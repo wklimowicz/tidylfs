@@ -1,0 +1,44 @@
+Package: tidylfs
+Title: Tools for analysing the Labour Force Survey
+Version: 0.0.1
+Authors@R: 
+    person("Wojtek", "Klimowicz", , "wojtekklimowicz96@gmail.com", role = c("aut", "cre"))
+Description: Tools for analysts working with the LFS.
+License: MIT + file LICENSE
+URL: https://github.com/wklimowicz/tidylfs
+BugReports: https://github.com/wklimowicz/tidylfs/issues
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2
+Depends:
+    R (>= 3.5.0)
+Imports: 
+    haven,
+    stringr,
+    rlang,
+    stats,
+    dplyr,
+    purrr,
+    jsonlite,
+    readr,
+    magrittr,
+    tibble,
+    forcats,
+    openssl,
+    lifecycle,
+    matrixStats,
+    cli
+Suggests: 
+    testthat (>= 3.0.0),
+    curl,
+    janitor,
+    readxl,
+    tidyr,
+    vctrs,
+    knitr,
+    httr,
+    withr,
+    fs,
+    rmarkdown
+Config/testthat/edition: 3
+VignetteBuilder: knitr

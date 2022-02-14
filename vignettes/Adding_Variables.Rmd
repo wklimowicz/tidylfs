@@ -1,0 +1,30 @@
+---
+title: "Adding your own Variables"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Adding your own Variables}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  eval = FALSE,
+  comment = "#>"
+)
+```
+
+# Overview
+
+* tidylfs is designed to be easily extended. Adding variables and summaries is a few steps:
+
+    * If your variable isn't currently in the compiled dataset, run `lfs_extra_mappings()`.
+    * Find the relevant variables in the ONS User guidance.
+    * Add them to the function.
+    * Load the function, and pass it as an argument to `lfs_compile`:
+
+```{r}
+lfs_extra_mappings()
+```
+

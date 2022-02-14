@@ -1,0 +1,69 @@
+setwd(here::here())
+load_all()
+library(tidyverse)
+
+
+lfs_convert("../lfs_raw_data/", "../lfs_rds_data/") #, filter_files = "2017 Q3.sav")
+
+lfs_compile("../lfs_rds_data/")
+source("data-raw/create_test_data.R")
+check()
+
+lfs <- lfs_load()
+
+lfs %>%
+  lfs_flag_teacher() %>%
+  filter(!is.na(PARENTAL_OCCUPATION_MAJOR)) %>%
+  filter(TEACHER == 1) %>%
+  count(QUARTER, OCCUPATION_MAJOR, PARENTAL_OCCUPATION_MAJOR) %>%
+  arrange(desc(n))
+
+lfs %>%
+  count(QUARTER, !is.na(PARENTAL_OCCUPATION)) %>%
+  sie()
+
+lfs %>%
+  count(QUARTER, PARENTAL_OCCUPATION)
+
+lfs %>%
+  lfs_flag_teacher() %>%
+  filter(teacher 
+  filter(YEAR %in% c(2010:2019)) %>%
+  # filter(HIGHO %in% c("Post grad cert in educ", "Post grad cert in education")) %>%
+  group_by(TEACHER) %>%
+  count(HIGHO, sort = T)
+
+
+
+table(lfs$QUARTER, lfs$COUNTRY)
+
+table(lfs$QUARTER, (lfs$ILODEFR))
+table(lfs$QUARTER, as.numeric(lfs$ILODEFR))
+table(lfs$QUARTER, (lfs$FTPT))
+
+table(lfs$QUARTER, lfs$SEX)
+table(lfs$QUARTER, lfs$HIQUALD)
+table(lfs$QUARTER, lfs$DEGREE71)
+
+lfs %>%
+  lfs_summarise_union(QUARTER, SEX) %>%
+  dplyr::select(SEX, QUARTER, union_percentage)
+
+
+table(lfs$ILODEFR)
+table(lfs$QUARTER, lfs$FTPT)
+
+
+lfs %>%
+  dplyr::select(ILODEFR) %>%
+  dplyr::filter(!is.na(ILODEFR)) %>%
+  dplyr::mutate(as.numeric(ILODEFR))
+
+
+
+lfs %>%
+  filter(FTPTWK == "Full-time") %>%
+  lfs_flag_teacher() %>%
+  lfs_summarise_hours(YEAR, TEACHER, SEX) %>%
+  ggplot() +
+  geom_line(aes(x = YEAR, y = hours, color = TEACHER, group = interaction(TEACHER, SEX), linetype = SEX))
