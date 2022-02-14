@@ -14,6 +14,12 @@ df <- lfs_load() %>%
     )
   )
 
+directory_path <- paste0(
+  system.file("tests", "testthat", package = "tidylfs"),
+  "/data"
+)
+
+dir.create(directory_path, showWarnings = FALSE)
 
 # Occupation Salary Test Data
 earn06 <- df %>%
@@ -29,6 +35,7 @@ save_file_path <- paste0(
   system.file("tests", "testthat", package = "tidylfs"),
   "/data/test-e1.Rds"
 )
+
 
 saveRDS_compressed(earn06, save_file_path)
 

@@ -6,7 +6,5 @@
 ^variables_report\.csv$
 ^data-raw$
 ^_pkgdown\.yml$
-^inst/package_licenses\.R$
 ^docs$
 ^pkgdown$
-^.*\.gitkeep

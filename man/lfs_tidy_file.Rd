@@ -13,13 +13,13 @@ lfs_tidy_file(
 )
 }
 \arguments{
-\item{file}{index of file}
+\item{file}{Index of file}
 
-\item{total_files}{vector of file names - helper function for cli}
+\item{total_files}{Vector of file names - helper function for cli}
 
-\item{file_format}{sav csv or Rds}
+\item{file_format}{File extension: sav csv or Rds}
 
-\item{file_names}{To save intermediate ones with}
+\item{file_names}{To Save intermediate Rds files.}
 
 \item{extra_mappings}{Either NULL (use default) or an R script with the lfs_extra_mappings function}
 }

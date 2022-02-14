@@ -2,18 +2,18 @@
 % Please edit documentation in R/flags.R
 \name{lfs_flag_graduate_ons}
 \alias{lfs_flag_graduate_ons}
-\title{Add a gradaute flag column to LFS data}
+\title{Add anm ONS graduate flag column to LFS data}
 \usage{
-lfs_flag_graduate_ons(lfs, column_name = "GRADUATE2")
+lfs_flag_graduate_ons(lfs, column_name = "GRADUATE_ONS")
 }
 \arguments{
 \item{lfs}{LFS dataset}
 
-\item{column_name}{Name of the column - by default GRADUATE}
+\item{column_name}{Name of the column - by default GRADUATE_ONS}
 }
 \value{
 tibble with extra teacher column
 }
 \description{
-Add a gradaute flag column to LFS data
+Add anm ONS graduate flag column to LFS data
 }

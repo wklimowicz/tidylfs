@@ -1,11 +1,12 @@
 Package: tidylfs
-Title: Tools for analysing the Labour Force Survey
+Title: Tools for analysing the ONS Labour Force Survey
 Version: 0.0.1
 Authors@R: 
     person("Wojtek", "Klimowicz", , "wojtekklimowicz96@gmail.com", role = c("aut", "cre"))
 Description: Tools for analysts working with the LFS.
 License: MIT + file LICENSE
-URL: https://github.com/wklimowicz/tidylfs
+URL: https://github.com/wklimowicz/tidylfs,
+    https://wklimowicz.github.io/tidylfs/
 BugReports: https://github.com/wklimowicz/tidylfs/issues
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

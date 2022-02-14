@@ -4,7 +4,7 @@
 \name{tidylfs-package}
 \alias{tidylfs}
 \alias{tidylfs-package}
-\title{tidylfs: Analyse the ONS Labour Force Survey}
+\title{tidylfs: Tools for analysing the Labour Force Survey}
 \description{
 Tools for analysts working with the LFS.
 }
@@ -12,6 +12,7 @@ Tools for analysts working with the LFS.
 Useful links:
 \itemize{
   \item \url{https://github.com/wklimowicz/tidylfs}
+  \item \url{https://wklimowicz.github.io/tidylfs/}
   \item Report bugs at \url{https://github.com/wklimowicz/tidylfs/issues}
 }
 

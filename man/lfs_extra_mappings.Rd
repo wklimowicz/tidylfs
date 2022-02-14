@@ -10,5 +10,5 @@ lfs_extra_mappings(file_name = "extra_lfs_mappings.R")
 \item{file_name}{Name of mapping file}
 }
 \description{
-Add Custom Column Mappings
+Create file with function that can be used to add columns
 }

@@ -24,8 +24,8 @@ output in the package directory, so it's always accessible with \code{lfs_load}.
 \item{save_variables_report}{Save a csv with the list of picked variables?}
 }
 \value{
-Nothing
+Nothing - saves the Rds file only.
 }
 \description{
-Compile to 1 R file
+Compiles seperate Rds files into one, picking relevant columns
 }
