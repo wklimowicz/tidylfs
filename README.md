@@ -80,3 +80,22 @@ lfs %>%
 
 For more information on the ONS variables, see the [LFS
 Guidance](https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/methodologies/labourforcesurveyuserguidance).
+
+Some of the variables included by default are:
+
+| Variable Name        | Definition                             |
+| :------------------- | :------------------------------------- |
+| YEAR                 | Year                                   |
+| QUARTER              | Quarter                                |
+| SEX                  | Sex                                    |
+| GOVTOR               | Government Office Region               |
+| AGE                  | Age                                    |
+| FTPTWK               | Part-Time/Full-time Status             |
+| EDAGE                | Age when completed full time education |
+| TTACHR               | Actual hours worked                    |
+| UNION                | In union?                              |
+| HIQUALD              | Highest Qualification                  |
+| DEGREE               | Degree Subjeect                        |
+| OCCUPATION           | Occupation in main job                 |
+| PARENTAL\_OCCUPATION | Parental Occupation                    |
+| ETHNICITY            | Ethnicity                              |
