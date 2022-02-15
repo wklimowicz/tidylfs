@@ -110,7 +110,7 @@
 <!-- end list --><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">lfs</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span>
     <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">OCCUPATION_MAJOR</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> <span class="co"># Filter out NA's</span>
-    <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">FTPTWK</span> <span class="op">==</span> <span class="st">"Full-time"</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span>
+    <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">FTPTWK</span> <span class="op">==</span> <span class="st">"Full-time"</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> <span class="co"># Take only full-time employees</span>
     <span class="fu"><a href="reference/lfs_summarise_salary.html">lfs_summarise_salary</a></span><span class="op">(</span><span class="va">QUARTER</span>, <span class="va">OCCUPATION_MAJOR</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span>
     <span class="fu">tidyr</span><span class="fu">::</span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_wider.html" class="external-link">pivot_wider</a></span><span class="op">(</span>id_cols <span class="op">=</span> <span class="va">QUARTER</span>,
                        names_from <span class="op">=</span> <span class="va">OCCUPATION_MAJOR</span>,
@@ -123,6 +123,71 @@
 <code class="sourceCode R"><span class="va">lfs</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span>
   <span class="fu"><a href="reference/lfs_summarise_unemployment.html">lfs_summarise_unemployment</a></span><span class="op">(</span><span class="va">QUARTER</span>, <span class="va">SEX</span>, <span class="va">AGES</span><span class="op">)</span></code></pre></div>
 <p>For more information on the ONS variables, see the <a href="https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/methodologies/labourforcesurveyuserguidance" class="external-link">LFS Guidance</a>.</p>
+<p>Some of the variables included by default are:</p>
+<table class="table">
+<thead><tr class="header">
+<th align="left">Variable Name</th>
+<th align="left">Definition</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">YEAR</td>
+<td align="left">Year</td>
+</tr>
+<tr class="even">
+<td align="left">QUARTER</td>
+<td align="left">Quarter</td>
+</tr>
+<tr class="odd">
+<td align="left">SEX</td>
+<td align="left">Sex</td>
+</tr>
+<tr class="even">
+<td align="left">GOVTOR</td>
+<td align="left">Government Office Region</td>
+</tr>
+<tr class="odd">
+<td align="left">AGE</td>
+<td align="left">Age</td>
+</tr>
+<tr class="even">
+<td align="left">FTPTWK</td>
+<td align="left">Part-Time/Full-time Status</td>
+</tr>
+<tr class="odd">
+<td align="left">EDAGE</td>
+<td align="left">Age when completed full time education</td>
+</tr>
+<tr class="even">
+<td align="left">TTACHR</td>
+<td align="left">Actual hours worked</td>
+</tr>
+<tr class="odd">
+<td align="left">UNION</td>
+<td align="left">In union?</td>
+</tr>
+<tr class="even">
+<td align="left">HIQUALD</td>
+<td align="left">Highest Qualification</td>
+</tr>
+<tr class="odd">
+<td align="left">DEGREE</td>
+<td align="left">Degree Subject</td>
+</tr>
+<tr class="even">
+<td align="left">OCCUPATION</td>
+<td align="left">Occupation in main job</td>
+</tr>
+<tr class="odd">
+<td align="left">PARENTAL_OCCUPATION</td>
+<td align="left">Parental Occupation at 14</td>
+</tr>
+<tr class="even">
+<td align="left">ETHNICITY</td>
+<td align="left">Ethnicity</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="links">
