@@ -48,16 +48,21 @@ lfs_tidy_file <- function(file,
     complete_mappings <- dplyr::bind_rows(complete_mappings, vars_extra)
   }
 
+
+
   # Only take the variables that are present - eg. "UNION" is only in Q4's
   vars_present <- complete_mappings$lfs_name[complete_mappings$lfs_name %in% cols]
 
   df3 <- df2 %>%
     dplyr::select(dplyr::all_of(vars_present)) %>%
-    dplyr::distinct()
+    dplyr::distinct() %>%
+    annotate_occupation()
 
-  colnames(df3) <- complete_mappings$new_name[complete_mappings$lfs_name %in% vars_present]
+  new_names <- complete_mappings$new_name[complete_mappings$lfs_name %in% vars_present]
+  new_names <- c(new_names, "OCCUPATION_DESCRIPTION", "PARENTAL_OCCUPATION_DESCRIPTION")
 
-  stopifnot(length(colnames(df3)) == sum(complete_mappings$lfs_name %in% cols))
+  colnames(df3) <- new_names
+  # stopifnot(length(colnames(df3)) == sum(complete_mappings$lfs_name %in% cols)) - 2 
 
   # Investigate how to integrate this
   # Try as_factor(level = "both")
@@ -85,6 +90,8 @@ lfs_tidy_file <- function(file,
       dplyr::any_of(character_variables),
       as.character
     ))
+
+
 
   return(list(df3, complete_mappings))
 }

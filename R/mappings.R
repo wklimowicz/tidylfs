@@ -1,11 +1,34 @@
+#' Picks column names in order of appearanceA
+#'
+#' When column names change over time, picks the first
+#' one that appears from the list in order of appearance
+#' If it doesn't appear, returns a character NA.
+#'
+#' @param vector_of_names character vector of column names
+#' @param column_names vector of columns from lfs
+#'
+#' @return First name that appears in cols
+#'
+#' @export
+lfs_pick_column <- function(vector_of_names, column_names) {
+
+ index <- vector_of_names %in% column_names
+
+if (sum(index) > 0) {
+  vector_of_names[which.max(index == T)]
+} else {
+  NA_character_
+}
+
+}
+
 lfs_default_mappings <- function(cols) {
 
   # Choose variables in order of priority when found
 
-  deg_var <- dplyr::case_when(
-    "FDSNGDEG" %in% cols ~ "FDSNGDEG",
-    "SNGDEG" %in% cols ~ "SNGDEG",
-  )
+  deg_var <- lfs_pick_column(c("FDSNGDEG", "SNGDEG"), cols)
+
+  deg_var2 <- lfs_pick_column(c("FDCMBMA", "UNCOMBMA", "CMBDEG01"), cols)
 
   deg_var2 <- dplyr::case_when(
     "FDCMBMA" %in% cols ~ "FDCMBMA",
@@ -129,9 +152,8 @@ lfs_default_mappings <- function(cols) {
   )
 
   parental_occupation <- dplyr::case_when(
-    "SMSOC20" %in% cols ~ "SMSOC20",
-    "SMSOC10" %in% cols ~ "SMSOC10",
-    "SMSOC2K" %in% cols ~ "SMSOC2K",
+    "SMSOC204" %in% cols ~ "SMSOC204",
+    "SMSOC104" %in% cols ~ "SMSOC104",
   )
 
   parental_occupation_major <- dplyr::case_when(
@@ -203,10 +225,10 @@ lfs_default_mappings <- function(cols) {
     deg_var, "DEGREE", "character",
     deg_var2, "CMBDEGREE", "character",
     ilo_var, "ILODEFR", "factor",
-    occupation, "OCCUPATION", "factor",
+    occupation, "OCCUPATION", "numeric",
     occupation_major, "OCCUPATION_MAJOR", "numeric",
-    parental_occupation, "PARENTAL_OCCUPATION", "factor",
-    parental_occupation_major, "PARENTAL_OCCUPATION_MAJOR", "factor",
+    parental_occupation, "PARENTAL_OCCUPATION", "numeric",
+    parental_occupation_major, "PARENTAL_OCCUPATION_MAJOR", "numeric",
     weight_income, "WEIGHT_INCOME", "numeric",
     weight, "WEIGHT", "numeric",
     ilo_status, "INECAC05", "numeric",

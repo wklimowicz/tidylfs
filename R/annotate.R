@@ -38,3 +38,45 @@ annotate_hiquald <- function(data) {
       )
     )
 }
+
+
+annotate_occupation <- function(lfs) {
+
+  cols <- names(lfs)
+
+  soc_coding <- lfs_pick_column(c("SOC2KM", "SOC10M", "SOC20M"), cols)
+  parent_soc_coding <- lfs_pick_column(c("SMSOC204", "SMSOC104"), cols)
+
+
+
+  if (is.na(soc_coding)) {
+  return(lfs)
+  }
+
+  # Find correct coding file
+    file_name <- paste0(system.file("coding_frames", package = "tidylfs"),
+                        "/coding_", soc_coding, ".csv")
+
+  # Read in relevant coding file
+  soc_mapping <- readr::read_csv(file_name,
+    col_types = readr::cols(
+      SOC = readr::col_double(),
+      OCCUPATION_DESCRIPTION = readr::col_character()
+  ))
+
+  # Match main OCCUPATION variable
+  join_vector <- "SOC"
+  names(join_vector) <- soc_coding
+  output <- dplyr::left_join(lfs, soc_mapping, join_vector)
+
+
+  if (!is.na(parent_soc_coding)) {
+    # Match Parental occupation variable
+    join_vector <- "SOC"
+    names(join_vector) <- parent_soc_coding
+    colnames(soc_mapping) <- c("SOC", "PARENTAL_OCCUPATION_DESCRIPTION")
+    output <- dplyr::left_join(output, soc_mapping, join_vector)
+  }
+
+  output
+}
