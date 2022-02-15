@@ -90,9 +90,9 @@ x <- tibble::tribble( ~`Variable Name`, ~`Definition`,
 "TTACHR", "Actual hours worked",
 "UNION", "In union?",
 "HIQUALD", "Highest Qualification",
-"DEGREE", "Degree Subjeect",
+"DEGREE", "Degree Subject",
 "OCCUPATION", "Occupation in main job",
-"PARENTAL_OCCUPATION", "Parental Occupation",
+"PARENTAL_OCCUPATION", "Parental Occupation at 14",
 "ETHNICITY", "Ethnicity"
 )
 
