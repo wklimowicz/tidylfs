@@ -2,7 +2,7 @@
 % Please edit documentation in R/flags.R
 \name{lfs_flag_graduate}
 \alias{lfs_flag_graduate}
-\title{Add a gradaute flag column to LFS data}
+\title{Add a graduate flag column to LFS data}
 \usage{
 lfs_flag_graduate(lfs, column_name = "GRADUATE")
 }
@@ -15,5 +15,5 @@ lfs_flag_graduate(lfs, column_name = "GRADUATE")
 tibble with extra teacher column
 }
 \description{
-Add a gradaute flag column to LFS data
+Add a graduate flag column to LFS data
 }

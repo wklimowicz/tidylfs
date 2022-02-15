@@ -4,10 +4,10 @@
 \alias{lfs_summarise_unemployment}
 \title{Group by and Summarise for ONS unemployment}
 \usage{
-lfs_summarise_unemployment(data, ...)
+lfs_summarise_unemployment(lfs, ...)
 }
 \arguments{
-\item{data}{LFS Dataset}
+\item{lfs}{LFS Dataset}
 
 \item{...}{Variables to group by}
 }

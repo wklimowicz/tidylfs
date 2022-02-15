@@ -2,7 +2,7 @@
 #'
 #' `r lifecycle::badge("experimental")`
 #'
-#' @param data LFS Dataset
+#' @param lfs LFS Dataset
 #' @param ... Variables to group by
 #'
 #' @return Tibble of outputs
@@ -11,8 +11,8 @@
 #'
 #'
 #' @export
-lfs_summarise_union <- function(data, ...) {
-  df <- data %>%
+lfs_summarise_union <- function(lfs, ...) {
+  df <- lfs %>%
     dplyr::filter(.data$INECAC05 == 1) %>%
     dplyr::filter(.data$WEIGHT > 0) %>%
     # dplyr::filter(.data$WEIGHT_INCOME > 0,
@@ -39,7 +39,7 @@ lfs_summarise_union <- function(data, ...) {
 #'
 #' `r lifecycle::badge("experimental")`
 #'
-#' @param data LFS Dataset
+#' @param lfs LFS Dataset
 #' @param ... Variables to group by
 #'
 #' @return Tibble of outputs
@@ -47,8 +47,8 @@ lfs_summarise_union <- function(data, ...) {
 #' @importFrom rlang .data
 #'
 #' @export
-lfs_summarise_hours <- function(data, ...) {
-  df <- data %>%
+lfs_summarise_hours <- function(lfs, ...) {
+  df <- lfs %>%
     dplyr::mutate(ILODEFR = as.numeric(.data$ILODEFR)) %>%
     dplyr::filter(
       .data$ILODEFR == 1,

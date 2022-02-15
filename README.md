@@ -60,7 +60,7 @@ lfs %>%
 ``` r
 lfs %>%
     dplyr::filter(!is.na(OCCUPATION_MAJOR)) %>% # Filter out NA's
-    dplyr::filter(FTPTWK == "Full-time") %>%
+    dplyr::filter(FTPTWK == "Full-time") %>% # Take only full-time employees
     lfs_summarise_salary(QUARTER, OCCUPATION_MAJOR) %>%
     tidyr::pivot_wider(id_cols = QUARTER,
                        names_from = OCCUPATION_MAJOR,
