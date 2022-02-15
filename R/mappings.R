@@ -222,7 +222,7 @@ lfs_default_mappings <- function(cols) {
     "TUPRES", "TUPRES", "factor",
     "TUCOV", "TUCOV", "factor",
     # Variable changes over time ----------
-    deg_var, "DEGREE", "character",
+    deg_var, "DEGREE_SUBJECT", "character",
     deg_var2, "CMBDEGREE", "character",
     ilo_var, "ILODEFR", "factor",
     occupation, "OCCUPATION", "numeric",
