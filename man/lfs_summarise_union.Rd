@@ -4,10 +4,10 @@
 \alias{lfs_summarise_union}
 \title{Group by and Summarise for unionisation rates}
 \usage{
-lfs_summarise_union(data, ...)
+lfs_summarise_union(lfs, ...)
 }
 \arguments{
-\item{data}{LFS Dataset}
+\item{lfs}{LFS Dataset}
 
 \item{...}{Variables to group by}
 }

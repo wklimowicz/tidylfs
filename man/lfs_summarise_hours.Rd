@@ -4,10 +4,10 @@
 \alias{lfs_summarise_hours}
 \title{Group by and Summarise for hours worked}
 \usage{
-lfs_summarise_hours(data, ...)
+lfs_summarise_hours(lfs, ...)
 }
 \arguments{
-\item{data}{LFS Dataset}
+\item{lfs}{LFS Dataset}
 
 \item{...}{Variables to group by}
 }

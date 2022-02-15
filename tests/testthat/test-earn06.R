@@ -38,7 +38,7 @@ test_that("EARN06 matches raw data", {
 
   earn06_ons <- readxl::read_xls(
     path = "earn06.xls",
-    sheet = "PeopleWeeklyEarnings",
+    sheet = "Weekly SOC2010",
     .name_repair = "minimal"
   )
 

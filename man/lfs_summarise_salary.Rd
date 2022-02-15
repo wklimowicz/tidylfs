@@ -4,10 +4,10 @@
 \alias{lfs_summarise_salary}
 \title{Group by and Summarise into salary ONS Salary}
 \usage{
-lfs_summarise_salary(data, ...)
+lfs_summarise_salary(lfs, ...)
 }
 \arguments{
-\item{data}{LFS Dataset}
+\item{lfs}{LFS Dataset}
 
 \item{...}{Variables to group by}
 }

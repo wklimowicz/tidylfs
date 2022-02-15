@@ -4,7 +4,7 @@
 \name{tidylfs-package}
 \alias{tidylfs}
 \alias{tidylfs-package}
-\title{tidylfs: Tools for analysing the Labour Force Survey}
+\title{tidylfs: Tools for analysing the ONS Labour Force Survey}
 \description{
 Tools for analysts working with the LFS.
 }

@@ -69,6 +69,9 @@ lfs_tidy_file <- function(file,
   numeric_variables <- ifelse(complete_mappings$type == "numeric", complete_mappings$new_name, NA)
   numeric_variables <- numeric_variables[!is.na(numeric_variables)]
 
+  character_variables <- ifelse(complete_mappings$type == "character", complete_mappings$new_name, NA)
+  character_variables <- character_variables[!is.na(character_variables)]
+
   df3 <- df3 %>%
     dplyr::mutate(dplyr::across(
       dplyr::any_of(factor_variables),
@@ -77,6 +80,10 @@ lfs_tidy_file <- function(file,
     dplyr::mutate(dplyr::across(
       dplyr::any_of(numeric_variables),
       as.numeric
+    )) %>%
+    dplyr::mutate(dplyr::across(
+      dplyr::any_of(character_variables),
+      as.character
     ))
 
   return(list(df3, complete_mappings))
@@ -97,7 +104,7 @@ lfs_tidy_file <- function(file,
 #' @param save_variables_report Save a csv with the list of picked variables?
 #'
 #' @return Nothing - saves the Rds file only.
-#' 
+#'
 #' @export
 lfs_compile <- function(lfs_directory,
                         extra_mappings = NULL,

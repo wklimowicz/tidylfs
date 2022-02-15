@@ -37,7 +37,7 @@ lfs_flag_teacher <- function(lfs, column_name = "TEACHER") {
 }
 
 
-#' Add a gradaute flag column to LFS data
+#' Add a graduate flag column to LFS data
 #'
 #' @param lfs LFS dataset
 #' @param column_name Name of the column - by default GRADUATE
@@ -88,7 +88,7 @@ lfs_flag_postgraduate <- function(lfs, column_name = "POSTGRADUATE") {
 
 
 
-#' Add anm ONS graduate flag column to LFS data
+#' Add an ONS graduate flag column to LFS data
 #'
 #' @param lfs LFS dataset
 #' @param column_name Name of the column - by default GRADUATE_ONS

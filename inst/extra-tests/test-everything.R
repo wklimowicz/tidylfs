@@ -1,10 +1,7 @@
 setwd(here::here())
 load_all()
 library(tidyverse)
-
-
 lfs_convert("../lfs_raw_data/", "../lfs_rds_data/") #, filter_files = "2017 Q3.sav")
-
 lfs_compile("../lfs_rds_data/")
 source("data-raw/create_test_data.R")
 check()
@@ -27,7 +24,7 @@ lfs %>%
 
 lfs %>%
   lfs_flag_teacher() %>%
-  filter(teacher 
+  filter(teacher
   filter(YEAR %in% c(2010:2019)) %>%
   # filter(HIGHO %in% c("Post grad cert in educ", "Post grad cert in education")) %>%
   group_by(TEACHER) %>%

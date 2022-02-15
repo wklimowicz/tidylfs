@@ -1,7 +1,7 @@
 #' Group by and Summarise into salary ONS Salary
 #'
 #'
-#' @param data LFS Dataset
+#' @param lfs LFS Dataset
 #' @param ... Variables to group by
 #'
 #' @importFrom rlang .data
@@ -9,8 +9,8 @@
 #' @return Tibble of outputs
 #'
 #' @export
-lfs_summarise_salary <- function(data, ...) {
-  df <- data %>%
+lfs_summarise_salary <- function(lfs, ...) {
+  df <- lfs %>%
     dplyr::filter(
       .data$WEIGHT_INCOME > 0,
       .data$HOURPAY <= 100,
@@ -53,7 +53,7 @@ lfs_summarise_salary <- function(data, ...) {
 #' Group by and Summarise for ONS unemployment
 #'
 #'
-#' @param data LFS Dataset
+#' @param lfs LFS Dataset
 #' @param ... Variables to group by
 #'
 #' @return Tibble of outputs
@@ -61,8 +61,8 @@ lfs_summarise_salary <- function(data, ...) {
 #' @importFrom rlang .data
 #'
 #' @export
-lfs_summarise_unemployment <- function(data, ...) {
-  df <- data %>%
+lfs_summarise_unemployment <- function(lfs, ...) {
+  df <- lfs %>%
     dplyr::filter(.data$WEIGHT > 0) %>%
     dplyr::filter(!is.na(.data$WEIGHT), !is.na(.data$ILODEFR)) %>%
     dplyr::group_by(...) %>%
