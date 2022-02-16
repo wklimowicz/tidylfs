@@ -42,6 +42,7 @@ test_that("EARN07 matches raw data", {
   # From ONS EARN07 Publication --------------------
 
   withr::local_file(list("earn07.xls"), {
+
     url_earn07 <- "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/grossweeklyearningsbyindustryearn07"
     html_webpage <- httr::GET(url_earn07)
     html_webpage <- rawToChar(html_webpage$content)
@@ -52,6 +53,7 @@ test_that("EARN07 matches raw data", {
     } else {
       download.file(download_link, "earn07.xls", quiet = TRUE)
     }
+
   })
 
   earn07_ons <- readxl::read_xls(
@@ -90,6 +92,6 @@ test_that("EARN07 matches raw data", {
   earn07_ons <- stats::setNames(earn07_ons, names(earn07))
 
 
-  expect_equal(earn07, earn07_ons, tolerance = 1e-8)
+  expect_equal(earn07, earn07_ons, tolerance = 1e-4)
   expect_gt(nrow(earn07), 1)
 })

@@ -60,7 +60,7 @@ lfs_tidy_file <- function(file,
   new_names <- complete_mappings$new_name[complete_mappings$lfs_name %in% vars_present]
 
   colnames(df3) <- new_names
-  # stopifnot(length(colnames(df3)) == sum(complete_mappings$lfs_name %in% cols)) - 2
+  stopifnot(length(colnames(df3)) == sum(complete_mappings$lfs_name %in% cols))
 
   # Investigate how to integrate this
   # Try as_factor(level = "both")
