@@ -9,29 +9,27 @@ lfs_flag_teacher <- function(lfs, column_name = "TEACHER") {
   rename <- c("column_name")
   names(rename) <- {{ column_name }}
 
-  soc_2000 <- c(
-    # "2311  'Higher educ teaching prfsnals'",
-    # "2312  'Further educ teaching prfsnals'",
-    "2314  'Secondary eductn teaching prfsnals'",
-    "2315  'Prim & nurs eductn teaching profs'"
-  )
 
-  soc_2010 <- c(
-    "2314  'Secondary education teaching professionals'",
-    "2315  'Primary and nursery education teaching professionals'"
-  )
+teaching_occupations <- c(
+"Further education teaching professionals",
+# "Head teachers and principals",
+# "Higher education teaching professionals",
+"Higher level teaching assistants",
+"Nursery education teaching professionals",
+"Primary and nursery education teaching professionals",
+"Primary education teaching professionals",
+"Secondary education teaching professionals",
+"Special needs education teaching professionals",
+# "Teachers of English as a foreign language",
+"Teaching and other educational professionals n.e.c.",
+"Teaching assistants",
+"Teaching professionals n.e.c."
+)
 
-  soc_2020 <- c(
-    # "Further education teaching professionals",
-    "Secondary education teaching professionals",
-    "Primary education teaching professionals",
-    "Nursery education teaching professionals"
-    # "Special needs education teaching professionals"))
-  )
 
   lfs <- lfs %>%
     dplyr::mutate(
-      column_name = .data$OCCUPATION %in% c(soc_2000, soc_2010, soc_2020)
+      column_name = .data$OCCUPATION_DESCRIPTION %in% teaching_occupations
     ) %>%
     dplyr::rename(rename)
 }
