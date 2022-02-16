@@ -1,12 +1,45 @@
 setwd(here::here())
 load_all()
 library(tidyverse)
-lfs_convert("../lfs_raw_data/", "../lfs_rds_data/") #, filter_files = "2017 Q3.sav")
+# lfs_convert("../lfs_raw_data/", "../lfs_rds_data/") #, filter_files = "2017 Q3.sav")
 lfs_compile("../lfs_rds_data/")
 source("data-raw/create_test_data.R")
 check()
 
 lfs <- lfs_load()
+
+lfs$OCCUPATION_DESCRIPTION
+
+table(lfs$PARENTAL_OCCUPATION)
+table(lfs$OCCUPATION)
+
+table(lfs$OCCUPATION_DESCRIPTION)
+table(lfs$PARENTAL_OCCUPATION_DESCRIPTION)
+
+lfs %>%
+  lfs_summarise_salary(OCCUPATION, OCCUPATION_DESCRIPTION) %>%
+  sie()
+
+lfs %>%
+filter(OCCUPATION_DESCRIPTION %in%
+c(
+"Business and related research professionals",
+"Business, research and administrative professionals n.e.c."
+)) %>%
+lfs_summarise_salary(DEGREE_SUBJECT)
+
+lfs %>%
+  filter(DEGREE_SUBJECT == "Music") %>%
+  lfs_summarise_salary(OCCUPATION_DESCRIPTION) %>%
+  sie()
+
+
+sie()
+
+
+table(lfs$OCCUPATION_DESCRIPTION)
+
+names(lfs)
 
 lfs %>%
   lfs_flag_teacher() %>%

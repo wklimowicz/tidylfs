@@ -48,6 +48,8 @@ lfs_tidy_file <- function(file,
     complete_mappings <- dplyr::bind_rows(complete_mappings, vars_extra)
   }
 
+
+
   # Only take the variables that are present - eg. "UNION" is only in Q4's
   vars_present <- complete_mappings$lfs_name[complete_mappings$lfs_name %in% cols]
 
@@ -55,9 +57,10 @@ lfs_tidy_file <- function(file,
     dplyr::select(dplyr::all_of(vars_present)) %>%
     dplyr::distinct()
 
-  colnames(df3) <- complete_mappings$new_name[complete_mappings$lfs_name %in% vars_present]
+  new_names <- complete_mappings$new_name[complete_mappings$lfs_name %in% vars_present]
 
-  stopifnot(length(colnames(df3)) == sum(complete_mappings$lfs_name %in% cols))
+  colnames(df3) <- new_names
+  # stopifnot(length(colnames(df3)) == sum(complete_mappings$lfs_name %in% cols)) - 2 
 
   # Investigate how to integrate this
   # Try as_factor(level = "both")
@@ -85,6 +88,8 @@ lfs_tidy_file <- function(file,
       dplyr::any_of(character_variables),
       as.character
     ))
+
+
 
   return(list(df3, complete_mappings))
 }
@@ -202,7 +207,8 @@ lfs_compile <- function(lfs_directory,
   lfs_data_frame <- dplyr::bind_rows(lfs_data_frame, .id = "QUARTER") %>%
     dplyr::mutate(YEAR = as.integer(substr(.data$QUARTER, 1, 4))) %>%
     dplyr::relocate(.data$YEAR) %>%
-    annotate_hiquald()
+    annotate_hiquald() %>%
+    annotate_occupation()
 
 
 
