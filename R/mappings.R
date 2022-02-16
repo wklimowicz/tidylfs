@@ -26,157 +26,49 @@ lfs_default_mappings <- function(cols) {
 
   # Choose variables in order of priority when found
 
-  deg_var <- lfs_pick_column(c("FDSNGDEG", "SNGDEG"), cols)
+  # Core
+  ilo_status <- lfs_pick_column(c("INECACR", "INECAC05"), cols)
 
-  deg_var2 <- lfs_pick_column(c("FDCMBMA", "UNCOMBMA", "CMBDEG01"), cols)
+  weight_income <- lfs_pick_column(c("PIWT20", "PIWT18", "PIWT14",
+                                     "PIWT07", "PWT07"), cols)
 
-  deg_var2 <- dplyr::case_when(
-    "FDCMBMA" %in% cols ~ "FDCMBMA",
-    "UNCOMBMA" %in% cols ~ "UNCOMBMA",
-    "CMBDEG01" %in% cols ~ "CMBDEG01",
-  )
+  weight <- lfs_pick_column(c("PWT20", "PWT18", "PWT14", "PWT07"), cols)
 
-  deg_var3 <- dplyr::case_when(
-    "CMBDEG" %in% cols ~ "CMBDEG",
-    "COMDEG" %in% cols ~ "COMDEG",
-    "CMBDEG01" %in% cols ~ "CMBDEG01",
-    "CMBDEGN01" %in% cols ~ "CMBDEGN01",
-    "COMDEG01" %in% cols ~ "COMDEG01",
-  )
+  # Education
+  cured <- lfs_pick_column(c("CURED8", "CURED"), cols)
 
-  ilo_var <- dplyr::case_when(
-    "ILODEFA" %in% cols ~ "ILODEFA", # For 1992
-    "ILODEFR" %in% cols ~ "ILODEFR",
-  )
+  hiquald <- lfs_pick_column(c("HIQUL15D", "HIQUL11D", "HIQUAL8D",
+                                  "HIQUAL5D", "HIQUAL4D", "HIQUALD"), cols)
 
+  hiqual <- lfs_pick_column(c("HIQUAL15", "HIQUAL11", "HIQUAL8",
+                                 "HIQUAL5", "HIQUAL4", "HIQUAL"), cols)
 
-  weight_income <- dplyr::case_when(
-    "PIWT20" %in% cols ~ "PIWT20",
-    "PIWT18" %in% cols ~ "PIWT18",
-    "PIWT17" %in% cols ~ "PIWT17",
-    "PIWT14" %in% cols ~ "PIWT14",
-    "PIWT07" %in% cols ~ "PIWT07",
-    "PWT07" %in% cols ~ "PWT07_MI",
-    "NEWIWT" %in% cols ~ "NEWIWT",
-    "WEIGHT2" %in% cols ~ "WEIGHT2",
-  )
+  degree71 <- lfs_pick_column(c("DEGREE71", "DEGREE4", "DEGREE"), cols)
 
-  weight <- dplyr::case_when(
-    "PWT20" %in% cols ~ "PWT20",
-    "PWT18" %in% cols ~ "PWT18",
-    "PWT17" %in% cols ~ "PWT17",
-    "PWT14" %in% cols ~ "PWT14",
-    "PWT07" %in% cols ~ "PWT07",
-    "NEWWT" %in% cols ~ "NEWWT",
-    "WEIGHT1" %in% cols ~ "WEIGHT1",
-  )
+  fdsico <- lfs_pick_column(c("FDSICO", "FDSINCOM", "SINCOM"), cols)
 
-  ilo_status <- dplyr::case_when(
-    "INECACA" %in% cols ~ "INECACA",
-    "INECACR" %in% cols ~ "INECACR",
-    "INECAC05" %in% cols ~ "INECAC05",
-  )
+  degree_subject <- lfs_pick_column(c("FDSNGDEG", "SNGDEG"), cols)
 
-  cured_var <- dplyr::case_when(
-    "CURED8" %in% cols ~ "CURED8",
-    "CURED" %in% cols ~ "CURED",
-  )
+  combined_degree_subject <- lfs_pick_column(c("FDCMBMA", "UNCOMBMA",
+                                               "CMBDEG01"), cols)
 
+  # Occupation
+  occupation <- lfs_pick_column(c("SOC20M", "SOC10M", "SOC2KM"), cols)
 
-  hiquld_var <- dplyr::case_when(
-    "HIQUL15D" %in% cols ~ "HIQUL15D",
-    "HIQUL11D" %in% cols ~ "HIQUL11D",
-    "HIQUAL8D" %in% cols ~ "HIQUAL8D",
-    "HIQUAL5D" %in% cols ~ "HIQUAL5D",
-    "HIQUAL4D" %in% cols ~ "HIQUAL4D",
-    "HIQUALD" %in% cols ~ "HIQUALD",
-  )
+  occupation_major <- lfs_pick_column(c("SC2010MMJ", "SC10MMJ",
+                                        "SC2KMMJ"), cols)
 
-  hiqul_var <- dplyr::case_when(
-    "HIQUAL15" %in% cols ~ "HIQUAL15",
-    "HIQUAL11" %in% cols ~ "HIQUAL11",
-    "HIQUAL8" %in% cols ~ "HIQUAL8",
-    "HIQUAL5" %in% cols ~ "HIQUAL5",
-    "HIQUAL4" %in% cols ~ "HIQUAL4",
-    "HIQUAL" %in% cols ~ "HIQUAL",
-  )
+  parental_occupation <- lfs_pick_column(c("SMSOC204", "SMSOC104"), cols)
 
-  DEGREE71 <- dplyr::case_when(
-    "DEGREE71" %in% cols ~ "DEGREE71",
-    "DEGREE4" %in% cols ~ "DEGREE4",
-    "DEGREE" %in% cols ~ "DEGREE",
-  )
+  parental_occupation_major <- lfs_pick_column(c("SMSOC201", "SMSOC101"), cols)
 
-  DEGREE72 <- dplyr::case_when(
-    "DEGREE72" %in% cols ~ "DEGREE72",
-  )
-
-
-  DEGREE73 <- dplyr::case_when(
-    "DEGREE73" %in% cols ~ "DEGREE73",
-  )
-
-  DEGREE74 <- dplyr::case_when(
-    "DEGREE74" %in% cols ~ "DEGREE74",
-  )
-
-
-  DEGREE75 <- dplyr::case_when(
-    "DEGREE75" %in% cols ~ "DEGREE75",
-  )
-
-
-  fdsico_var <- dplyr::case_when(
-    "FDSICO" %in% cols ~ "FDSICO",
-    "FDSINCOM" %in% cols ~ "FDSINCOM",
-    "SINCOM" %in% cols ~ "SINCOM",
-  )
-
-  #  qual1_var <- dplyr::case_when(
-  #    "QUAL_1" %in% cols ~ "QUAL_1",
-  #    "QUALCH1" %in% cols ~ "QUALCH1",
-  #    )
-  #
-
-  occupation <- dplyr::case_when(
-    "SOC10M" %in% cols ~ "SOC10M",
-    "SOC2KM" %in% cols ~ "SOC2KM",
-    "SOC20M" %in% cols ~ "SOC20M",
-  )
-
-  occupation_major <- dplyr::case_when(
-    "SC2KMMJ" %in% cols ~ "SC2KMMJ",
-    "SC10MMJ" %in% cols ~ "SC10MMJ",
-    "SC2010MMJ" %in% cols ~ "SC2010MMJ",
-    "SC20MMJ" %in% cols ~ "SC20MMJ",
-  )
-
-  parental_occupation <- dplyr::case_when(
-    "SMSOC204" %in% cols ~ "SMSOC204",
-    "SMSOC104" %in% cols ~ "SMSOC104",
-  )
-
-  parental_occupation_major <- dplyr::case_when(
-    "SMSOC201" %in% cols ~ "SMSOC201",
-    "SMSOC101" %in% cols ~ "SMSOC101",
-    "SMSOC2k1" %in% cols ~ "SMSOC2k1",
-  )
-
-
-
-  industry_var <- dplyr::case_when(
-    "INDS07M" %in% cols ~ "INDS07M",
-    "IN9207SM" %in% cols ~ "IN0792SM",
+  # Other
+  industry <- lfs_pick_column(c("INDS07M", "IN9207SM"), cols)
     # "INDS92M" %in% cols ~ "INDS92M",
-  )
-
-  ethnicity_var <- dplyr::case_when(
-    "ETH01" %in% cols ~ "ETH01",
-    "ETH11" %in% cols ~ "ETH11",
-    "ETH11EW" %in% cols ~ "ETH11EW",
-  )
+  ethnicity <- lfs_pick_column(c("ETH11EW", "ETH01"), cols)
 
 
+  # For longitudinal ID
   longitudinal_variables <- tibble::tribble(
     ~lfs_name, ~new_name, ~type,
     "QUOTA", "QUOTA", "numeric",
@@ -222,9 +114,9 @@ lfs_default_mappings <- function(cols) {
     "TUPRES", "TUPRES", "factor",
     "TUCOV", "TUCOV", "factor",
     # Variable changes over time ----------
-    deg_var, "DEGREE_SUBJECT", "character",
-    deg_var2, "CMBDEGREE", "character",
-    ilo_var, "ILODEFR", "factor",
+    degree_subject, "DEGREE_SUBJECT", "character",
+    combined_degree_subject, "CMBDEGREE", "character",
+    "ILODEFR", "ILODEFR", "factor",
     occupation, "OCCUPATION", "numeric",
     occupation_major, "OCCUPATION_MAJOR", "numeric",
     parental_occupation, "PARENTAL_OCCUPATION", "numeric",
@@ -232,26 +124,29 @@ lfs_default_mappings <- function(cols) {
     weight_income, "WEIGHT_INCOME", "numeric",
     weight, "WEIGHT", "numeric",
     ilo_status, "INECAC05", "numeric",
-    fdsico_var, "FDSICO", "factor",
-    industry_var, "INDUSTRY", "factor",
-    ethnicity_var, "ETHNICITY", "factor",
+    fdsico, "FDSICO", "factor",
+    industry, "INDUSTRY", "factor",
+    ethnicity, "ETHNICITY", "factor",
     # Education -------------------------
+    cured, "CURED", "factor",
+    hiquald, "HIQUALD", "numeric",
+    hiqual, "HIQUAL", "factor",
+    degree71, "DEGREE71", "numeric",
     "HIGHO", "HIGHO", "factor",
-    cured_var, "CURED", "factor",
-    hiquld_var, "HIQUALD", "numeric",
-    hiqul_var, "HIQUAL", "factor",
-    DEGREE71, "DEGREE71", "numeric",
-    DEGREE72, "DEGREE72", "numeric",
-    DEGREE73, "DEGREE73", "numeric",
-    DEGREE74, "DEGREE74", "numeric",
-    DEGREE75, "DEGREE75", "numeric"
+    "DEGREE72", "DEGREE72", "numeric",
+    "DEGREE73", "DEGREE73", "numeric",
+    "DEGREE74", "DEGREE74", "numeric",
+    "DEGREE75", "DEGREE75", "numeric"
   )
 
+  # Bind all elements together
   variables <- dplyr::bind_rows(variables, longitudinal_variables)
 
   # Exclude missing
   variables <- variables %>%
-    dplyr::mutate(lfs_name = ifelse(.data$lfs_name %in% cols, .data$lfs_name, NA))
+    dplyr::mutate(lfs_name = ifelse(.data$lfs_name %in% cols,
+                                    .data$lfs_name,
+                                    NA))
 
 
   return(variables)

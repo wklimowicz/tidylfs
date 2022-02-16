@@ -4,8 +4,8 @@ library(tidyverse)
 # lfs_convert("../lfs_raw_data/", "../lfs_rds_data/") #, filter_files = "2017 Q3.sav")
 # lfs_compile("../lfs_rds_small/")
 lfs_compile("../lfs_rds_data/")
-# source("data-raw/create_test_data.R")
-# check()
+source("data-raw/create_test_data.R")
+check()
 
 lfs <- lfs_load()
 
