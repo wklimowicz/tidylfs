@@ -60,7 +60,7 @@ lfs_tidy_file <- function(file,
   new_names <- complete_mappings$new_name[complete_mappings$lfs_name %in% vars_present]
 
   colnames(df3) <- new_names
-  # stopifnot(length(colnames(df3)) == sum(complete_mappings$lfs_name %in% cols)) - 2 
+  # stopifnot(length(colnames(df3)) == sum(complete_mappings$lfs_name %in% cols)) - 2
 
   # Investigate how to integrate this
   # Try as_factor(level = "both")
@@ -74,6 +74,22 @@ lfs_tidy_file <- function(file,
 
   character_variables <- ifelse(complete_mappings$type == "character", complete_mappings$new_name, NA)
   character_variables <- character_variables[!is.na(character_variables)]
+
+
+  # Explicitly convert problem columns to correct type, for vctrs compatibility
+
+  # if ("PARENTAL_OCCUPATION" %in% vars_present) {
+
+    columns_coerce <- c("PARENTAL_OCCUPATION", "PARENTAL_OCCUPATION_MAJOR")
+
+  df3 <- df3 %>%
+    dplyr::mutate(dplyr::across(
+      dplyr::any_of(columns_coerce),
+     ~ as.integer(as.character(.x))
+    ))
+
+#   }
+
 
   df3 <- df3 %>%
     dplyr::mutate(dplyr::across(
