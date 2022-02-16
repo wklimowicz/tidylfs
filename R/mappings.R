@@ -29,8 +29,12 @@ lfs_default_mappings <- function(cols) {
   # Core
   ilo_status <- lfs_pick_column(c("INECACR", "INECAC05"), cols)
 
-  weight_income <- lfs_pick_column(c("PIWT20", "PIWT18", "PIWT14",
-                                     "PIWT07", "PWT07"), cols)
+  weight_income <- lfs_pick_column(c("PIWT20", "PIWT18",
+                                     "PIWT14",
+                                     # "PWT07", # This causes a bug because of duplicate variable names
+                                     # technically ONS omits 2001 Q1j due to no weighting
+                                     "PIWT07"),
+                                   cols)
 
   weight <- lfs_pick_column(c("PWT20", "PWT18", "PWT14", "PWT07"), cols)
 

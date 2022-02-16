@@ -95,7 +95,7 @@ Some of the variables included by default are:
 | TTACHR               | Actual hours worked                    |
 | UNION                | In union?                              |
 | HIQUALD              | Highest Qualification                  |
-| DEGREE               | Degree Subject                         |
+| DEGREE\_SUBJECT      | Degree Subject                         |
 | OCCUPATION           | Occupation in main job                 |
 | PARENTAL\_OCCUPATION | Parental Occupation at 14              |
 | ETHNICITY            | Ethnicity                              |
