@@ -1,7 +1,7 @@
 #' Picks column names in order of appearanceA
 #'
 #' When column names change over time, picks the first
-#' one that appears from the list in order of appearance
+#' one that appears from the list in order of appearance.
 #' If it doesn't appear, returns a character NA.
 #'
 #' @param vector_of_names character vector of column names

@@ -16,6 +16,6 @@ First name that appears in cols
 }
 \description{
 When column names change over time, picks the first
-one that appears from the list in order of appearance
+one that appears from the list in order of appearance.
 If it doesn't appear, returns a character NA.
 }
