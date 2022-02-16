@@ -42,41 +42,46 @@ annotate_hiquald <- function(data) {
 
 annotate_occupation <- function(lfs) {
 
-  cols <- names(lfs)
-
-  soc_coding <- lfs_pick_column(c("SOC2KM", "SOC10M", "SOC20M"), cols)
-  parent_soc_coding <- lfs_pick_column(c("SMSOC204", "SMSOC104"), cols)
-
-
-
-  if (is.na(soc_coding)) {
-  return(lfs)
-  }
-
   # Find correct coding file
-    file_name <- paste0(system.file("coding_frames", package = "tidylfs"),
-                        "/coding_", soc_coding, ".csv")
-
-  # Read in relevant coding file
-  soc_mapping <- readr::read_csv(file_name,
+  read_occupation_coding <- function(soc) {
+    readr::read_csv(
+      paste0(system.file("coding_frames", package = "tidylfs"), "/occupation_", soc, ".csv"),
     col_types = readr::cols(
       SOC = readr::col_double(),
       OCCUPATION_DESCRIPTION = readr::col_character()
-  ))
+    )) %>%
+    dplyr::mutate(SOC_TYPE = soc)
 
-  # Match main OCCUPATION variable
-  join_vector <- "SOC"
-  names(join_vector) <- soc_coding
-  output <- dplyr::left_join(lfs, soc_mapping, join_vector)
+}
+  soc2km <- read_occupation_coding("SOC2KM")
+  soc10m <- read_occupation_coding("SOC10M")
+  soc20m <- read_occupation_coding("SOC20M")
+
+  soc_coding <- dplyr::bind_rows(soc2km, soc10m, soc20m) %>%
+    dplyr::rename(OCCUPATION = SOC)
+
+  soc_coding_parental <- dplyr::bind_rows(soc2km, soc10m, soc20m) %>%
+    dplyr::rename(PARENTAL_OCCUPATION = SOC, PARENTAL_OCCUPATION_DESCRIPTION = OCCUPATION_DESCRIPTION)
+
+  lfs1 <- lfs %>%
+    dplyr::mutate(SOC_TYPE = dplyr::case_when(
+                YEAR >= 2001 & YEAR < 2011 ~ "SOC2KM",
+                YEAR >= 2011 & YEAR < 2021 ~ "SOC10M",
+                YEAR >= 2021 ~ "SOC20M"
+                )) %>%
+  dplyr::left_join(soc_coding, by = c("SOC_TYPE", "OCCUPATION"))
+
+if ("PARENTAL_OCCUPATION" %in% names(lfs)) {
+ lfs1 <- lfs1 %>% 
+  dplyr::left_join(soc_coding_parental, by = c("SOC_TYPE", "PARENTAL_OCCUPATION"))
+}
 
 
-  if (!is.na(parent_soc_coding)) {
-    # Match Parental occupation variable
-    join_vector <- "SOC"
-    names(join_vector) <- parent_soc_coding
-    colnames(soc_mapping) <- c("SOC", "PARENTAL_OCCUPATION_DESCRIPTION")
-    output <- dplyr::left_join(output, soc_mapping, join_vector)
-  }
 
-  output
+# QA
+# dplyr::count(lfs1, QUARTER, PARENTAL_OCCUPATION_DESCRIPTION, PARENTAL_OCCUPATION) %>%sie()
+
+lfs1 %>%
+  dplyr::select(-SOC_TYPE)
+
 }

@@ -55,11 +55,9 @@ lfs_tidy_file <- function(file,
 
   df3 <- df2 %>%
     dplyr::select(dplyr::all_of(vars_present)) %>%
-    dplyr::distinct() %>%
-    annotate_occupation()
+    dplyr::distinct()
 
   new_names <- complete_mappings$new_name[complete_mappings$lfs_name %in% vars_present]
-  new_names <- c(new_names, "OCCUPATION_DESCRIPTION", "PARENTAL_OCCUPATION_DESCRIPTION")
 
   colnames(df3) <- new_names
   # stopifnot(length(colnames(df3)) == sum(complete_mappings$lfs_name %in% cols)) - 2 
@@ -209,7 +207,8 @@ lfs_compile <- function(lfs_directory,
   lfs_data_frame <- dplyr::bind_rows(lfs_data_frame, .id = "QUARTER") %>%
     dplyr::mutate(YEAR = as.integer(substr(.data$QUARTER, 1, 4))) %>%
     dplyr::relocate(.data$YEAR) %>%
-    annotate_hiquald()
+    annotate_hiquald() %>%
+    annotate_occupation()
 
 
 
