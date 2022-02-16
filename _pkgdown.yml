@@ -27,6 +27,7 @@ reference:
   desc: Brings in extra columns from lfs
   contents:
   - lfs_extra_mappings
+  - lfs_pick_column
 
 navbar:
   structure:
