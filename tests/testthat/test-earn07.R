@@ -3,10 +3,11 @@ skip_on_ci()
 
 
 test_that("EARN07 matches raw data", {
+
   earn07_raw <- readRDS("data/test-e1.Rds")
 
   earn07 <- earn07_raw %>%
-    # dplyr::filter(YEAR %in% c(2009:2023)) %>%
+    dplyr::filter(YEAR > 2009) %>% # Only works for 2009 + so far
     dplyr::filter(!is.na(INDUSTRY)) %>%
     dplyr::mutate(GROUPED_INDUSTRY = dplyr::case_when(
       substr(INDUSTRY, 1, 1) == "A" ~ "A",

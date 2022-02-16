@@ -1,18 +1,18 @@
 devtools::load_all()
 
-df <- lfs_load() %>%
-  dplyr::filter(
-    QUARTER %in% c(
-      "1992 Q4",
-      "1995 Q4",
-      "1999 Q4",
-      "2003 Q2",
-      "2008 Q2",
-      "2011 Q2",
-      "2017 Q2",
-      "2021 Q3"
-    )
-  )
+df <- lfs_load()
+  # dplyr::filter(
+  #   QUARTER %in% c(
+  #     "1992 Q4",
+  #     "1995 Q4",
+  #     "1999 Q4",
+  #     "2003 Q2",
+  #     "2008 Q2",
+  #     "2011 Q2",
+  #     "2017 Q2",
+  #     "2021 Q3"
+  #   )
+  # )
 
 directory_path <- paste0(
   system.file("tests", "testthat", package = "tidylfs"),
@@ -42,7 +42,7 @@ saveRDS_compressed(earn06, save_file_path)
 # Unemployment Test Data
 
 unem01 <- df %>%
-  dplyr::filter(YEAR > 2010) %>%
+  dplyr::filter(YEAR > 1996) %>%
   dplyr::select(YEAR, QUARTER, ILODEFR, WEIGHT, SEX, INECAC05) %>%
   na.exclude()
 
@@ -60,19 +60,19 @@ hour01 <- df %>%
   dplyr::select(
     QUARTER, ILODEFR, WEIGHT, FTPTWK, TTACHR
   ) %>%
-  na.exclude() %>%
-  dplyr::filter(
-    QUARTER %in% c(
-      # "1992 Q4",
-      # "1995 Q4",
-      # "1999 Q4",
-      "2003 Q2",
-      # "2008 Q2",
-      "2011 Q2",
-      # "2017 Q2",
-      "2021 Q3"
-    )
-  )
+  na.exclude()
+  # dplyr::filter(
+  #   QUARTER %in% c(
+  #     "1992 Q4",
+  #     "1995 Q4",
+  #     "1999 Q4",
+  #     "2003 Q2",
+  #     "2008 Q2",
+  #     "2011 Q2",
+  #     "2017 Q2",
+  #     "2021 Q3"
+  #   )
+  # )
 
 save_file_path <- paste0(
   system.file("tests", "testthat", package = "tidylfs"),
