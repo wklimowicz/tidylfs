@@ -1,5 +1,4 @@
 test_that("Converting and compiling runs succesfully", {
-
   test_data <- tibble::tribble(
     ~ACTHR, ~ACTHR2, ~ACTPOT, ~ACTUOT, ~ACTWKDY1, ~ACTWKDY2,
     ~ACTWKDY3, ~ACTWKDY4, ~ACTWKDY5, ~ACTWKDY6, ~ACTWKDY7,

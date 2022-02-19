@@ -19,7 +19,6 @@ test_that("UNEM01 matches raw data", {
 
 
   withr::local_file("unem01.xls", {
-
     url_unem01 <- "https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/unemployment/datasets/unemploymentbyageanddurationnotseasonallyadjustedunem01nsa"
     html_webpage <- httr::GET(url_unem01)
     html_webpage <- rawToChar(html_webpage$content)
@@ -30,7 +29,6 @@ test_that("UNEM01 matches raw data", {
     } else {
       download.file(download_link, "unem01.xls", quiet = TRUE)
     }
-
   })
 
 

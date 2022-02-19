@@ -46,13 +46,13 @@ annotate_occupation <- function(lfs) {
   read_occupation_coding <- function(soc) {
     readr::read_csv(
       paste0(system.file("coding_frames", package = "tidylfs"), "/occupation_", soc, ".csv"),
-    col_types = readr::cols(
-      SOC = readr::col_double(),
-      OCCUPATION_DESCRIPTION = readr::col_character()
-    )) %>%
-    dplyr::mutate(SOC_TYPE = soc)
-
-}
+      col_types = readr::cols(
+        SOC = readr::col_double(),
+        OCCUPATION_DESCRIPTION = readr::col_character()
+      )
+    ) %>%
+      dplyr::mutate(SOC_TYPE = soc)
+  }
   soc2km <- read_occupation_coding("SOC2KM")
   soc10m <- read_occupation_coding("SOC10M")
   soc20m <- read_occupation_coding("SOC20M")
@@ -61,28 +61,29 @@ annotate_occupation <- function(lfs) {
     dplyr::rename(OCCUPATION = .data$SOC)
 
   soc_coding_parental <- dplyr::bind_rows(soc2km, soc10m, soc20m) %>%
-    dplyr::rename(PARENTAL_OCCUPATION = .data$SOC,
-                  PARENTAL_OCCUPATION_DESCRIPTION = .data$OCCUPATION_DESCRIPTION)
+    dplyr::rename(
+      PARENTAL_OCCUPATION = .data$SOC,
+      PARENTAL_OCCUPATION_DESCRIPTION = .data$OCCUPATION_DESCRIPTION
+    )
 
   lfs1 <- lfs %>%
     dplyr::mutate(SOC_TYPE = dplyr::case_when(
-                .data$YEAR >= 2001 & .data$YEAR < 2011 ~ "SOC2KM",
-                .data$YEAR >= 2011 & .data$YEAR < 2021 ~ "SOC10M",
-                .data$YEAR >= 2021 ~ "SOC20M"
-                )) %>%
-  dplyr::left_join(soc_coding, by = c("SOC_TYPE", "OCCUPATION"))
+      .data$YEAR >= 2001 & .data$YEAR < 2011 ~ "SOC2KM",
+      .data$YEAR >= 2011 & .data$YEAR < 2021 ~ "SOC10M",
+      .data$YEAR >= 2021 ~ "SOC20M"
+    )) %>%
+    dplyr::left_join(soc_coding, by = c("SOC_TYPE", "OCCUPATION"))
 
-if ("PARENTAL_OCCUPATION" %in% names(lfs)) {
- lfs1 <- lfs1 %>% 
-  dplyr::left_join(soc_coding_parental, by = c("SOC_TYPE", "PARENTAL_OCCUPATION"))
-}
+  if ("PARENTAL_OCCUPATION" %in% names(lfs)) {
+    lfs1 <- lfs1 %>%
+      dplyr::left_join(soc_coding_parental, by = c("SOC_TYPE", "PARENTAL_OCCUPATION"))
+  }
 
 
 
-# QA
-# dplyr::count(lfs1, QUARTER, PARENTAL_OCCUPATION_DESCRIPTION, PARENTAL_OCCUPATION) %>%sie()
+  # QA
+  # dplyr::count(lfs1, QUARTER, PARENTAL_OCCUPATION_DESCRIPTION, PARENTAL_OCCUPATION) %>%sie()
 
-lfs1 %>%
-  dplyr::select(-.data$SOC_TYPE)
-
+  lfs1 %>%
+    dplyr::select(-.data$SOC_TYPE)
 }

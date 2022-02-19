@@ -24,7 +24,6 @@ lfs_tidy_file <- function(file,
                           file_format,
                           file_names,
                           extra_mappings = NULL) {
-
   cli::cli_div(theme = list(span.emph = list(color = "blue")))
   cli::cli_progress_step("Processing {.emph {total_files[[file]]} } {file}/{length(total_files)}.")
   cli::cli_end()
@@ -80,15 +79,15 @@ lfs_tidy_file <- function(file,
 
   # if ("PARENTAL_OCCUPATION" %in% vars_present) {
 
-    columns_coerce <- c("PARENTAL_OCCUPATION", "PARENTAL_OCCUPATION_MAJOR")
+  columns_coerce <- c("PARENTAL_OCCUPATION", "PARENTAL_OCCUPATION_MAJOR")
 
   df3 <- df3 %>%
     dplyr::mutate(dplyr::across(
       dplyr::any_of(columns_coerce),
-     ~ as.integer(as.character(.x))
+      ~ as.integer(as.character(.x))
     ))
 
-#   }
+  #   }
 
 
   df3 <- df3 %>%

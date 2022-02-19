@@ -10,21 +10,21 @@ lfs_flag_teacher <- function(lfs, column_name = "TEACHER") {
   names(rename) <- {{ column_name }}
 
 
-teaching_occupations <- c(
-"Further education teaching professionals",
-# "Head teachers and principals",
-# "Higher education teaching professionals",
-"Higher level teaching assistants",
-"Nursery education teaching professionals",
-"Primary and nursery education teaching professionals",
-"Primary education teaching professionals",
-"Secondary education teaching professionals",
-"Special needs education teaching professionals",
-# "Teachers of English as a foreign language",
-"Teaching and other educational professionals n.e.c.",
-"Teaching assistants",
-"Teaching professionals n.e.c."
-)
+  teaching_occupations <- c(
+    "Further education teaching professionals",
+    # "Head teachers and principals",
+    # "Higher education teaching professionals",
+    "Higher level teaching assistants",
+    "Nursery education teaching professionals",
+    "Primary and nursery education teaching professionals",
+    "Primary education teaching professionals",
+    "Secondary education teaching professionals",
+    "Special needs education teaching professionals",
+    # "Teachers of English as a foreign language",
+    "Teaching and other educational professionals n.e.c.",
+    "Teaching assistants",
+    "Teaching professionals n.e.c."
+  )
 
 
   lfs <- lfs %>%

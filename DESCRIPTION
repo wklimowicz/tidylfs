@@ -8,38 +8,40 @@ License: MIT + file LICENSE
 URL: https://github.com/wklimowicz/tidylfs,
     https://wklimowicz.github.io/tidylfs/
 BugReports: https://github.com/wklimowicz/tidylfs/issues
-Encoding: UTF-8
-Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.2
 Depends:
     R (>= 3.5.0)
 Imports: 
+    cli,
+    dplyr,
+    forcats,
+    glue,
     haven,
-    stringr,
+    jsonlite,
+    lifecycle,
+    magrittr,
+    matrixStats,
+    openssl,
+    purrr,
+    readr,
     rlang,
     stats,
-    dplyr,
-    purrr,
-    jsonlite,
-    readr,
-    magrittr,
+    stringr,
     tibble,
-    forcats,
-    openssl,
-    lifecycle,
-    matrixStats,
-    cli
+    withr
 Suggests: 
-    testthat (>= 3.0.0),
     curl,
-    janitor,
-    readxl,
-    tidyr,
-    vctrs,
-    knitr,
-    httr,
-    withr,
     fs,
-    rmarkdown
+    httr,
+    janitor,
+    knitr,
+    readxl,
+    rmarkdown,
+    testthat (>= 3.0.0),
+    tidyr,
+    vctrs
+VignetteBuilder: 
+    knitr
 Config/testthat/edition: 3
-VignetteBuilder: knitr
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2

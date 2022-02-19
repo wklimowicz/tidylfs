@@ -22,7 +22,6 @@ test_that("EARN04 matches raw data", {
   # From ONS EARN04 Publication --------------------
 
   withr::local_file("earn04.xls", {
-
     url_earn04 <- "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/grossweeklyearningsoffulltimeemployeesearn04"
     html_webpage <- httr::GET(url_earn04)
     html_webpage <- rawToChar(html_webpage$content)
@@ -34,7 +33,6 @@ test_that("EARN04 matches raw data", {
     } else {
       download.file(download_link, "earn04.xls", quiet = TRUE)
     }
-
   })
 
 

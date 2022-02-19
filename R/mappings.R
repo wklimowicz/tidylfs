@@ -11,15 +11,13 @@
 #'
 #' @export
 lfs_pick_column <- function(vector_of_names, column_names) {
+  index <- vector_of_names %in% column_names
 
- index <- vector_of_names %in% column_names
-
-if (sum(index) > 0) {
-  vector_of_names[which.max(index == T)]
-} else {
-  NA_character_
-}
-
+  if (sum(index) > 0) {
+    vector_of_names[which.max(index == T)]
+  } else {
+    NA_character_
+  }
 }
 
 lfs_default_mappings <- function(cols) {
@@ -29,23 +27,31 @@ lfs_default_mappings <- function(cols) {
   # Core
   ilo_status <- lfs_pick_column(c("INECACR", "INECAC05"), cols)
 
-  weight_income <- lfs_pick_column(c("PIWT20", "PIWT18",
-                                     "PIWT14",
-                                     # "PWT07", # This causes a bug because of duplicate variable names
-                                     # technically ONS omits 2001 Q1j due to no weighting
-                                     "PIWT07"),
-                                   cols)
+  weight_income <- lfs_pick_column(
+    c(
+      "PIWT20", "PIWT18",
+      "PIWT14",
+      # "PWT07", # This causes a bug because of duplicate variable names
+      # technically ONS omits 2001 Q1j due to no weighting
+      "PIWT07"
+    ),
+    cols
+  )
 
   weight <- lfs_pick_column(c("PWT20", "PWT18", "PWT14", "PWT07"), cols)
 
   # Education
   cured <- lfs_pick_column(c("CURED8", "CURED"), cols)
 
-  hiquald <- lfs_pick_column(c("HIQUL15D", "HIQUL11D", "HIQUAL8D",
-                                  "HIQUAL5D", "HIQUAL4D", "HIQUALD"), cols)
+  hiquald <- lfs_pick_column(c(
+    "HIQUL15D", "HIQUL11D", "HIQUAL8D",
+    "HIQUAL5D", "HIQUAL4D", "HIQUALD"
+  ), cols)
 
-  hiqual <- lfs_pick_column(c("HIQUAL15", "HIQUAL11", "HIQUAL8",
-                                 "HIQUAL5", "HIQUAL4", "HIQUAL"), cols)
+  hiqual <- lfs_pick_column(c(
+    "HIQUAL15", "HIQUAL11", "HIQUAL8",
+    "HIQUAL5", "HIQUAL4", "HIQUAL"
+  ), cols)
 
   degree71 <- lfs_pick_column(c("DEGREE71", "DEGREE4", "DEGREE"), cols)
 
@@ -53,14 +59,18 @@ lfs_default_mappings <- function(cols) {
 
   degree_subject <- lfs_pick_column(c("FDSNGDEG", "SNGDEG"), cols)
 
-  combined_degree_subject <- lfs_pick_column(c("FDCMBMA", "UNCOMBMA",
-                                               "CMBDEG01"), cols)
+  combined_degree_subject <- lfs_pick_column(c(
+    "FDCMBMA", "UNCOMBMA",
+    "CMBDEG01"
+  ), cols)
 
   # Occupation
   occupation <- lfs_pick_column(c("SOC20M", "SOC10M", "SOC2KM"), cols)
 
-  occupation_major <- lfs_pick_column(c("SC2010MMJ", "SC10MMJ",
-                                        "SC2KMMJ"), cols)
+  occupation_major <- lfs_pick_column(c(
+    "SC2010MMJ", "SC10MMJ",
+    "SC2KMMJ"
+  ), cols)
 
   parental_occupation <- lfs_pick_column(c("SMSOC204", "SMSOC104"), cols)
 
@@ -68,7 +78,7 @@ lfs_default_mappings <- function(cols) {
 
   # Other
   industry <- lfs_pick_column(c("INDS07M", "INDS92M", "SICMAIN"), cols)
-    # "INDS92M" %in% cols ~ "INDS92M",INDS92M
+  # "INDS92M" %in% cols ~ "INDS92M",INDS92M
   ethnicity <- lfs_pick_column(c("ETH11EW", "ETH01"), cols)
 
 
@@ -149,8 +159,9 @@ lfs_default_mappings <- function(cols) {
   # Exclude missing
   variables <- variables %>%
     dplyr::mutate(lfs_name = ifelse(.data$lfs_name %in% cols,
-                                    .data$lfs_name,
-                                    NA))
+      .data$lfs_name,
+      NA
+    ))
 
 
   return(variables)

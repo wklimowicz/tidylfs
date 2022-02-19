@@ -2,21 +2,21 @@ devtools::load_all()
 
 df <- lfs_load() %>%
   dplyr::filter(YEAR > 1996)
-  # dplyr::filter( 
-  #   QUARTER %in% c(
-  #     "1992 Q4",
-  #     "1995 Q4",
-  #     "1999 Q4",
-  #     "2003 Q2",
-  #     "2008 Q2",
-  #     "2011 Q2",
-  #     "2017 Q1",
-  #     "2017 Q2",
-  #     "2017 Q3",
-  #     "2017 Q4",
-  #     "2021 Q3"
-  #   )
-  # )
+# dplyr::filter(
+#   QUARTER %in% c(
+#     "1992 Q4",
+#     "1995 Q4",
+#     "1999 Q4",
+#     "2003 Q2",
+#     "2008 Q2",
+#     "2011 Q2",
+#     "2017 Q1",
+#     "2017 Q2",
+#     "2017 Q3",
+#     "2017 Q4",
+#     "2021 Q3"
+#   )
+# )
 
 directory_path <- paste0(
   system.file("tests", "testthat", package = "tidylfs"),
@@ -32,8 +32,8 @@ earn06 <- df %>%
     OCCUPATION_MAJOR, INDUSTRY,
     GRSSWK, HOURPAY, INECAC05
   )
-  # dplyr::filter(FTPTWK == "Full-time") %>%
-  # dplyr::filter(WEIGHT_INCOME > 0, HOURPAY <= 100, HOURPAY >= 0, INECAC05 == 1)
+# dplyr::filter(FTPTWK == "Full-time") %>%
+# dplyr::filter(WEIGHT_INCOME > 0, HOURPAY <= 100, HOURPAY >= 0, INECAC05 == 1)
 
 save_file_path <- paste0(
   system.file("tests", "testthat", package = "tidylfs"),
@@ -65,18 +65,18 @@ hour01 <- df %>%
     QUARTER, ILODEFR, WEIGHT, FTPTWK, TTACHR
   ) %>%
   na.exclude()
-  # dplyr::filter(
-  #   QUARTER %in% c(
-  #     "1992 Q4",
-  #     "1995 Q4",
-  #     "1999 Q4",
-  #     "2003 Q2",
-  #     "2008 Q2",
-  #     "2011 Q2",
-  #     "2017 Q2",
-  #     "2021 Q3"
-  #   )
-  # )
+# dplyr::filter(
+#   QUARTER %in% c(
+#     "1992 Q4",
+#     "1995 Q4",
+#     "1999 Q4",
+#     "2003 Q2",
+#     "2008 Q2",
+#     "2011 Q2",
+#     "2017 Q2",
+#     "2021 Q3"
+#   )
+# )
 
 save_file_path <- paste0(
   system.file("tests", "testthat", package = "tidylfs"),
