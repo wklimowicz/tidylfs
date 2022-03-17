@@ -82,23 +82,10 @@ lfs_default_mappings <- function(cols) {
   ethnicity <- lfs_pick_column(c("ETH11EW", "ETH01"), cols)
 
 
-  # For longitudinal ID
-  longitudinal_variables <- tibble::tribble(
-    ~lfs_name, ~new_name, ~type,
-    "QUOTA", "QUOTA", "numeric",
-    "WEEK", "WEEK", "numeric",
-    "W1YR", "W1YR", "numeric",
-    "QRTR", "QRTR", "numeric",
-    "ADD", "ADD", "numeric",
-    "WAVFND", "WAVFND", "numeric",
-    "HHLD", "HHLD", "numeric",
-    "RECNO", "RECNO", "numeric"
-  )
-
-
   variables <- tibble::tribble(
     ~lfs_name, ~new_name, ~type,
     # ID Variables --------------------
+    "CASENO", "CASENO", "character",
     "SEX", "SEX", "factor",
     "COUNTRY", "COUNTRY", "factor",
     "GOVTOR", "GOVTOR", "factor",
