@@ -140,9 +140,6 @@ lfs_default_mappings <- function(cols) {
     "DEGREE75", "DEGREE75", "numeric"
   )
 
-  # Bind all elements together
-  variables <- dplyr::bind_rows(variables, longitudinal_variables)
-
   # Exclude missing
   variables <- variables %>%
     dplyr::mutate(lfs_name = ifelse(.data$lfs_name %in% cols,

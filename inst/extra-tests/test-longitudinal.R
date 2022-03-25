@@ -1,5 +1,51 @@
 library(tidyverse)
+library(tictoc)
+library(data.table)
 load_all()
+
+tic()
+lfs <- lfs_load()
+toc()
+
+lfs_compile("../lfs_rds_data/")
+
+fst::write_fst(lfs, "lfs.fst")
+
+tic()
+lfs <- fst::read_fst("lfs.fst")
+toc()
+
+
+# TODO: Rewrite in data.table
+# TODO: Save as fst
+
+lfs %>%
+    lfs_summarise_unemployment(QUARTER, AGE, ETHNICITY, SEX)
+
+lfsdt <- data.table(lfs)
+
+setkey(lfsdt, QUARTER, CASENO)
+
+lfsdt %>%
+    dtlfs_summarise_unemployment(list(QUARTER, AGE, ETHNICITY, SEX))
+
+dtlfs_summarise_unemployment <- function(lfs, ...) {
+
+lfs[WEIGHT > 0 & !is.na(WEIGHT) & !is.na(ILODEFR),
+      .(n = .N, 
+      employed = mean((ILODEFR == "In employment") * WEIGHT, na.rm = TRUE),
+      unemployed = mean((ILODEFR == "ILO unemployed") * WEIGHT, na.rm = TRUE),
+      inactive = mean((ILODEFR == "Inactive") * WEIGHT, na.rm = TRUE)),
+      , by = ...
+      ][,
+      `:=`(unemployed_percentage = unemployed / (employed + unemployed),
+      employed_percentage = employed / (employed + unemployed + inactive),
+      inactive_percentage = inactive / (employed + unemployed + inactive)),]
+
+}
+      
+
+
 
 lfs <- lfs %>%
     arrange(QUARTER) %>%
@@ -11,20 +57,18 @@ lfs %>%
     filter(last_job == 2317) %>%
     count(OCCUPATION_DESCRIPTION, sort = T)
 
-library(data.table)
 
 lfsdt <- data.table(lfs)
 
-library(tictoc)
 
 tic()
 lfs %>% 
-    group_by(CASENO) %>%
-    summarise(n = n())
+    count(CASENO) %>%
+    count(n)
 toc()
 
 tic()
-x = lfsdt[, .N, by = CASENO][,.N, by = N][order(-N)]
+lfsdt[, .N, by = CASENO][,.N, by = N][order(-N)]
 toc()
 
 
