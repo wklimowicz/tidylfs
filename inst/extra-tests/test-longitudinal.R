@@ -3,11 +3,19 @@ library(tictoc)
 library(data.table)
 load_all()
 
+setwd(here::here())
+
+# lfs_compile("../lfs_rds_data/")
+
 tic()
 lfs <- lfs_load()
 toc()
 
-lfs_compile("../lfs_rds_data/")
+# Object size in RAM
+lfsdt |>
+  object.size() |>
+  as.numeric() |>
+  prettyunits::pretty_bytes()
 
 fst::write_fst(lfs, "lfs.fst")
 
@@ -15,9 +23,40 @@ tic()
 lfs <- fst::read_fst("lfs.fst")
 toc()
 
+# How long do people stay in sample
+
+lfsdt <- data.table(lfs)
+
+lfsdt[, .N, by = .(CASENO, QUARTER)][N == 1, .N, by = QUARTER] 
+
+# CASENO only from 2001 Q3
+
+lfsdt[CASENO != "" & YEAR > 2002][, quarters_in_sample := .N, by = CASENO
+    ] [,.N, by = quarters_in_sample
+     ][order(quarters_in_sample)][, prop := N / sum(N)] |>
+  ggplot() +
+    geom_col(aes(x = quarters_in_sample, y = prop)) +
+    geom_vline(aes(xintercept = 5),
+    size = 2, linetype = "dotted")
 
 # TODO: Rewrite in data.table
 # TODO: Save as fst
+
+# Check what occupaitons senior leaders have year after
+
+lfsdt[,`:=`(last_job = shift(OCCUPATION_DESCRIPTION, 1)), by = CASENO]
+
+
+lfsdt[last_job %in% c("Senior professionals of educational establishments"), .N, by = OCCUPATION_DESCRIPTION
+     ][order(-N)] |>
+sie()
+
+
+lfsdt[CASENO == " 96013130610101"]
+
+
+
+
 
 lfs %>%
     lfs_summarise_unemployment(QUARTER, AGE, ETHNICITY, SEX)
@@ -77,7 +116,7 @@ list.files(server_dir)
 
 list.files(".")
 
-lfs_convert(, "../lfs_raw_from_server")
+lfs_convert(server_dir, "../lfs_raw_from_server")
 
 lfs <- lfs_load()
 
