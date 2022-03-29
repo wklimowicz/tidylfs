@@ -44,6 +44,21 @@ lfs[WEIGHT > 0 & !is.na(WEIGHT) & !is.na(ILODEFR),
 
 }
       
+lfs %>%
+    filter(LAST_OCCUPATION_DESCRIPTION ==
+           "Secondary education teaching professionals") %>% 
+count(YEAR)
+
+lfs %>%
+    filter(!is.na(LAST_OCCUPATION)) %>%
+    count(YEAR)
+
+count(OCCUPATION_DESCRIPTION, sort = T)
+
+
+lfs %>% count(LAST_OCCUPATION)
+
+lfs %>% count(OCCUPATION_DESCRIPTION) %>% sie()
 
 
 
@@ -57,14 +72,13 @@ lfs %>%
     filter(last_job == 2317) %>%
     count(OCCUPATION_DESCRIPTION, sort = T)
 
-
 lfsdt <- data.table(lfs)
 
 
 tic()
 lfs %>% 
     count(CASENO) %>%
-    count(n)
+ c   count(n)
 toc()
 
 tic()
