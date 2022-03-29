@@ -76,7 +76,7 @@ lfs_default_mappings <- function(cols) {
     "SC2KMMJ"
   ), cols)
 
-  last_occupation <- lfs_pick_column(c("SOC20O", "SOC10O", "SOC2K0"), cols)
+  last_occupation <- lfs_pick_column(c("SOC20O", "SOC10O", "SOC2KO"), cols)
 
   parental_occupation <- lfs_pick_column(c("SMSOC204", "SMSOC104"), cols)
 

@@ -85,12 +85,13 @@ lfs[WEIGHT > 0 & !is.na(WEIGHT) & !is.na(ILODEFR),
       
 lfs %>%
     filter(LAST_OCCUPATION_DESCRIPTION ==
-           "Secondary education teaching professionals") %>% 
+           "Secondary education teaching professionals") %>%
 count(YEAR)
 
 lfs %>%
-    filter(!is.na(LAST_OCCUPATION)) %>%
-    count(YEAR)
+    filter(LAST_OCCUPATION_DESCRIPTION ==
+           "Secondary education teaching professionals") %>%
+    count(OCCUPATION_DESCRIPTION, sort = T)
 
 count(OCCUPATION_DESCRIPTION, sort = T)
 
