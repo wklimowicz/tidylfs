@@ -29,10 +29,14 @@ lfs_default_mappings <- function(cols) {
 
   weight_income <- lfs_pick_column(
     c(
-      "PIWT20", "PIWT18",
+      "PIWT20",
+      "PIWT18",
       "PIWT14",
-      # "PWT07", # This causes a bug because of duplicate variable names
-      # technically ONS omits 2001 Q1j due to no weighting
+      # "PWT07", 
+      # The ONS doesn't include an Income weighting in 2001 Q1. 
+      # Replacing it with the non-income weight causes a bug because of duplicate
+      # variable names in this script.
+      # The ONS omits 2001 Q1 in official pay publications (eg. EARN07)
       "PIWT07"
     ),
     cols
@@ -71,6 +75,8 @@ lfs_default_mappings <- function(cols) {
     "SC2010MMJ", "SC10MMJ",
     "SC2KMMJ"
   ), cols)
+
+  last_occupation <- lfs_pick_column(c("SOC20O", "SOC10O", "SOC2K0"), cols)
 
   parental_occupation <- lfs_pick_column(c("SMSOC204", "SMSOC104"), cols)
 
@@ -120,6 +126,7 @@ lfs_default_mappings <- function(cols) {
     "ILODEFR", "ILODEFR", "factor",
     occupation, "OCCUPATION", "numeric",
     occupation_major, "OCCUPATION_MAJOR", "numeric",
+    last_occupation, "LAST_OCCUPATION", "numeric",
     parental_occupation, "PARENTAL_OCCUPATION", "numeric",
     parental_occupation_major, "PARENTAL_OCCUPATION_MAJOR", "numeric",
     weight_income, "WEIGHT_INCOME", "numeric",
