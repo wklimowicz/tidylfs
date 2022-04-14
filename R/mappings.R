@@ -85,7 +85,7 @@ lfs_default_mappings <- function(cols) {
   # Other
   industry <- lfs_pick_column(c("INDS07M", "INDS92M", "SICMAIN"), cols)
   # "INDS92M" %in% cols ~ "INDS92M",INDS92M
-  ethnicity <- lfs_pick_column(c("ETH11EW", "ETH01"), cols)
+  ethnicity <- lfs_pick_column(c("ETHUKEUL", "ETH01"), cols)
 
 
   variables <- tibble::tribble(
