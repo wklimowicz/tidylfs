@@ -92,6 +92,7 @@ lfs_default_mappings <- function(cols) {
     ~lfs_name, ~new_name, ~type,
     # ID Variables --------------------
     "CASENO", "CASENO", "character",
+    "THISWV", "THISWV", "numeric",
     "SEX", "SEX", "factor",
     "COUNTRY", "COUNTRY", "factor",
     "GOVTOR", "GOVTOR", "factor",

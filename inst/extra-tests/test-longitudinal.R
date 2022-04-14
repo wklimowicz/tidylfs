@@ -5,11 +5,15 @@ load_all()
 
 setwd(here::here())
 
-# lfs_compile("../lfs_rds_data/")
+lfs_convert("../lfs_raw_data/", "../lfs_rds_data/")
+
+lfs_compile("../lfs_rds_data/")
 
 tic()
 lfs <- lfs_load()
 toc()
+
+lfsdt <- data.table(lfs)
 
 # Object size in RAM
 lfsdt |>
@@ -17,15 +21,17 @@ lfsdt |>
   as.numeric() |>
   prettyunits::pretty_bytes()
 
-fst::write_fst(lfs, "lfs.fst")
 
 tic()
-lfs <- fst::read_fst("lfs.fst")
+fst::write_fst(lfsdt, "lfs.fst")
+toc()
+
+tic()
+lfs <- fst::read_fst("lfs.fst", as.data.table = T)
 toc()
 
 # How long do people stay in sample
 
-lfsdt <- data.table(lfs)
 
 lfsdt[, .N, by = .(CASENO, QUARTER)][N == 1, .N, by = QUARTER] 
 
@@ -195,8 +201,6 @@ lfsdt[, .N, by = CASENO][,.N, by = N][order(-N)]
 toc()
 
 
-
-
-
-select(OCCUPATION_DESCRIPTION, GRSSWK, INDUSTRY) 
+lfsdt[QUARTER == "2021 Q3", .N, by = THISWV]
+lfsdt[QUARTER == "2020 Q2", .N, by = THISWV]
 
