@@ -29,10 +29,14 @@ lfs_default_mappings <- function(cols) {
 
   weight_income <- lfs_pick_column(
     c(
-      "PIWT20", "PIWT18",
+      "PIWT20",
+      "PIWT18",
       "PIWT14",
-      # "PWT07", # This causes a bug because of duplicate variable names
-      # technically ONS omits 2001 Q1j due to no weighting
+      # "PWT07", 
+      # The ONS doesn't include an Income weighting in 2001 Q1. 
+      # Replacing it with the non-income weight causes a bug because of duplicate
+      # variable names in this script.
+      # The ONS omits 2001 Q1 in official pay publications (eg. EARN07)
       "PIWT07"
     ),
     cols
@@ -72,6 +76,8 @@ lfs_default_mappings <- function(cols) {
     "SC2KMMJ"
   ), cols)
 
+  last_occupation <- lfs_pick_column(c("SOC20O", "SOC10O", "SOC2KO"), cols)
+
   parental_occupation <- lfs_pick_column(c("SMSOC204", "SMSOC104"), cols)
 
   parental_occupation_major <- lfs_pick_column(c("SMSOC201", "SMSOC101"), cols)
@@ -82,23 +88,11 @@ lfs_default_mappings <- function(cols) {
   ethnicity <- lfs_pick_column(c("ETH11EW", "ETH01"), cols)
 
 
-  # For longitudinal ID
-  longitudinal_variables <- tibble::tribble(
-    ~lfs_name, ~new_name, ~type,
-    "QUOTA", "QUOTA", "numeric",
-    "WEEK", "WEEK", "numeric",
-    "W1YR", "W1YR", "numeric",
-    "QRTR", "QRTR", "numeric",
-    "ADD", "ADD", "numeric",
-    "WAVFND", "WAVFND", "numeric",
-    "HHLD", "HHLD", "numeric",
-    "RECNO", "RECNO", "numeric"
-  )
-
-
   variables <- tibble::tribble(
     ~lfs_name, ~new_name, ~type,
     # ID Variables --------------------
+    "CASENO", "CASENO", "character",
+    "THISWV", "THISWV", "numeric",
     "SEX", "SEX", "factor",
     "COUNTRY", "COUNTRY", "factor",
     "GOVTOR", "GOVTOR", "factor",
@@ -133,6 +127,7 @@ lfs_default_mappings <- function(cols) {
     "ILODEFR", "ILODEFR", "factor",
     occupation, "OCCUPATION", "numeric",
     occupation_major, "OCCUPATION_MAJOR", "numeric",
+    last_occupation, "LAST_OCCUPATION", "numeric",
     parental_occupation, "PARENTAL_OCCUPATION", "numeric",
     parental_occupation_major, "PARENTAL_OCCUPATION_MAJOR", "numeric",
     weight_income, "WEIGHT_INCOME", "numeric",
@@ -152,9 +147,6 @@ lfs_default_mappings <- function(cols) {
     "DEGREE74", "DEGREE74", "numeric",
     "DEGREE75", "DEGREE75", "numeric"
   )
-
-  # Bind all elements together
-  variables <- dplyr::bind_rows(variables, longitudinal_variables)
 
   # Exclude missing
   variables <- variables %>%

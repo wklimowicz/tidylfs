@@ -60,6 +60,12 @@ annotate_occupation <- function(lfs) {
   soc_coding <- dplyr::bind_rows(soc2km, soc10m, soc20m) %>%
     dplyr::rename(OCCUPATION = .data$SOC)
 
+  soc_coding_last <- dplyr::bind_rows(soc2km, soc10m, soc20m) %>%
+    dplyr::rename(
+      LAST_OCCUPATION = .data$SOC,
+      LAST_OCCUPATION_DESCRIPTION = .data$OCCUPATION_DESCRIPTION
+    )
+
   soc_coding_parental <- dplyr::bind_rows(soc2km, soc10m, soc20m) %>%
     dplyr::rename(
       PARENTAL_OCCUPATION = .data$SOC,
@@ -74,6 +80,11 @@ annotate_occupation <- function(lfs) {
     )) %>%
     dplyr::left_join(soc_coding, by = c("SOC_TYPE", "OCCUPATION"))
 
+  if ("LAST_OCCUPATION" %in% names(lfs)) {
+    lfs1 <- lfs1 %>%
+        dplyr::left_join(soc_coding_last, by = c("SOC_TYPE", "LAST_OCCUPATION"))
+  }
+
   if ("PARENTAL_OCCUPATION" %in% names(lfs)) {
     lfs1 <- lfs1 %>%
       dplyr::left_join(soc_coding_parental, by = c("SOC_TYPE", "PARENTAL_OCCUPATION"))
@@ -82,7 +93,7 @@ annotate_occupation <- function(lfs) {
 
 
   # QA
-  # dplyr::count(lfs1, QUARTER, PARENTAL_OCCUPATION_DESCRIPTION, PARENTAL_OCCUPATION) %>%sie()
+  # dplyr::count(lfs1, QUARTER, PARENTAL_OCCUPATION_DESCRIPTION, PARENTAL_OCCUPATION)
 
   lfs1 %>%
     dplyr::select(-.data$SOC_TYPE)
