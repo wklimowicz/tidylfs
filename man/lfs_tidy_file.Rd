@@ -4,22 +4,14 @@
 \alias{lfs_tidy_file}
 \title{Selects and renames columns from LFS File}
 \usage{
-lfs_tidy_file(
-  file,
-  total_files,
-  file_format,
-  file_names,
-  extra_mappings = NULL
-)
+lfs_tidy_file(file, total_files, file_format, extra_mappings = NULL)
 }
 \arguments{
 \item{file}{Index of file}
 
 \item{total_files}{Vector of file names - helper function for cli}
 
-\item{file_format}{File extension: sav csv or Rds}
-
-\item{file_names}{To Save intermediate Rds files.}
+\item{file_format}{File extension: sav csv or rds}
 
 \item{extra_mappings}{Either NULL (use default) or an R script with the lfs_extra_mappings function}
 }

@@ -6,6 +6,7 @@
 .DS_Store
 *.csv
 *.Rds
+*.fst
 *.xls
 *.xlsx
 docs

@@ -241,10 +241,10 @@ test_that("Converting and compiling runs succesfully", {
     lfs_convert("test", "test_rds_data/")
 
     lfs_compile("test_rds_data",
-      save_location = "final_data.Rds"
+      save_location = "final_data.fst"
     )
 
-    readRDS("final_data.Rds")
+    fst::read_fst("final_data.fst")
   }
 
 
@@ -253,7 +253,7 @@ test_that("Converting and compiling runs succesfully", {
     "test/2003 Q4.sav" = haven::write_sav(test_data, "test/2003 Q4.sav"),
     "test/2010 Q4.sav" = haven::write_sav(test_data, "test/2010 Q4.sav"),
     "final_data.Rds",
-    "variables_report.csv"
+    "lfs_variables_report.csv"
   ), {
     expect_error(suppressMessages(test_convert_compile()), NA)
   })
