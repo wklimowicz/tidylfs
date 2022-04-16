@@ -37,25 +37,23 @@ lfs_compile("lfs_rds_folder/")
 To load the data into your environment run:
 
 ``` r
-lfs <- lfs_load()
+lfs <- lfs_load(data.table = FALSE)
 ```
+
+(Use data.table = TRUE if you know it, it’s much faster.)
 
 To reproduce official ONS publications, such as
 
-  - Unemployent [UNEM01
+-   Unemployent [UNEM01
     NSA](https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/unemployment/datasets/unemploymentbyageanddurationnotseasonallyadjustedunem01nsa)
-
-<!-- end list -->
 
 ``` r
 lfs %>%
     lfs_summarise_unemployment(QUARTER)
 ```
 
-  - Salary by occupation
+-   Salary by occupation
     [EARN06](https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/grossweeklyearningsbyoccupationearn06)
-
-<!-- end list -->
 
 ``` r
 lfs %>%
@@ -69,9 +67,7 @@ lfs %>%
 
 Extending them is easy:
 
-  - Unemployment by quarter, sex, and age category
-
-<!-- end list -->
+-   Unemployment by quarter, sex, and age category
 
 ``` r
 lfs %>%
@@ -83,19 +79,19 @@ Guidance](https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employme
 
 Some of the variables included by default are:
 
-| Variable Name        | Definition                             |
-| :------------------- | :------------------------------------- |
-| YEAR                 | Year                                   |
-| QUARTER              | Quarter                                |
-| SEX                  | Sex                                    |
-| GOVTOR               | Government Office Region               |
-| AGE                  | Age                                    |
-| FTPTWK               | Part-Time/Full-time Status             |
-| EDAGE                | Age when completed full time education |
-| TTACHR               | Actual hours worked                    |
-| UNION                | In union?                              |
-| HIQUALD              | Highest Qualification                  |
-| DEGREE\_SUBJECT      | Degree Subject                         |
-| OCCUPATION           | Occupation in main job                 |
-| PARENTAL\_OCCUPATION | Parental Occupation at 14              |
-| ETHNICITY            | Ethnicity                              |
+| Variable Name       | Definition                             |
+|:--------------------|:---------------------------------------|
+| YEAR                | Year                                   |
+| QUARTER             | Quarter                                |
+| SEX                 | Sex                                    |
+| GOVTOR              | Government Office Region               |
+| AGE                 | Age                                    |
+| FTPTWK              | Part-Time/Full-time Status             |
+| EDAGE               | Age when completed full time education |
+| TTACHR              | Actual hours worked                    |
+| UNION               | In union?                              |
+| HIQUALD             | Highest Qualification                  |
+| DEGREE_SUBJECT      | Degree Subject                         |
+| OCCUPATION          | Occupation in main job                 |
+| PARENTAL_OCCUPATION | Parental Occupation at 14              |
+| ETHNICITY           | Ethnicity                              |
