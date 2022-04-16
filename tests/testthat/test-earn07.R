@@ -3,6 +3,7 @@ skip_on_ci()
 
 
 test_that("EARN07 matches raw data", {
+
   earn07_raw <- readRDS("data/test-e1.Rds")
 
   earn07 <- earn07_raw %>%
@@ -31,6 +32,7 @@ test_that("EARN07 matches raw data", {
     dplyr::filter(FTPTWK == "Full-time") %>%
     # dplyr::filter(QUARTER == "2005 Q1") %>%
     lfs_summarise_salary(QUARTER, GROUPED_INDUSTRY) %>%
+    dplyr::arrange(GROUPED_INDUSTRY) %>%
     tidyr::pivot_wider(
       id_cols = QUARTER,
       names_from = GROUPED_INDUSTRY,

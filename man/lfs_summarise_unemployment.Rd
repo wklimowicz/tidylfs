@@ -12,7 +12,7 @@ lfs_summarise_unemployment(lfs, ...)
 \item{...}{Variables to group by}
 }
 \value{
-Tibble of outputs
+Tibble or data.table with unemployment data
 }
 \description{
 Group by and Summarise for ONS unemployment

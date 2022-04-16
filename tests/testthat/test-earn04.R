@@ -62,7 +62,8 @@ test_that("EARN04 matches raw data", {
     dplyr::select(-YEAR) %>%
     dplyr::filter(dplyr::if_all(2:3, ~ .x != "..")) %>%
     dplyr::mutate(dplyr::across(2:3, as.numeric)) %>%
-    dplyr::filter(dplyr::if_all(2:3, ~ !is.na(.x)))
+    dplyr::filter(dplyr::if_all(2:3, ~ !is.na(.x))) %>%
+    data.table::as.data.table()
 
   # Take only rows that ONS Published as well
   earn04 <- earn04 %>%
