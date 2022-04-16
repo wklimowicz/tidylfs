@@ -4,7 +4,7 @@ cli_compiling_complete <- function(file_format) {
   cli::cli_alert_success("Compiling complete")
 
   cli::cli_alert_info("Load LFS data with {.emph lfs <- lfs_load()}\n
-                       To check ONS definitions see {.emph variables_report.csv}\n")
+                       To check ONS definitions see {.emph lfs_variables_report.csv}\n")
 
   if (file_format[[1]] == "sav") {
     cli::cli_alert_info("You can view column labels with {.emph haven::print_labels}")
@@ -32,7 +32,7 @@ cli_warn_files <- function(file_pattern, files_in_directory) {
   if (sum(file_pattern) != length(files_in_directory)) {
     cli::cli_alert_warning(
       "{sum(file_pattern == FALSE)} file{?s} not matching [Year Quarter.ext]
-      (eg. {.emph 2020 Q1.csv} or {.emph 2003 Q3.sav}):
+      (eg. {.emph 2020 Q1.Rds} or {.emph 2003 Q3.sav}):
 
       {files_in_directory[!file_pattern]}
 

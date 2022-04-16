@@ -8,7 +8,8 @@ lfs_compile(
   lfs_directory,
   extra_mappings = NULL,
   save_location = "package",
-  save_variables_report = TRUE
+  save_variables_report = TRUE,
+  fst_compress = 50
 )
 }
 \arguments{
@@ -18,14 +19,16 @@ lfs_compile(
 which has the custom mapping function.
 See \code{\link{lfs_extra_mappings}}}
 
-\item{save_location}{File path for \code{Rds} file to save. By default, saves the
+\item{save_location}{File path for \code{fst} file to save. By default, saves the
 output in the package directory, so it's always accessible with \code{lfs_load}.}
 
 \item{save_variables_report}{Save a csv with the list of picked variables?}
+
+\item{fst_compress}{Compression level for fst}
 }
 \value{
-Nothing - saves the Rds file only.
+Nothing - saves the fst file only.
 }
 \description{
-Compiles seperate Rds files into one, picking relevant columns
+Compiles seperate fst files into one, picking relevant columns
 }

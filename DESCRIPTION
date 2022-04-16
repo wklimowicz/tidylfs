@@ -14,6 +14,7 @@ Imports:
     cli,
     dplyr,
     forcats,
+    fst,
     glue,
     haven,
     jsonlite,

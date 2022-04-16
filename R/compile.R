@@ -9,9 +9,8 @@
 #'
 #' @param file Index of file
 #' @param total_files Vector of file names - helper function for cli
-#' @param file_format File extension: sav csv or Rds
+#' @param file_format File extension: sav csv or rds
 #' @param extra_mappings Either NULL (use default) or an R script with the lfs_extra_mappings function
-#' @param file_names To Save intermediate Rds files.
 #'
 #' @importFrom rlang .data
 #'
@@ -22,7 +21,6 @@
 lfs_tidy_file <- function(file,
                           total_files,
                           file_format,
-                          file_names,
                           extra_mappings = NULL) {
   cli::cli_div(theme = list(span.emph = list(color = "blue")))
   cli::cli_progress_step("Processing {.emph {total_files[[file]]} } {file}/{length(total_files)}.")
@@ -105,7 +103,6 @@ lfs_tidy_file <- function(file,
     ))
 
 
-
   return(list(df3, complete_mappings))
 }
 
@@ -113,23 +110,25 @@ lfs_tidy_file <- function(file,
 
 #' Compile to 1 R file
 #'
-#' Compiles seperate Rds files into one, picking relevant columns
+#' Compiles seperate fst files into one, picking relevant columns
 #'
 #' @param lfs_directory Path to directory with LFS files
 #' @param extra_mappings Either NULL (use default) or a file
 #' which has the custom mapping function.
 #' See \code{\link{lfs_extra_mappings}}
-#' @param save_location File path for `Rds` file to save. By default, saves the
+#' @param save_location File path for `fst` file to save. By default, saves the
 #' output in the package directory, so it's always accessible with `lfs_load`.
 #' @param save_variables_report Save a csv with the list of picked variables?
+#' @param fst_compress Compression level for fst
 #'
-#' @return Nothing - saves the Rds file only.
+#' @return Nothing - saves the fst file only.
 #'
 #' @export
 lfs_compile <- function(lfs_directory,
                         extra_mappings = NULL,
                         save_location = "package",
-                        save_variables_report = TRUE) {
+                        save_variables_report = TRUE,
+                        fst_compress = 50) {
 
   # Get list of files ----------------------------------------
 
@@ -178,11 +177,11 @@ lfs_compile <- function(lfs_directory,
     lfs_tidy_file,
     total_files = lfs_files_w_path,
     file_format = file_format[[1]], # Should all be the same
-    file_names = lfs_files,
     extra_mappings = extra_mappings
   )
 
   # Make record of what variables chosen if picked ---------------------------
+  cli::cli_alert_info("Combining and saving...")
 
   if (save_variables_report == TRUE) {
     final_mapping <- purrr::map(lfs_data, 2)[[1]][[2]]
@@ -201,12 +200,13 @@ lfs_compile <- function(lfs_directory,
 
     colnames(variables_report) <- c("QUARTER", final_mapping)
 
+    # If file is open, give warning and continue
     tryCatch(
       {
-        readr::write_csv(variables_report, file = "variables_report.csv")
+        readr::write_csv(variables_report, file = "lfs_variables_report.csv")
       },
       error = function(cond) {
-        cli::cli_alert_danger("variables_report.csv is open - close it and rerun to get the report")
+        cli::cli_alert_danger("lfs_variables_report.csv is open - close it and rerun to get the report")
       }
     )
   }
@@ -230,16 +230,13 @@ lfs_compile <- function(lfs_directory,
   if (save_location == "package") {
     save_file_path <- paste0(
       system.file(package = "tidylfs"),
-      "/lfs_data.Rds"
+      "/lfs_data.fst"
     )
   } else {
     save_file_path <- save_location
   }
 
-  connection <- gzfile(save_file_path, compression = 1)
-  on.exit(close(connection))
-
-  saveRDS(lfs_data_frame, connection)
+  fst::write_fst(lfs_data_frame, save_file_path, compress = fst_compress)
 
   # Print complete message
   cli_compiling_complete(file_format = file_format)

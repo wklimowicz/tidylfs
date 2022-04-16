@@ -4,7 +4,10 @@
 \alias{lfs_load}
 \title{Load LFS Data}
 \usage{
-lfs_load()
+lfs_load(data.table = TRUE)
+}
+\arguments{
+\item{data.table}{Import as data.table?}
 }
 \value{
 A tibble with lfs data
