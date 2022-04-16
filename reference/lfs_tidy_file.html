@@ -60,13 +60,7 @@ eg. PWT20 &gt; PWT18 etc. Renames them so that they can be binded to one dataset
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">lfs_tidy_file</span><span class="op">(</span>
-  <span class="va">file</span>,
-  <span class="va">total_files</span>,
-  <span class="va">file_format</span>,
-  <span class="va">file_names</span>,
-  extra_mappings <span class="op">=</span> <span class="cn">NULL</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">lfs_tidy_file</span><span class="op">(</span><span class="va">file</span>, <span class="va">total_files</span>, <span class="va">file_format</span>, extra_mappings <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -76,9 +70,7 @@ eg. PWT20 &gt; PWT18 etc. Renames them so that they can be binded to one dataset
 <dt>total_files</dt>
 <dd><p>Vector of file names - helper function for cli</p></dd>
 <dt>file_format</dt>
-<dd><p>File extension: sav csv or Rds</p></dd>
-<dt>file_names</dt>
-<dd><p>To Save intermediate Rds files.</p></dd>
+<dd><p>File extension: sav csv or rds</p></dd>
 <dt>extra_mappings</dt>
 <dd><p>Either NULL (use default) or an R script with the lfs_extra_mappings function</p></dd>
 </dl></div>
