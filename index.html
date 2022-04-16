@@ -94,20 +94,21 @@
 <span class="fu"><a href="reference/lfs_compile.html">lfs_compile</a></span><span class="op">(</span><span class="st">"lfs_rds_folder/"</span><span class="op">)</span></code></pre></div>
 <p>To load the data into your environment run:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">lfs</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/lfs_load.html">lfs_load</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="va">lfs</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/lfs_load.html">lfs_load</a></span><span class="op">(</span>data.table <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
+<p>(Use data.table = TRUE if you know it, it’s much faster.)</p>
 <p>To reproduce official ONS publications, such as</p>
 <ul>
 <li>Unemployent <a href="https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/unemployment/datasets/unemploymentbyageanddurationnotseasonallyadjustedunem01nsa" class="external-link">UNEM01 NSA</a>
 </li>
 </ul>
-<!-- end list --><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">lfs</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span>
     <span class="fu"><a href="reference/lfs_summarise_unemployment.html">lfs_summarise_unemployment</a></span><span class="op">(</span><span class="va">QUARTER</span><span class="op">)</span></code></pre></div>
 <ul>
 <li>Salary by occupation <a href="https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/grossweeklyearningsbyoccupationearn06" class="external-link">EARN06</a>
 </li>
 </ul>
-<!-- end list --><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">lfs</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span>
     <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">OCCUPATION_MAJOR</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> <span class="co"># Filter out NA's</span>
     <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">FTPTWK</span> <span class="op">==</span> <span class="st">"Full-time"</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> <span class="co"># Take only full-time employees</span>
@@ -119,7 +120,7 @@
 <ul>
 <li>Unemployment by quarter, sex, and age category</li>
 </ul>
-<!-- end list --><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">lfs</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span>
   <span class="fu"><a href="reference/lfs_summarise_unemployment.html">lfs_summarise_unemployment</a></span><span class="op">(</span><span class="va">QUARTER</span>, <span class="va">SEX</span>, <span class="va">AGES</span><span class="op">)</span></code></pre></div>
 <p>For more information on the ONS variables, see the <a href="https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/methodologies/labourforcesurveyuserguidance" class="external-link">LFS Guidance</a>.</p>
