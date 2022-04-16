@@ -53,7 +53,8 @@ test_that("UNEM01 matches raw data", {
     dplyr::mutate(QUARTER = paste(YEAR, QUARTER)) %>%
     dplyr::select(-YEAR) %>%
     dplyr::filter(QUARTER %in% unique(unem01$QUARTER)) %>%
-    dplyr::mutate(unemployed_percentage = as.numeric(unemployed_percentage))
+    dplyr::mutate(unemployed_percentage = as.numeric(unemployed_percentage)) |>
+    data.table::as.data.table()
 
   expect_equal(unem01, unem01_ons, tolerance = test_tolerance)
   expect_gt(nrow(unem01), 1)
@@ -91,7 +92,8 @@ test_that("UNEM01 matches raw data", {
     dplyr::mutate(QUARTER = paste(YEAR, QUARTER)) %>%
     dplyr::select(-YEAR) %>%
     dplyr::filter(QUARTER %in% unique(unem01$QUARTER)) %>%
-    dplyr::mutate(unemployed_percentage = as.numeric(unemployed_percentage))
+    dplyr::mutate(unemployed_percentage = as.numeric(unemployed_percentage)) %>%
+    data.table::as.data.table()
 
   expect_equal(unem01, unem01_ons, tolerance = test_tolerance)
   expect_gt(nrow(unem01), 1)
@@ -128,7 +130,8 @@ test_that("UNEM01 matches raw data", {
     dplyr::mutate(QUARTER = paste(YEAR, QUARTER)) %>%
     dplyr::select(-YEAR) %>%
     dplyr::filter(QUARTER %in% unique(unem01$QUARTER)) %>%
-    dplyr::mutate(unemployed_percentage = as.numeric(unemployed_percentage))
+    dplyr::mutate(unemployed_percentage = as.numeric(unemployed_percentage)) %>%
+    data.table::as.data.table()
 
   expect_equal(unem01, unem01_ons, tolerance = test_tolerance)
   expect_gt(nrow(unem01), 1)

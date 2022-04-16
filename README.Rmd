@@ -42,10 +42,12 @@ lfs_convert("lfs_data_folder/", "lfs_rds_folder/")
 lfs_compile("lfs_rds_folder/")
 ```
 
-To load the data into your environment run:
+To load the data into your environment run: 
 ```{r eval=FALSE}
-lfs <- lfs_load()
+lfs <- lfs_load(data.table = FALSE)
 ```
+(Use data.table = TRUE if you know it, it's much faster.)
+
 To reproduce official ONS publications, such as
 
 * Unemployent [UNEM01 NSA](https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/unemployment/datasets/unemploymentbyageanddurationnotseasonallyadjustedunem01nsa)

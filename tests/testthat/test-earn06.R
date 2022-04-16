@@ -12,6 +12,7 @@ test_that("EARN06 matches raw data", {
     dplyr::filter(FTPTWK == "Full-time") %>%
     dplyr::filter(!is.na(OCCUPATION_MAJOR)) %>%
     lfs_summarise_salary(QUARTER, OCCUPATION_MAJOR) %>%
+    dplyr::arrange(OCCUPATION_MAJOR) %>%
     # dplyr::mutate(QUARTER = "Apr-Jun 2021") %>%
     tidyr::pivot_wider(
       id_cols = QUARTER,

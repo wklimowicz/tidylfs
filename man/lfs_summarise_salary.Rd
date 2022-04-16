@@ -12,7 +12,7 @@ lfs_summarise_salary(lfs, ...)
 \item{...}{Variables to group by}
 }
 \value{
-Tibble of outputs
+Tibble or data.table with salary data
 }
 \description{
 Group by and Summarise into salary ONS Salary

@@ -1,6 +1,7 @@
 setwd(here::here())
 load_all()
 library(tidyverse)
+library(data.table)
 
 lfs_convert("../lfs_raw_data/", "../lfs_fst_data/") #, filter_files = "2017 Q3.sav")
 
@@ -77,8 +78,12 @@ table(lfs$QUARTER, lfs$SEX)
 table(lfs$QUARTER, lfs$HIQUALD)
 table(lfs$QUARTER, lfs$DEGREE71)
 
-lfs %>%
-  lfs_summarise_union(QUARTER, SEX) %>%
+lfs[QUARTER %ilike% "Q4"] |>
+  lfs_summarise_union(QUARTER, SEX) 
+
+lfs |>
+  lfs_summarise_hours(QUARTER, SEX) 
+
   dplyr::select(SEX, QUARTER, union_percentage)
 
 
