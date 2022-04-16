@@ -1,6 +1,6 @@
 Package: tidylfs
 Title: Tools for analysing the ONS Labour Force Survey
-Version: 0.0.1
+Version: 0.0.2
 Authors@R: 
     person("Wojtek", "Klimowicz", , "wojtekklimowicz96@gmail.com", role = c("aut", "cre"))
 Description: Tools for analysts working with the LFS.
