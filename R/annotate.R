@@ -127,7 +127,7 @@ annotate_industry <- function(lfs) {
     ) %>%
       dplyr::mutate(SIC_TYPE = "SIC92") %>%
       dplyr::select(-.data$Industry_Code, -.data$LFS_Description) %>%
-      dplyr::rename(INDUSTRY_DESCRIPTION = ONS_Description)
+      dplyr::rename(INDUSTRY_DESCRIPTION = .data$ONS_Description)
 
   sic_coding <- dplyr::bind_rows(sic07, sic92) %>%
     dplyr::rename(INDUSTRY = .data$SIC)
