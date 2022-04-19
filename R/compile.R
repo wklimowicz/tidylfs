@@ -223,7 +223,8 @@ lfs_compile <- function(lfs_directory,
     dplyr::mutate(YEAR = as.integer(substr(.data$QUARTER, 1, 4))) %>%
     dplyr::relocate(.data$YEAR, .data$QUARTER, .data$CASENO) %>%
     annotate_hiquald() %>%
-    annotate_occupation()
+    annotate_occupation() %>%
+    annotate_industry()
 
 
 

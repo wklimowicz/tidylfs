@@ -83,7 +83,10 @@ lfs_default_mappings <- function(cols) {
   parental_occupation_major <- lfs_pick_column(c("SMSOC201", "SMSOC101"), cols)
 
   # Other
-  industry <- lfs_pick_column(c("INDS07M", "INDS92M", "SICMAIN"), cols)
+  industry_major <- lfs_pick_column(c("INDS07M", "INDS92M", "SICMAIN"), cols)
+
+  industry <- lfs_pick_column(c("ICDM", "INDM92M"), cols)
+
   # "INDS92M" %in% cols ~ "INDS92M",INDS92M
   ethnicity <- lfs_pick_column(c("ETHUKEUL", "ETH01"), cols)
 
@@ -134,7 +137,8 @@ lfs_default_mappings <- function(cols) {
     weight, "WEIGHT", "numeric",
     ilo_status, "INECAC05", "numeric",
     fdsico, "FDSICO", "factor",
-    industry, "INDUSTRY", "factor",
+    industry_major, "INDUSTRY_MAJOR", "factor",
+    industry, "INDUSTRY", "character",
     ethnicity, "ETHNICITY", "factor",
     # Education -------------------------
     cured, "CURED", "factor",

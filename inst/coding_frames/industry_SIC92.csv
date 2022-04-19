@@ -1,61 +1,463 @@
-SIC, SIC_DESCRIPTION
-01, Agriculture And Related Activities
-02, Forestry, Logging And Related Activities
-05, Fishing
-10, Mining Of Coal And Coal Extraction
-11, Extraction Of Crude Petroleum And Natural Gas; Service Activities Incidental To Oil And Gas Extraction
-12, Mining Of Uranium And Thorium Ores
-13, Mining Of Metal Ores
-14, Other Mining And Quarrying
-15, Manufacturing Of Food Products And Beverages
-16, Manufacture Of Tobacco Products
-17, Manufacture Of Textiles
-18, Manufacture Of Wearing Apparel
-19, Manufacture Of Leather, Leather Products And Footwear Of Any Material
-20, Manufacture Of Wood And Wood Products, Except Furniture
-21, Manufacture Of Pulp, Paper And Paper Products
-22, Publishing, Printing And Reproduction Of Recorded Media
-23, Manufacture Of Coke, Refined Petroleum Products And Nuclear Fuel
-24, Manufacture Of Chemicals And Chemical Products
-25, Manufacture Of Rubber And Plastic Products
-26, Manufacture Of Other Non-Metallic Mineral Products
-27, Manufacture Of Basic Metals
-28, Manufacture Of Fabricated Metal Products, Except Machinery And Equipment
-29, Manufacture Of Machinery And Equipment Not Elsewhere Classified
-30, Manufacture And Assembly Of Office Machinery And Computers
-31, Manufacture Of Electrical Machinery And Apparatus Not Elsewhere Classified
-32, Manufacture Of Radio, Television And Communication Equipment And Apparatus
-33, Manufacture Of Medical, Precision And Optical Instruments, Watches And Clocks
-34, Manufacture Of Motor Vehicles, Trailers And Semi-Trailers
-35, Manufacture Of Other Transport Equipment
-36, Manufacture Of Furniture; Manufacturing Not Elsewhere Classified
-37, Recycling
-40, Electricity, Gas, Steam And Hot Water Supply
-41, Collection, Purification And Distribution Of Water (Excluding Sewage Treatment)
-45, Construction
-50, Sale, Maintenance And Repair Of Motor Vehicles And Motorcycles; Retail Sale Of Automotive Fuel
-51, Wholesale Trade And Commission Trade, Except Of Motor Vehicles And Motorcycles
-52, Retail Trade, Except Of Motor Vehicles And Motorcycles; Repair Of Personal And Household Goods
-55, Hotels And Restaurants
-60, Land Transport; Transport Via Pipelines
-61, Water Transport
-62, Air Transport
-63, Supporting And Auxiliary Transport Activities; Activities Of Travel Agencies
-64, Post And Courier Activities And Telecommunications
-65, Financial Activities, Except Insurance And Pension Funding
-66, Insurance And Pension Funding, Except Social Security
-67, Activities Auxiliary To Financial Management
-70, Property Development
-71, Renting Of Machinery And Equipment Without Operator And Of Personal And Household Goods
-72, Computer And Related Activities
-73, Research And Development Activities
-74, Other Business Activities
-75, Public Administration And Defence; Social Security
-80, Education
-85, Health And Social Work
-90, Sewage And Refuse Disposal, Sanitation And Similar Activities
-91, Activities Of Membership Organisations Not Elsewhere Classified
-92, Recreational, Cultural And Sporting Activities
-93, Other Service Activities
-95, Private Households With Employed Persons
-99, International Organisations And Bodies
+﻿SIC,Industry_Code,LFS_Description,ONS_Description
+1,01.11,"Growing cereals, other crops",Growing of cereals and other crops not elsewhere classified
+2,01.12,"Growing veg,horticulture,nursery","Growing of vegetables, horticultural specialities and nursery"
+3,01.13,"Grwg.fruit,nut,beverge,spice crop","Growing of fruit, nuts, beverage and spice crops"
+4,01.21,"Farming cattle,dairy","Farming of cattle, dairy farming"
+5,01.22,"Farming sheep,goats,horses etc","Farming of sheep, goats, horses, asses, mules and hinnies"
+6,01.23,Farming pigs,Farming of swine
+7,01.24,Farming poultry,Farming of poultry
+8,01.25,Farming other animals,Other farming of animal
+9,01.30,Mixed farming (crops & animals),Growing of crops combined with farming of animals (mixed
+10,01.41,Agricultural services,Agricultural service activities
+11,01.42,Animal husbdry service (not vet),"Animal husbandry service activities, except veterinary"
+12,01.50,"Hunting,trapping,game etc","Hunting, trapping and game propagation including related"
+13,02.01,"Forestry,logging",Forestry and logging
+14,02.02,"Forestry,logging services",Forestry and logging related service activities
+15,05.01,Fishing,Fishing
+16,05.02,"Fish hatcheries,farms",Operation of fish hatcheries and fish farms
+17,10.101,Deep coal mines,Deep coal mines
+18,10.102,Opencast coal working,Opencast coal working
+19,10.103,Solid fuel manufacture,Manufacture of solid fuel
+20,10.20,"Lignite mining,agglomeration",Mining and agglomeration of lignite
+21,10.30,"Peat extraction,agglomeration",Extraction and agglomeration of peat
+22,11.10,"Crude oil,gas extraction",Extraction of crude petroleum and natural gas
+23,11.20,"Oil,gas services (not surveying)",Service activities incidental to oil and gas extraction
+24,12.00,"Uranium,thorium ore mining",Mining of uranium and thorium ores
+25,13.10,Iron ore mining,Mining of iron ores
+26,13.20,"Non-ferrous mine.(not Uran,Thor)","Mining of non-ferrous metal ores, except uranium and"
+27,14.11,Quarrying construction stone,Quarrying of stone for construction
+28,14.12,"Limestone,gypsum,chalk quarrying","Quarrying of limestone, gypsum and chalk"
+29,14.13,Slate quarrying,Quarrying of slate
+30,14.21,"Gravel,sand pits",Operation of gravel and sand pits
+31,14.22,"Clay,kaolin mining",Mining of clays and kaolin
+32,14.30,"Chemical,fertiliser mining",Mining of chemical and fertilizer minerals
+33,14.40,Salt production,Production of salt
+34,14.50,"Other mining,quarrying",Other mining and quarrying not elsewhere classified
+35,15.111,"Slaught'ng (not poultry,rabbit)",Slaughtering of animals other than poultry and rabbits
+36,15.112,Animal by-product processing,Animal by-product processing
+37,15.113,Fellmongery,Fellmongery
+38,15.12,"Poultry production,preserving",Production and preserving of poultry meat
+39,15.13,"Meat,poultry products",Production of meat and poultry meat products
+40,15.20,"Fish,fish products,preserving",Processing and preserving of fish and fish products
+41,15.31,"Potato products,preserving",Processing and preserving of potatoes
+42,15.32,"Fruit,vegetable juice processing",Manufacture of fruit and vegetable juice
+43,15.33,"Other fruit,veg processing",Processing and preserving of fruit and vegetables not
+44,15.41,"Crude oils,fats manufacture",Manufacture of crude oils and fats
+45,15.42,"Refined oils,fats manufacture",Manufacture of refined oils and fats
+46,15.43,"Margarine,edible fat manufacture",Manufacture of margarine and similar edible fat
+47,15.51,"Dairies,cheese making",Operation of dairies and cheese making
+48,15.52,Ice cream manufacture,Manufacture of ice cream
+49,15.61,"Grain,mill products",Manufacture of grain mill products
+50,15.62,"Starches,starch products",Manufacture of starches and starch products
+51,15.71,Farm animal feed manufacture,Manufacture of prepared feeds for farm animals
+52,15.72,Pet food manufacture,Manufacture of prepared pet foods
+53,15.81,"Bread,fresh pastry,cakes manufact.",Manufacture of bread; manufacture of pastry goods and
+54,15.82,"Biscuits,rusks,preserved pastries",Manufacture of rusks and biscuits; manufacture of
+55,15.83,Sugar manufacture,Manufacture of sugar
+56,15.84,"Chocolate,cocoa,sugar confect'y",Manufacture of cocoa; chocolate and sugar confectionary
+57,15.85,"Macaroni,noodles,couscous etc","Manufacture of macaroni, noodles, couscous and similar"
+58,15.86,"Tea,coffee manufacture",Processing of tea and coffee
+59,15.87,"Condiment,seasoning manufacture",Manufacture of condiments and seasonings
+60,15.88,"Homogenised,dietetic food products",Manufacture of homogenised food preparations and
+61,15.89,Other food products manufacture,Manufacture of other foods products not elsewhere
+62,15.91,Distilled alcoholic drinks,Manufacture of distilled potable alcoholic beverages
+63,15.92,Ethyl alcohol from fermentation,Production of ethyl alcohol from fermented materials
+64,15.93,Wine production,Manufacture of wines
+65,15.94,"Cider,other fruit wine production",Manufacture of cider and other fruit wines
+66,15.95,Non-distilled fermented drinks,Manufacture of other non-distilled fermented beverages
+67,15.96,Beer production,Manufacture of beer
+68,15.97,Malt production,Manufacture of malt
+69,15.98,"Mineral water,soft drink prodctn.",Production of mineral waters and soft drinks
+70,16.00,Tobacco products,Manufacture of tobacco product
+71,17.11,Cotton fibre preparation,Preparation and spinning of cotton-type fibres
+72,17.12,Wool fibre preparation,Preparation and spinning of woollen-type fibres
+73,17.13,Worsted fibre preparation,Preparation and spinning of worsted-type fibres
+74,17.14,Flax fibre preparation,Preparation and spinning of flax-type fibres
+75,17.15,"Silk,synthetic preparation",Throwing and preparation of silk including from noils and
+76,17.16,Sewing thread manufacture,Manufacture of sewing threads
+77,17.17,Other textile preparation,Preparation and spinning of other textile fibres
+78,17.21,Cotton weaving,Cotton type weaving
+79,17.22,Woollen weaving,Woollen type weaving
+80,17.23,Worsted weaving,Worsted type weaving
+81,17.24,Silk weaving,Silk type weaving
+82,17.25,Other textile weaving,Other textile weaving
+83,17.30,Textile finishing,Finishing of textiles
+84,17.401,Soft furnishing manufacture,Manufacture of soft furnishings
+85,17.402,"Canvas,sacks etc manufacture","Manufacture of canvas goods, sacks, etc."
+86,17.403,Household textiles manufacture,Manufacture of household goods
+87,17.511-2,"Woven,tufted carpets,rugs manu.","Manufacture of woven, tufted carpets and rugs"
+88,17.513,"Other carpets,rugs manufacture",Manufacture of other carpets and rugs
+89,17.52,"Cordage,rope,twine manufacture","Manufacture of cordage, rope, twine and netting"
+90,17.53,Non-woven articles (not clothing),Manufacture of non-wovens and articles made from
+91,17.541,Lace manufacture,Manufacture of lace
+92,17.542,Narrow fabrics manufacture,Manufacture of narrow fabrics
+93,17.543,Other textiles manufacture,Manufacture of other textiles not elsewhere specified
+94,17.60,"Knitted,crocheted fabric manuf.",Manufacture of knitted and crocheted fabrics
+95,17.71,"Knitted,crocheted hosiery manuf.",Manufacture of knitted and crocheted hosiery
+96,17.72,"Knitted,crocheted clothing","Manufacture of knitted and crocheted pullovers, cardigans"
+97,18.10,Leather clothing manufacture,Manufacture of leather clothes
+98,18.21,Workwear manufacture,Manufacture of workwear
+99,18.221,Other mens outerwear manufacture,Manufacture of other men's outerwear
+100,18.222,Other womens outerwear manuf.,Manufacture of other women's outerwear
+101,18.231,Mens underwear manufacture,Manufacture of men's underwear
+102,18.232,Womens underwear manufacture,Manufacture of women's underwear
+103,18.241,Hat manufacture,Manufacture of hats
+104,18.242,"Other apparel,accessories manuf.",Manufacture of other wearing apparel and accessories
+105,18.30,Fur processing,Dressing and dyeing of fur; manufacture of articles of fur
+106,19.10,"Leather tanning,dressing",Tanning and dressing of leather
+107,19.20,"Luggage,handbags,saddlery manuf.","Manufacture of luggage, handbags and the like, saddlery"
+108,19.30,Footwear manufacture,Manufacture of footwear
+109,20.10,"Wood sawmill,planing,impregnation","Sawmilling and planing of wood, impregnation of wood"
+110,20.20,"Wood veneer,plywood,etc production","Manufacture of veneer sheets; manufacture of plywood,"
+111,20.30,"Builders carpentry,joinery",Manufacture of builders' carpentry and joinery
+112,20.40,Wooded containers manufacture,Manufacture of wooden containers
+113,20.51,Other wood products manufacture,Manufacture of other products of wood
+114,20.52,"Cork,straw,etc manufacture","Manufacture of articles of cork, straw and plaiting materials"
+115,21.11,Pulp manufacture,Manufacture of pulp
+116,21.12,"Paper,card manufacture",Manufacture of paper and paperboard
+117,21.211,"Paper board,sacks,bags manuf.","Manufacture of corrugated paper and paperboard, sacks"
+118,21.212,"Cartons,boxes,etc manufacture","Manufacture of cartons, boxes, cases and other containers"
+119,21.22,"Sanitary,toilet requis. production",Manufacture of household and sanitary goods and of toilet
+120,21.23,Paper stationary manufacture,Manufacture of paper stationery
+121,21.24,Wallpaper manufacture,Manufacture of wallpaper
+122,21.25,Other paper articles manufacture,Manufacture of other articles of paper and paperboard not
+123,22.11,Book publishing,Publishing of books
+124,22.12,Newspaper publishing,Publishing of newspapers
+125,22.13,"Journal,periodical publishing",Publishing of journals and periodicals
+126,22.14,Sound recording publishing,Publishing of sound recordings
+127,22.15,Other publishing,Other publishing
+128,22.21,Newspaper printing,Printing of newspapers
+129,22.22,Other printing,Printing not elsewhere classified
+130,22.23,"Bookbinding,finishing",Bookbinding and finishing
+131,22.24,"Composition,plate-making",Composition and plate-making
+132,22.25,Other printing activities,Other activities related to printing
+133,22.31,Reproduction of sound recording,Reproduction of sound recording
+134,22.32,Reproduction of video recording,Reproduction of video recording
+135,22.33,Reproduction of computer media,Reproduction of computer media
+136,23.10,Coke oven products manufacture,Manufacture of coke oven products
+137,23.201,Mineral oil refining,Mineral oil refining
+138,23.202,Other treatment petrol products,Other treatment of petroleum products (excluding
+139,23.30,Nuclear fuel processing,Processing of nuclear fuel
+140,24.11,Industrial gas manufacture,Manufacture of industrial gases
+141,24.12,"Dye,pigment manufacture",Manufacture of dyes and pigments
+142,24.13,Inorganic chemical manufacture,Manufacture of other inorganic basic chemicals
+143,24.14,Organic chemical manufacture,Manufacture of other organic basic chemicals
+144,24.15,"Fertilizer,etc manufacture",Manufacture of fertilizers and nitrogen compounds
+145,24.16,Primary plastics manufacture,Manufacture of plastics in primary forms
+146,24.17,Primary synthetic rubber,Manufacture of synthetic rubber in primary forms
+147,24.20,"Pesticides,etc manufacture",Manufacture of pesticides and other agro-chemical
+148,24.301&3,"Paint,varnsh,mastic,sealnt man","Manufacture of paints, varnishes, mastic and sealants"
+149,24.302,Printing ink manufacture,Manufacture of printing ink
+150,24.41,Basic pharmaceutical manufacture,Manufacture of basic pharmaceutical products
+151,24.42,Pharmaceutical preparations man.,Manufacture of pharmaceutical preparation
+152,24.511,"Soap,detergent manufacture",Manufacture of soap and detergents
+153,24.512,"Cleaning,polishing agent man.",Manufacture of cleaning and polishing preparations
+154,24.52,"Perfumes,etc manufacture",Manufacture of perfumes and toilet preparations
+155,24.61,Explosives manufacture,Manufacture of explosives
+156,24.62,"Glues,etc manufacture",Manufacture of glues and gelatine
+157,24.63,Essential oils manufacture,Manufacture of essential oils
+158,24.64,Photographic chemicals man.,Manufacture of photographic chemical material
+159,24.65,Recording media manufacture,Manufacture of prepared unrecorded media
+160,24.66,Other chemical products man.,Manufacture of other chemical products not elsewhere
+161,24.70,Man-made fibres manufacture,Manufacture of man-made fibres
+162,25.11,"Rubber tyres,etc manufacture",Manufacture of rubber tyres and tubes
+163,25.12,Rubber tyres retreading etc,Retreading and rebuilding of rubber tyres
+164,25.13,Other rubber products manufacture,Manufacture of other rubber products
+165,25.21,"Plastic sheets,tubes,etc man.","Manufacture of plastic plates, sheets, tubes and profiles"
+166,25.22,Plastic packing manufacture,Manufacture of plastic packing goods
+167,25.231,Plastic flooring manufacture,Manufacture of plastic floor covering
+168,25.232,Other plastic builders ware,Manufacture of other builders' ware of plastic
+169,25.24,Other plastic products,Manufacture of other plastic products
+170,26.11,Flat glass manufacture,Manufacture of flat glass
+171,26.12,"Flat glass shaping,processing",Shaping and processing of flat glass
+172,26.13,Hollow glass manufacture,Manufacture of hollow glass
+173,26.14,Glass fibre manufacture,Manufacture of glass fibres
+174,26.15,"Other glass proc,manufacture",Manufacture and processing of other glass including
+175,26.21,"Ceramic hhld,ornamental man.",Manufacture of ceramic household and ornamental articles
+176,26.22,Ceramic sanitary fixtures man.,Manufacture of ceramic sanitary fixtures
+177,26.23,Ceramic insulators etc man.,Manufacture of ceramic insulators and insulating fittings
+178,26.24,Other technical ceramic man.,Manufacture of other technical ceramic products
+179,26.25,Other ceramic manufacture,Manufacture of other ceramic products
+180,26.26,Refractory ceramic manufacture,Manufacture of refractory ceramic products
+181,26.30,"Ceramic tile,flags manufacture",Manufacture of ceramic tiles and flags
+182,26.40,"Bricks,tiles etc manufacture","Manufacture of bricks, tiles and construction products, in"
+183,26.51,Cement manufacture,Manufacture of cement
+184,26.52,Lime manufacture,Manufacture of lime
+185,26.53,Plaster manufacture,Manufacture of plaster
+186,26.61,Concrete prods(construction)man.,Manufacture of concrete products for construction
+187,26.62,Plaster products(construction)man.,Manufacture of plaster products for construction purposes
+188,26.63,Ready-mixed concrete manufacture,Manufacture of ready-mixed concrete
+189,26.64,Mortars manufacture,Manufacture of mortars
+190,26.65,Fibre cement manufacture,Manufacture of fibre cement
+191,26.66,"Other concrete,plaster,etc man.","Manufacture of other articles of concrete, plaster and"
+192,26.70,"Stone cutting,shaping","Cutting, shaping and finishing of stone"
+193,26.81,Abrasive products manufacture,Production of abrasive products
+194,26.821,Asbestos manufacture,Manufacture of asbestos
+195,26.822,Oath non-metal mineral prod man.,Manufacture of other non-metallic mineral products not
+196,27.10,"Basic iron,steel,ferro-alloys man.",Manufacture of basic iron and steel and of ferro-alloys
+197,27.21,Cast iron tubes manufacture,Manufacture of cast iron tubes
+198,27.22,Steel tubes manufacture,Manufacture of steel tubes
+199,27.31,Cold drawing,Cold drawing
+200,27.32,Cold rolling(narrow strip),Cold rolling of narrow strip
+201,27.33,"Cold forming,folding",Cold forming or folding
+202,27.34,Wire drawing,Wire drawing
+203,27.35,"Other 1st proc iron,steel",Other first processing of iron and steel not elsewhere
+204,27.41,Precious metals production,Precious metals production
+205,27.42,Aluminium production,Aluminium production
+206,27.43,"Lead,zinc,tin production","Lead, zinc and tin production"
+207,27.44,Copper production,Copper production
+208,27.45,Other non-metal production,Other non-ferrous metal production
+209,27.51,Iron casting,Casting of iron
+210,27.52,Steel casting,Casting of steel
+211,27.53,Light metals casting,Casting of light metals
+212,27.54,Other non-ferrous casting,Casting of other non-ferrous metals
+213,28.11,Metal structures etc manufacture,Manufacture of metal structures and parts of structures
+214,28.12,Builders metal work,Manufacture of builders' carpentry and joinery of metal
+215,28.21,Metal containers manufacture,"Manufacture of tanks, reservoirs and containers of metal"
+216,28.22,"Radiators,boilers manufacture",Manufacture of central heating radiators and boilers
+217,28.30,Steam generators manufacture,"Manufacture of steam generators, except central heating"
+218,28.40,"Forging,pressing etc","Forging, pressing, stamping and roll forming of metal;"
+219,28.51,"Treatment,coating of metals",Treatment and coating of metals
+220,28.52,General mech engineering,General mechanical engineering
+221,28.61,Cutlery manufacture,Manufacture of cutlery
+222,28.62,Tools manufacture,Manufacture of tools
+223,28.63,"Locks,hinges etc manufacture",Manufacture of locks and hinges
+224,28.71,Steel drums etc manufacture,Manufacture of steel drums and similar containers
+225,28.72,Light metal packaging manufacture,Manufacture of light metal packaging
+226,28.73,Wire products manufacture,Manufacture of wire products
+227,28.74,"Fasteners,chains etc manufacture","Manufacture of fasteners, screw machine products, chain"
+228,28.75,Other metal products manufacture,Manufacture of other fabricated metal products not
+229,29.11,"Engines,turbines (not aircraft)","Manufacture of engines and turbines, except aircraft,"
+230,29.121,Pumps manufacture,Manufacture of pumps
+231,29.122,Compressors manufacture,Manufacture of compressors
+232,29.13,"Taps,valves manufacture",Manufacture of taps and valves
+233,29.14,"Bearings,gears etc manufacture","Manufacture of bearings, gears, gearing and driving"
+234,29.21,Furnace manufacture,Manufacture of furnaces and furnace burners
+235,29.22,"Lifting,handling eqt manufacture",Manufacture of lifting and handling equipment
+236,29.23,"Cool.,ventilat eqt(not domestic)",Manufacture of non-domestic cooling and ventilation
+237,29.24,Other gen purpose mach manufacture,Manufacture of other general purpose machinery not
+238,29.31,Agricultural tractors manufacture,Manufacture of agricultural tractors
+239,29.32,"Other agric.,forestry mach. man.",Manufacture of other agricultural and forestry machinery
+240,29.40,Machine tool manufacture,Manufacture of machine tools
+241,29.51,Metallurgy mach manufacture,Manufacture of machinery for metallurgy
+242,29.521+3,"Concrete,mining,roadwk mch man.","Manufacture of machinery for concrete crushing, mining"
+243,29.522,Earthmoving eqt,Manufacture of earth-moving equipment
+244,29.53,"Food,tobacco proc mach","Manufacture of machinery for food, beverage and tobacco"
+245,29.54,"Textile etc ,leather mach man.","Manufacture of machinery for textile, apparel and leather"
+246,29.55,Paper etc prod mach manufacture,Manufacture of machinery for paper and paperboard
+247,29.56,Other special purpose mach man.,Manufacture of other special purpose machinery not
+248,29.60,"Weapons,ammunition manufacture",Manufacture of weapons and ammunition
+249,29.71,Elec domestic appliances man.,Manufacture of electric domestic appliances
+250,29.72,Non elec domestic appliances man.,Manufacture of non-electric domestic appliances
+251,30.01,Office mach manufacture,Manufacture of office machinery
+252,30.02,"Computers, IT eqt manufacture",Manufacture of computers and other information
+253,31.10,"Elec motors,gentors,trans man.","Manufacture of electric motors, generators and"
+254,31.20,"Elec distribution, control man.",Manufacture of electricity distribution and control apparatus
+255,31.30,Insulated cable manufacture,Manufacture of insulated wire and cable
+256,31.40,Electric battery manufacture,"Manufacture of accumulators, primary cells and primary"
+257,31.50,Lighting eqt manufacture,Manufacture of lighting equipment and electric lamps
+258,31.61,Other elec eqt (engines/veh) man.,Manufacture of electrical equipment for engines and
+259,31.62,Other elec eqt manufacture,Manufacture of other electrical equipment not elsewhere
+260,32.10,Electronic components etc man.,Manufacture of electronic valves and tubes and other
+261,32.201,"Telegraph,telephone eqt man.",Manufacture of telegraph and telephone apparatus and
+262,32.202,"Radio,electronic goods manuf.",Manufacture of radio and electronic capital goods
+263,32.30,"TV,radio,HiFi etc eqt manufacture","Manufacture of television and radio receivers, sound or"
+264,33.10,"Medical eqt,appliances manufacture",Manufacture of medical and surgical equipment and
+265,33.20,"Testing,navigating etc eqt man.","Manufacture of instruments and appliances for measuring,"
+266,33.30,Industrial proc control eqt man.,Manufacture of industrial process control equipment
+267,33.401,"Spectacles,lens manufacture",Manufacture of spectacles and unmounted lenses
+268,33.402,Optical precision eqt manufacture,Manufacture of optical precision instruments
+269,33.403,"Photographic,cinema eqt man.",Manufacture of photographic and cinematographic
+270,33.50,"Watches,clock manufacture",Manufacture of watches and clocks
+271,34.10,Motor veh manufacture,Manufacture of motor vehicles
+272,34.201,Motor veh bodywork manufacture,Manufacture of bodies (coachwork) for motor vehicles
+273,34.202,Trailers manufacture,Manufacture of trailers and semi-trailers
+274,34.203,Caravan manufacture,Manufacture of caravans
+275,34.30,Motor veh parts etc manufacture,Manufacture of parts and accessories for motor vehicles
+276,35.11,"Ship building,repairing",Building and repairing of ships
+277,35.12,"Boat building,repairing",Building and repairing of pleasure and sporting boats
+278,35.20,"Rail,tram rolling stk etc man.",Manufacture of railway and tramway locomotives and
+279,35.30,"Aircraft,spacecraft manufacture",Manufacture of aircraft and spacecraft
+280,35.41,Motorcycle manufacture,Manufacture of motorcycles
+281,35.42,Bicycle manufacture,Manufacture of bicycles
+282,35.43,Invalid carriage manufacture,Manufacture of invalid carriages
+283,35.50,Other transport eqt manufacture,Manufacture of other transport equipment not elsewhere
+284,36.11,Chairs etc manufacture,Manufacture of chairs and seats
+285,36.12,"Other office,shop furniture man.",Manufacture of other office and shop furniture
+286,36.13,Other kitchen furniture man.,Manufacture of other kitchen furniture
+287,36.14,Other furniture manufacture,Manufacture of other furniture
+288,36.15,Mattresses manufacture,Manufacture of mattresses
+289,36.21,"Coins,medal manufacture",Striking of coins and medals
+290,36.22,Jewellery etc manufacture,Manufacture of jewellery and related articles not elsewhere
+291,36.30,Musical instruments manufacture,Manufacture of musical instruments
+292,36.40,Sports goods manufacture,Manufacture of sports goods
+293,36.501,Arcade games etc manufacture,Manufacture of professional and arcade games and toys
+294,36.502,"Other games,toys etc manufacture",Manufacture of other games and toys not elsewhere
+295,36.61,Imitation jewellery manufacture,Manufacture of imitation jewellery
+296,36.62,"Brooms,brushes etc manufacture",Manufacture of brooms and brushes
+297,36.631,Stationers goods manufacture,Manufacture of miscellaneous stationers' goods
+298,36.632,Other manufacture,Other manufacturing not elsewhere classified
+299,37.10,Metal scrap recycling,Recycling of metal waste and scrap
+300,37.20,Non-metal scrap recycling,Recycling of non-metal waste and scrap
+301,40.10,"Elec generation,supply",Production and distribution of electricity
+302,40.20,Gas production supply,Manufacture of gas; distribution of gaseous fuels through
+303,40.30,"Steam,hot water supply",Steam and hot water supply
+304,41.00,Water supply etc,Water supply etc
+305,45.11-45.50,"Building demol.,earth moving",Construction; Building demolition and earth moving
+306,50.10+50.30+50.50,"Sales motors,parts,etc","Sale of motor vehicles, parts, accessories and fuel"
+307,50.20,Motor veh repair,Maintenance and repair of motor vehicles
+308,50.40,"Motorcycle sale,repair etc","Sale, maintenance and repair of motorcycles and related"
+309,51.11-51.19,"Wsale on fee,contract basis",Wholesale on a fee or contract basis
+310,51.21-51.70,Wholesale,"Wholesale trade; agricultural raw materials, live animals,"
+311,51.57,"Wsale waste,scrap",Wholesale of waste and scrap
+312,52.11-52.63,Retail trade,"Retail trade, except of motor vehicles and motor vehicles"
+313,52.71,Repair leather articles,"Repair of boots, shoes and other articles of leather"
+314,52.72,Repair elec hhld goods,Repair of electrical household goods
+315,52.73,"Repair watches,clocks etc","Repair of watches, clocks and jewellery"
+316,52.74,Other repair,Repair not elsewhere classified
+317,55.11,"Hotels,motels with restaurant","Hotels and motels, with restaurant"
+318,55.12,"Hotels,motels without restaurant","Hotels and motels, without restaurant"
+319,55.21,"Youth hostel,mountain refuge",Youth hostels and mountain refuges
+320,55.22,"Camping,caravan sites","Camping sites, including caravan sites"
+321,55.23,Other provision of lodgings,Other provision of lodgings not elsewhere classified
+322,55.301-2,"Licenced,unlicenced restaurants",Licensed and Unlicensed restaurants
+323,55.303,Take-away food shops,Take-away food shops
+324,55.401,Licenced clubs with entertainment,Licensed clubs with entertainment
+325,55.402,"Public houses,bars",Public houses and bars
+326,55.51,Canteens,Canteens
+327,55.52,Catering,Catering
+328,60.10,Transport via railway,Transport via railways
+329,60.21,Other scheduled land transport,Other scheduled passenger land transport
+330,60.22,Taxi,Taxi operation
+331,60.23,Other passenger land transport,Other passenger land transport
+332,60.24,Freight transport by road,Freight transport by road
+333,60.30,Transport via pipelines,Transport via pipelines
+334,61.10,"Sea,coastal water transport",Sea and coastal water transport
+335,61.20,Inland water transport,Inland water transport
+336,62.10,Scheduled air transport,Scheduled air transport
+337,62.20,Non-scheduled air transport,Non-scheduled air transport
+338,62.30,Space transport,Space transport
+339,63.11,Cargo handling,Cargo handling
+340,63.12,"Storage,warehousing",Storage and warehousing
+341,63.21,Other land transport activities,Other supporting land transport activities
+342,63.22,Other water transport activities,Other supporting water transport activities
+343,63.23,Other air transport activities,Other supporting air transport activities
+344,63.301-3,"Travel agenc.,organisers,guides","Activities of travel agencies, organisers and tour guides"
+345,63.304,Other tourist assistance,Other tourist assistance activities not elsewhere classified
+346,63.40,Other transport agencies,Activities of other transport agencie
+347,64.11,National post activities,National post activities
+348,64.12,Courier activ. (not natnl. Post),Courier activities other than national post activities
+349,64.20,Telecommunications,Telecommunications
+350,65.11,Central banking,Central banking
+351,65.121,Banks,Banks
+352,65.122,Building societies,Building societies
+353,65.21,Financial leasing,Financial leasing
+354,65.22,Other credit granting,Other credit granting
+355,65.231-6,"Unit,inv trusts,hlding co etc","Activities of unit trust, investment trusts and bank holding"
+356,65.233,Securities dealing for self,Security dealing on own account
+357,66.01,Life insurance,Life insurance
+358,66.02,Pension funding,Pension funding
+359,66.03,Non-life insurance,Non-life insurance
+360,67.11,Financial market administration,Administration of financial markets
+361,67.12,"Securities,fund management",Security broking and fund management
+362,67.13,Other financial intermed. activ.,Activities auxiliary to financial intermediation not elsewhere
+363,67.20,Other insurance activities,Activities auxiliary to insurance and pension funding
+364,70.11,"Development,sale of real estate",Development and selling of real estate
+365,70.12,"Buying,selling real estate,self",Buying and selling of own real estate
+366,70.20,Letting own property,Letting of own property
+367,70.31,Real estate agency,Real estate agencies
+368,70.32,Management of real estate,Management of real estate on a fee or contract basis
+369,71.10,Car rental,Renting of automobiles
+370,71.21,Other land transport rental,Renting of other land transport equipment
+371,71.22,Water transport eqt rental,Renting of water transport equipment
+372,71.23,Air transport eqt rental,Renting of air transport equipment
+373,71.31,"Agricultural mach,eqt rental",Renting of agricultural machinery and equipment
+374,71.32,"Construction mach,eqt rental",Renting of construction and civil engineering machinery
+375,71.33,"Office mach,eqt rental",Renting of office machinery and equipment including
+376,71.34,"Other mach,eqt rental",Renting of other machinery and equipment not elsewhere
+377,71.40,"Person,hhld eqt rental",Renting of personal and household goods not elsewhere
+378,72.10,Computer hardware consultancy,Hardware consultancy
+379,72.20,Computer software consultancy,Software consultancy and supply
+380,72.30,Data processing,Data processing
+381,72.40,Data base activities,Data base activities
+382,72.50,"Repair of office,computer eqt","Maintenance and repair of office, accounting and"
+383,72.60,Other computer activities,Other computer related activities
+384,73.10,"Research,natural sciences,engin.",Research and experimental development on natural
+385,73.20,"Res.,social sciences,humanities",Research and experimental development on social
+386,74.11,Legal activities,Legal activities
+387,74.12,"Accountng,auditng,tax consultancy","Accounting, book-keeping and auditing activities; tax"
+388,74.13,"Market,opinion research",Market research and public opinion polling
+389,74.14,"Business,management consultancy",Business and management consultancy activities
+390,74.15,"Managemnt activities,holding comps",Management activities of holding companies
+391,74.20,"Archit.,engineering,etc consultncy",Architectural and engineering activities and related
+392,74.30,"Technical testing,analysis",Technical testing and analysis
+393,74.40,Advertising,Advertising
+394,74.50,"Labour,personnel recruitment",Labour recruitment and provision of personnel
+395,74.60,"Investigation,security services",Investigation and security activities
+396,74.70,Industrial cleaning,Industrial cleaning
+397,74.81,Photographic activities,Photographic activities
+398,74.82,Packaging activities,Packaging activities
+399,74.83,"Secretarial,translation",Secretarial and translation activities
+400,74.84,Other business activities,Other business activities not elsewhere classified
+401,75.11,General public service activities,General (overall) public service activities
+402,75.12,Reguln Govt agency (not Soc Sec),Regulation of the activities of agencies that provide health
+403,75.13,Development of Govt agencies,Regulation of and contribution to more efficient operation
+404,75.14,Support of Govt as a whole,Supporting service activities for the government as a whole
+405,75.21,Foreign affairs,Foreign affairs
+406,75.22,Defence,Defence activities
+407,75.23,Justice and judicial activities,Justice and judicial activities
+408,75.24,"Public security,law and order etc","Public security, law and order activities"
+409,75.25,Fire service,Fire service activities
+410,75.30,Compulsory Social Security activ.,Compulsory social security activities
+411,80.10,"Primary educ,state,maintained",Primary education
+412,80.10,"Primary educ,priv.,non-maintained",Primary education
+413,80.21,"Gen. 2ndry educ,state,maintained",General secondary education
+414,80.21,"Gen. 2ndry educ,private,non-main.",General secondary education
+415,80.22,"Tech,vocational 2nd-ary educ","Technical, vocational secondary education, special"
+416,,"Special educ,state,maintained","Special Education, State, Maintained"
+417,,"Special educ,private non-maintained","Special Education, Private, Non-maintained"
+418,80.301,Sub-degree level educ,Sub-degree level higher education
+419,80.302+3,First & post degree level educ.,First-degree and post-graduate levels higher education
+420,80.41,Driving school activities,Driving school activities
+421,80.42,"Adult,other educ",Adult and other education not elsewhere classifie
+422,85.11,Hospital activities,Hospital activities
+423,85.12,Medical practice activities,Medical practice activities
+424,85.13,Dental practice activities,Dental practice activities
+425,85.14,Other human health activities,Other human health activities
+426,85.20,Veterinary activities,Veterinary activities
+427,85.31,Social work with accom,Social work activities with accommodation
+428,85.32,Social work without accom,Social work activities without accommodatio
+429,90.00,"Sewage,refuse disposal etc","Sewage and refuse disposal, sanitation and similar"
+430,91.11,"Business,employers organisations",Activities of business and employers organisations
+431,91.12,Professional organisations,Activities of professional organisations
+432,91.20,Trade unions,Activities of trade unions
+433,91.31,Religious organisations,Activities of religious organisations
+434,91.32,Political organisations,Activities of political organisations
+435,91.33,Other membership organisations,Activities of other membership organisations not elsewhere
+436,92.11,"Motion picture,video production",Motion picture and video production
+437,92.12,"Motion picture,video distribution",Motion picture and video production
+438,92.13,Motion picture projection,Motion picture projection
+439,92.20,"Radio,TV activities",Radio and television activities
+440,92.31,"Artistic,literary creation etc",Artistic and literary creation and interpretation
+441,92.32,Arts facilities,Operation of arts facilities
+442,92.33,"Fair,amusement park activities",Fair and amusement park activities
+443,92.34,Other entertainment activities,Other entertainment activities not elsewhere classified
+444,92.40,News agency activities,News agency activities
+445,92.51,"Library,archive activities",Library and archives activities
+446,92.52,Museum activities,Museum activities and preservation of historical sites and
+447,92.53,"Botanical,zoological gardens etc",Botanical and zoological gardens and nature reserves
+448,92.61,"Operation of sports arenas,stadia",Operation of sports arenas and stadiums
+449,92.62,Other sporting activities,Other sporting activities
+450,92.71,"Gambling,betting activities",Gambling and betting activities
+451,92.72,Other recreational activities,Other recreational activities not elsewhere classified
+452,93.01,"Washing,dry cleaning textiles,furs",Washing and dry cleaning of textile and fur products
+453,93.02,"Hairdressing,oth beauty treatment",Hairdressing and other beauty treatment
+454,93.03,Funeral etc,Funeral and related activities
+455,93.04,Physical well-being activities,Physical well-being activities
+456,93.05,Other service activities,Other service activities not elsewhere classified
+457,95.00,Priv. hhlds with emplyed persons,Private households with employed persons
+458,99.00,Extra-territorial organisations,Extra-territorial organisations and bodies
+459,,"Inadequate description,No reply","Inadequate description,No reply"
+460,,"No Answer/NA","No Answer/NA"
+461,,Workplace outside UK,Workplace outside UK
+462,,Did Not Answer,Did Not Answer

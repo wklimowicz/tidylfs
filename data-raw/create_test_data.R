@@ -29,7 +29,7 @@ dir.create(directory_path, showWarnings = FALSE)
 earn06 <- df %>%
   dplyr::select(
     YEAR, QUARTER, FTPTWK, WEIGHT_INCOME,
-    OCCUPATION_MAJOR, INDUSTRY,
+    OCCUPATION_MAJOR, INDUSTRY_MAJOR,
     GRSSWK, HOURPAY, INECAC05
   )
 # dplyr::filter(FTPTWK == "Full-time") %>%

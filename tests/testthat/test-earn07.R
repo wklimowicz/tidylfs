@@ -8,24 +8,24 @@ test_that("EARN07 matches raw data", {
 
   earn07 <- earn07_raw %>%
     dplyr::filter(YEAR > 2009) %>% # Only works for 2009 + so far
-    dplyr::filter(!is.na(INDUSTRY)) %>%
+    dplyr::filter(!is.na(INDUSTRY_MAJOR)) %>%
     dplyr::mutate(GROUPED_INDUSTRY = dplyr::case_when(
-      substr(INDUSTRY, 1, 1) == "A" ~ "A",
-      substr(INDUSTRY, 1, 1) %in% c("B", "D", "E") ~ "BDE",
-      substr(INDUSTRY, 1, 1) %in% "C" ~ "C",
-      substr(INDUSTRY, 1, 1) %in% "F" ~ "F",
-      substr(INDUSTRY, 1, 1) %in% "G" ~ "G",
-      substr(INDUSTRY, 1, 1) %in% "H" ~ "H",
-      substr(INDUSTRY, 1, 1) %in% "I" ~ "I",
-      substr(INDUSTRY, 1, 1) %in% "J" ~ "J",
-      substr(INDUSTRY, 1, 1) %in% c("K", "L") ~ "KL",
-      substr(INDUSTRY, 1, 1) %in% "M" ~ "M",
-      substr(INDUSTRY, 1, 1) %in% "N" ~ "N",
-      substr(INDUSTRY, 1, 1) %in% "O" ~ "O",
-      substr(INDUSTRY, 1, 1) %in% "P" ~ "P",
-      substr(INDUSTRY, 1, 1) %in% "Q" ~ "Q",
-      substr(INDUSTRY, 1, 1) %in% c("R", "S", "T") ~ "RST"
-      # substr(INDUSTRY, 1, 1) %in% "U" ~ "U"
+      substr(INDUSTRY_MAJOR, 1, 1) == "A" ~ "A",
+      substr(INDUSTRY_MAJOR, 1, 1) %in% c("B", "D", "E") ~ "BDE",
+      substr(INDUSTRY_MAJOR, 1, 1) %in% "C" ~ "C",
+      substr(INDUSTRY_MAJOR, 1, 1) %in% "F" ~ "F",
+      substr(INDUSTRY_MAJOR, 1, 1) %in% "G" ~ "G",
+      substr(INDUSTRY_MAJOR, 1, 1) %in% "H" ~ "H",
+      substr(INDUSTRY_MAJOR, 1, 1) %in% "I" ~ "I",
+      substr(INDUSTRY_MAJOR, 1, 1) %in% "J" ~ "J",
+      substr(INDUSTRY_MAJOR, 1, 1) %in% c("K", "L") ~ "KL",
+      substr(INDUSTRY_MAJOR, 1, 1) %in% "M" ~ "M",
+      substr(INDUSTRY_MAJOR, 1, 1) %in% "N" ~ "N",
+      substr(INDUSTRY_MAJOR, 1, 1) %in% "O" ~ "O",
+      substr(INDUSTRY_MAJOR, 1, 1) %in% "P" ~ "P",
+      substr(INDUSTRY_MAJOR, 1, 1) %in% "Q" ~ "Q",
+      substr(INDUSTRY_MAJOR, 1, 1) %in% c("R", "S", "T") ~ "RST"
+      # substr(INDUSTRY_MAJOR, 1, 1) %in% "U" ~ "U"
     )) %>%
     dplyr::filter(!is.na(GROUPED_INDUSTRY)) %>%
     # dplyr::mutate(FTPT = as.numeric(.data$FTPT)) %>%

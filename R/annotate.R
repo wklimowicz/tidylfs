@@ -98,3 +98,49 @@ annotate_occupation <- function(lfs) {
   lfs1 %>%
     dplyr::select(-.data$SOC_TYPE)
 }
+
+annotate_industry <- function(lfs) {
+
+  # Find correct coding file
+  read_industry_coding <- function(sic) {
+    readr::read_csv(
+      paste0(system.file("coding_frames", package = "tidylfs"), "/industry_", sic, ".csv"),
+      col_types = readr::cols(
+        SIC = readr::col_character(),
+        INDUSTRY_DESCRIPTION = readr::col_character()
+      )
+    ) %>%
+      dplyr::mutate(SIC_TYPE = sic)
+  }
+
+  sic07 <- read_industry_coding("SIC07")
+
+  # SIC92 is complicated...
+  sic92 <- readr::read_csv(
+      paste0(system.file("coding_frames", package = "tidylfs"), "/industry_SIC92.csv"),
+      col_types = readr::cols(
+        SIC = readr::col_character(),
+        Industry_Code = readr::col_character(),
+        LFS_Description = readr::col_character(),
+        ONS_Description = readr::col_character()
+      )
+    ) %>%
+      dplyr::mutate(SIC_TYPE = "SIC92") %>%
+      dplyr::select(-.data$Industry_Code, -.data$LFS_Description) %>%
+      dplyr::rename(INDUSTRY_DESCRIPTION = ONS_Description)
+
+  sic_coding <- dplyr::bind_rows(sic07, sic92) %>%
+    dplyr::rename(INDUSTRY = .data$SIC)
+
+  lfs1 <- lfs %>%
+    dplyr::mutate(SIC_TYPE = dplyr::case_when(
+      .data$YEAR >= 1992 & .data$YEAR < 2009 ~ "SIC92",
+      .data$YEAR >= 2009 ~ "SIC07"
+    )) %>%
+    dplyr::left_join(sic_coding, by = c("SIC_TYPE", "INDUSTRY"))
+
+  lfs1 %>%
+    dplyr::select(-.data$SIC_TYPE)
+
+
+}
