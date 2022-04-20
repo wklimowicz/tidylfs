@@ -30,7 +30,7 @@ library(tidylfs)
 # space and for quicker loading
 lfs_convert("lfs_data_folder/", "lfs_rds_folder/")
 
-# Compiles into one tidy `.Rds` file.
+# Compiles into one tidy `.fst` file.
 lfs_compile("lfs_rds_folder/")
 ```
 
@@ -78,6 +78,8 @@ For more information on the ONS variables, see the [LFS
 Guidance](https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/methodologies/labourforcesurveyuserguidance).
 
 Some of the variables included by default are:
+
+    #> Warning: package 'magrittr' was built under R version 4.1.3
 
 | Variable Name       | Definition                             |
 |:--------------------|:---------------------------------------|

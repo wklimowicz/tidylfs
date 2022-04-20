@@ -38,7 +38,7 @@ library(tidylfs)
 # space and for quicker loading
 lfs_convert("lfs_data_folder/", "lfs_rds_folder/")
 
-# Compiles into one tidy `.Rds` file.
+# Compiles into one tidy `.fst` file.
 lfs_compile("lfs_rds_folder/")
 ```
 

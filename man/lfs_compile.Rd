@@ -17,7 +17,8 @@ lfs_compile(
 
 \item{extra_mappings}{Either NULL (use default) or a file
 which has the custom mapping function.
-See \code{\link{lfs_extra_mappings}}}
+See
+\code{vignette("Adding_Variables", package = "tidylfs")}}
 
 \item{save_location}{File path for \code{fst} file to save. By default, saves the
 output in the package directory, so it's always accessible with \code{lfs_load}.}

@@ -2,7 +2,7 @@
 % Please edit documentation in R/mappings.R
 \name{lfs_pick_column}
 \alias{lfs_pick_column}
-\title{Picks column names in order of appearanceA}
+\title{Picks column names in order of appearance}
 \usage{
 lfs_pick_column(vector_of_names, column_names)
 }

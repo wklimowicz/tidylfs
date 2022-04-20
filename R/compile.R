@@ -115,7 +115,8 @@ lfs_tidy_file <- function(file,
 #' @param lfs_directory Path to directory with LFS files
 #' @param extra_mappings Either NULL (use default) or a file
 #' which has the custom mapping function.
-#' See \code{\link{lfs_extra_mappings}}
+#' See
+#' \code{vignette("Adding_Variables", package = "tidylfs")}
 #' @param save_location File path for `fst` file to save. By default, saves the
 #' output in the package directory, so it's always accessible with `lfs_load`.
 #' @param save_variables_report Save a csv with the list of picked variables?
@@ -241,31 +242,4 @@ lfs_compile <- function(lfs_directory,
 
   # Print complete message
   cli_compiling_complete(file_format = file_format)
-}
-
-
-#' Add Custom Column Mappings
-#'
-#' Create file with function that can be used to add columns
-#'
-#' @param file_name Name of mapping file
-#'
-#' @export
-lfs_extra_mappings <- function(file_name = "extra_lfs_mappings.R") {
-  if (file.exists(file_name)) {
-    stop("You already have this file in your directory - move or rename it")
-  }
-
-  cli::cli_div(theme = list(span.emph = list(color = "orange")))
-  cli::cli_alert_info("Pass this function to {.emph lfs_compile} to add more columns to the compiled lfs dataset")
-  cli::cli_alert_info("If a variable appears under different names, use a {.epmh case_when} statement to select variables")
-  cli::cli_end()
-
-  invisible(readline(prompt = "Press [enter] to continue"))
-
-  file_contents <- readr::read_file(system.file("templates/lfs_extra_mappings.R", package = "tidylfs"))
-
-  readr::write_file(file_contents, file = file_name)
-
-  utils::file.edit(file_name)
 }

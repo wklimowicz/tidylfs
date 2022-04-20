@@ -3,7 +3,6 @@
 export("%>%")
 export(lfs_compile)
 export(lfs_convert)
-export(lfs_extra_mappings)
 export(lfs_flag_graduate)
 export(lfs_flag_graduate_ons)
 export(lfs_flag_postgraduate)
