@@ -1,4 +1,4 @@
-#' Picks column names in order of appearanceA
+#' Picks column names in order of appearance
 #'
 #' When column names change over time, picks the first
 #' one that appears from the list in order of appearance.
@@ -67,6 +67,8 @@ lfs_default_mappings <- function(cols) {
     "FDCMBMA", "UNCOMBMA",
     "CMBDEG01"
   ), cols)
+
+  teaching_qualification <- lfs_pick_column(c("TEACH41", "TEACH1"), cols)
 
   # Occupation
   occupation <- lfs_pick_column(c("SOC20M", "SOC10M", "SOC2KM"), cols)
@@ -149,7 +151,8 @@ lfs_default_mappings <- function(cols) {
     "DEGREE72", "DEGREE72", "numeric",
     "DEGREE73", "DEGREE73", "numeric",
     "DEGREE74", "DEGREE74", "numeric",
-    "DEGREE75", "DEGREE75", "numeric"
+    "DEGREE75", "DEGREE75", "numeric",
+    teaching_qualification, "TEACH1", "factor"
   )
 
   # Exclude missing
