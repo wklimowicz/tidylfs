@@ -79,8 +79,6 @@ Guidance](https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employme
 
 Some of the variables included by default are:
 
-    #> Warning: package 'magrittr' was built under R version 4.1.3
-
 | Variable Name       | Definition                             |
 |:--------------------|:---------------------------------------|
 | YEAR                | Year                                   |
