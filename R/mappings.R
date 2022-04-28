@@ -137,7 +137,7 @@ lfs_default_mappings <- function(cols) {
     parental_occupation_major, "PARENTAL_OCCUPATION_MAJOR", "numeric",
     weight_income, "WEIGHT_INCOME", "numeric",
     weight, "WEIGHT", "numeric",
-    ilo_status, "INECAC05", "numeric",
+    ilo_status, "INECAC05", "factor",
     fdsico, "FDSICO", "factor",
     industry_major, "INDUSTRY_MAJOR", "factor",
     industry, "INDUSTRY", "character",
