@@ -70,7 +70,6 @@
 <div class="page-header"><h1 id="tidylfs">tidylfs<a class="anchor" aria-label="anchor" href="#tidylfs"></a>
 </h1></div>
 <!-- badges: start -->
-
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
@@ -97,17 +96,13 @@
 <code class="sourceCode R"><span class="va">lfs</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/lfs_load.html">lfs_load</a></span><span class="op">(</span>data.table <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
 <p>(Use data.table = TRUE if you know it, it’s much faster.)</p>
 <p>To reproduce official ONS publications, such as</p>
-<ul>
-<li>Unemployent <a href="https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/unemployment/datasets/unemploymentbyageanddurationnotseasonallyadjustedunem01nsa" class="external-link">UNEM01 NSA</a>
-</li>
-</ul>
+<ul><li>Unemployent <a href="https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/unemployment/datasets/unemploymentbyageanddurationnotseasonallyadjustedunem01nsa" class="external-link">UNEM01 NSA</a>
+</li></ul>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">lfs</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span>
     <span class="fu"><a href="reference/lfs_summarise_unemployment.html">lfs_summarise_unemployment</a></span><span class="op">(</span><span class="va">QUARTER</span><span class="op">)</span></code></pre></div>
-<ul>
-<li>Salary by occupation <a href="https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/grossweeklyearningsbyoccupationearn06" class="external-link">EARN06</a>
-</li>
-</ul>
+<ul><li>Salary by occupation <a href="https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/grossweeklyearningsbyoccupationearn06" class="external-link">EARN06</a>
+</li></ul>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">lfs</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span>
     <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">OCCUPATION_MAJOR</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> <span class="co"># Filter out NA's</span>
@@ -117,9 +112,7 @@
                        names_from <span class="op">=</span> <span class="va">OCCUPATION_MAJOR</span>,
                        values_from <span class="op">=</span> <span class="va">mean_weekly_pay</span><span class="op">)</span></code></pre></div>
 <p>Extending them is easy:</p>
-<ul>
-<li>Unemployment by quarter, sex, and age category</li>
-</ul>
+<ul><li>Unemployment by quarter, sex, and age category</li></ul>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">lfs</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span>
   <span class="fu"><a href="reference/lfs_summarise_unemployment.html">lfs_summarise_unemployment</a></span><span class="op">(</span><span class="va">QUARTER</span>, <span class="va">SEX</span>, <span class="va">AGES</span><span class="op">)</span></code></pre></div>
@@ -240,7 +233,7 @@
 
 <div class="pkgdown-footer-right">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
 </div>
 
     </footer>
