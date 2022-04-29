@@ -28,8 +28,7 @@ Imports:
     rlang,
     stats,
     stringr,
-    tibble,
-    withr
+    tibble
 Suggests: 
     curl,
     fs,
@@ -40,7 +39,8 @@ Suggests:
     rmarkdown,
     testthat (>= 3.0.0),
     tidyr,
-    vctrs
+    vctrs,
+    withr
 VignetteBuilder: 
     knitr
 Config/testthat/edition: 3
