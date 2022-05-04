@@ -130,6 +130,7 @@ lfs_default_mappings <- function(cols) {
     degree_subject, "DEGREE_SUBJECT", "character",
     combined_degree_subject, "CMBDEGREE", "character",
     "ILODEFR", "ILODEFR", "factor",
+    "OYCIRC", "OYCIRC", "factor",
     occupation, "OCCUPATION", "numeric",
     occupation_major, "OCCUPATION_MAJOR", "numeric",
     last_occupation, "LAST_OCCUPATION", "numeric",

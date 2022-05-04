@@ -63,7 +63,7 @@ lfs_summarise_salary_dt <- function(lfs, ...) {
    lfs[WEIGHT_INCOME > 0 &
           HOURPAY <= 100 &
           HOURPAY >= 0 &
-          INECAC05 == 1,
+          INECAC05 == "Employee",
         list(n = .N,
           median_weekly_pay = matrixStats::weightedMedian(GRSSWK,
             w = WEIGHT_INCOME,
@@ -96,7 +96,7 @@ lfs_summarise_salary_df <- function(lfs, ...) {
       .data$WEIGHT_INCOME > 0,
       .data$HOURPAY <= 100,
       .data$HOURPAY >= 0,
-      .data$INECAC05 == 1
+      .data$INECAC05 == "Employee"
     ) %>%
     dplyr::group_by(...) %>%
     dplyr::summarize(

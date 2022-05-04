@@ -106,7 +106,7 @@ lfs_summarise_union_df <- function(lfs, ...) {
 
   lfs %>%
     dplyr::filter(
-      .data$INECAC05 == 1,
+      .data$INECAC05 == "Employee",
       .data$WEIGHT > 0
       ) %>%
     # dplyr::filter(.data$WEIGHT_INCOME > 0,
@@ -134,7 +134,7 @@ lfs_summarise_union_dt <- function(lfs, ...) {
       vars <- eval(substitute(alist(...)))
       vars <- sapply(vars, deparse)
 
-   lfs[INECAC05 == 1 &
+   lfs[INECAC05 == "Employee" &
        WEIGHT > 0,
      list(
       n = .N,
