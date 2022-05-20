@@ -40,6 +40,55 @@ annotate_hiquald <- function(data) {
 }
 
 
+annotate_degree <- function(lfs) {
+
+  # Find correct coding file
+  read_degree_coding <- function(degree) {
+    readr::read_csv(
+      paste0(system.file("coding_frames", package = "tidylfs"), "/degree_", degree, ".csv"),
+      col_types = readr::cols(
+        DEGREE_SUBJECT2 = readr::col_character(),
+        DEGREE_DESCRIPTION = readr::col_character()
+      )
+    ) %>%
+      dplyr::mutate(DEGREE_TYPE = degree)
+  }
+  sngdeg <- read_degree_coding("SNGDEG")
+  fdsngdeg <- read_degree_coding("FDSNGDEG")
+
+  degree_coding <- dplyr::bind_rows(sngdeg, fdsngdeg)
+    # dplyr::rename(OCCUPATION = .data$SOC)
+
+  first_two_digits <- stringr::regex("(\\d{1,2}\\.\\d{1,2}|\\d{1,2})")
+  first_one_digit <- stringr::regex("(\\d{1,2})")
+
+lfs1 <- lfs %>%
+    dplyr::mutate(DEGREE_TYPE = dplyr::case_when(
+      lubridate::yq(.data$QUARTER) >= lubridate::yq("2012 Q1") ~ "FDSNGDEG",
+      lubridate::yq(.data$QUARTER) < lubridate::yq("2012 Q1") ~ "SNGDEG",
+    )) %>%
+    dplyr::mutate(DEGREE_SHORT2 = stringr::str_extract(.data$DEGREE_SUBJECT, first_two_digits)) %>%
+    dplyr::mutate(DEGREE_SHORT1 = stringr::str_extract(.data$DEGREE_SUBJECT, first_one_digit)) %>%
+    dplyr::mutate(DEGREE_DESCRIPTION = dplyr::coalesce(.data$DEGREE_SHORT1, .data$CMBDEGREE))
+
+  #   dplyr::left_join(degree_coding, by = c("DEGREE_SUBJECT2", "DEGREE_SUBJECT2"))
+
+
+  # QA
+  # dplyr::count(lfs1, QUARTER, PARENTAL_OCCUPATION_DESCRIPTION, PARENTAL_OCCUPATION)
+
+  lfs1 %>%
+    dplyr::select(-.data$SOC_TYPE)
+
+
+lfs1[,.N,HIQUALD]
+
+lfs1[HIQUALD == "Degree or equivalent",.N,DEGREE_DESCRIPTION
+][,prop := N/sum(N)]
+
+}
+
+
 annotate_occupation <- function(lfs) {
 
   # Find correct coding file
