@@ -11,6 +11,14 @@ check()
 
 lfs <- lfs_load()
 
+
+lfs[,.N, .(CMBDEG1, CMBDEG_MAIN)] |> sie()
+
+dplyr::count(s, CMBDEG01, CMBDEG_MAIN) |> 
+tidyr::pivot_wider(CMBDEG01,
+                   names_from = CMBMAIN,
+values_from = n)  |> sie()
+
 lfs$OCCUPATION_DESCRIPTION
 
 table(lfs$PARENTAL_OCCUPATION)

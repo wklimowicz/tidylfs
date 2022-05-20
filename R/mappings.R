@@ -63,9 +63,15 @@ lfs_default_mappings <- function(cols) {
 
   degree_subject <- lfs_pick_column(c("SUBJCT1", "FDSNGDEG", "SNGDEG"), cols)
 
-  combined_degree_subject <- lfs_pick_column(c(
-    "FDCMBMA", "UNCOMBMA",
-    "CMBDEG01"
+  combined_degree_subject1 <- lfs_pick_column(c(
+    "CMBDEG01",
+    "COMDEG"
+  ), cols)
+
+  combined_degree_subject_main <- lfs_pick_column(c(
+    "CMBMAIN",
+    "FDCMBMA",
+    "UNCOMBMA"
   ), cols)
 
   teaching_qualification <- lfs_pick_column(c("TEACH41", "TEACH1"), cols)
@@ -128,7 +134,8 @@ lfs_default_mappings <- function(cols) {
     "TUCOV", "TUCOV", "factor",
     # Variable changes over time ----------
     degree_subject, "DEGREE_SUBJECT", "character",
-    combined_degree_subject, "CMBDEGREE", "character",
+    combined_degree_subject1, "CMBDEG1", "character",
+    combined_degree_subject_main, "CMBDEG_MAIN", "character",
     "ILODEFR", "ILODEFR", "factor",
     "OYCIRC", "OYCIRC", "factor",
     occupation, "OCCUPATION", "numeric",
