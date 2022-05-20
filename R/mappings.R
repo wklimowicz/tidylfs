@@ -61,7 +61,7 @@ lfs_default_mappings <- function(cols) {
 
   fdsico <- lfs_pick_column(c("FDSICO", "FDSINCOM", "SINCOM"), cols)
 
-  degree_subject <- lfs_pick_column(c("FDSNGDEG", "SNGDEG"), cols)
+  degree_subject <- lfs_pick_column(c("SUBJCT1", "FDSNGDEG", "SNGDEG"), cols)
 
   combined_degree_subject <- lfs_pick_column(c(
     "FDCMBMA", "UNCOMBMA",

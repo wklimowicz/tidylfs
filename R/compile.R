@@ -222,7 +222,8 @@ lfs_compile <- function(lfs_directory,
 
   lfs_data_frame <- dplyr::bind_rows(lfs_data_frame, .id = "QUARTER") %>%
     dplyr::mutate(YEAR = as.integer(substr(.data$QUARTER, 1, 4))) %>%
-    dplyr::mutate(CASENO = trimws(.data$CASENO)) %>% # Trim whitespace in ID
+    dplyr::mutate(CASENO = trimws(.data$CASENO),
+                  DEGREE_SUBJECT = trimws(.data$DEGREE_SUBJECT)) %>% # Trim whitespace in ID and subject
     dplyr::relocate(.data$YEAR, .data$QUARTER, .data$CASENO) %>%
     annotate_hiquald() %>%
     annotate_occupation() %>%
