@@ -1,0 +1,162 @@
+﻿DEGREE_SUBJECT2,DEGREE_DESCRIPTION
+1,Medicine and Dentistry
+1.1,Pre-clinical Medicine
+1.2,Pre-clinical Dentistry
+1.3,Clinical Medicine
+1.4,Clinical Dentistry
+1.9,Others in Medicine and Dentistry
+2,Subjects allied to Medicine
+2.1,"Anatomy, Physiology and Pathology"
+2.2,"Pharmacology, Toxicology and Pharmacy"
+2.3,Complementary Medicine
+2.4,Nutrition
+2.5,Ophthalmics
+2.6,Aural and Oral Sciences
+2.7,Nursing
+2.8,Medical Technology
+2.9,Others in Subjects allied to Medicine
+3,Biological Sciences
+3.1,Biology
+3.2,Botany
+3.3,Zoology
+3.4,Genetics
+3.5,Microbiology
+3.6,Sports Science
+3.7,"Molecular Biology, Biophysics and Biochemistry"
+3.8,Psychology
+3.9,Others in Biological Sciences
+4,"Veterinary Sciences, Agriculture and related subjects"
+4.1,Pre-clinical Veterinary Medicine
+4.2,Clinical Veterinary Medicine and Dentistry
+4.3,Animal Science
+4.4,Agriculture
+4.5,Forestry
+4.6,Food and Beverage studies
+4.7,Agricultural Sciences
+4.9,"Others in Veterinary Sciences, Agriculture and related subjects"
+5,Physical Sciences
+5.1,Chemistry
+5.2,Materials Science
+5.3,Physics
+5.4,Forensic and Archaeological Science
+5.5,Astronomy
+5.6,Geology
+5.7,Ocean Sciences
+5.8,Physical and Terrestrial Geographical and Environmental Sciences
+5.9,Others in Physical Sciences
+6,Mathematical and Computer Sciences
+6.1,Mathematics
+6.2,Operational Research
+6.3,Statistics
+6.4,Computer Science
+6.5,Information Systems
+6.6,Software Engineering
+6.7,Artificial Intelligence
+6.9,Others in Mathematical and Computing Sciences
+7,Engineering
+7.1,General Engineering
+7.2,Civil Engineering
+7.3,Mechanical Engineering
+7.4,Aerospace Engineering
+7.5,Naval Architecture
+7.6,Electronic and Electrical Engineering
+7.7,Production and Manufacturing Engineering
+7.8,"Chemical, Process and Energy Engineering"
+7.9,Others in Engineering
+8,Technologies
+8.1,Minerals Technology
+8.2,Metallurgy
+8.3,Ceramics and Glasses
+8.4,Polymers and Textiles
+8.5,Materials Technology not otherwise specified
+8.6,Maritime Technology
+8.7,Industrial Biotechnology
+8.9,Others in Technology
+9,"Architecture, Building and Planning"
+9.1,Architecture
+9.2,Building
+9.3,Landscape Design
+9.4,"Planning (Urban, Rural and Regional)"
+9.9,"Others in Architecture, Building and Planning"
+10,Social studies
+10.1,Economics
+10.2,Politics
+10.3,Sociology
+10.4,Social Policy
+10.5,Social Work
+10.6,Anthropology
+10.7,Human and Social Geography
+10.9,Others in Social studies
+11,Law
+11.1,Law by area
+11.2,Law by Topic
+11.9,Other in Law
+12,Business and Administrative studies
+12.1,Business studies
+12.2,Management studies
+12.3,Finance
+12.4,Accounting
+12.5,Marketing
+12.6,Human Resource Management
+12.7,Office skills
+12.8,"Tourism, Transport and Travel"
+12.9,Others in Business and Administrative studies
+13,Mass Communications and Documentation
+13.1,Information Services
+13.2,Publicity studies
+13.3,Media studies
+13.4,Publishing
+13.5,Journalism
+13.9,Others in Mass Communications and Documentation
+14,"Linguistics, Classics and related subjects"
+14.1,Linguistics
+14.2,Comparative Literary studies
+14.3,English studies
+14.4,Ancient Language studies
+14.5,Celtic studies
+14.6,Latin studies
+14.7,Classical Greek studies
+14.8,Classical studies
+14.9,"Others in Linguistics, Classics and related subjects"
+15,"European Languages, Literature and related subjects"
+15.1,French studies
+15.2,German studies
+15.3,Italian studies
+15.4,Spanish studies
+15.5,Portuguese studies
+15.6,Scandinavian studies
+15.7,Russian and East European studies
+15.9,"Others in European Languages, Literature and related subjects"
+16,"Eastern, Asiatic, African, American and Australasian Languages, Literature"
+16.1,Chinese studies
+16.2,Japanese studies
+16.3,South Asian studies
+16.4,Other Asian studies
+16.5,African studies
+16.6,Modern Middle Eastern studies
+16.7,American studies
+16.8,Australasian studies
+16.9,"Others in Eastern, Asiatic, African, American and Australasian Languages,"
+17,Historical and Philosophical studies
+17.1,History by period
+17.2,History by area
+17.3,History by topic
+17.4,Archaeology
+17.5,Philosophy
+17.6,Theology and Religious studies
+17.9,Others in Historical and Philosophical studies
+18,Creative Arts and Design
+18.1,Fine Art
+18.2,Design studies
+18.3,Music
+18.4,Drama
+18.5,Dance
+18.6,Cinematics and Photography
+18.7,Crafts
+18.8,Imaginative Writing
+18.9,Others in Creative Arts and Design
+19,Education
+19.1,Training Teachers
+19.2,Research and Study Skills in Education
+19.3,Academic studies in Education
+19.9,Others in Education
