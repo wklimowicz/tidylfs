@@ -227,7 +227,8 @@ lfs_compile <- function(lfs_directory,
     dplyr::relocate(.data$YEAR, .data$QUARTER, .data$CASENO) %>%
     annotate_hiquald() %>%
     annotate_occupation() %>%
-    annotate_industry()
+    annotate_industry() %>%
+    annotate_degree()
 
 
 

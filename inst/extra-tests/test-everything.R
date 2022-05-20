@@ -12,6 +12,19 @@ check()
 lfs <- lfs_load()
 
 
+lfs[HIQUALD == "Degree or equivalent",.N, by = .(YEAR, DEGREE_DESCRIPTION)] |>
+ggplot() +
+    geom_col(aes(x = YEAR, y = N, fill = DEGREE_DESCRIPTION))
+
+
+lfs[YEAR > 2012 & HIQUALD == "Degree or equivalent",
+    mean(GRSSWK, na.rm = T),
+    by = .(DEGREE_DESCRIPTION)] 
+
+lfs[HIQUALD == "Degree or equivalent",.N,DEGREE_DESCRIPTION
+][,prop := N/sum(N) * 100][DEGREE_DESCRIPTION |> is.na()]
+
+
 lfs[,.N, .(CMBDEG1, CMBDEG_MAIN)] |> sie()
 
 dplyr::count(s, CMBDEG01, CMBDEG_MAIN) |> 

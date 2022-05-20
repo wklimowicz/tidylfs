@@ -62,14 +62,32 @@ annotate_degree <- function(lfs) {
   first_two_digits <- stringr::regex("(\\d{1,2}\\.\\d{1,2}|\\d{1,2})")
   first_one_digit <- stringr::regex("(\\d{1,2})")
 
-lfs1 <- lfs %>%
+degree_coding1 <- degree_coding
+    # dplyr::filter(stringr::str_detect(DEGREE_SUBJECT2, first_one_digit))
+
+
+degree_coding2 <- degree_coding %>%
+    dplyr::rename(DEGREE_DESCRIPTION_FULL = DEGREE_DESCRIPTION)
+
+
+# TODO: Investigate NA's in FDSNGDEG
+
+lfs <- lfs %>%
     dplyr::mutate(DEGREE_TYPE = dplyr::case_when(
       lubridate::yq(.data$QUARTER) >= lubridate::yq("2012 Q1") ~ "FDSNGDEG",
       lubridate::yq(.data$QUARTER) < lubridate::yq("2012 Q1") ~ "SNGDEG",
     )) %>%
     dplyr::mutate(DEGREE_SHORT2 = stringr::str_extract(.data$DEGREE_SUBJECT, first_two_digits)) %>%
     dplyr::mutate(DEGREE_SHORT1 = stringr::str_extract(.data$DEGREE_SUBJECT, first_one_digit)) %>%
-    dplyr::mutate(DEGREE_DESCRIPTION = dplyr::coalesce(.data$DEGREE_SHORT1, .data$CMBDEGREE))
+    dplyr::mutate(CMBDEGREE = dplyr::coalesce(.data$CMBDEG_MAIN, .data$CMBDEG1)) %>%
+    dplyr::mutate(DEGREE1 = dplyr::coalesce(.data$DEGREE_SHORT1, .data$CMBDEGREE)) %>%
+    dplyr::left_join(degree_coding1, by = c("DEGREE_TYPE" = "DEGREE_TYPE",
+                                           "DEGREE1" = "DEGREE_SUBJECT2")) %>%
+    dplyr::left_join(degree_coding2, by = c("DEGREE_TYPE" = "DEGREE_TYPE",
+                                           "DEGREE_SHORT2" = "DEGREE_SUBJECT2")) %>%
+    dplyr::select(-DEGREE_TYPE, -DEGREE_SHORT2, -DEGREE_SHORT1)
+
+    return(lfs)
 
   #   dplyr::left_join(degree_coding, by = c("DEGREE_SUBJECT2", "DEGREE_SUBJECT2"))
 
@@ -77,14 +95,22 @@ lfs1 <- lfs %>%
   # QA
   # dplyr::count(lfs1, QUARTER, PARENTAL_OCCUPATION_DESCRIPTION, PARENTAL_OCCUPATION)
 
-  lfs1 %>%
-    dplyr::select(-.data$SOC_TYPE)
+  # lfs1 %>%
+  #   dplyr::select(-.data$SOC_TYPE)
 
 
-lfs1[,.N,HIQUALD]
+# lfs1[,.N,HIQUALD]
 
-lfs1[HIQUALD == "Degree or equivalent",.N,DEGREE_DESCRIPTION
-][,prop := N/sum(N)]
+# lfs[HIQUALD == "Degree or equivalent",.N,DEGREE_DESCRIPTION_FULL
+# ][,prop := N/sum(N) * 100][DEGREE_DESCRIPTION_FULL |> is.na()]
+
+
+# lfs[HIQUALD == "Degree or equivalent",.N,DEGREE_DESCRIPTION
+# ][,prop := N/sum(N) * 100][DEGREE_DESCRIPTION|> is.na()]
+
+# lfs1[HIQUALD == "Degree or equivalent" & is.na(DEGREE_DESCRIPTION), CASENO]
+
+# lfs[CASENO == 6007330510102]
 
 }
 
