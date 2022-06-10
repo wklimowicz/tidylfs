@@ -20,6 +20,7 @@ Imports:
     haven,
     jsonlite,
     lifecycle,
+    lubridate,
     magrittr,
     matrixStats,
     openssl,
