@@ -121,6 +121,7 @@ lfs_tidy_file <- function(file,
 #' output in the package directory, so it's always accessible with `lfs_load`.
 #' @param save_variables_report Save a csv with the list of picked variables?
 #' @param fst_compress Compression level for fst
+#' @param aps Annual Population Survey flag, files called eg. "APS 2012.sav"
 #'
 #' @return Nothing - saves the fst file only.
 #'
@@ -129,7 +130,8 @@ lfs_compile <- function(lfs_directory,
                         extra_mappings = NULL,
                         save_location = "package",
                         save_variables_report = TRUE,
-                        fst_compress = 50) {
+                        fst_compress = 50,
+                        aps = FALSE) {
 
   # Get list of files ----------------------------------------
 
@@ -145,7 +147,7 @@ lfs_compile <- function(lfs_directory,
 
   correct_file_index <- stringr::str_detect(
     files_in_directory,
-    "^\\d{4}( |_)Q\\d\\.(sav|csv|Rds)$"
+    "^\\d{4}( |_)Q\\d\\.(sav|csv|Rds)$|APS \\d{4}.(sav|csv|Rds)$"
   )
 
   # Take only files which match "4 digits Q digit" pattern
@@ -189,7 +191,13 @@ lfs_compile <- function(lfs_directory,
     variables_report <- purrr::map(lfs_data, 2) %>%
       purrr::map("lfs_name")
 
+    if (aps == TRUE) {
+    names(variables_report) <- substr(lfs_files, 1, 8)
+    } else {
     names(variables_report) <- substr(lfs_files, 1, 7)
+    }
+
+print("foo6")
     variables_report <- dplyr::bind_rows(variables_report, .id = "QUARTER")
     variables_report <- base::t(variables_report)
     variables_report <- as.data.frame(variables_report)
@@ -198,6 +206,7 @@ lfs_compile <- function(lfs_directory,
       dplyr::mutate(QUARTER = row.names(variables_report)) %>%
       dplyr::relocate(.data$QUARTER)
 
+print("foo4")
 
     colnames(variables_report) <- c("QUARTER", final_mapping)
 
@@ -221,9 +230,33 @@ lfs_compile <- function(lfs_directory,
   lfs_data_frame <- stats::setNames(lfs_data_frame, lfs_quarter_names)
 
 
-
   cli::cli_alert_info("Merging descriptions into the main dataset")
 
+
+
+  if (aps == 1) {
+
+  lfs_data_frame <- data.table::rbindlist(lfs_data_frame, idcol = "YEAR", fill = TRUE)
+
+  lfs_data_frame[, `:=`(YEAR = as.integer(substr(YEAR, 5, 8)),
+                        CASENO = trimws(CASENO))]
+
+  data.table::setcolorder(lfs_data_frame, c("YEAR", "CASENO"))
+
+  lfs_data_frame <- lfs_data_frame |>
+    annotate_hiquald() |>
+    annotate_occupation() |>
+    # annotate_industry() |>
+    annotate_economic_activity()
+
+  lfs_data_frame <- dplyr::bind_rows(lfs_data_frame, .id = "YEAR") %>%
+    dplyr::mutate(YEAR = as.integer(substr(.data$YEAR, 5, 8))) %>%
+    dplyr::mutate(CASENO = trimws(.data$CASENO)) %>% # Trim whitespace in ID
+    dplyr::relocate(.data$YEAR, .data$CASENO) %>%
+    annotate_hiquald() %>%
+    annotate_occupation()
+    # annotate_industry()
+  } else {
   lfs_data_frame <- data.table::rbindlist(lfs_data_frame, idcol = "QUARTER", fill = TRUE)
 
 
@@ -231,21 +264,27 @@ lfs_compile <- function(lfs_directory,
                         CASENO = trimws(CASENO))]
 
   data.table::setcolorder(lfs_data_frame, c("YEAR", "QUARTER", "CASENO"))
-
-  # Assign annotations to columns
   lfs_data_frame <- lfs_data_frame |>
     annotate_hiquald() |>
     annotate_occupation() |>
     annotate_industry() |>
     annotate_economic_activity()
+  }
+  # Assign annotations to columns
 
   cli::cli_alert_info("Saving as fst")
+
+  if (aps == TRUE) {
+  save_name <- "aps_data.fst"
+  } else {
+  save_name <- "lfs_data.fst"
+  }
 
   # Choose save location
   if (save_location == "package") {
     save_file_path <- paste0(
       system.file(package = "tidylfs"),
-      "/lfs_data.fst"
+      "/", save_name
     )
   } else {
     save_file_path <- save_location
