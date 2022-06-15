@@ -126,6 +126,11 @@ lfs_default_mappings <- function(cols) {
     "UNION", "UNION", "factor",
     "TUPRES", "TUPRES", "factor",
     "TUCOV", "TUCOV", "factor",
+    # Life Satisfaction ---------------
+    "SATIS", "SATIS", "numeric",
+    "WORTH", "WORTH", "numeric",
+    "HAPPY", "HAPPY", "numeric",
+    "ANXIOUS", "ANXIOUS", "numeric",
     # Variable changes over time ----------
     degree_subject, "DEGREE_SUBJECT", "character",
     combined_degree_subject, "CMBDEGREE", "character",
