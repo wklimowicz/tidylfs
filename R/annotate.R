@@ -164,7 +164,7 @@ annotate_economic_activity <- function(lfs) {
       col_types = readr::cols(
         INECAC = readr::col_integer(),
         INECAC_DESCRIPTION = readr::col_character()
-      )
+      ), progress = FALSE
     ) %>%
       dplyr::mutate(INECAC_VAR = inecac)
   }
