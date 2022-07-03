@@ -185,6 +185,7 @@ lfs[economic_activity_coding,
     on = c("INECAC_VAR", "INECAC05"),
     INECAC_DESCRIPTION := i.INECAC_DESCRIPTION
     ][, `:=`(INECAC_VAR = NULL, INECAC05 = NULL)
-      ][, data.table::setnames(.SD, "INECAC_DESCRIPTION", "INECAC05")]
+      ][, data.table::setnames(.SD, "INECAC_DESCRIPTION", "INECAC05")
+    ][, INECAC05 := forcats::as_factor(INECAC05)]
 
 }
