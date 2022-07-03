@@ -225,7 +225,6 @@ lfs_compile <- function(lfs_directory,
   lfs_quarter_names <- tools::file_path_sans_ext(lfs_files)
 
   lfs_data_frame <- stats::setNames(lfs_data_frame, lfs_quarter_names)
-print("foo2")
 
   cli::cli_alert_info("Merging descriptions into the main dataset")
 
