@@ -95,6 +95,8 @@ lfs_default_mappings <- function(cols) {
 
   health <- lfs_pick_column(c("HEALTH20", "HEALTH"), cols)
 
+  lnglst <- lfs_pick_column(c("LNGLST", "LNGLIM"), cols)
+
 
   variables <- tibble::tribble(
     ~lfs_name, ~new_name, ~type,
@@ -148,6 +150,7 @@ lfs_default_mappings <- function(cols) {
     weight, "WEIGHT", "numeric",
     ilo_status, "INECAC05", "numeric",
     health, "HEALTH", "factor",
+    lnglst, "LNGLST", "factor",
     fdsico, "FDSICO", "factor",
     industry_major, "INDUSTRY_MAJOR", "factor",
     industry, "INDUSTRY", "character",
