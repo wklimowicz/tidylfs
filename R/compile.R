@@ -281,5 +281,5 @@ lfs_compile <- function(lfs_directory,
   fst::write_fst(lfs_data_frame, save_file_path, compress = fst_compress)
 
   # Print complete message
-  cli_compiling_complete(file_format = file_format)
+  cli_compiling_complete(file_format = file_format, aps = aps)
 }
