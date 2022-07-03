@@ -28,6 +28,7 @@ lfs_tidy_file <- function(file,
 
   df2 <- read_correct_format(file_format, total_files[[file]])
 
+  # Some filenames have lower case columns - capitalise for consistency
   colnames(df2) <- toupper(colnames(df2))
 
   cols <- colnames(df2)
@@ -101,7 +102,6 @@ lfs_tidy_file <- function(file,
       dplyr::any_of(character_variables),
       as.character
     ))
-
 
   return(list(df3, complete_mappings))
 }
@@ -220,16 +220,28 @@ lfs_compile <- function(lfs_directory,
 
   lfs_data_frame <- stats::setNames(lfs_data_frame, lfs_quarter_names)
 
-  lfs_data_frame <- dplyr::bind_rows(lfs_data_frame, .id = "QUARTER") %>%
-    dplyr::mutate(YEAR = as.integer(substr(.data$QUARTER, 1, 4))) %>%
-    dplyr::mutate(CASENO = trimws(.data$CASENO)) %>% # Trim whitespace in ID
-    dplyr::relocate(.data$YEAR, .data$QUARTER, .data$CASENO) %>%
-    annotate_hiquald() %>%
-    annotate_occupation() %>%
-    annotate_industry()
 
 
+  cli::cli_alert_info("Merging descriptions into the main dataset")
 
+  lfs_data_frame <- data.table::rbindlist(lfs_data_frame, idcol = "QUARTER", fill = TRUE)
+
+
+  lfs_data_frame[, `:=`(YEAR = as.integer(substr(QUARTER, 1, 4)),
+                        CASENO = trimws(CASENO))]
+
+  data.table::setcolorder(lfs_data_frame, c("YEAR", "QUARTER", "CASENO"))
+
+  # Assign annotations to columns
+  lfs_data_frame <- lfs_data_frame |>
+    annotate_hiquald() |>
+    annotate_occupation() |>
+    annotate_industry() |>
+    annotate_economic_activity()
+
+  cli::cli_alert_info("Saving as fst")
+
+  # Choose save location
   if (save_location == "package") {
     save_file_path <- paste0(
       system.file(package = "tidylfs"),

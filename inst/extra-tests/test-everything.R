@@ -2,14 +2,39 @@ setwd(here::here())
 load_all()
 library(tidyverse)
 library(data.table)
+library(tictoc)
 
-lfs_convert("../lfs_raw_data/", "../lfs_fst_data/") #, filter_files = "2017 Q3.sav")
+lfs_convert("../lfs_raw_data/", "../lfs_rds_data/", filter_files = "2022 Q1.sav")
 
+tic()
 lfs_compile("../lfs_rds_data/")
-source("data-raw/create_test_data.R")
+toc()
+
 check()
 
+source("data-raw/create_test_data.R")
+
+tic()
+lfs_compile("../lfs_rds_data_test/")
+toc()
+
 lfs <- lfs_load()
+
+lfs[,.N,.(YEAR,HEALTH)] |>
+dcast(YEAR ~ HEALTH)
+
+lfs[,.N,DEGREE71]
+lfs[,.N,INECAC05]
+lfs[,.N,LAST_OCCUPATION_DESCRIPTION]
+lfs[,.N,OCCUPATION_DESCRIPTION]
+lfs[,.N,INDUSTRY_DESCRIPTION]
+
+lfs[,.N,.(YEAR,DEGREE71)] |>
+dcast(YEAR ~ DEGREE71)
+
+lfs[,.N,CMBDEGREE]
+lfs[,.N,QUARTER]
+lfs[,.N,INDUSTRY]
 
 lfs$OCCUPATION_DESCRIPTION
 
