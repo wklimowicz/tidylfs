@@ -4,7 +4,7 @@
 .Ruserdata
 .httr-oauth
 .DS_Store
-variables_report.csv
+*variables_report.csv
 *.Rds
 *.fst
 *.xls
