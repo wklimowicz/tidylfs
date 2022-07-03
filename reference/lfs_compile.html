@@ -57,35 +57,46 @@
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">lfs_compile</span><span class="op">(</span>
-  <span class="va">lfs_directory</span>,
-  extra_mappings <span class="op">=</span> <span class="cn">NULL</span>,
-  save_location <span class="op">=</span> <span class="st">"package"</span>,
-  save_variables_report <span class="op">=</span> <span class="cn">TRUE</span>,
-  fst_compress <span class="op">=</span> <span class="fl">50</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">lfs_compile</span><span class="op">(</span></span>
+<span>  <span class="va">lfs_directory</span>,</span>
+<span>  extra_mappings <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  save_location <span class="op">=</span> <span class="st">"package"</span>,</span>
+<span>  save_variables_report <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  fst_compress <span class="op">=</span> <span class="fl">50</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
     <dl><dt>lfs_directory</dt>
 <dd><p>Path to directory with LFS files</p></dd>
+
+
 <dt>extra_mappings</dt>
 <dd><p>Either NULL (use default) or a file
 which has the custom mapping function.
 See
 <code><a href="../articles/Adding_Variables.html">vignette("Adding_Variables", package = "tidylfs")</a></code></p></dd>
+
+
 <dt>save_location</dt>
 <dd><p>File path for <code>fst</code> file to save. By default, saves the
 output in the package directory, so it's always accessible with <code>lfs_load</code>.</p></dd>
+
+
 <dt>save_variables_report</dt>
 <dd><p>Save a csv with the list of picked variables?</p></dd>
+
+
 <dt>fst_compress</dt>
 <dd><p>Compression level for fst</p></dd>
+
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>Nothing - saves the fst file only.</p>
+    
+
+<p>Nothing - saves the fst file only.</p>
     </div>
 
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
@@ -97,7 +108,7 @@ output in the package directory, so it's always accessible with <code>lfs_load</
 </div>
 
 <div class="pkgdown-footer-right">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.</p>
 </div>
 
     </footer></div>
