@@ -23,6 +23,7 @@ reference:
   - starts_with("lfs_convert")
   - starts_with("lfs_compile")
   - lfs_load
+  - aps_load
 - subtitle: Add custom columns
   desc: Brings in extra columns from lfs
   contents:
