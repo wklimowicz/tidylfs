@@ -24,7 +24,8 @@ lfs_default_mappings <- function(cols) {
 
   # Choose variables in order of priority when found
 
-  # Core
+  # Core - INECACR is older, but replicates ONS numbers more precisely in 2000's
+  # - see variales_report
   ilo_status <- lfs_pick_column(c("INECACR", "INECAC05"), cols)
 
   weight_income <- lfs_pick_column(
@@ -92,6 +93,8 @@ lfs_default_mappings <- function(cols) {
   # "INDS92M" %in% cols ~ "INDS92M",INDS92M
   ethnicity <- lfs_pick_column(c("ETHUKEUL", "ETH01"), cols)
 
+  health <- lfs_pick_column(c("HEALTH20", "HEALTH"), cols)
+
 
   variables <- tibble::tribble(
     ~lfs_name, ~new_name, ~type,
@@ -113,22 +116,22 @@ lfs_default_mappings <- function(cols) {
     "PUBLICR", "PUBLIC", "factor",
     # Hours ----------------------
     "BUSHR", "BUSHR", "numeric",
-    "TTUSHR", "TTUSHR", "numeric",
-    "BACTHR", "BACTHR", "numeric",
-    "TTACHR", "TTACHR", "numeric",
-    "TOTUS1", "TOTUS1", "numeric",
-    "TOTAC1", "TOTAC1", "numeric",
+    # "TTUSHR", "TTUSHR", "numeric",
+    # "BACTHR", "BACTHR", "numeric",
+    # "TTACHR", "TTACHR", "numeric",
+    # "TOTUS1", "TOTUS1", "numeric",
+    # "TOTAC1", "TOTAC1", "numeric",
     "ACTHR", "ACTHR", "numeric",
-    "TOTAC2", "TOTAC2", "numeric",
-    "SUMHRS", "SUMHRS", "numeric",
-    "TOTHRS", "TOTHRS", "numeric",
+    # "TOTAC2", "TOTAC2", "numeric",
+    # "SUMHRS", "SUMHRS", "numeric",
+    # "TOTHRS", "TOTHRS", "numeric",
     # Union ----------------------------------------
     "UNION", "UNION", "factor",
     "TUPRES", "TUPRES", "factor",
     "TUCOV", "TUCOV", "factor",
     # Variable changes over time ----------
-    degree_subject, "DEGREE_SUBJECT", "character",
-    combined_degree_subject, "CMBDEGREE", "character",
+    degree_subject, "DEGREE_SUBJECT", "factor",
+    combined_degree_subject, "CMBDEGREE", "factor",
     "ILODEFR", "ILODEFR", "factor",
     "OYCIRC", "OYCIRC", "factor",
     occupation, "OCCUPATION", "numeric",
@@ -138,7 +141,8 @@ lfs_default_mappings <- function(cols) {
     parental_occupation_major, "PARENTAL_OCCUPATION_MAJOR", "numeric",
     weight_income, "WEIGHT_INCOME", "numeric",
     weight, "WEIGHT", "numeric",
-    ilo_status, "INECAC05", "factor",
+    ilo_status, "INECAC05", "numeric",
+    health, "HEALTH", "factor",
     fdsico, "FDSICO", "factor",
     industry_major, "INDUSTRY_MAJOR", "factor",
     industry, "INDUSTRY", "character",

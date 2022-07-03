@@ -11,7 +11,7 @@ test_that("UNEM01 matches raw data", {
   # All people ----------------------------------------
 
   unem01 <- unem01_raw %>%
-    dplyr::filter(YEAR > 1995) %>%
+    dplyr::filter(YEAR > 1994) %>%
     lfs_summarise_unemployment(QUARTER) %>%
     dplyr::select(QUARTER, unemployed_percentage) %>%
     dplyr::mutate(unemployed_percentage = unemployed_percentage * 100) %>%
