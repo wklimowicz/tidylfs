@@ -9,7 +9,8 @@ lfs_compile(
   extra_mappings = NULL,
   save_location = "package",
   save_variables_report = TRUE,
-  fst_compress = 50
+  fst_compress = 50,
+  aps = FALSE
 )
 }
 \arguments{
@@ -26,6 +27,8 @@ output in the package directory, so it's always accessible with \code{lfs_load}.
 \item{save_variables_report}{Save a csv with the list of picked variables?}
 
 \item{fst_compress}{Compression level for fst}
+
+\item{aps}{Annual Population Survey flag, files called eg. "APS 2012.sav"}
 }
 \value{
 Nothing - saves the fst file only.

@@ -118,7 +118,7 @@ lfs_default_mappings <- function(cols) {
     "BUSHR", "BUSHR", "numeric",
     # "TTUSHR", "TTUSHR", "numeric",
     # "BACTHR", "BACTHR", "numeric",
-    # "TTACHR", "TTACHR", "numeric",
+    "TTACHR", "TTACHR", "numeric",
     # "TOTUS1", "TOTUS1", "numeric",
     # "TOTAC1", "TOTAC1", "numeric",
     "ACTHR", "ACTHR", "numeric",
@@ -129,7 +129,7 @@ lfs_default_mappings <- function(cols) {
     "UNION", "UNION", "factor",
     "TUPRES", "TUPRES", "factor",
     "TUCOV", "TUCOV", "factor",
-    # Life Satisfaction ---------------
+    # Life Satisfaction - only in APS ---------------
     "SATIS", "SATIS", "numeric",
     "WORTH", "WORTH", "numeric",
     "HAPPY", "HAPPY", "numeric",

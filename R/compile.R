@@ -197,7 +197,6 @@ lfs_compile <- function(lfs_directory,
     names(variables_report) <- substr(lfs_files, 1, 7)
     }
 
-print("foo6")
     variables_report <- dplyr::bind_rows(variables_report, .id = "QUARTER")
     variables_report <- base::t(variables_report)
     variables_report <- as.data.frame(variables_report)
@@ -205,8 +204,6 @@ print("foo6")
     variables_report <- variables_report %>%
       dplyr::mutate(QUARTER = row.names(variables_report)) %>%
       dplyr::relocate(.data$QUARTER)
-
-print("foo4")
 
     colnames(variables_report) <- c("QUARTER", final_mapping)
 
@@ -233,8 +230,8 @@ print("foo4")
   cli::cli_alert_info("Merging descriptions into the main dataset")
 
 
-
-  if (aps == 1) {
+  # Assign annotations to columns
+  if (aps == TRUE) {
 
   lfs_data_frame <- data.table::rbindlist(lfs_data_frame, idcol = "YEAR", fill = TRUE)
 
@@ -249,16 +246,9 @@ print("foo4")
     # annotate_industry() |>
     annotate_economic_activity()
 
-  lfs_data_frame <- dplyr::bind_rows(lfs_data_frame, .id = "YEAR") %>%
-    dplyr::mutate(YEAR = as.integer(substr(.data$YEAR, 5, 8))) %>%
-    dplyr::mutate(CASENO = trimws(.data$CASENO)) %>% # Trim whitespace in ID
-    dplyr::relocate(.data$YEAR, .data$CASENO) %>%
-    annotate_hiquald() %>%
-    annotate_occupation()
-    # annotate_industry()
   } else {
-  lfs_data_frame <- data.table::rbindlist(lfs_data_frame, idcol = "QUARTER", fill = TRUE)
 
+  lfs_data_frame <- data.table::rbindlist(lfs_data_frame, idcol = "QUARTER", fill = TRUE)
 
   lfs_data_frame[, `:=`(YEAR = as.integer(substr(QUARTER, 1, 4)),
                         CASENO = trimws(CASENO))]
@@ -270,7 +260,6 @@ print("foo4")
     annotate_industry() |>
     annotate_economic_activity()
   }
-  # Assign annotations to columns
 
   cli::cli_alert_info("Saving as fst")
 
