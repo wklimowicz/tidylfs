@@ -114,6 +114,11 @@ lfs_default_mappings <- function(cols) {
     "EDAGE", "EDAGE", "numeric",
     "DISEA", "DISABILITY", "factor",
     "GOVTOF", "GOVTOF", "factor",
+    "LAUA", "LAUA", "unlabelled_factor",
+    "PCON9D", "PCON9D", "unlabelled_factor",
+    "CTY", "CTY", "unlabelled_factor",
+    "TTWA", "TTWA", "unlabelled_factor",
+    "WARD", "WARD", "unlabelled_factor",
     "AGES", "AGES", "factor",
     "PUBLICR", "PUBLIC", "factor",
     # Hours ----------------------
