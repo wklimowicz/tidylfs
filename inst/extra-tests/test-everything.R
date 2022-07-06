@@ -19,6 +19,14 @@ toc()
 
 lfs <- lfs_load()
 
+
+lfs[,.N,.(YEAR, is.na(WARD))]
+lfs[,.N,.(YEAR, is.na(PCON9D))]
+lfs[,.N,.(YEAR, is.na(TTWA))]
+lfs[,.N,.(YEAR, is.na(CTY))]
+
+lfs[,.N,.(CTY)]
+
 lfs[,.N,.(YEAR,HEALTH)] |>
 dcast(YEAR ~ HEALTH)
 

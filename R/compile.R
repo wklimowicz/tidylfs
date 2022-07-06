@@ -73,6 +73,10 @@ lfs_tidy_file <- function(file,
   character_variables <- ifelse(complete_mappings$type == "character", complete_mappings$new_name, NA)
   character_variables <- character_variables[!is.na(character_variables)]
 
+    unlabelled_factor_variables <- ifelse(complete_mappings$type == "unlabelled_factor", complete_mappings$new_name, NA)
+    unlabelled_factor_variables <- unlabelled_factor_variables[!is.na(unlabelled_factor_variables)]
+
+
 
   # Explicitly convert problem columns to correct type, for vctrs compatibility
 
@@ -101,7 +105,12 @@ lfs_tidy_file <- function(file,
     dplyr::mutate(dplyr::across(
       dplyr::any_of(character_variables),
       as.character
-    ))
+    )) %>%
+    dplyr::mutate(dplyr::across(
+      dplyr::any_of(unlabelled_factor_variables),
+      ~ .x |> as.character() |> as.factor()
+        ))
+
 
   return(list(df3, complete_mappings))
 }
