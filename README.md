@@ -28,10 +28,11 @@ library(tidylfs)
 
 # Converts `.sav` files to `.Rds` files, to save
 # space and for quicker loading
-lfs_convert("lfs_data_folder/", "lfs_rds_folder/")
+lfs_convert(lfs_directory = "lfs_data_folder/",
+            output_directory = "lfs_rds_folder/")
 
-# Compiles into one tidy `.fst` file.
-lfs <- lfs_compile("lfs_rds_folder/")
+# Compiles into one file.
+lfs <- lfs_compile(lfs_directory = "lfs_rds_folder/")
 ```
 
 To reproduce official ONS publications, such as
