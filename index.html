@@ -8,8 +8,8 @@
 <meta name="description" content="Tools for analysts working with the LFS.">
 <title>Tools for analysing the ONS Labour Force Survey • tidylfs</title>
 <script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="deps/bootstrap-5.1.0/bootstrap.min.css" rel="stylesheet">
-<script src="deps/bootstrap-5.1.0/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<link href="deps/bootstrap-5.1.3/bootstrap.min.css" rel="stylesheet">
+<script src="deps/bootstrap-5.1.3/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- bootstrap-toc --><script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Tools for analysing the ONS Labour Force Survey">
 <meta property="og:description" content="Tools for analysts working with the LFS.">
@@ -26,7 +26,7 @@
     
     <a class="navbar-brand me-2" href="index.html">tidylfs</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.2</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.3</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -90,30 +90,25 @@
 <span><span class="fu"><a href="reference/lfs_convert.html">lfs_convert</a></span><span class="op">(</span><span class="st">"lfs_data_folder/"</span>, <span class="st">"lfs_rds_folder/"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Compiles into one tidy `.fst` file.</span></span>
-<span><span class="fu"><a href="reference/lfs_compile.html">lfs_compile</a></span><span class="op">(</span><span class="st">"lfs_rds_folder/"</span><span class="op">)</span></span></code></pre></div>
-<p>To load the data into your environment run:</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">lfs</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/lfs_load.html">lfs_load</a></span><span class="op">(</span>data.table <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
-<p>(Use data.table = TRUE if you know it, it’s much faster.)</p>
+<span><span class="va">lfs</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/lfs_compile.html">lfs_compile</a></span><span class="op">(</span><span class="st">"lfs_rds_folder/"</span><span class="op">)</span></span></code></pre></div>
 <p>To reproduce official ONS publications, such as</p>
 <ul><li>Unemployent <a href="https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/unemployment/datasets/unemploymentbyageanddurationnotseasonallyadjustedunem01nsa" class="external-link">UNEM01 NSA</a>
 </li></ul>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">lfs</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span></span>
 <span>    <span class="fu"><a href="reference/lfs_summarise_unemployment.html">lfs_summarise_unemployment</a></span><span class="op">(</span><span class="va">QUARTER</span><span class="op">)</span></span></code></pre></div>
 <ul><li>Salary by occupation <a href="https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/grossweeklyearningsbyoccupationearn06" class="external-link">EARN06</a>
 </li></ul>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">lfs</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span></span>
-<span>    <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">OCCUPATION_MAJOR</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> <span class="co"># Filter out NA's</span></span>
-<span>    <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">FTPTWK</span> <span class="op">==</span> <span class="st">"Full-time"</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> <span class="co"># Take only full-time employees</span></span>
-<span>    <span class="fu"><a href="reference/lfs_summarise_salary.html">lfs_summarise_salary</a></span><span class="op">(</span><span class="va">QUARTER</span>, <span class="va">OCCUPATION_MAJOR</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span></span>
-<span>    <span class="fu">tidyr</span><span class="fu">::</span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_wider.html" class="external-link">pivot_wider</a></span><span class="op">(</span>id_cols <span class="op">=</span> <span class="va">QUARTER</span>,</span>
-<span>                       names_from <span class="op">=</span> <span class="va">OCCUPATION_MAJOR</span>,</span>
-<span>                       values_from <span class="op">=</span> <span class="va">mean_weekly_pay</span><span class="op">)</span></span></code></pre></div>
+<span>    <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span></span>
+<span>      <span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">OCCUPATION_MAJOR</span><span class="op">)</span>, <span class="co"># Filter out NA's</span></span>
+<span>      <span class="va">FTPTWK</span> <span class="op">==</span> <span class="st">"Full-time"</span> <span class="co"># Take only full-time employees</span></span>
+<span>    <span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="reference/lfs_summarise_salary.html">lfs_summarise_salary</a></span><span class="op">(</span><span class="va">QUARTER</span>, <span class="va">OCCUPATION_MAJOR</span><span class="op">)</span></span></code></pre></div>
 <p>Extending them is easy:</p>
 <ul><li>Unemployment by quarter, sex, and age category</li></ul>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">lfs</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="reference/lfs_summarise_unemployment.html">lfs_summarise_unemployment</a></span><span class="op">(</span><span class="va">QUARTER</span>, <span class="va">SEX</span>, <span class="va">AGES</span><span class="op">)</span></span></code></pre></div>
 <p>For more information on the ONS variables, see the <a href="https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/methodologies/labourforcesurveyuserguidance" class="external-link">LFS Guidance</a>.</p>
@@ -184,6 +179,17 @@
 </table>
 </div>
 </div>
+<div class="section level1">
+<h1 id="using-the-data-across-multiple-projects">Using the data across multiple projects<a class="anchor" aria-label="anchor" href="#using-the-data-across-multiple-projects"></a>
+</h1>
+<p>To avoid storing multiple copies of the compiled dataset, you can set the <code>DATA_DIRECTORY</code> environment variable before compiling. This can be done on the system or in <code>.Rprofile</code>:</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Sys.setenv.html" class="external-link">Sys.setenv</a></span><span class="op">(</span>DATA_DIRECTORY <span class="op">=</span> <span class="st">"path/to/folder"</span><span class="op">)</span></span></code></pre></div>
+<p>The compiled dataset will be saved there as an fst file, and you can load it using this command:</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">lfs</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/lfs_load.html">lfs_load</a></span><span class="op">(</span>data.table <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
+</div>
+
   </main><aside class="col-md-3"><div class="links">
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
@@ -233,7 +239,7 @@
 
 <div class="pkgdown-footer-right">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
     </footer>
