@@ -101,7 +101,7 @@ neet_final <- neet_processing %>%
     AGEDFE %in% 19:24 ~ "19-24",
     TRUE ~  NA_character_
     ),
-  ) 
+  )
 
 # List of groupings that show up ---------------------------
 combinations <- list(

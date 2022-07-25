@@ -31,16 +31,8 @@ library(tidylfs)
 lfs_convert("lfs_data_folder/", "lfs_rds_folder/")
 
 # Compiles into one tidy `.fst` file.
-lfs_compile("lfs_rds_folder/")
+lfs <- lfs_compile("lfs_rds_folder/")
 ```
-
-To load the data into your environment run:
-
-``` r
-lfs <- lfs_load(data.table = FALSE)
-```
-
-(Use data.table = TRUE if you know it, it’s much faster.)
 
 To reproduce official ONS publications, such as
 
@@ -57,12 +49,11 @@ lfs %>%
 
 ``` r
 lfs %>%
-    dplyr::filter(!is.na(OCCUPATION_MAJOR)) %>% # Filter out NA's
-    dplyr::filter(FTPTWK == "Full-time") %>% # Take only full-time employees
-    lfs_summarise_salary(QUARTER, OCCUPATION_MAJOR) %>%
-    tidyr::pivot_wider(id_cols = QUARTER,
-                       names_from = OCCUPATION_MAJOR,
-                       values_from = mean_weekly_pay)
+    dplyr::filter(
+      !is.na(OCCUPATION_MAJOR), # Filter out NA's
+      FTPTWK == "Full-time" # Take only full-time employees
+    ) %>%
+    lfs_summarise_salary(QUARTER, OCCUPATION_MAJOR)
 ```
 
 Extending them is easy:
@@ -95,3 +86,20 @@ Some of the variables included by default are:
 | OCCUPATION          | Occupation in main job                 |
 | PARENTAL_OCCUPATION | Parental Occupation at 14              |
 | ETHNICITY           | Ethnicity                              |
+
+# Using the data across multiple projects
+
+To avoid storing multiple copies of the compiled dataset, you can set
+the `DATA_DIRECTORY` environment variable before compiling. This can be
+done on the system or in `.Rprofile`:
+
+``` r
+Sys.setenv(DATA_DIRECTORY = "path/to/folder")
+```
+
+The compiled dataset will be saved there as an fst file, and you can
+load it using this command:
+
+``` r
+lfs <- lfs_load(data.table = FALSE)
+```

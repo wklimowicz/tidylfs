@@ -76,7 +76,7 @@ lfs %>%
   filter(TEACHER == FALSE) %>%
   filter(HIGHO %in% c("Post grad cert in educ", "Post grad cert in education")) %>%
   lfs_summarise_unemployment(YEAR) %>%
-  ggplot(aes(x = YEAR, y = unemployed_percentage)) + 
+  ggplot(aes(x = YEAR, y = unemployed_percentage)) +
   geom_line()
 
 lfs %>%

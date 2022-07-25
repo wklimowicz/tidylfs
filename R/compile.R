@@ -3,9 +3,8 @@
 #' Checks which variables are present and picks them in order of priority
 #' eg. PWT20 > PWT18 etc. Renames them so that they can be binded to one dataset
 #'
-#' Note: importing labelled from haven is required to import haven when
-#' tests are run - otherwise it can't use the haven labelled format.
-#' (imported functions causes tests to run library(haven))
+#' To automatically save the compiled file in a directory ready to be loaded with
+#' `lfs_load()`, set the `DATA_DIRECTORY` environment variable to point at a folder.
 #'
 #' @param file Index of file
 #' @param total_files Vector of file names - helper function for cli
@@ -22,6 +21,11 @@ lfs_tidy_file <- function(file,
                           total_files,
                           file_format,
                           extra_mappings = NULL) {
+
+# Note: importing labelled from haven is required to import haven when
+# tests are run - otherwise it can't use the haven labelled format.
+# (imported functions causes tests to run library(haven))
+
   cli::cli_div(theme = list(span.emph = list(color = "blue")))
   cli::cli_progress_step("Processing {.emph {total_files[[file]]} } {file}/{length(total_files)}.")
   cli::cli_end()
@@ -277,18 +281,17 @@ lfs_compile <- function(lfs_directory,
   save_name <- "lfs_data.fst"
   }
 
-  # Choose save location
-  if (save_location == "package") {
-    save_file_path <- paste0(
-      system.file(package = "tidylfs"),
-      "/", save_name
+  # If DATA_DIRECTORY environment variable is present, save there.
+  if (Sys.getenv("DATA_DIRECTORY") != "") {
+    fst::write_fst(
+      lfs_data_frame,
+      paste0(Sys.getenv("DATA_DIRECTORY"), "/", save_name)
     )
-  } else {
-    save_file_path <- save_location
   }
-
-  fst::write_fst(lfs_data_frame, save_file_path, compress = fst_compress)
 
   # Print complete message
   cli_compiling_complete(file_format = file_format, aps = aps)
+
+  return(lfs_data_frame)
+
 }

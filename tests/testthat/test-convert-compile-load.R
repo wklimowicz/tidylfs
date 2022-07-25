@@ -1,4 +1,6 @@
 test_that("Converting and compiling runs succesfully", {
+
+
   test_data <- tibble::tribble(
     ~ACTHR, ~ACTHR2, ~ACTPOT, ~ACTUOT, ~ACTWKDY1, ~ACTWKDY2,
     ~ACTWKDY3, ~ACTWKDY4, ~ACTWKDY5, ~ACTWKDY6, ~ACTWKDY7,
@@ -238,13 +240,14 @@ test_that("Converting and compiling runs succesfully", {
 
 
   test_convert_compile <- function() {
+
+    withr::local_envvar(DATA_DIRECTORY = ".")
+
     lfs_convert("test", "test_rds_data/")
 
-    lfs_compile("test_rds_data",
-      save_location = "final_data.fst"
-    )
+    lfs_compile("test_rds_data")
 
-    fst::read_fst("final_data.fst")
+    lfs <- lfs_load()
   }
 
 
@@ -252,7 +255,7 @@ test_that("Converting and compiling runs succesfully", {
     fs::dir_create("test_rds_data"),
     "test/2003 Q4.sav" = haven::write_sav(test_data, "test/2003 Q4.sav"),
     "test/2010 Q4.sav" = haven::write_sav(test_data, "test/2010 Q4.sav"),
-    "final_data.Rds",
+    "lfs_data.fst",
     "lfs_variables_report.csv"
   ), {
     expect_error(suppressMessages(test_convert_compile()), NA)
