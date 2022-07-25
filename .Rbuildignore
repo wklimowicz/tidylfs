@@ -4,7 +4,8 @@
 ^inst/lfs_data\.Rds$
 ^inst/lfs_data\.fst$
 ^inst/active_testing\.R$
-^variables_report\.csv$
+^lfs_variables_report\.csv$
+^aps_variables_report\.csv$
 ^data-raw$
 ^_pkgdown\.yml$
 ^docs$

@@ -277,18 +277,17 @@ lfs_compile <- function(lfs_directory,
   save_name <- "lfs_data.fst"
   }
 
-  # Choose save location
-  if (save_location == "package") {
-    save_file_path <- paste0(
-      system.file(package = "tidylfs"),
-      "/", save_name
+  # If DATA_DIRECTORY environment variable is present, save there.
+  if (Sys.getenv("DATA_DIRECTORY") != "") {
+    fst::write_fst(
+      lfs_data_frame,
+      paste0(Sys.getenv("DATA_DIRECTORY"), "/", save_name)
     )
-  } else {
-    save_file_path <- save_location
   }
-
-  fst::write_fst(lfs_data_frame, save_file_path, compress = fst_compress)
 
   # Print complete message
   cli_compiling_complete(file_format = file_format, aps = aps)
+
+  return(lfs_data_frame)
+
 }

@@ -7,20 +7,16 @@
 #' @export
 lfs_load <- function(data.table = TRUE) {
 
-    tryCatch(
-        {
-    lfs <- fst::read_fst(paste0(system.file(package = "tidylfs"), "/lfs_data.fst"), as.data.table = data.table)
-        },
-        error = function(error_message) {
-  cli::cli_div(theme = list(span.emph = list(color = "blue")))
-            cli::cli_alert_danger("Can't find the {.emph lfs_data.fst} file - have you ran {.emph lfs_convert} and {.emph lfs_compile} on the raw data?")
-  message(error_message)
-  cli::cli_end()
-        },
-  finally = lfs
-    )
+  # Check if DATA_DIRECTORY environment variable is present
+  if (Sys.getenv("DATA_DIRECTORY") == "") {
+    cli::cli_alert_danger("You don't have the DATA_DIRECTORY environment variable set: see the help for `lfs_compile`.")
 
-# return(lfs)
+    stop()
+  }
+
+    lfs <- fst::read_fst(paste0(Sys.getenv("DATA_DIRECTORY"), "/lfs_data.fst"), as.data.table = data.table)
+
+    return(lfs)
 
 }
 

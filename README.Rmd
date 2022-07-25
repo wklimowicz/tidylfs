@@ -23,7 +23,7 @@ knitr::opts_chunk$set(
 
 You can install the development version of tidylfs from [GitHub](https://github.com/) with:
 
-``` r
+```{r eval = FALSE}
 # install.packages("devtools")
 devtools::install_github("wklimowicz/tidylfs")
 ```
@@ -40,14 +40,8 @@ library(tidylfs)
 lfs_convert("lfs_data_folder/", "lfs_rds_folder/")
 
 # Compiles into one tidy `.fst` file.
-lfs_compile("lfs_rds_folder/")
+lfs <- lfs_compile("lfs_rds_folder/")
 ```
-
-To load the data into your environment run: 
-```{r eval=FALSE}
-lfs <- lfs_load(data.table = FALSE)
-```
-(Use data.table = TRUE if you know it, it's much faster.)
 
 To reproduce official ONS publications, such as
 
@@ -102,4 +96,17 @@ x <- tibble::tribble( ~`Variable Name`, ~`Definition`,
 x %>%
   kableExtra::kbl(format = "pipe")
 
+```
+
+# Using the data across multiple projects
+
+To avoid storing multiple copies of the compiled dataset, you can set the `DATA_DIRECTORY` environment variable before compiling. This can be done on the system or in `.Rprofile`:
+
+```{r eval = FALSE}
+Sys.setenv(DATA_DIRECTORY = "path/to/folder")
+```
+The compiled dataset will be saved there as an fst file, and you can load it using this command:
+
+```{r eval=FALSE}
+lfs <- lfs_load(data.table = FALSE)
 ```
