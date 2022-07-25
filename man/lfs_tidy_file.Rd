@@ -23,8 +23,7 @@ Checks which variables are present and picks them in order of priority
 eg. PWT20 > PWT18 etc. Renames them so that they can be binded to one dataset
 }
 \details{
-Note: importing labelled from haven is required to import haven when
-tests are run - otherwise it can't use the haven labelled format.
-(imported functions causes tests to run library(haven))
+To automatically save the compiled file in a directory ready to be loaded with
+\code{lfs_load()}, set the \code{DATA_DIRECTORY} environment variable to point at a folder.
 }
 \keyword{internal}

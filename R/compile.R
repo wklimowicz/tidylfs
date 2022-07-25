@@ -130,8 +130,7 @@ lfs_tidy_file <- function(file,
 #' which has the custom mapping function.
 #' See
 #' \code{vignette("Adding_Variables", package = "tidylfs")}
-#' @param save_location File path for `fst` file to save. By default, saves the
-#' output in the package directory, so it's always accessible with `lfs_load`.
+#' @param save_to_folder If TRUE, will save to the `DATA_DIRECTORY` environment variable if present
 #' @param save_variables_report Save a csv with the list of picked variables?
 #' @param fst_compress Compression level for fst
 #' @param aps Annual Population Survey flag, files called eg. "APS 2012.sav"
@@ -141,7 +140,7 @@ lfs_tidy_file <- function(file,
 #' @export
 lfs_compile <- function(lfs_directory,
                         extra_mappings = NULL,
-                        save_location = "package",
+                        save_to_folder = TRUE,
                         save_variables_report = TRUE,
                         fst_compress = 50,
                         aps = FALSE) {
@@ -197,7 +196,7 @@ lfs_compile <- function(lfs_directory,
   )
 
   # Make record of what variables chosen if picked ---------------------------
-  cli::cli_alert_info("Combining and saving...")
+  cli::cli_alert_info("Combining...")
 
   if (save_variables_report == TRUE) {
     final_mapping <- purrr::map(lfs_data, 2)[[1]][[2]]
@@ -281,12 +280,15 @@ lfs_compile <- function(lfs_directory,
   save_name <- "lfs_data.fst"
   }
 
-  # If DATA_DIRECTORY environment variable is present, save there.
-  if (Sys.getenv("DATA_DIRECTORY") != "") {
-    fst::write_fst(
-      lfs_data_frame,
-      paste0(Sys.getenv("DATA_DIRECTORY"), "/", save_name)
-    )
+  # If enabled
+  if (save_to_folder) {
+      # If DATA_DIRECTORY environment variable is present, save there.
+      if (Sys.getenv("DATA_DIRECTORY") != "") {
+        fst::write_fst(
+          lfs_data_frame,
+          paste0(Sys.getenv("DATA_DIRECTORY"), "/", save_name)
+        )
+      }
   }
 
   # Print complete message

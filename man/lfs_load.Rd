@@ -13,5 +13,8 @@ lfs_load(data.table = TRUE)
 A tibble with lfs data
 }
 \description{
-Load LFS Data
+This works only with the \code{DATA_DIRECTORY} environment variable set to a folder.
+You can either manually save \code{lfs_data.fst} there, or it will automatically be
+saved during compilation if the \code{DATA_DIRECTORY} variable is present while running
+\code{lfs_compile()}
 }
