@@ -87,10 +87,11 @@
 <span></span>
 <span><span class="co"># Converts `.sav` files to `.Rds` files, to save</span></span>
 <span><span class="co"># space and for quicker loading</span></span>
-<span><span class="fu"><a href="reference/lfs_convert.html">lfs_convert</a></span><span class="op">(</span><span class="st">"lfs_data_folder/"</span>, <span class="st">"lfs_rds_folder/"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/lfs_convert.html">lfs_convert</a></span><span class="op">(</span>lfs_directory <span class="op">=</span> <span class="st">"lfs_data_folder/"</span>,</span>
+<span>            output_directory <span class="op">=</span> <span class="st">"lfs_rds_folder/"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># Compiles into one tidy `.fst` file.</span></span>
-<span><span class="va">lfs</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/lfs_compile.html">lfs_compile</a></span><span class="op">(</span><span class="st">"lfs_rds_folder/"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="co"># Compiles into one file.</span></span>
+<span><span class="va">lfs</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/lfs_compile.html">lfs_compile</a></span><span class="op">(</span>lfs_directory <span class="op">=</span> <span class="st">"lfs_rds_folder/"</span><span class="op">)</span></span></code></pre></div>
 <p>To reproduce official ONS publications, such as</p>
 <ul><li>Unemployent <a href="https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/unemployment/datasets/unemploymentbyageanddurationnotseasonallyadjustedunem01nsa" class="external-link">UNEM01 NSA</a>
 </li></ul>
