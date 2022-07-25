@@ -33,7 +33,7 @@ toc()
 # How long do people stay in sample
 
 
-lfsdt[, .N, by = .(CASENO, QUARTER)][N == 1, .N, by = QUARTER] 
+lfsdt[, .N, by = .(CASENO, QUARTER)][N == 1, .N, by = QUARTER]
 
 # CASENO only from 2001 Q3
 
@@ -77,7 +77,7 @@ lfsdt %>%
 dtlfs_summarise_unemployment <- function(lfs, ...) {
 
 lfs[WEIGHT > 0 & !is.na(WEIGHT) & !is.na(ILODEFR),
-      .(n = .N, 
+      .(n = .N,
       employed = mean((ILODEFR == "In employment") * WEIGHT, na.rm = TRUE),
       unemployed = mean((ILODEFR == "ILO unemployed") * WEIGHT, na.rm = TRUE),
       inactive = mean((ILODEFR == "Inactive") * WEIGHT, na.rm = TRUE)),
@@ -88,7 +88,7 @@ lfs[WEIGHT > 0 & !is.na(WEIGHT) & !is.na(ILODEFR),
       inactive_percentage = inactive / (employed + unemployed + inactive)),]
 
 }
-      
+
 lfs %>%
     filter(LAST_OCCUPATION_DESCRIPTION ==
            "Secondary education teaching professionals") %>%
@@ -160,9 +160,9 @@ leader_descriptions <- c("Head teachers and principals",
 "Registrars and senior administrators of educational establishments")
 
 
-lfs[, leader := OCCUPATION_DESCRIPTION %in% leader_descriptions & !is.na(CASENO)] 
+lfs[, leader := OCCUPATION_DESCRIPTION %in% leader_descriptions & !is.na(CASENO)]
 
-lfs[, last_job_leader := shift(OCCUPATION_DESCRIPTION, 1) %in% leader_descriptions & !is.na(CASENO)] 
+lfs[, last_job_leader := shift(OCCUPATION_DESCRIPTION, 1) %in% leader_descriptions & !is.na(CASENO)]
 
 
 lfs[, .N, by = .(YEAR, leader_ever)]
@@ -171,7 +171,7 @@ lfs[, .N, by = .(YEAR, leader_ever)]
 lfs[, leader_ever := max(leader == 1), by = CASENO]
 
 
-lfs[YEAR > 2010 & leader_ever == 1, .N, by = OCCUPATION_DESCRIPTION][order(-N)] 
+lfs[YEAR > 2010 & leader_ever == 1, .N, by = OCCUPATION_DESCRIPTION][order(-N)]
 
 
 lfs[YEAR > 2010 & last_job_leader == 1, .N, by = OCCUPATION_DESCRIPTION][order(-N)]  %>%
@@ -188,7 +188,7 @@ lfsdt <- data.table(lfs)
 
 
 tic()
-lfs %>% 
+lfs %>%
     count(CASENO) %>%
  c   count(n)
 toc()
