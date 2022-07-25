@@ -60,7 +60,7 @@
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">lfs_compile</span><span class="op">(</span></span>
 <span>  <span class="va">lfs_directory</span>,</span>
 <span>  extra_mappings <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  save_location <span class="op">=</span> <span class="st">"package"</span>,</span>
+<span>  save_to_folder <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  save_variables_report <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  fst_compress <span class="op">=</span> <span class="fl">50</span>,</span>
 <span>  aps <span class="op">=</span> <span class="cn">FALSE</span></span>
@@ -80,9 +80,8 @@ See
 <code><a href="../articles/Adding_Variables.html">vignette("Adding_Variables", package = "tidylfs")</a></code></p></dd>
 
 
-<dt>save_location</dt>
-<dd><p>File path for <code>fst</code> file to save. By default, saves the
-output in the package directory, so it's always accessible with <code>lfs_load</code>.</p></dd>
+<dt>save_to_folder</dt>
+<dd><p>If TRUE, will save to the <code>DATA_DIRECTORY</code> environment variable if present</p></dd>
 
 
 <dt>save_variables_report</dt>
