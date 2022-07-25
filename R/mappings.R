@@ -24,6 +24,8 @@ lfs_default_mappings <- function(cols) {
 
   # Choose variables in order of priority when found
 
+    caseno <- lfs_pick_column(c("CASENO", "CASE"), cols)
+
   # Core - INECACR is older, but replicates ONS numbers more precisely in 2000's
   # - see variales_report
   ilo_status <- lfs_pick_column(c("INECACR", "INECAC05"), cols)
@@ -101,14 +103,13 @@ lfs_default_mappings <- function(cols) {
   variables <- tibble::tribble(
     ~lfs_name, ~new_name, ~type,
     # ID Variables --------------------
-    "CASENO", "CASENO", "character",
+    caseno, "CASENO", "character",
     "THISWV", "THISWV", "numeric",
     "SEX", "SEX", "factor",
     "COUNTRY", "COUNTRY", "factor",
     "GOVTOR", "GOVTOR", "factor",
     "AGE", "AGE", "numeric",
     "FTPTWK", "FTPTWK", "factor",
-    # "FTPT", "FTPT", "numeric",
     "GRSSWK", "GRSSWK", "numeric",
     "HOURPAY", "HOURPAY", "numeric",
     "EDAGE", "EDAGE", "numeric",
@@ -116,8 +117,7 @@ lfs_default_mappings <- function(cols) {
     "GOVTOF", "GOVTOF", "factor",
     "LAUA", "LAUA", "unlabelled_factor",
     "PCON9D", "PCON9D", "unlabelled_factor",
-    "CTY", "CTY", "unlabelled_factor",
-    "TTWA", "TTWA", "unlabelled_factor",
+    "MSOA11", "MSOA11", "unlabelled_factor",
     "WARD", "WARD", "unlabelled_factor",
     "AGES", "AGES", "factor",
     "PUBLICR", "PUBLIC", "factor",

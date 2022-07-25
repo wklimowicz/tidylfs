@@ -20,7 +20,7 @@ toc()
 
 lfs <- lfs_load()
 
-
+lfs[is.na(CASENO), .N, YEAR]
 lfs[,.N,.(YEAR, is.na(WARD))]
 lfs[,.N,.(YEAR, is.na(PCON9D))]
 lfs[,.N,.(YEAR, is.na(TTWA))]

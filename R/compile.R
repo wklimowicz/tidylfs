@@ -197,7 +197,7 @@ lfs_compile <- function(lfs_directory,
   )
 
   # Make record of what variables chosen if picked ---------------------------
-  cli::cli_alert_info("Combining and saving...")
+  cli::cli_alert_info("Combining...")
 
   if (save_variables_report == TRUE) {
     final_mapping <- purrr::map(lfs_data, 2)[[1]][[2]]
