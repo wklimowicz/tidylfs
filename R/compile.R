@@ -272,7 +272,6 @@ lfs_compile <- function(lfs_directory,
     annotate_economic_activity()
   }
 
-  cli::cli_alert_info("Saving as fst")
 
   if (aps == TRUE) {
   save_name <- "aps_data.fst"
@@ -284,10 +283,21 @@ lfs_compile <- function(lfs_directory,
   if (save_to_folder) {
       # If DATA_DIRECTORY environment variable is present, save there.
       if (Sys.getenv("DATA_DIRECTORY") != "") {
+
+        cli::cli_alert_info("Saving as fst")
+
         fst::write_fst(
           lfs_data_frame,
           paste0(Sys.getenv("DATA_DIRECTORY"), "/", save_name)
         )
+
+            if (aps == 0) {
+            cli::cli_alert_info("Load LFS data with {.emph lfs <- lfs_load()}\n
+                                 To check ONS definitions see {.emph lfs_variables_report.csv}\n")
+            } else {
+            cli::cli_alert_info("Load LFS data with {.emph aps <- aps_load()}\n
+                                 To check ONS definitions see {.emph lfs_variables_report.csv}\n")
+            }
       }
   }
 
