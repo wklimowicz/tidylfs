@@ -8,6 +8,7 @@
 #' @param lfs_directory Directory with raw LFS files
 #' @param output_directory Target directory to save Rds files
 #' @param filter_files Limit to certain files, using a named vector
+#' @param incremental Only convert files which don't exist in output directory
 #'
 #' @importFrom rlang .data
 #'
@@ -15,7 +16,11 @@
 #'
 #' @importFrom haven labelled
 #' @export
-lfs_convert <- function(lfs_directory, output_directory, filter_files = NULL) {
+lfs_convert <- function(lfs_directory,
+                        output_directory,
+                        filter_files = NULL,
+                        incremental = FALSE) {
+
   files_in_directory <- list.files(lfs_directory)
 
   . <- NULL # Fix R CMD Check
@@ -24,6 +29,18 @@ lfs_convert <- function(lfs_directory, output_directory, filter_files = NULL) {
     files_in_directory <- files_in_directory %>%
       .[. %in% filter_files]
   }
+
+  if (incremental == TRUE) {
+    # Check what files exist and diff
+   exist_in_output <- tools::file_path_sans_ext(list.files(output_directory))
+   exist_in_input <- tools::file_path_sans_ext(list.files(lfs_directory))
+   files_in_directory <- setdiff(exist_in_input, exist_in_output)
+
+   # Reattach extension
+   files_in_directory <- paste0(files_in_directory, ".sav")
+  }
+
+
 
   if (length(files_in_directory) == 0) {
     cli::cli_alert_danger("No Files Found")
