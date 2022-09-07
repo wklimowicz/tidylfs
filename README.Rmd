@@ -105,7 +105,12 @@ To avoid storing multiple copies of the compiled dataset, you can set the `DATA_
 ```{r eval = FALSE}
 Sys.setenv(DATA_DIRECTORY = "path/to/folder")
 ```
-The compiled dataset will be saved there as an fst file, and you can load it using this command:
+When compiling the dataset include the save_to_folder option as `TRUE`:
+
+```{r eval = FALSE}
+lfs_compile(lfs_directory = "lfs_rds_folder/", save_to_folder = TRUE)
+```
+The compiled dataset will be saved to the directory as an fst file, and you can load it from anywhere using this command:
 
 ```{r eval=FALSE}
 lfs <- lfs_load(data.table = FALSE)
