@@ -4,10 +4,10 @@ library(tidyverse)
 library(data.table)
 library(tictoc)
 
-lfs_convert("../lfs_raw_data/", "../lfs_rds_data/", filter_files = "2022 Q1.sav")
+lfs_convert("../lfs_raw_data/", "../lfs_rds_data/", incremental = TRUE)
 
 tic()
-lfs_compile("../lfs_rds_data/")
+lfs <- lfs_compile("../lfs_rds_data/", save_to_folder = TRUE)
 toc()
 
 source("data-raw/create_test_data.R")

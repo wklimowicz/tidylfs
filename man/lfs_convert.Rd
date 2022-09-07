@@ -4,7 +4,12 @@
 \alias{lfs_convert}
 \title{Convert files to Rds for faster compiling in future}
 \usage{
-lfs_convert(lfs_directory, output_directory, filter_files = NULL)
+lfs_convert(
+  lfs_directory,
+  output_directory,
+  filter_files = NULL,
+  incremental = FALSE
+)
 }
 \arguments{
 \item{lfs_directory}{Directory with raw LFS files}
@@ -12,6 +17,8 @@ lfs_convert(lfs_directory, output_directory, filter_files = NULL)
 \item{output_directory}{Target directory to save Rds files}
 
 \item{filter_files}{Limit to certain files, using a named vector}
+
+\item{incremental}{Only convert files which don't exist in output directory}
 }
 \value{
 List of output
