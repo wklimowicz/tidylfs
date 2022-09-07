@@ -98,8 +98,14 @@ done on the system or in `.Rprofile`:
 Sys.setenv(DATA_DIRECTORY = "path/to/folder")
 ```
 
-The compiled dataset will be saved there as an fst file, and you can
-load it using this command:
+When compiling the dataset include the save_to_folder option as `TRUE`:
+
+``` r
+lfs_compile(lfs_directory = "lfs_rds_folder/", save_to_folder = TRUE)
+```
+
+The compiled dataset will be saved to the directory as an fst file, and
+you can load it from anywhere using this command:
 
 ``` r
 lfs <- lfs_load(data.table = FALSE)

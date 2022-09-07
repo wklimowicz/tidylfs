@@ -140,7 +140,7 @@ lfs_tidy_file <- function(file,
 #' @export
 lfs_compile <- function(lfs_directory,
                         extra_mappings = NULL,
-                        save_to_folder = TRUE,
+                        save_to_folder = FALSE,
                         save_variables_report = TRUE,
                         fst_compress = 50,
                         aps = FALSE) {
