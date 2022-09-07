@@ -57,7 +57,12 @@
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">lfs_convert</span><span class="op">(</span><span class="va">lfs_directory</span>, <span class="va">output_directory</span>, filter_files <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">lfs_convert</span><span class="op">(</span></span>
+<span>  <span class="va">lfs_directory</span>,</span>
+<span>  <span class="va">output_directory</span>,</span>
+<span>  filter_files <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  incremental <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -72,6 +77,10 @@
 
 <dt>filter_files</dt>
 <dd><p>Limit to certain files, using a named vector</p></dd>
+
+
+<dt>incremental</dt>
+<dd><p>Only convert files which don't exist in output directory</p></dd>
 
 </dl></div>
     <div class="section level2">
