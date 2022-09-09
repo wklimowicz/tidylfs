@@ -9,6 +9,23 @@ lfs_compile("../lfs_rds_data/")
 source("data-raw/create_test_data.R")
 check()
 
+lfs_convert("../aps_raw_data/", "../aps_rds_data/", incremental = TRUE)
+
+tic()
+lfs <- lfs_compile("../aps_rds_data/",
+                   save_to_folder = TRUE,
+                   aps = TRUE)
+toc()
+
+source("data-raw/create_test_data.R")
+check()
+
+
+
+tic()
+lfs_compile("../lfs_rds_data_test/")
+toc()
+
 lfs <- lfs_load()
 
 

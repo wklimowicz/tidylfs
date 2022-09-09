@@ -42,6 +42,10 @@ lfs_tidy_file <- function(file,
     vars_extra <- vars_extra %>%
       dplyr::mutate(lfs_name = ifelse(.data$lfs_name %in% cols, .data$lfs_name, NA))
 
+    # Remove existing mappings if overwritten
+    complete_mappings <- complete_mappings %>%
+      dplyr::filter(!.data$new_name %in% vars_extra[[2]])
+
     complete_mappings <- dplyr::bind_rows(complete_mappings, vars_extra)
   }
 
@@ -102,6 +106,16 @@ lfs_tidy_file <- function(file,
       as.character
     ))
 
+    # Test to check if there are any
+    if (length(unlabelled_factor_variables) > 0) {
+
+    df3 <- df3 %>%
+      dplyr::mutate(dplyr::across(
+      dplyr::any_of(unlabelled_factor_variables),
+      ~ .x |> as.character() |> as.factor()
+        ))
+
+    }
 
   return(list(df3, complete_mappings))
 }
