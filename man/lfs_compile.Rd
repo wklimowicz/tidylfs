@@ -7,9 +7,10 @@
 lfs_compile(
   lfs_directory,
   extra_mappings = NULL,
-  save_location = "package",
+  save_to_folder = FALSE,
   save_variables_report = TRUE,
-  fst_compress = 50
+  fst_compress = 50,
+  aps = FALSE
 )
 }
 \arguments{
@@ -20,12 +21,13 @@ which has the custom mapping function.
 See
 \code{vignette("Adding_Variables", package = "tidylfs")}}
 
-\item{save_location}{File path for \code{fst} file to save. By default, saves the
-output in the package directory, so it's always accessible with \code{lfs_load}.}
+\item{save_to_folder}{If TRUE, will save to the \code{DATA_DIRECTORY} environment variable if present}
 
 \item{save_variables_report}{Save a csv with the list of picked variables?}
 
 \item{fst_compress}{Compression level for fst}
+
+\item{aps}{Annual Population Survey flag, files called eg. "APS 2012.sav"}
 }
 \value{
 Nothing - saves the fst file only.

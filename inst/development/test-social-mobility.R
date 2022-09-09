@@ -2,7 +2,7 @@ load_all()
 library(tidyverse)
 
 
-lfs <- lfs_load() 
+lfs <- lfs_load()
 
 lfs %>%
   filter(PARENTAL_OCCUPATION_MAJOR %in% c(1:9)) %>%
@@ -13,7 +13,7 @@ lfs %>%
   mutate(prop = n/sum(n)) %>%
   pivot_wider(id_cols = 1, names_from = 2, values_from = prop) %>%
   sie()
- 
+
 
 lfs %>%
   filter(OCCUPATION_DESCRIPTION == "Actuaries, economists and statisticians") %>%
@@ -36,7 +36,7 @@ lfs %>%
 lfs %>%
     lfs_summarise_unemployment(QUARTER)
 
-  lfs %>% 
+  lfs %>%
   lfs_flag_teacher() %>%
   lfs_summarise_hours(TEACHER)
 

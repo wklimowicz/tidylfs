@@ -60,7 +60,7 @@ lfs %>%
   group_by(HIGH_SKILLED) %>%
   summarise(number = sum(n)) %>%
   mutate(prop = number / sum(number))
-  
+
 
 # Median salary premium
 diff <- lfs %>%

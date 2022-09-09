@@ -1,10 +1,8 @@
-cli_compiling_complete <- function(file_format) {
+cli_compiling_complete <- function(file_format, aps) {
   cli::cli_div(theme = list(span.emph = list(color = "orange")))
 
   cli::cli_alert_success("Compiling complete")
-
-  cli::cli_alert_info("Load LFS data with {.emph lfs <- lfs_load()}\n
-                       To check ONS definitions see {.emph lfs_variables_report.csv}\n")
+  
 
   if (file_format[[1]] == "sav") {
     cli::cli_alert_info("You can view column labels with {.emph haven::print_labels}")

@@ -24,7 +24,10 @@ lfs_default_mappings <- function(cols) {
 
   # Choose variables in order of priority when found
 
-  # Core
+    caseno <- lfs_pick_column(c("CASENO", "CASE"), cols)
+
+  # Core - INECACR is older, but replicates ONS numbers more precisely in 2000's
+  # - see variales_report
   ilo_status <- lfs_pick_column(c("INECACR", "INECAC05"), cols)
 
   weight_income <- lfs_pick_column(
@@ -98,40 +101,52 @@ lfs_default_mappings <- function(cols) {
   # "INDS92M" %in% cols ~ "INDS92M",INDS92M
   ethnicity <- lfs_pick_column(c("ETHUKEUL", "ETH01"), cols)
 
+  health <- lfs_pick_column(c("HEALTH20", "HEALTH"), cols)
+
+  lnglst <- lfs_pick_column(c("LNGLST", "LNGLIM"), cols)
+
 
   variables <- tibble::tribble(
     ~lfs_name, ~new_name, ~type,
     # ID Variables --------------------
-    "CASENO", "CASENO", "character",
+    caseno, "CASENO", "character",
     "THISWV", "THISWV", "numeric",
     "SEX", "SEX", "factor",
     "COUNTRY", "COUNTRY", "factor",
     "GOVTOR", "GOVTOR", "factor",
     "AGE", "AGE", "numeric",
     "FTPTWK", "FTPTWK", "factor",
-    # "FTPT", "FTPT", "numeric",
     "GRSSWK", "GRSSWK", "numeric",
     "HOURPAY", "HOURPAY", "numeric",
     "EDAGE", "EDAGE", "numeric",
     "DISEA", "DISABILITY", "factor",
     "GOVTOF", "GOVTOF", "factor",
+    "LAUA", "LAUA", "unlabelled_factor",
+    "PCON9D", "PCON9D", "unlabelled_factor",
+    "MSOA11", "MSOA11", "unlabelled_factor",
+    "WARD", "WARD", "unlabelled_factor",
     "AGES", "AGES", "factor",
     "PUBLICR", "PUBLIC", "factor",
     # Hours ----------------------
     "BUSHR", "BUSHR", "numeric",
-    "TTUSHR", "TTUSHR", "numeric",
-    "BACTHR", "BACTHR", "numeric",
+    # "TTUSHR", "TTUSHR", "numeric",
+    # "BACTHR", "BACTHR", "numeric",
     "TTACHR", "TTACHR", "numeric",
-    "TOTUS1", "TOTUS1", "numeric",
-    "TOTAC1", "TOTAC1", "numeric",
+    # "TOTUS1", "TOTUS1", "numeric",
+    # "TOTAC1", "TOTAC1", "numeric",
     "ACTHR", "ACTHR", "numeric",
-    "TOTAC2", "TOTAC2", "numeric",
-    "SUMHRS", "SUMHRS", "numeric",
-    "TOTHRS", "TOTHRS", "numeric",
+    # "TOTAC2", "TOTAC2", "numeric",
+    # "SUMHRS", "SUMHRS", "numeric",
+    # "TOTHRS", "TOTHRS", "numeric",
     # Union ----------------------------------------
     "UNION", "UNION", "factor",
     "TUPRES", "TUPRES", "factor",
     "TUCOV", "TUCOV", "factor",
+    # Life Satisfaction - only in APS ---------------
+    "SATIS", "SATIS", "numeric",
+    "WORTH", "WORTH", "numeric",
+    "HAPPY", "HAPPY", "numeric",
+    "ANXIOUS", "ANXIOUS", "numeric",
     # Variable changes over time ----------
     degree_subject, "DEGREE_SUBJECT", "character",
     combined_degree_subject1, "CMBDEG1", "character",
@@ -145,7 +160,9 @@ lfs_default_mappings <- function(cols) {
     parental_occupation_major, "PARENTAL_OCCUPATION_MAJOR", "numeric",
     weight_income, "WEIGHT_INCOME", "numeric",
     weight, "WEIGHT", "numeric",
-    ilo_status, "INECAC05", "factor",
+    ilo_status, "INECAC05", "numeric",
+    health, "HEALTH", "factor",
+    lnglst, "LNGLST", "factor",
     fdsico, "FDSICO", "factor",
     industry_major, "INDUSTRY_MAJOR", "factor",
     industry, "INDUSTRY", "character",

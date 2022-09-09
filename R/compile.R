@@ -3,9 +3,8 @@
 #' Checks which variables are present and picks them in order of priority
 #' eg. PWT20 > PWT18 etc. Renames them so that they can be binded to one dataset
 #'
-#' Note: importing labelled from haven is required to import haven when
-#' tests are run - otherwise it can't use the haven labelled format.
-#' (imported functions causes tests to run library(haven))
+#' To automatically save the compiled file in a directory ready to be loaded with
+#' `lfs_load()`, set the `DATA_DIRECTORY` environment variable to point at a folder.
 #'
 #' @param file Index of file
 #' @param total_files Vector of file names - helper function for cli
@@ -22,12 +21,18 @@ lfs_tidy_file <- function(file,
                           total_files,
                           file_format,
                           extra_mappings = NULL) {
+
+# Note: importing labelled from haven is required to import haven when
+# tests are run - otherwise it can't use the haven labelled format.
+# (imported functions causes tests to run library(haven))
+
   cli::cli_div(theme = list(span.emph = list(color = "blue")))
   cli::cli_progress_step("Processing {.emph {total_files[[file]]} } {file}/{length(total_files)}.")
   cli::cli_end()
 
   df2 <- read_correct_format(file_format, total_files[[file]])
 
+  # Some filenames have lower case columns - capitalise for consistency
   colnames(df2) <- toupper(colnames(df2))
 
   cols <- colnames(df2)
@@ -76,6 +81,10 @@ lfs_tidy_file <- function(file,
   character_variables <- ifelse(complete_mappings$type == "character", complete_mappings$new_name, NA)
   character_variables <- character_variables[!is.na(character_variables)]
 
+    unlabelled_factor_variables <- ifelse(complete_mappings$type == "unlabelled_factor", complete_mappings$new_name, NA)
+    unlabelled_factor_variables <- unlabelled_factor_variables[!is.na(unlabelled_factor_variables)]
+
+
 
   # Explicitly convert problem columns to correct type, for vctrs compatibility
 
@@ -104,7 +113,11 @@ lfs_tidy_file <- function(file,
     dplyr::mutate(dplyr::across(
       dplyr::any_of(character_variables),
       as.character
-    ))
+    )) %>%
+    dplyr::mutate(dplyr::across(
+      dplyr::any_of(unlabelled_factor_variables),
+      ~ .x |> as.character() |> as.factor()
+        ))
 
     # Test to check if there are any
     if (length(unlabelled_factor_variables) > 0) {
@@ -131,19 +144,20 @@ lfs_tidy_file <- function(file,
 #' which has the custom mapping function.
 #' See
 #' \code{vignette("Adding_Variables", package = "tidylfs")}
-#' @param save_location File path for `fst` file to save. By default, saves the
-#' output in the package directory, so it's always accessible with `lfs_load`.
+#' @param save_to_folder If TRUE, will save to the `DATA_DIRECTORY` environment variable if present
 #' @param save_variables_report Save a csv with the list of picked variables?
 #' @param fst_compress Compression level for fst
+#' @param aps Annual Population Survey flag, files called eg. "APS 2012.sav"
 #'
 #' @return Nothing - saves the fst file only.
 #'
 #' @export
 lfs_compile <- function(lfs_directory,
                         extra_mappings = NULL,
-                        save_location = "package",
+                        save_to_folder = FALSE,
                         save_variables_report = TRUE,
-                        fst_compress = 50) {
+                        fst_compress = 50,
+                        aps = FALSE) {
 
   # Get list of files ----------------------------------------
 
@@ -159,7 +173,7 @@ lfs_compile <- function(lfs_directory,
 
   correct_file_index <- stringr::str_detect(
     files_in_directory,
-    "^\\d{4}( |_)Q\\d\\.(sav|csv|Rds)$"
+    "^\\d{4}( |_)Q\\d\\.(sav|csv|Rds)$|APS \\d{4}.(sav|csv|Rds)$"
   )
 
   # Take only files which match "4 digits Q digit" pattern
@@ -196,14 +210,19 @@ lfs_compile <- function(lfs_directory,
   )
 
   # Make record of what variables chosen if picked ---------------------------
-  cli::cli_alert_info("Combining and saving...")
+  cli::cli_alert_info("Combining...")
 
   if (save_variables_report == TRUE) {
     final_mapping <- purrr::map(lfs_data, 2)[[1]][[2]]
     variables_report <- purrr::map(lfs_data, 2) %>%
       purrr::map("lfs_name")
 
+    if (aps == TRUE) {
+    names(variables_report) <- substr(lfs_files, 1, 8)
+    } else {
     names(variables_report) <- substr(lfs_files, 1, 7)
+    }
+
     variables_report <- dplyr::bind_rows(variables_report, .id = "QUARTER")
     variables_report <- base::t(variables_report)
     variables_report <- as.data.frame(variables_report)
@@ -211,7 +230,6 @@ lfs_compile <- function(lfs_directory,
     variables_report <- variables_report %>%
       dplyr::mutate(QUARTER = row.names(variables_report)) %>%
       dplyr::relocate(.data$QUARTER)
-
 
     colnames(variables_report) <- c("QUARTER", final_mapping)
 
@@ -244,19 +262,72 @@ lfs_compile <- function(lfs_directory,
     annotate_industry() %>%
     annotate_degree()
 
+  cli::cli_alert_info("Merging descriptions into the main dataset")
 
 
-  if (save_location == "package") {
-    save_file_path <- paste0(
-      system.file(package = "tidylfs"),
-      "/lfs_data.fst"
-    )
+  # Assign annotations to columns
+  if (aps == TRUE) {
+
+  lfs_data_frame <- data.table::rbindlist(lfs_data_frame, idcol = "YEAR", fill = TRUE)
+
+  lfs_data_frame[, `:=`(YEAR = as.integer(substr(YEAR, 5, 8)),
+                        CASENO = trimws(CASENO))]
+
+  data.table::setcolorder(lfs_data_frame, c("YEAR", "CASENO"))
+
+  lfs_data_frame <- lfs_data_frame |>
+    annotate_hiquald() |>
+    annotate_occupation()
+    # annotate_industry() |>
+    # annotate_economic_activity()
+
   } else {
-    save_file_path <- save_location
+
+  lfs_data_frame <- data.table::rbindlist(lfs_data_frame, idcol = "QUARTER", fill = TRUE)
+
+  lfs_data_frame[, `:=`(YEAR = as.integer(substr(QUARTER, 1, 4)),
+                        CASENO = trimws(CASENO))]
+
+  data.table::setcolorder(lfs_data_frame, c("YEAR", "QUARTER", "CASENO"))
+  lfs_data_frame <- lfs_data_frame |>
+    annotate_hiquald() |>
+    annotate_occupation() |>
+    annotate_industry() |>
+    annotate_economic_activity()
   }
 
-  fst::write_fst(lfs_data_frame, save_file_path, compress = fst_compress)
+
+  if (aps == TRUE) {
+  save_name <- "aps_data.fst"
+  } else {
+  save_name <- "lfs_data.fst"
+  }
+
+  # If enabled
+  if (save_to_folder) {
+      # If DATA_DIRECTORY environment variable is present, save there.
+      if (Sys.getenv("DATA_DIRECTORY") != "") {
+
+        cli::cli_alert_info("Saving as fst")
+
+        fst::write_fst(
+          lfs_data_frame,
+          paste0(Sys.getenv("DATA_DIRECTORY"), "/", save_name)
+        )
+
+            if (aps == 0) {
+            cli::cli_alert_info("Load LFS data with {.emph lfs <- lfs_load()}\n
+                                 To check ONS definitions see {.emph lfs_variables_report.csv}\n")
+            } else {
+            cli::cli_alert_info("Load LFS data with {.emph aps <- aps_load()}\n
+                                 To check ONS definitions see {.emph lfs_variables_report.csv}\n")
+            }
+      }
+  }
 
   # Print complete message
-  cli_compiling_complete(file_format = file_format)
+  cli_compiling_complete(file_format = file_format, aps = aps)
+
+  return(lfs_data_frame)
+
 }

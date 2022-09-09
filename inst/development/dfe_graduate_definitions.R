@@ -39,7 +39,7 @@ lfs_flag_notinscope <-  function(lfs, column_name = "NOTSCOPE") {
 
   lfs %>%
     dplyr::mutate(column_name = case_when(
-HIQUAL == "Level 8 Diploma" | 
+HIQUAL == "Level 8 Diploma" |
 HIQUAL == "Level 8 Certificate" |
 HIQUAL == "Level 8 Award" |
 HIQUAL == "Level 7 Certificate" |

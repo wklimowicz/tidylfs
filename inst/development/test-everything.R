@@ -2,10 +2,14 @@ setwd(here::here())
 load_all()
 library(tidyverse)
 library(data.table)
+library(tictoc)
 
-lfs_convert("../lfs_raw_data/", "../lfs_fst_data/") #, filter_files = "2017 Q3.sav")
+lfs_convert("../lfs_raw_data/", "../lfs_rds_data/", incremental = TRUE)
 
-lfs_compile("../lfs_rds_data/")
+tic()
+lfs <- lfs_compile("../lfs_rds_data/", save_to_folder = TRUE)
+toc()
+
 source("data-raw/create_test_data.R")
 check()
 
@@ -21,13 +25,11 @@ source("data-raw/create_test_data.R")
 check()
 
 
-
 tic()
 lfs_compile("../lfs_rds_data_test/")
 toc()
 
 lfs <- lfs_load()
-
 
 lfs[HIQUALD == "Degree or equivalent",.N, by = .(YEAR, DEGREE_DESCRIPTION)] |>
 ggplot() +
@@ -48,6 +50,30 @@ dplyr::count(s, CMBDEG01, CMBDEG_MAIN) |>
 tidyr::pivot_wider(CMBDEG01,
                    names_from = CMBMAIN,
 values_from = n)  |> sie()
+
+lfs[is.na(CASENO), .N, YEAR]
+lfs[,.N,.(YEAR, is.na(WARD))]
+lfs[,.N,.(YEAR, is.na(PCON9D))]
+lfs[,.N,.(YEAR, is.na(TTWA))]
+lfs[,.N,.(YEAR, is.na(CTY))]
+
+lfs[,.N,.(CTY)]
+
+lfs[,.N,.(YEAR,HEALTH)] |>
+dcast(YEAR ~ HEALTH)
+
+lfs[,.N,DEGREE71]
+lfs[,.N,INECAC05]
+lfs[,.N,LAST_OCCUPATION_DESCRIPTION]
+lfs[,.N,OCCUPATION_DESCRIPTION]
+lfs[,.N,INDUSTRY_DESCRIPTION]
+
+lfs[,.N,.(YEAR,DEGREE71)] |>
+dcast(YEAR ~ DEGREE71)
+
+lfs[,.N,CMBDEGREE]
+lfs[,.N,QUARTER]
+lfs[,.N,INDUSTRY]
 
 lfs$OCCUPATION_DESCRIPTION
 

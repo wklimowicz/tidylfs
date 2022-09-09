@@ -1,42 +1,37 @@
-annotate_degree71 <- function(YEAR, degree_name) {
-  dplyr::case_when(
-    (YEAR >= 2004 & {{ degree_name }} == 1) ~ "A higher degree (including PGCE)",
-    (YEAR >= 2004 & {{ degree_name }} == 2) ~ "A first degree",
-    (YEAR >= 2004 & {{ degree_name }} == 3) ~ "A foundation degree",
-    (YEAR >= 2004 & {{ degree_name }} == 4) ~ "A graduate membership of a professional institution",
-    (YEAR >= 2004 & {{ degree_name }} == 5) ~ "Other",
-    (YEAR >= 2004 & {{ degree_name }} == 6) ~ "Don't know",
-    (YEAR < 2004 & {{ degree_name }} == 1) ~ "A higher degree (including PGCE)",
-    (YEAR < 2004 & {{ degree_name }} == 2) ~ "A first degree",
-    (YEAR < 2004 & {{ degree_name }} == 3) ~ "Other (e.g. graduate member of a professional institute or chartered accountant)",
-    (YEAR < 2004 & {{ degree_name }} == 4) ~ "Don't know"
+annotate_degree71 <- function(degree_name, YEAR) {
+
+  data.table::fcase(
+    YEAR >= 2004 & c(degree_name) == 1, "A higher degree (including PGCE)",
+    YEAR >= 2004 & c(degree_name) == 2, "A first degree",
+    YEAR >= 2004 & c(degree_name) == 3, "A foundation degree",
+    YEAR >= 2004 & c(degree_name) == 4, "A graduate membership of a professional institution",
+    YEAR >= 2004 & c(degree_name) == 5, "Other",
+    YEAR >= 2004 & c(degree_name) == 6, "Don't know",
+    YEAR < 2004 & c(degree_name) == 1, "A higher degree (including PGCE)",
+    YEAR < 2004 & c(degree_name) == 2, "A first degree",
+    YEAR < 2004 & c(degree_name) == 3, "Other (e.g. graduate member of a professional institute or chartered accountant)",
+    YEAR < 2004 & c(degree_name) == 4, "Don't know"
   )
 }
 
-annotate_hiquald <- function(data) {
-  data %>%
-    dplyr::mutate(HIQUALD = dplyr::case_when(
-      .data$HIQUALD == 1 ~ "Degree or equivalent",
-      .data$HIQUALD == 2 ~ "Higher education",
-      .data$HIQUALD == 3 ~ "GCE, A-level or equivalent",
-      .data$HIQUALD == 4 ~ "GCSE grades A*-C or equivalent",
-      .data$HIQUALD == 5 ~ "Other qualifications",
-      .data$HIQUALD == 6 ~ "No qualification",
-      .data$HIQUALD == 7 ~ "Don't know"
-    )) %>%
-    dplyr::mutate(HIQUALD = forcats::as_factor(.data$HIQUALD)) %>%
-    dplyr::mutate(
-      dplyr::across(
-        dplyr::starts_with("DEGREE7"),
-        ~ annotate_degree71(YEAR, .x)
-      )
-    ) %>%
-    dplyr::mutate(
-      dplyr::across(
-        dplyr::starts_with("DEGREE7"),
-        forcats::as_factor
-      )
-    )
+annotate_hiquald <- function(lfs) {
+
+    names_vector <- lfs[, names(.SD), .SDcols = patterns("DEGREE7")]
+
+    lfs[, HIQUALD := data.table::fcase(
+      HIQUALD == 1, "Degree or equivalent",
+      HIQUALD == 2, "Higher education",
+      HIQUALD == 3, "GCE, A-level or equivalent",
+      HIQUALD == 4, "GCSE grades A*-C or equivalent",
+      HIQUALD == 5, "Other qualifications",
+      HIQUALD == 6, "No qualification",
+      HIQUALD == 7, "Don't know"
+      )][, HIQUALD := forcats::as_factor(HIQUALD)
+       ][, (names_vector) := lapply(.SD, annotate_degree71, YEAR), .SDcols = patterns("DEGREE7")
+       ][, (names_vector) := lapply(.SD, forcats::as_factor), .SDcols = patterns("DEGREE7")]
+
+    return(lfs)
+
 }
 
 
@@ -133,45 +128,57 @@ annotate_occupation <- function(lfs) {
   soc20m <- read_occupation_coding("SOC20M")
 
   soc_coding <- dplyr::bind_rows(soc2km, soc10m, soc20m) %>%
-    dplyr::rename(OCCUPATION = .data$SOC)
+    dplyr::rename(OCCUPATION = .data$SOC)|>
+    data.table::setDT()
+
+    # dplyr::mutate(OCCUPATION_DESCRIPTION = forcats::as_factor(OCCUPATION_DESCRIPTION))
 
   soc_coding_last <- dplyr::bind_rows(soc2km, soc10m, soc20m) %>%
     dplyr::rename(
       LAST_OCCUPATION = .data$SOC,
       LAST_OCCUPATION_DESCRIPTION = .data$OCCUPATION_DESCRIPTION
-    )
+    ) |>
+    data.table::setDT()
+
+    # dplyr::mutate(LAST_OCCUPATION_DESCRIPTION = forcats::as_factor(LAST_OCCUPATION_DESCRIPTION))
 
   soc_coding_parental <- dplyr::bind_rows(soc2km, soc10m, soc20m) %>%
     dplyr::rename(
       PARENTAL_OCCUPATION = .data$SOC,
       PARENTAL_OCCUPATION_DESCRIPTION = .data$OCCUPATION_DESCRIPTION
-    )
+    )  |>
+    data.table::setDT()
+    # dplyr::mutate(PARENTAL_OCCUPATION_DESCRIPTION = forcats::as_factor(PARENTAL_OCCUPATION_DESCRIPTION))
 
-  lfs1 <- lfs %>%
-    dplyr::mutate(SOC_TYPE = dplyr::case_when(
-      .data$YEAR >= 2001 & .data$YEAR < 2011 ~ "SOC2KM",
-      .data$YEAR >= 2011 & .data$YEAR < 2021 ~ "SOC10M",
-      .data$YEAR >= 2021 ~ "SOC20M"
-    )) %>%
-    dplyr::left_join(soc_coding, by = c("SOC_TYPE", "OCCUPATION"))
+
+
+  lfs <- lfs[, SOC_TYPE := data.table::fcase(
+      YEAR >= 2001 & YEAR < 2011, "SOC2KM",
+      YEAR >= 2011 & YEAR < 2021, "SOC10M",
+      YEAR >= 2021, "SOC20M"
+      )][soc_coding, on = c("SOC_TYPE", "OCCUPATION"),
+        OCCUPATION_DESCRIPTION := i.OCCUPATION_DESCRIPTION
+        ][, OCCUPATION_DESCRIPTION := as.factor(OCCUPATION_DESCRIPTION)]
 
   if ("LAST_OCCUPATION" %in% names(lfs)) {
-    lfs1 <- lfs1 %>%
-        dplyr::left_join(soc_coding_last, by = c("SOC_TYPE", "LAST_OCCUPATION"))
+    lfs <- lfs[soc_coding_last, on = c("SOC_TYPE", "LAST_OCCUPATION"),
+        LAST_OCCUPATION_DESCRIPTION := i.LAST_OCCUPATION_DESCRIPTION
+        ][, LAST_OCCUPATION_DESCRIPTION := as.factor(LAST_OCCUPATION_DESCRIPTION)]
   }
 
   if ("PARENTAL_OCCUPATION" %in% names(lfs)) {
-    lfs1 <- lfs1 %>%
-      dplyr::left_join(soc_coding_parental, by = c("SOC_TYPE", "PARENTAL_OCCUPATION"))
+    lfs <- lfs[soc_coding_parental, on = c("SOC_TYPE", "PARENTAL_OCCUPATION"),
+        PARENTAL_OCCUPATION_DESCRIPTION := i.PARENTAL_OCCUPATION_DESCRIPTION
+        ][, PARENTAL_OCCUPATION_DESCRIPTION := as.factor(PARENTAL_OCCUPATION_DESCRIPTION)]
   }
 
+  lfs[, SOC_TYPE := NULL]
 
+  return(lfs)
 
   # QA
   # dplyr::count(lfs1, QUARTER, PARENTAL_OCCUPATION_DESCRIPTION, PARENTAL_OCCUPATION)
 
-  lfs1 %>%
-    dplyr::select(-.data$SOC_TYPE)
 }
 
 annotate_industry <- function(lfs) {
@@ -205,17 +212,55 @@ annotate_industry <- function(lfs) {
       dplyr::rename(INDUSTRY_DESCRIPTION = .data$ONS_Description)
 
   sic_coding <- dplyr::bind_rows(sic07, sic92) %>%
-    dplyr::rename(INDUSTRY = .data$SIC)
+    dplyr::rename(INDUSTRY = .data$SIC) |>
+    data.table::setDT()
+    # dplyr::mutate(INDUSTRY_DESCRIPTION = forcats::as_factor(INDUSTRY_DESCRIPTION))
 
-  lfs1 <- lfs %>%
-    dplyr::mutate(SIC_TYPE = dplyr::case_when(
-      .data$YEAR >= 1992 & .data$YEAR < 2009 ~ "SIC92",
-      .data$YEAR >= 2009 ~ "SIC07"
-    )) %>%
-    dplyr::left_join(sic_coding, by = c("SIC_TYPE", "INDUSTRY"))
 
-  lfs1 %>%
-    dplyr::select(-.data$SIC_TYPE)
+    lfs <- lfs[, SIC_TYPE := data.table::fcase(
+      YEAR >= 1992 & YEAR < 2009, "SIC92",
+      YEAR >= 2009, "SIC07"
+      )][sic_coding, on = c("SIC_TYPE", "INDUSTRY"),
+    INDUSTRY_DESCRIPTION := i.INDUSTRY_DESCRIPTION
+    ][, SIC_TYPE := NULL
+       ][, INDUSTRY_DESCRIPTION := forcats::as_factor(INDUSTRY_DESCRIPTION)]
 
+    return(lfs)
+
+}
+
+
+annotate_economic_activity <- function(lfs) {
+
+  # Find correct coding file
+  read_economic_activity <- function(inecac) {
+    readr::read_csv(
+      paste0(system.file("coding_frames", package = "tidylfs"), "/economic_activity_", inecac, ".csv"),
+      col_types = readr::cols(
+        INECAC = readr::col_integer(),
+        INECAC_DESCRIPTION = readr::col_character()
+      ), progress = FALSE
+    ) %>%
+      dplyr::mutate(INECAC_VAR = inecac)
+  }
+
+  inecac05 <- read_economic_activity("INECAC05")
+  inecacr <- read_economic_activity("INECACR")
+
+  economic_activity_coding <- dplyr::bind_rows(inecac05, inecacr) |>
+    dplyr::rename(INECAC05 = .data$INECAC) |>
+    data.table::setDT()
+
+lfs[, INECAC_VAR := data.table::fcase(
+      QUARTER <= "2005 Q1", "INECACR",
+      QUARTER > "2005 Q1", "INECAC05"
+    )]
+
+lfs[economic_activity_coding,
+    on = c("INECAC_VAR", "INECAC05"),
+    INECAC_DESCRIPTION := i.INECAC_DESCRIPTION
+    ][, `:=`(INECAC_VAR = NULL, INECAC05 = NULL)
+      ][, data.table::setnames(.SD, "INECAC_DESCRIPTION", "INECAC05")
+    ][, INECAC05 := forcats::as_factor(INECAC05)]
 
 }
