@@ -27,7 +27,7 @@ reference:
 - subtitle: Add custom columns
   desc: Brings in extra columns from lfs
   contents:
-  - lfs_pick_column
+  - pick
 
 navbar:
   structure:

@@ -10,7 +10,7 @@
 #' @return First name that appears in cols
 #'
 #' @export
-lfs_pick_column <- function(vector_of_names, column_names) {
+pick <- function(vector_of_names, column_names) {
   index <- vector_of_names %in% column_names
 
   if (sum(index) > 0) {
@@ -24,13 +24,13 @@ lfs_default_mappings <- function(cols) {
 
   # Choose variables in order of priority when found
 
-    caseno <- lfs_pick_column(c("CASENO", "CASE"), cols)
+    caseno <- pick(c("CASENO", "CASE"), cols)
 
   # Core - INECACR is older, but replicates ONS numbers more precisely in 2000's
   # - see variales_report
-  ilo_status <- lfs_pick_column(c("INECACR", "INECAC05"), cols)
+  ilo_status <- pick(c("INECACR", "INECAC05"), cols)
 
-  weight_income <- lfs_pick_column(
+  weight_income <- pick(
     c(
       "PIWT20",
       "PIWT18",
@@ -45,59 +45,59 @@ lfs_default_mappings <- function(cols) {
     cols
   )
 
-  weight <- lfs_pick_column(c("PWT20", "PWT18", "PWT14", "PWT07"), cols)
+  weight <- pick(c("PWT20", "PWT18", "PWT14", "PWT07"), cols)
 
   # Education
-  cured <- lfs_pick_column(c("CURED8", "CURED"), cols)
+  cured <- pick(c("CURED8", "CURED"), cols)
 
-  hiquald <- lfs_pick_column(c(
+  hiquald <- pick(c(
     "HIQUL15D", "HIQUL11D", "HIQUAL8D",
     "HIQUAL5D", "HIQUAL4D", "HIQUALD"
   ), cols)
 
-  hiqual <- lfs_pick_column(c(
+  hiqual <- pick(c(
     "HIQUAL15", "HIQUAL11", "HIQUAL8",
     "HIQUAL5", "HIQUAL4", "HIQUAL"
   ), cols)
 
-  degree71 <- lfs_pick_column(c("DEGREE71", "DEGREE4", "DEGREE"), cols)
+  degree71 <- pick(c("DEGREE71", "DEGREE4", "DEGREE"), cols)
 
-  fdsico <- lfs_pick_column(c("FDSICO", "FDSINCOM", "SINCOM"), cols)
+  fdsico <- pick(c("FDSICO", "FDSINCOM", "SINCOM"), cols)
 
-  degree_subject <- lfs_pick_column(c("FDSNGDEG", "SNGDEG"), cols)
+  degree_subject <- pick(c("FDSNGDEG", "SNGDEG"), cols)
 
-  combined_degree_subject <- lfs_pick_column(c(
+  combined_degree_subject <- pick(c(
     "FDCMBMA", "UNCOMBMA",
     "CMBDEG01"
   ), cols)
 
-  teaching_qualification <- lfs_pick_column(c("TEACH41", "TEACH1"), cols)
+  teaching_qualification <- pick(c("TEACH41", "TEACH1"), cols)
 
   # Occupation
-  occupation <- lfs_pick_column(c("SOC20M", "SOC10M", "SOC2KM"), cols)
+  occupation <- pick(c("SOC20M", "SOC10M", "SOC2KM"), cols)
 
-  occupation_major <- lfs_pick_column(c(
+  occupation_major <- pick(c(
     "SC2010MMJ", "SC10MMJ",
     "SC2KMMJ"
   ), cols)
 
-  last_occupation <- lfs_pick_column(c("SOC20O", "SOC10O", "SOC2KO"), cols)
+  last_occupation <- pick(c("SOC20O", "SOC10O", "SOC2KO"), cols)
 
-  parental_occupation <- lfs_pick_column(c("SMSOC204", "SMSOC104"), cols)
+  parental_occupation <- pick(c("SMSOC204", "SMSOC104"), cols)
 
-  parental_occupation_major <- lfs_pick_column(c("SMSOC201", "SMSOC101"), cols)
+  parental_occupation_major <- pick(c("SMSOC201", "SMSOC101"), cols)
 
   # Other
-  industry_major <- lfs_pick_column(c("INDS07M", "INDS92M", "SICMAIN"), cols)
+  industry_major <- pick(c("INDS07M", "INDS92M", "SICMAIN"), cols)
 
-  industry <- lfs_pick_column(c("ICDM", "INDM92M"), cols)
+  industry <- pick(c("ICDM", "INDM92M"), cols)
 
   # "INDS92M" %in% cols ~ "INDS92M",INDS92M
-  ethnicity <- lfs_pick_column(c("ETHUKEUL", "ETH01"), cols)
+  ethnicity <- pick(c("ETHUKEUL", "ETH01"), cols)
 
-  health <- lfs_pick_column(c("HEALTH20", "HEALTH"), cols)
+  health <- pick(c("HEALTH20", "HEALTH"), cols)
 
-  lnglst <- lfs_pick_column(c("LNGLST", "LNGLIM"), cols)
+  lnglst <- pick(c("LNGLST", "LNGLIM"), cols)
 
 
   variables <- tibble::tribble(

@@ -41,14 +41,14 @@ lfs_compile("your_lfs_rds_directory", extra_mappings = user_extra_mappings)
 
 ```
 
-* To add a variable that changes over time, use `lfs_pick_column`. As an example, degree class is `DEGCLS7` from 2007 onwards, and `DEGCLS` before then. This code imports those as a factor (retaining the SPSS labels), and calls the new column `DEGREE_CLASS`.
+* To add a variable that changes over time, use `pick`. As an example, degree class is `DEGCLS7` from 2007 onwards, and `DEGCLS` before then. This code imports those as a factor (retaining the SPSS labels), and calls the new column `DEGREE_CLASS`.
 
 ```{r}
 user_extra_mappings <- function(lfs_file_column_names) {
 
   # This will pick DEGCLS7 if it exists in the quarterly file,
   # if not then DEGCLS, otherwise it'll return NA.
-  degree_class <- lfs_pick_column(c("DEGCLS7", "DEGCLS"), lfs_file_column_names)
+  degree_class <- pick(c("DEGCLS7", "DEGCLS"), lfs_file_column_names)
 
   custom_variables <- tibble::tribble(
     ~lfs_name,       ~new_name,     ~type,
