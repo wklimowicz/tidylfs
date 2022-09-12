@@ -11,3 +11,5 @@
 *.xlsx
 docs
 inst/doc
+/doc/
+/Meta/
