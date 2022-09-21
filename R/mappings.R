@@ -31,7 +31,7 @@ lfs_default_mappings <- function(cols) {
   ilo_status <- pick(c("INECACR", "INECAC05"), cols)
 
   weight_income <- pick(
-    c(
+    c("PIWT22",
       "PIWT20",
       "PIWT18",
       "PIWT14",
@@ -45,7 +45,13 @@ lfs_default_mappings <- function(cols) {
     cols
   )
 
-  weight <- pick(c("PWT20", "PWT18", "PWT14", "PWT07"), cols)
+  weight <- pick(
+   c("PWT22",
+     "PWT20",
+     "PWT18",
+     "PWT14",
+     "PWT07"),
+   cols)
 
   # Education
   cured <- pick(c("CURED8", "CURED"), cols)

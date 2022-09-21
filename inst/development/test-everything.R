@@ -6,8 +6,19 @@ library(tictoc)
 
 lfs_convert("../lfs_raw_data/", "../lfs_rds_data/", incremental = TRUE)
 
+
+user_extra_mappings <- function(lfs_file_column_names) {
+
+  custom_variables <- tibble::tribble(
+    ~lfs_name,       ~new_name,     ~type,
+    "DTEOFBTH", "DTEOFBTH", "unlabelled_factor"
+    )
+
+  return(custom_variables)
+}
+
 tic()
-lfs <- lfs_compile("../lfs_rds_data/", save_to_folder = TRUE)
+lfs <- lfs_compile("../lfs_rds_data/", save_to_folder = TRUE, extra_mappings = user_extra_mappings)
 toc()
 
 source("data-raw/create_test_data.R")
