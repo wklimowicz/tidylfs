@@ -47,6 +47,13 @@ lfs_tidy_file <- function(file,
     vars_extra <- vars_extra %>%
       dplyr::mutate(lfs_name = ifelse(.data$lfs_name %in% cols, .data$lfs_name, NA))
 
+    # Remove existing mappings if overwritten
+    complete_mappings <- complete_mappings %>%
+      dplyr::filter(!.data$new_name %in% vars_extra[[2]])
+
+    # TODO: more verification if user writes the same variable to a different name
+    # eg. UNION -> union_rep breaks the code
+
     complete_mappings <- dplyr::bind_rows(complete_mappings, vars_extra)
   }
 
