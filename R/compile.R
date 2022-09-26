@@ -269,7 +269,8 @@ lfs_compile <- function(lfs_directory,
     annotate_hiquald() |>
     annotate_occupation() |>
     annotate_industry() |>
-    annotate_economic_activity()
+    annotate_economic_activity() |>
+    annotate_subject()
   }
 
 

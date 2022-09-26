@@ -189,3 +189,48 @@ lfs[economic_activity_coding,
     ][, INECAC05 := forcats::as_factor(INECAC05)]
 
 }
+
+
+annotate_subject <- function(lfs) {
+
+  # Find correct coding file
+  read_subject_coding <- function(year) {
+    readr::read_csv(
+      paste0(system.file("coding_frames", package = "tidylfs"), "/one_digit_subject_", year, ".csv"),
+      col_types = readr::cols(
+        DEGREE_SUBJECT = readr::col_character(),
+        SUBJECT_DESCRIPTION = readr::col_character()
+      ), progress = FALSE
+    ) %>%
+      dplyr::mutate(SUBJECT_VAR = year)
+  }
+
+  subject_2012 <- read_subject_coding("2012")
+  subject_2004 <- read_subject_coding("2004")
+  subject_1997 <- read_subject_coding("1997")
+
+  subject_coding <- dplyr::bind_rows(subject_2012, subject_2004, subject_1997) |>
+    # dplyr::rename(INECAC05 = .data$INECAC) |>
+    data.table::setDT()
+
+lfs[, SUBJECT_VAR := data.table::fcase(
+      QUARTER <= "1997 Q3", "1997",
+      QUARTER <= "2003 Q4", "2004",
+      QUARTER <= "2011 Q4", "2004", # 2 different ones here?
+      QUARTER > "2012 Q1", "2012"
+    )]
+
+lfs[, one_digit_code := str_extract(DEGREE_SUBJECT, regex("(\\d{1,2})"))]
+# lfs[, 2_digit_code := str_extract(DEGREE_SUBJECT, regex("(\\d{1,2}\\.\\d{1,2}|\\d{1,2})"))
+
+
+lfs[subject_coding,
+    on = c("SUBJECT_VAR", "one_digit_code" = "DEGREE_SUBJECT"),
+    SUBJECT_DESCRIPTION := i.SUBJECT_DESCRIPTION
+    ][, `:=`(SUBJECT_VAR = NULL, one_digit_code = NULL)
+      ][, SUBJECT_DESCRIPTION := forcats::as_factor(SUBJECT_DESCRIPTION)]
+# [, data.table::setnames(.SD, "INECAC_DESCRIPTION", "INECAC05")]
+
+
+}
+

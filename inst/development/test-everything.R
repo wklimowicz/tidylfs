@@ -10,9 +10,21 @@ tic()
 lfs <- lfs_compile("../lfs_rds_data/", save_to_folder = TRUE)
 toc()
 
+# Short version
+# tic()
+# lfs <- lfs_compile("../lfs_rds_data_test/", save_to_folder = TRUE)
+# toc()
+
 source("data-raw/create_test_data.R")
 check()
 
+
+lfs[!is.na(DEGREE_SUBJECT) , .N, .(SUBJECT_DESCRIPTION, DEGREE_SUBJECT)] |> sie()
+
+lfs[is.na(SUBJECT_DESCRIPTION) & !is.na(DEGREE_SUBJECT), .N, .(QUARTER)] 
+
+
+s <- 
 
 tic()
 lfs_compile("../lfs_rds_data_test/")

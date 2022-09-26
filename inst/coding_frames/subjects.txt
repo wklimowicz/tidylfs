@@ -1,0 +1,2413 @@
+1
+1.1
+1.2
+1.3
+1.4
+1.9
+1.9.9
+Medicine & Dentistry
+Pre-clinical Medicine
+Pre-clinical Dentistry
+Clinical Medicine
+Clinical Dentistry
+Other in Medicine & Dentistry
+Medicine & Dentistry N.E.C
+10
+10.1
+10.1.1
+10.1.1.1
+10.1.1.2
+10.1.1.3
+10.1.2
+10.1.3
+10.1.4
+10.1.5
+10.1.6
+10.1.7
+10.1.7.1
+10.1.7.2
+10.1.7.3
+10.1.7.4
+10.1.9
+Social Studies
+Economics
+Applied Economics
+Financial Economics
+Agricultural Economics
+Economic Policy
+Microeconomics
+Macroeconomics
+Econometrics
+Political Economics
+International Economics
+Economic System
+Capitalism
+Monetarism
+Keynesianism
+Collectivism
+Economics N.E.C
+10.2
+10.2.1
+10.2.1.1
+10.2.1.2
+10.2.1.3
+10.2.1.4
+10.2.1.5
+10.2.1.6
+10.2.1.7
+10.2.1.8
+10.2.2
+10.2.2.1
+10.2.2.2
+10.2.2.3
+10.2.2.4
+10.2.3
+Politics
+Political Theories
+Liberalism
+Conservatism
+Socialism
+Nationalism
+10.2.3.1
+10.2.3.2
+10.2.4
+10.2.4.1
+10.2.4.2
+10.2.4.3
+10.2.4.4
+10.2.5
+10.2.5.1
+10.2.5.2
+10.2.6
+10.2.9
+10.3
+10.3.1
+10.3.2
+10.3.2.1
+10.3.2.2
+10.3.3
+10.3.4
+10.3.5
+10.3.6
+10.3.7
+10.3.7.1
+10.3.8
+10.3.9
+10.3.9.1
+Sociology
+Applied Sociology
+Gender Studies
+Women’s Studies
+Men’s Studies
+Ethnic Studies
+Disability in Society
+Religion in Society
+Socio-economics
+Social Theory
+Social Hierarchy
+Political Sociology
+Sociology N.E.C
+Sociology of Science & Technology
+10.4
+10.4.1
+10.4.2
+10.4.3
+10.4.3.1
+10.4.3.2
+10.4.3.3
+10.4.3.4
+10.4.3.5
+10.4.9
+Social Policy
+UK Social Policy
+International Social Policy
+Public Policy
+Health Policy
+Welfare Policy
+Education Policy
+Transport Policy
+Security Policy
+Social Policy N.E.C
+10.5
+10.5.1
+10.5.2
+10.5.3
+10.5.4
+10.5.5
+10.5.6
+10.5.9
+Social Work
+Health & Welfare
+Child Care
+Youth Work
+Community Work
+Careers Guidance
+Probation/After Care
+Social Work N.E.C
+10.6
+10.6.1
+10.6.2
+10.6.9
+Anthropology
+Social & Cultural Anthropology
+Physical & Biological Anthropology
+Anthropology N.E.C
+10.7
+10.7.1
+10.7.1.1
+Human & Social Geography
+Human & Social Geography by area
+Human & Social Geography of Europe
+Human & Social Geography of Asia
+Human & Social Geography of Africa
+Human & Social Geography of Australia
+Human & Social Geography of the Americas
+Human & Social Geography of Arctic /Antarctic
+10.7.1.2
+10.7.1.3
+10.7.1.4
+10.7.1.5
+10.7.1.6
+10.7.2
+10.7.2.1
+10.7.2.2
+10.7.2.3
+10.7.2.4
+10.7.2.5
+10.7.2.6
+10.7.2.7
+10.7.9
+Human & Social Geography by topic
+Economic Geography
+Urban Geography
+Political Geography
+Transport Geography
+Historical Geography
+Cultural Geography
+Agricultural Geography
+Human & Social Geography
+10.9
+10.9.9
+Other in Social Studies
+Social Studies N.E.C
+11
+11.1
+11.1.1
+11.1.1.1
+11.1.1.2
+11.1.1.3
+11.1.1.4
+11.1.2
+11.1.3
+11.1.4
+11.1.9
+Law
+Law by area
+UK Legal Systems
+English Law
+Welsh Law
+Northern Irish Law
+Scottish Law
+European Union Law
+Public International Law
+Comparative Law
+Law by Area N.E.C
+11.2
+11.2.1
+11.2.1.1
+11.2.2
+11.2.2.1
+11.2.2.2
+11.2.2.3
+11.2.2.4
+11.2.4
+11.2.5
+11.2.6
+11.2.9
+Law by Topic
+Public Law
+Criminal Law
+Private Law
+Business & Commercial Law
+Contract Law
+Property Law
+Torts
+Jurisprudence
+Legal Practice
+Medical Law
+Law by topic N.E.C
+11.9
+11.9.9
+Other in Law
+Law N.E.C
+1212.1
+12.1.1
+12.1.2
+12.1.9
+Business & Administrative
+Studies
+Business Studies
+European Business Studies
+International Business Studies
+Business Studies N.E.C
+12.2
+12.2.1
+12.2.1.1
+12.2.1.2
+12.2.1.3
+12.2.1.4
+12.2.1.5
+12.2.2
+12.2.2.1
+12.2.2.2
+12.2.2.3
+Management Studies
+Management Techniques
+Strategic Management
+Creative Management
+Project Management
+Change Management
+Organisational Development
+Institutional Management
+Hotel & Catering
+Recreation/Leisure Management
+Domestic Management
+12.2.2.4
+12.2.3
+12.2.3.1
+12.2.3.2
+12.2.3.4
+12.2.4
+12.2.9
+Management & Organisation of
+Education
+Land & Property Management
+Land & Management
+Property Management
+Valuation & Auctioneering
+Retail Management
+Management Studies N.E.C
+12.3
+12.3.1
+12.3.2
+12.3.2.1
+12.3.2.2
+12.3.2.3
+12.3.3
+12.3.4
+12.3.4.1
+12.3.9
+Finance
+Banking
+Investment & Insurance
+Investment
+Insurance
+Actuarial Science
+Taxation
+Financial Management
+Financial Risk
+Finance N.E.C
+12.4
+12.4.1
+12.4.1.1
+12.4.1.2
+12.4.1.3
+12.4.2
+12.4.2.1
+12.4.2.2
+12.4.9
+Accounting
+Accountancy
+Cost & Management Accountancy
+Public Accountancy
+Book-keeping
+Accounting Theory
+Auditing of Accounts
+Financial Reporting
+Accounting N.E.C
+12.5
+12.5.1
+12.5.2
+12.5.3
+12.5.5
+12.5.6
+12.5.6.1
+12.5.6.2
+12.5.6.3
+12.5.9
+Marketing
+Market Research
+Sales Management
+Distribution
+International Marketing
+Promotion & Advertising
+Advertising
+Corporate Image
+Sponsorship
+Marketing N.E.C
+12.6
+12.6.1.1
+12.6.1.2
+12.6.1.3
+12.6.1.4
+12.6.2
+12.6.9
+Human Resource Management
+Industrial Relations
+Staff Development
+Training Methods
+Recruitment Methods
+Health & Safety Issues
+Human Resources N.E.C
+12.7
+12.7.1
+12.7.2
+12.7.2.1
+12.7.2.2
+12.7.9
+Office Skills
+Office Administration
+Secretarial & Typing Skills
+Audio Typing
+Shorthand & Transcription
+Office Skills N.E.C
+12.8
+12.8.1
+12.8.2
+12.8.3
+12.8.4
+Tourism, Transport & Travel
+Travel Management
+Event Management
+UK Tourism
+International Tourism
+12.8.5
+12.8.5.1
+12.8.5.2
+12.8.5.3
+12.8.9
+Transport Studies
+Land Travel
+Sea Travel
+Air Travel
+Tourism, Transport & Travel N.E.C
+12.9
+Other in Business &
+Administrative Studies
+Business & Administrative Studies N.E.C
+12.9.9
+13
+13.1
+13.1.1
+13.1.2
+13.1.2.1
+13.1.3
+13.1.3.1
+13.1.3.2
+13.1.9
+Mass Communications &
+Documentation
+Information Services
+Information Management
+Librarianship
+Library Studies
+Curatorial Studies
+Museum Studies
+Archive Studies
+Information Services N.E.C
+13.2
+13.2.1
+13.2.9
+Publicity Studies
+Public Relations
+Publicity Studies N.E.C
+13.3
+13.3.01
+13.3.02
+13.3.03
+13.3.04
+13.3.05
+13.3.1
+13.3.1.1
+13.3.1.2
+13.3.1.3
+13.3.9
+Media Studies
+Television Studies
+Radio Studies
+Film Studies
+Electronic Media Studies
+Paper-based Media Studies
+Media Production
+Television Production
+Radio Production
+Film Production
+Media Studies N.E.C
+13.4
+13.4.1
+13.4.1.1
+13.4.1.2
+13.4.1.3
+13.4.2
+13.4.3
+13.4.9
+Publishing
+Electronic Publishing
+Publishing on audio/video tape
+Publishing on CD-ROM
+Publishing via the World Wide Web
+Multi-media Publishing
+Interactive Publishing
+Publishing N.E.C
+13.5
+13.5.1
+13.5.9
+Journalism
+Factual Reporting
+Journalism N.E.C
+13.9
+Other in Mass Communications &
+Documentation
+Mass Communications &
+Documentation N.E.C
+13.9.9
+14
+14.1
+14.1.1
+14.1.2
+Linguistics, Classics & related
+subjects
+Linguistics
+Applied Linguistics
+Historical Linguistics
+14.1.3
+14.1.3.1
+14.1.3.2
+14.1.4
+14.1.5
+14.1.6
+14.1.7
+14.1.8.5
+14.1.9
+Phonetics & Phonology
+Phonetics
+Phonology
+Sociolinguistics
+Psycholinguistics
+English Linguistics
+Linguistics of non-English European
+Languages
+French Linguistics
+German Linguistics
+Italian Linguistics
+Spanish Linguistics
+Russian Linguistics
+Linguistics of Scandinavian
+Languages
+Linguistics of Slavonic & East-
+European Languages
+Linguistics of Ancient & Classical
+Languages
+Linguistics of non- English, non-
+European Languages
+Chinese Linguistics
+Japanese Linguistics
+Linguistics of Other Asian
+Languages
+Linguistics of Middle-Eastern
+Languages
+Linguistics of African Languages
+Linguistics N.E.C
+14.2
+14.2.1
+14.2.2
+14.2.9
+Comparative Literary Studies
+Literature in translation
+Literature in its original language
+Comparative Literary Studies N.E.C
+14.3
+14.3.1
+14.3.2
+14.3.2.1
+14.3.2.2
+14.3.2.3
+14.3.3
+14.3.414.3.9
+English Studies
+English Language
+English Literature
+English Literature by period
+English Literature by author
+English Literature by topic
+English as a second language
+English Literature written as a
+second language
+English Studies N.E.C
+14.4
+14.4.1
+14.4.1.1
+14.4.2
+14.4.3
+14.4.4
+14.4.5
+14.4.6
+14.4.7
+14.4.8
+14.4.9
+Ancient Language Studies
+Ancient Egyptian
+Coptic
+Classical Arabic
+Akkadian
+Sumerian
+Sanskrit
+Prakrit
+Aramaic
+Hebrew
+Ancient Language Studies N.E.C
+14.5
+14.5.1
+14.5.2
+Celtic Studies
+Ancient Celtic Studies
+Modern Celtic Studies
+14.1.7.1
+14.1.7.2
+14.1.7.3
+14.1.7.4
+14.1.7.5
+14.1.7.6
+14.1.7.7
+14.1.7.8
+14.1.8
+14.1.8.1
+14.1.8.2
+14.1.8.3
+14.1.8.4
+14.5.2.1
+14.5.2.2
+14.5.3
+14.5.3.1
+14.5.4
+14.5.4.1
+14.5.5
+14.5.5.1
+14.5.6
+14.5.6.1
+14.5.7
+14.5.7.1
+14.5.8
+14.5.8.1
+14.5.9
+Goidelic group of Languages
+Brythonic group of Languages
+Scottish Gaelic
+Scottish Gaelic Literature
+Irish Gaelic
+Irish Gaelic Literature
+Manx
+Manx Literature
+Welsh
+Welsh Literature
+Cornish
+Cornish Literature
+Breton
+Breton Literature
+Celtic Studies N.E.C
+14.6
+14.6.1
+14.6.1.1
+14.6.1.2
+14.6.2
+14.6.3
+14.6.9
+Latin Studies
+Latin Language
+Church Latin
+Medieval Latin
+Latin Literature
+Latin Literature in Translation
+Latin Studies N.E.C
+14.7
+14.7.1
+14.7.1.1
+14.7.1.2
+14.7.2
+14.7.314.7.9
+Classical Greek Studies
+Classical Greek Language
+Classical Church Greek
+Late Greek
+Classical Greek Literature
+Classical Greek Literature in
+Translation
+Classical Greek Studies N.E.C
+14.8
+14.8.9
+Classical Studies
+Classical Studies N.E.C
+14.9
+Other Linguistics, Classics &
+related subjects
+Translation studies
+Translation theory
+Linguistics, Classics & related
+subjects N.E.C
+14.9.1
+14.9.2
+14.9.9
+15
+15.1
+15.1.1
+15.1.2
+15.1.3
+15.1.9
+European Language, Literature &
+related subjects
+French Studies
+French Language
+French Literature
+French Society & Culture
+French Studies N.E.C
+15.2
+15.2.1
+15.2.2
+15.2.3
+15.2.9
+German Studies
+German Language
+German Literature
+German Society & Culture
+German Studies N.E.C
+15.3
+15.3.1
+15.3.2
+15.3.3
+Italian Studies
+Italian Language
+Italian Literature
+Italian Society & Culture
+15.3.9
+Italian Studies N.E.C
+15.4
+15.4.1
+15.4.1.1
+Spanish Studies
+Spanish Language
+Spanish Language in other
+countries
+Spanish Literature
+Spanish Society & Culture
+Spanish Studies N.E.C
+15.4.2
+15.4.3
+15.4.9
+15.5
+15.5.1
+15.5.1.1
+15.5.2
+15.5.3
+15.5.9
+Portuguese Studies
+Portuguese Language
+Portuguese Language in other
+countries
+Portuguese Literature
+Portuguese Society & Culture
+Portuguese Studies N.E.C
+15.6
+15.6.1
+15.6.1.1
+15.6.1.2
+15.6.1.3
+15.6.1.4
+15.6.2
+15.6.2.1
+15.6.2.2
+15.6.2.3
+15.6.2.4
+15.6.3
+15.6.3.1
+15.6.3.2
+15.6.3.3
+15.6.3.4
+15.6.9
+Scandinavian Studies
+Scandinavian Language
+Swedish Language
+Norwegian Language
+Finnish Language
+Danish Language
+Scandinavian Literature
+Swedish Literature
+Norwegian Literature
+Finnish Literature
+Danish Literature
+Scandinavian Society & Culture
+Swedish Society & Culture
+Norwegian Society & Culture
+Finnish Society & Culture
+Danish Society & Culture
+Scandinavian Studies N.E.C
+15.7
+15.7.1
+Russian & East European Studies
+Russian & East European
+Language
+Russian Language
+Polish Language
+Czechoslovakian Language
+Russian & East European Literature
+Russian Literature
+Polish Literature
+Czechoslovakian Literature
+Russian & East European Society &
+Culture
+Russian Society & Culture
+Polish Society & Culture
+Czechoslovakian Society & Culture
+Russian & East European Studies N.E.C
+15.7.1.1
+15.7.1.2
+15.7.1.3
+15.7.2
+15.7.2.1
+15.7.2.2
+15.7.2.3
+15.7.3
+15.7.3.1
+15.7.3.2
+15.7.3.3
+15.7.9
+15.9
+15.9.1
+15.9.1.1
+15.9.1.2
+15.9.2
+15.9.3
+Other European Language,
+Literature & related subject
+Other European language
+Dutch
+Flemish
+Other European Literature
+Other European Societies & Culture
+15.9.9
+European Languages, Literature &
+related subjects N.E.C
+1616.1
+16.1.1
+16.1.2
+16.1.3
+16.1.9
+East, Asiatic, African, American &
+Australian Languages, Literature
+Chinese Studies
+Chinese Language Studies
+Chinese Literature Studies
+Chinese Society & Culture Studies
+Chinese Studies N.E.C
+16.2
+16.2.1
+16.2.2
+16.2.3
+16.2.9
+Japanese Studies
+Japanese Language Studies
+Japanese Literature Studies
+Japanese Society & culture Studies
+Japanese Studies N.E.C
+16.3
+16.3.1
+16.3.2
+16.3.3
+South Asian Studies
+South Asian Language Studies
+South Asian Literature Studies
+South Asian Society & Culture
+Studies
+South Asian Studies N.E.C
+16.3.9
+16.4
+16.4.1
+16.4.2
+16.4.3
+16.4.9
+Other Asian Studies
+Other Asian Language Studies
+Other Asian Literature Studies
+Other Asian Society & Culture
+Studies
+Other Asian Studies N.E.C
+16.5
+16.5.1
+16.5.2
+16.5.3
+16.5.9
+African Studies
+African Language Studies
+African Literature Studies
+African Society & Culture Studies
+African Studies N.E.C
+16.6
+16.6.1
+Modern Middle Eastern Studies
+Modern Middle-Eastern Language
+Studies
+Modern Middle-Eastern Literature
+Studies
+Modern Middle-Eastern Society &
+Culture Studies
+Modern Middle-Eastern Studies
+N.E.C
+16.6.2
+16.6.3
+16.6.9
+16.7
+16.7.1
+16.7.1.1
+16.7.2
+16.7.2.1
+16.7.3
+16.7.3.1
+16.7.9
+American Studies
+American Language Studies
+Latin American Language Studies
+American Literature Studies
+Latin America Literature Studies
+American Society & Culture Studies
+Latin America Society & Culture Studies
+American Studies N.E.C
+16.8
+16.8.1
+16.8.2
+16.8.3
+Australian Studies
+Australian Language Studies
+Australian Literature Studies
+Australian Society & Culture Studies
+16.8.9
+Australian Studies N.E.C
+16.9
+Other East, Asiatic, African,
+American & Australian
+Languages
+Other East, Asiatic, African,
+American & Australian Languages
+Other East, Asiatic, African,
+American & Australian Literature
+Other East, Asiatic, African,
+American & Australian Society
+East, Asiatic, African, American &
+Australian Language, Literature
+16.9.1
+16.9.2
+16.9.3
+16.9.9
+17
+17.1
+17.1.1
+17.1.2
+17.1.3
+17.1.4
+17.1.4.1
+17.1.4.2
+17.1.4.3
+17.1.4.4
+17.1.4.5
+17.1.4.6
+17.1.4.7
+17.1.4.8
+17.1.9
+Historical & Philosophical
+Studies
+History by period
+Ancient History
+Byzantine History
+Medieval History
+Modern History
+Modern History 1500-1599
+Modern History 1600-1699
+Modern History 1700-1799
+Modern History 1800-1899
+Modern History 1900-1919
+Modern History 1920-1949
+Modern History 1950-1999
+Modern History 2000-2099
+History by period N.E.C
+17.2
+17.2.1
+17.2.1.1
+17.2.1.2
+17.2.1.3
+17.2.1.4
+17.2.2
+17.2.2.1
+17.2.2.2
+17.2.2.3
+17.2.2.4
+17.2.2.5
+17.2.3
+17.2.3.1
+17.2.3.2
+17.2.3.3
+17.2.3.4
+17.2.4
+17.2.4.1
+17.2.4.2
+17.2.4.3
+17.2.5
+17.2.5.1
+17.2.5.2
+17.2.5.3
+17.2.5.4
+17.2.5.5
+17.2.6
+17.2.6.1
+17.2.6.2
+History by area
+British History
+Irish History
+Scottish History
+Welsh History
+English History
+European History
+French History
+German History
+Italian History
+Iberian History
+Russian History
+American History
+Canadian History
+USA History
+South American History
+Central American History
+Asian History
+Chinese History
+Indian History
+South East Asian History
+African History
+North African History
+Central African History
+Southern African History
+East African History
+West African History
+Australian History
+Australian History
+New Zealand History
+17.2.7
+17.2.7.1
+17.2.9
+World History
+International History
+History by Area N.E.C
+17.3
+17.3.1
+17.3.2
+17.3.2.1
+17.3.2.2
+17.3.2.3
+17.3.3
+17.3.4
+17.3.5
+17.3.6
+17.3.7
+17.3.8
+17.3.8.1
+17.3.8.2
+17.3.8.3
+17.3.9
+17.3.9.1
+History by topic
+Economic History
+Social History
+Local History
+Oral History
+Family History
+History of Religions
+Intellectual History
+History of Art
+History of Architecture
+History of Design
+History of Science
+History of Physics
+History of Chemistry
+History of Mathematics
+History by Topic N.E.C
+Military History
+17.4
+17.4.1
+17.4.2
+17.4.3
+17.4.4
+17.4.5
+17.4.6
+17.4.9
+Archaeology
+Egyptology
+Stone Age
+Bronze Age
+Iron Age
+Archaeological conservation
+Archaeological techniques
+Archaeological N.E.C
+17.5
+17.5.1
+17.5.1.1
+17.5.2
+17.5.3
+17.5.4
+17.5.5
+17.5.6
+17.5.9
+Philosophy
+Metaphysics
+Epistemology
+Moral Philosophy
+Scholastic Philosophy
+Social Philosophy
+Philosophy of Science
+Mental Philosophy
+Philosophy N.E.C
+17.6
+17.6.1
+17.6.2
+17.6.2.1
+17.6.2.2
+17.6.2.3
+17.6.2.4
+17.6.2.5
+17.6.2.6
+17.6.2.7
+17.6.3
+17.6.4
+17.6.4.1
+17.6.4.2
+17.6.4.3
+17.6.4.4
+17.6.4.5
+17.6.5
+17.6.9
+Theology & Religious Studies
+Theology
+Religious Studies
+Christian Studies
+Islamic Studies
+Judaism
+Hinduism
+Buddhism
+Other Asian Religious Studies
+Comparative Religious Studies
+Divinity
+Religious writings
+The Bible & Christian texts
+The Qu’ran & Islamic texts
+The Torah & Judaic texts
+Asian religious texts
+Comparative religious texts
+Pastoral Studies
+Theology & Religious Studies N.E.C
+17.9
+17.9.9
+Other in Historical & Philosophical Studies
+Historical & Philosophical Studies N.E.C
+18
+18.1
+18.1.1
+18.1.2
+18.1.3
+18.1.4
+18.1.5
+18.1.6
+18.1.9
+Creative Arts & Design
+Fine Art
+Drawing
+Painting
+Sculpture
+Printmaking
+Calligraphy
+Fine Art Conservation
+Fine Art N.E.C
+18.2
+18.2.1
+18.2.1.1
+18.2.1.2
+18.2.1.3
+18.2.2
+18.2.3
+18.2.3.1
+18.2.4
+18.2.5
+18.2.6
+18.2.7
+18.2.8
+18.2.9
+Design Studies
+Graphic Design
+Typography
+Multimedia Design
+Visual Communication
+Illustration
+Clothing/Fashion Design
+Textile Design
+Industrial/Product Design
+Interior Design
+Furniture Design
+Ceramics Design
+Interactive & Electronic Design
+Design studies N.E.C
+18.3
+18.3.1
+18.3.3
+18.3.4
+18.3.5
+18.3.6
+18.3.9
+Music
+Musicianship/Performance Studies
+History of Music
+Types of Music
+Musicology
+Musical Instrument History
+Music N.E.C
+18.4
+18.4.1
+18.4.2
+18.4.3
+18.4.4
+18.4.5
+18.4.5.1
+18.4.5.2
+18.4.6
+18.4.6.1
+18.4.9
+Drama
+Acting
+Directing for Theatre
+Producing for Theatre
+Theatre Studies
+Stage Management
+Theatrical Wardrobe Design
+Theatrical Make-up
+Theatre Design
+Stage Design
+Drama N.E.C
+18.5
+18.5.1
+18.5.2
+18.5.3
+18.5.4
+18.5.9
+Dance
+Choreography
+Body Awareness
+History of Dance
+Types of Dance
+Dance N.E.C
+18.6
+18.6.1
+18.6.1.1
+18.6.1.2
+Cinematics & Photography
+Moving Image Techniques
+Directing Motion Pictures
+Producing Motion Pictures
+18.6.1.3
+18.6.1.4
+18.6.1.5
+18.6.2
+18.6.3
+18.6.3.1
+18.6.3.2
+18.6.4
+18.6.9
+Film & Sound Recording
+Visual & Audio Effects
+Animation Techniques
+Cinematography
+History of Cinematics &
+Photography
+History of Cinematics
+History of Photography
+Photography
+Cinematics & Photography N.E.C
+19.1.4
+19.1.4.1
+19.1.4.2
+19.1.5
+19.1.5.1
+19.1.6
+19.1.6.1
+19.1.6.218.7
+18.7.1
+18.7.1.1
+18.7.1.2
+18.7.1.3
+18.7.1.4
+18.7.1.5
+18.7.2
+18.7.2.1
+18.7.2.2
+18.7.2.3
+18.7.3
+18.7.3.1
+18.7.3.2
+18.7.3.3
+18.7.3.4
+18.7.4
+18.7.5
+18.7.5.1
+18.7.5.2
+18.7.5.3
+18.7.6
+18.7.6.1
+18.7.6.2
+18.7.7
+18.7.7.1
+18.7.8
+18.7.8.1
+18.7.8.2
+18.7.9
+Crafts
+Fabric & Leather Crafts
+Needlecraft
+Dressmaking
+Soft Furnishing
+Weaving
+Leatherwork
+Metal Crafts
+Silversmithing/Goldsmithing
+Blacksmithing
+Clock/Watchmaking
+Wood Crafts
+Carpentry/Joinery
+Cabinet making
+Marquetry & Inlaying
+Veneering
+Surface Decoration
+Clay & Stone Crafts
+Pottery
+Tile Making
+Stone Crafts
+Reed Crafts
+Basketry
+Thatching
+Glass Crafts
+Glassblowing
+Paper Crafts
+Bookbinding
+Origami
+Crafts N.E.C
+19.219.9
+19.9.9
+Others in Education
+Education N.E.C
+18.8
+18.8.1
+18.8.2
+18.8.3
+18.8.9
+Imaginative Writing
+Scriptwriting
+Poetry Writing
+Prose Writing
+Imaginative Writing N.E.C
+18.9
+18.9.9
+Other in Creative Arts & Design
+Creative Arts & Design N.E.C
+19
+19.1
+19.1.1
+19.1.2
+19.1.2.1
+19.1.2.2
+Education
+Training teach
+Training teach - Nursery
+Training teach - Primary
+Training teach - Infant (Key Stage 1)
+Training teach - Junior (Key Stage 2)
+Training teach - Secondary
+Training teach - (Key Stage 3)
+Training teach - (Key Stage 4)2
+2.1
+2.1.1
+2.1.2
+2.1.3
+2.1.3.1
+2.1.3.2
+2.1.4
+2.1.6
+2.1.9
+Subjects allied to Medicine
+Anatomy, Physiology & Pathology
+Anatomy
+Physiology
+Pathology
+Cellular Pathology
+Pathobiology
+Neuroscience
+Physiotherapy
+Anatomy, Physiology & Pathology
+N.E.C
+2.2
+Pharmacology, Toxicology &
+Pharmacy
+Pharmacology
+Toxicology
+Pharmacy
+Pharmacology, Toxicology &
+Pharmacy N.E.C
+19.1.3
+19.1.3.1
+19.1.3.2
+19.1.9
+19.2.1
+19.2.2
+19.2.9
+19.3
+19.3.1
+19.3.2
+19.3.3
+19.3.4
+19.3.4.1
+19.3.4.2
+19.3.5
+19.3.6
+19.3.7
+19.3.9
+2.2.1
+2.2.2
+2.2.3
+2.2.9
+Training teach - Tertiary
+Training teach - Further Education
+Training teach - Higher Education
+Training teach - Adult Education
+Training teach - Coaching
+Training teach - Specialist
+Training teach – Special Needs
+Teaching English as a Foreign
+Language (TEFL)
+Training teach N.E.C
+Research & Study Skills in Education
+Research Skills
+Study Skills
+Research & Study Skills N.E.C
+Academic Studies in Education
+Academic Studies in Nursery Education
+Academic Studies in Primary Education
+Academic Studies in Secondary Education
+Academic Studies in Tertiary Education
+Academic Studies in Further Education
+Academic Studies in Higher Education
+Academic Studies in Adult Education
+Academic Studies in Specialist Education
+Academic Studies in Education (across phases)
+Academic Studies in Education N.E.C
+2.3
+2.3.1
+2.3.2
+2.3.3
+2.3.4
+2.3.4.1
+2.3.4.2
+2.3.4.3
+2.3.4.4
+2.3.4.5
+2.3.4.6
+2.3.9
+Complementary Medicine
+Osteopathy
+Chiropractic
+Chiropody
+Alternative Medicine
+Chinese
+Herbalism
+Acupuncture
+Aromatherapy
+Hypnotherapy
+Reflexology
+Complementary Medicine N.E.C
+2.4
+2.4.1
+2.4.9
+Nutrition
+Dietetics
+Nutrition N.E.C
+2.5
+2.5.1
+2.5.2
+Opthalmics
+Optometry
+Orthoptics
+2.6
+2.6.1
+2.6.2
+2.6.3
+2.6.9
+Aural & Oral Sciences
+Audiology
+Speech Science
+Language Pathology
+Aural & Oral Sciences N.E.C
+2.7
+2.7.0.1
+2.7.1
+2.7.1.1
+2.7.1.2
+2.7.1.3
+2.7.1.4
+2.7.2
+2.7.3
+2.7.4
+2.7.4.1
+2.7.5
+2.7.6
+2.7.6.1
+2.7.7
+2.7.7.1
+2.7.8
+2.7.9
+Nursing
+Palliative Care Nursing
+Community Nursing
+District Nursing
+Health Visiting
+School Nursing
+Practice Nursing
+Midwifery
+Paediatric Nursing
+Adult Nursing
+Geriatric Nursing
+Dental Nursing
+Mental Health Nursing
+Learning Disability Nursing
+Medical Nursing
+Critical Care Nursing
+Paramedical Nursing
+Nursing N.E.C
+2.8
+2.8.1
+2.8.2
+2.8.2.1
+2.8.2.2
+2.8.3
+Medical Technology
+Cardiography
+Radiology
+Radiography, diagnostic
+Radiography, therapeutic
+Biomech, Biomats & Prosthet (non-
+clinical)
+Dental Technology
+Mortuary Technology
+Medical Technology N.E.C
+2.8.4
+2.8.5
+2.8.9
+2.9
+2.9.1
+Other in Subjects allied to
+Medicine
+Environmental Health
+2.9.2
+2.9.3
+2.9.4
+2.9.9
+Occupational Health
+Occupational Therapy
+Counselling
+Subjects Allied to Medicine N.E.C
+3
+3.1
+3.1.1
+3.1.1.1
+3.1.2
+3.1.3
+3.1.3.1
+3.1.43.1.4.1
+3.1.4.2
+3.1.5
+3.1.6
+3.1.6.1
+3.1.6.2
+3.1.7
+3.1.8
+3.1.8.1
+3.1.8.2
+3.1.9
+3.1.9.1
+Biological Sciences
+Biology
+Applied Biology
+Parasitology
+Behavioural Biology
+Cell Biology
+Applied Cell Biology
+Developmental/Reproductive
+Biology
+Developmental Biology
+Reproductive Biology
+Environmental Biology
+Marine/Freshwater Biology
+Marine Biology
+Freshwater Biology
+Population Biology
+Ecology
+Biodiversity
+Evolution
+Biology N.E.C
+Biometry
+3.2
+3.2.1
+3.2.2
+3.2.3
+3.2.4
+3.2.5
+3.2.9
+Botany
+Applied Botany
+Mycology
+Plant Biotechnology
+Plant Cell Science
+Plant Pathology
+Botany N.E.C
+3.3
+3.3.1
+3.3.2
+3.3.3
+3.3.4
+3.3.5
+3.3.6
+3.3.9
+Zoology
+Applied Zoology
+Cell Zoology
+Developmental Zoology
+Entomology
+Marine Zoology
+Pest Science
+Zoology N.E.C
+3.4
+3.4.1
+3.4.2
+3.4.3
+3.4.3.1
+3.4.3.2
+3.4.4
+3.4.9
+Genetics
+Applied Genetics
+Human Genetics
+Medical & Veterinary Genetics
+Medical Genetics
+Veterinary Genetics
+Molecular Genetics
+Genetics N.E.C
+3.5
+3.5.1
+3.5.2
+3.5.2.1
+3.5.2.2
+3.5.3
+3.5.4
+3.5.5
+Microbiology
+Applied Microbiology
+Medical & Veterinary Microbiology
+Medical Microbiology
+Veterinary Microbiology
+Bacteriology
+Virology
+Immunology
+3.5.6
+3.5.7
+3.5.9
+Biotechnology
+Serology
+Microbiology N.E.C
+3.6
+Sports Science
+3.7
+Molecular Biology, Biophysics &
+Biochemistry
+Applied Molecular Biology,
+Biophysics & Biochemistry
+Biological Chemistry
+Metabolic Biochemistry
+Medical & Veterinary Biochemistry
+Medical Biochemistry
+Veterinary Biochemistry
+3.7.1
+3.7.2
+3.7.3
+3.7.4
+3.7.4.1
+3.7.4.2
+3.7.5
+3.7.6
+3.7.7
+3.7.9
+Plant Biochemistry
+Biomolecular Science
+Biophysical Science
+Molecular Biology, Biophysics &
+Biochemistry N.E.C
+3.8
+3.8.1
+3.8.1.1
+3.8.1.2
+3.8.2
+3.8.3
+3.8.4
+3.8.4.1
+3.8.5
+3.8.6
+3.8.7
+3.8.8
+3.8.9
+Psychology
+Applied Psychology
+Occupational Psychology
+Educational Psychology
+Developmental Psychology
+Experimental Psychology
+Clinical Psychology
+Health Psychology
+Cognitive Psychology
+Neuropsychology
+Psychometrics
+Social Psychology
+Psychology N.E.C
+3.9
+3.9.1
+3.9.9
+Other in Biological Sciences
+Applied Biological Sciences
+Biological Sciences N.E.C
+4
+Veterinary Science, Agriculture & related subjects
+Pre-clinical Veterinary Medicine
+Pre-clinical Veterinary Medicine N.E.C
+4.1
+4.1.9
+4.2
+4.2.1
+4.2.2
+4.2.9
+4.3
+4.3.1
+4.3.2
+4.3.2.1
+4.3.2.2
+4.3.2.3
+4.3.2.4
+4.3.2.5
+Clinical Veterinary Medicine &
+Dentistry
+Clinical Veterinary Medicine
+Clinical Veterinary Dentistry
+Clinical Veterinary Medicine & Dentistry N.E.C
+Animal Science
+Veterinary Nursing
+Animal Health
+Animal Anatomy
+Animal Physiology
+Animal Pathology
+Animal Pharmacology
+Animal Toxicology
+4.3.2.6
+4.3.2.7
+4.3.2.8
+4.3.3
+4.3.4
+4.3.9
+Animal Pharmacy
+Animal Nutrition
+Animal Welfare
+Veterinary Public Health
+Overseas Veterinary Development
+Veterinary Sciences N.E.C
+4.4
+4.4.1
+4.4.1.1
+4.4.1.2
+4.4.1.3
+4.4.1.4
+4.4.1.5
+4.4.1.6
+4.4.1.7
+4.4.1.8
+4.4.2
+4.4.2.1
+4.4.2.2
+4.4.2.3
+4.4.2.4
+4.4.2.5
+4.4.3
+4.4.3.1
+4.4.3.2
+4.4.3.3
+4.4.3.4
+4.4.3.5
+4.4.4
+4.4.4.1
+4.4.4.2
+4.4.4.3
+4.4.4.4
+4.4.4.5
+4.4.4.6
+4.4.4.7
+4.4.5
+4.4.6
+4.4.6.1
+4.4.6.2
+4.4.6.3
+4.4.7
+4.4.7.1
+4.4.7.2
+4.4.9
+Agriculture
+Arable & Fruit Farming
+Agriculture Pests & Diseases
+Crop Physiology
+Crop Nutrition
+Crop Protection
+Crop Production
+Glasshouse Culture
+Amenity Plant Production
+Exotic Plants & Crops
+Livestock
+Livestock Husbandry
+Equine Studies
+Poultry Keeping
+Game Keeping
+Exotic Livestock
+Fish Farming
+Fish Husbandry
+Freshwater Fish
+Saltwater Fish
+Ornamental Fish
+Aquaculture
+Rural Estate Management
+Farm Management
+GameKeeping Management
+Water Resource Management
+Land & Management for Recreation
+Heritage Management
+Wilderness Management
+Environmental Conservation
+International Agriculture
+Organic Farming
+Organic Arable & Fruit farming
+Organic Livestock
+Organic Fish Farming
+Agricultural Technology
+Agricultural Machinery
+Agricultural Irrigation & Drainage
+Agriculture N.E.C
+4.5
+4.5.1
+4.5.1.1
+4.5.1.2
+4.5.1.3
+4.5.1.4
+4.5.1.5
+4.5.1.6
+4.5.1.7
+4.5.2
+4.5.3
+4.5.4
+4.5.4.1
+4.5.9
+Forestry
+Trees & Shrubs
+Forestry Pests & Diseases
+Tree Physiology
+Tree Nutrition
+Tree Protection
+Tree Production
+Timber Production
+Community Forestry
+International Forestry
+Organic Forestry
+Forestry Technology
+Forestry Irrigation & Drainage
+Forestry N.E.C
+5.8.3.1
+5.8.3.2
+5.8.4
+5.8.4.1
+5.8.5
+5.8.5.1
+5.8.5.2
+5.8.5.3
+5.8.6
+5.8.6.1
+5.8.7
+5.8.9
+5.8.9.1
+Cartography
+Remote Sensing
+Physical Geography
+Maritime Geography
+Environmental Sciences
+Applied Environmental Sciences
+Hydrology
+Pollution Control
+Climatology
+Meteorology
+Soil Science
+Geographical & Environmental
+Sciences N.E.C
+Geographical Information Systems
+5.9
+5.9.9
+Other in Physical Sciences
+Physical Sciences N.E.C
+66.1
+6.1.1
+6.1.2
+6.1.2.1
+6.1.3
+6.1.4
+6.1.5
+6.1.6
+6.1.9
+Mathematical & Computer
+Sciences
+Mathematics
+Pure Mathematics
+Applied Mathematics
+Mechanics (Mathematical)
+Mathematical Methods
+Numerical Analysis
+Mathematical Modelling
+Engineering/Industrial Mathematics
+Mathematics N.E.C
+6.2
+6.2.9
+Operational Research
+Operational Research N.E.C
+6.3
+6.3.1
+6.3.1.1
+6.3.2
+6.3.3
+6.3.4
+6.3.5
+6.3.9
+Statistics
+Applied Statistics
+Medical Statistics
+Probability
+Stochastic Processes
+Statistical Modelling
+Mathematical Statistics
+Statistics N.E.C
+6.4
+6.4.16.4.1.1
+6.4.1.2
+6.4.2
+6.4.3
+6.4.4
+6.4.5
+6.4.9
+Computer Science
+Computer Architectures & Operating
+Systems
+Computer Architectures
+Operating Systems
+Networks & Communications
+Computational Science Foundations
+Human-computer Interaction
+Multi-media Computing Science
+Computing Science N.E.C
+6.5
+6.5.1
+6.5.2
+6.5.3
+6.5.4
+6.5.5
+6.5.6
+6.5.9
+Information Systems
+Information Modelling
+Systems Design Methodologies
+Systems Analysis & Design
+Databases
+Systems Auditing
+Data Management
+Systems Analysis & Design N.E.C
+6.6
+6.6.1
+6.6.2
+6.6.2.1
+6.6.2.2
+6.6.2.3
+6.6.9
+Software Engineering
+Software Design
+Programming
+Procedural Programming
+Object Oriented Programming
+Declarative Programming
+Software Engineering N.E.C
+6.7
+6.7.1
+Artificial Intelligence
+Speech & Natural Language
+Processing
+Knowledge Representation
+Neural Computing
+Computer Vision
+Cognitive Modelling
+Machine Learning
+Automated Reasoning
+Artificial Intelligence N.E.C
+6.7.2
+6.7.3
+6.7.4
+6.7.5
+6.7.6
+6.7.6.1
+6.7.9
+6.9
+6.9.9
+Other in Mathematics &
+Computing Sciences
+Mathematics & Computing Sciences N.E.C
+7
+7.1
+7.1.1
+7.1.2
+7.1.2.1
+7.1.2.2
+7.1.2.3
+7.1.3
+7.1.3.1
+7.1.4
+7.1.4.1
+7.1.4.2
+7.1.4.3
+7.1.5
+7.1.9
+Engineering
+General Engineering
+Integrated Engineering
+Safety Engineering
+Fire Safety Engineering
+Water Quality Control
+Public Health Engineering
+Computer-Aided Engineering
+Automated Engineering Design
+Mechanics
+Fluid Mechanics
+Solid Mechanics
+Structural Mechanics
+Engineering Design
+General Engineering N.E.C
+7.2
+7.2.1
+7.2.2
+7.2.2.1
+7.2.2.2
+7.2.2.3
+7.2.3
+7.2.3.1
+7.2.3.2
+7.2.4
+7.2.4.1
+7.2.4.2
+7.2.5
+7.2.9
+Civil Engineering
+Structural Engineering
+Environmental Engineering
+Energy Resources
+Coastal Decay
+Environmental Impact Assessment
+Transport Engineering
+Permanent Way Engineering
+Pavement Engineering
+Surveying Science
+General Practice Surveying
+Engineering Surveying
+Geotechnical Engineering
+Civil Engineering N.E.C
+7.3
+7.3.1
+7.3.1.1
+7.3.2
+7.3.2.1
+Mechanical Engineering
+Dynamics
+Thermodynamics
+Mechanisms & Machines
+Turbine Technology
+7.3.3
+7.3.3.1
+7.3.3.2
+7.3.3.3
+7.3.4
+7.3.4.1
+7.3.4.2
+7.3.5
+7.3.6
+7.3.9
+Automotive Engineering
+Road Vehicle Engineering
+Rail Vehicle Engineering
+Ship Propulsion Engineering
+Acoustics & Vibration
+Acoustics
+Vibration
+Offshore Engineering
+Electromechanical Engineering
+Mechanical Engineering N.E.C
+7.4
+7.4.1
+7.4.1.17.4.1.2
+7.4.1.3
+7.4.2
+7.4.3
+7.4.4
+7.4.4.1
+7.4.5
+7.4.6
+7.4.9
+Aerospace Engineering
+Aeronautical Engineering
+Air-Passenger Transport
+Engineering
+Air-Freight Transport Engineering
+Air-Combat Engineering
+Astronautical Engineering
+Avionics
+Aerodynamics
+Flight Mechanics
+Propulsion System
+Aviation Studies
+Aerospace Engineering N.E.C
+7.5
+7.5.1
+7.5.1.1
+7.5.1.2
+7.5.1.3
+7.5.1.4
+7.5.2
+7.5.2.1
+7.5.2.2
+7.5.2.3
+7.5.2.4
+7.5.9
+Naval Architecture
+Shipbuilding
+Surface Passenger Ship Building
+Surface Freight Ship Building
+Surface Combat Ship Building
+Submarine Building
+Ship Design
+Surface Passenger Ship Design
+Surface Freight Ship Design
+Surface Combat Ship Design
+Submarine Design
+Naval Architecture N.E.C
+7.6
+Electronic & Electrical
+Engineering
+Electronic Engineering
+Microelectronic Engineering
+Integrated Circuit Design
+Electrical Engineering
+Electrical Power
+Electrical Power Generation
+Electrical Power Distribution
+Communications Engineering
+Telecommunications Engineering
+Broadcast Engineering
+Satellite Engineering
+Microwave Engineering
+Systems Engineering
+Digital Circuit Engineering
+Analogue Circuit Engineering
+Controls System
+Instrumentation Control
+Control by light systems
+Robotics & Cybernetics
+Robotics
+Cybernetics
+7.6.1
+7.6.1.1
+7.6.1.2
+7.6.2
+7.6.3
+7.6.3.1
+7.6.3.2
+7.6.4
+7.6.4.1
+7.6.4.2
+7.6.4.3
+7.6.4.4
+7.6.5
+7.6.5.1
+7.6.5.2
+7.6.6
+7.6.6.1
+7.6.6.2
+7.6.7
+7.6.7.1
+7.6.7.2
+7.6.7.3
+7.6.7.4
+7.6.8
+7.6.9
+Bioengineering
+Virtual Reality Engineering
+Optoelectronic Engineering
+Electronic & Electrical Engineering N.E.C
+7.7
+Production & Manufacturing
+Engineering
+Manufacturing Systems Engineering
+Manufacturing Systems Design
+Manufacturing Installation Systems
+Production Processes
+Manufacturing Systems
+Maintenance
+Quality Assurance Engineering
+Mechatronics
+Production & Manufacturing
+Engineering N.E.C
+7.7.1
+7.7.1.1
+7.7.1.2
+7.7.1.3
+7.7.1.4
+7.7.2
+7.7.3
+7.7.9
+7.8
+7.8.1
+7.8.1.1
+7.8. 1.2
+7.8.2
+7.8.2.1
+7.8.3
+7.8.3.1
+7.8.4
+7.8.5
+7.8.9
+Chemical, Process & Energy
+Engineering
+Chemical Engineering
+Biochemical Engineering
+Pharmaceutical Engineering
+Atomic Engineering
+Nuclear Engineering
+Chemical Process Engineering
+Bioprocess Engineering
+Gas Engineering
+Petroleum Engineering
+Chemical, Process & Energy
+Engineering N.E.C
+7.9
+7.9.9
+Other in Engineering
+Engineering N.E.C
+8
+8.1
+8.1.1
+8.1.2
+8.1.3
+8.1.4
+8.1.5
+8.1.6
+8.1.9
+Technologies
+Minerals Technology
+Mining
+Quarrying
+Rock Mechanics
+Mineral Processing
+Minerals Surveying
+Petrochemical Technology
+Minerals Technology N.E.C
+8.2
+8.2.1
+8.2.2
+8.2.2.1
+8.2.3
+8.2.9
+Metallurgy
+Applied Metallurgy
+Metallic Fabrication
+Pattern Making
+Corrosion Technology
+Metallurgy N.E.C
+8.3
+8.3.1
+8.3.2
+8.3.9
+Ceramics & Glasses
+Ceramics
+Glass Technology
+Ceramics & Glasses N.E.C
+8.4
+8.4.1
+8.4.1.1
+Polymers & Textiles
+Polymers Technology
+Plastics
+8.4.2
+8.4.2.1
+8.4.2.2
+8.4.3
+8.4.3.1
+8.4.4
+8.4.4.1
+8.4.4.2
+8.4.4.3
+8.4.4.4
+8.4.4.5
+8.4.9
+Textiles Technology
+Textile Chemistry
+Dying & Colouring of Textiles
+Leather Technology
+Tanning
+Clothing Production
+Machine Knitting
+Commercial Tailoring
+Pattern Cutting
+Millinery
+Footwear Production
+Polymers & Textiles N.E.C
+8.58.5.1
+8.5.1.1
+8.5.1.2
+8.5.1.3
+8.5.2
+8.5.2.1
+8.5.2.2
+8.5.2.3
+8.5.2.4
+8.5.3
+8.5.9
+Materials Technology not
+otherwise specified
+Materials Technology
+Engineering Materials
+Paper Technology
+Furniture Technology
+Printing
+Offset Lithography
+Photo-Lithography
+Reprographic Techniques
+Screen Process Printing
+Gemmology
+Materials Technology N.E.C
+8.6
+8.6.1
+8.6.1.1
+8.6.1.2
+8.6.1.3
+8.6.1.4
+8.6.9
+Maritime Technology
+Marine Technology
+Marine Navigation
+Marine Radar
+Marine Radio
+Marine Plumbing
+Maritime Technology N.E.C
+8.7
+8.7.9
+Industrial Biotechnology
+Industrial Biotechnology N.E.C
+8.9
+8.9.1
+8.9.2
+8.9.3
+8.9.3.1
+8.9.4
+8.9.4.1
+8.9.4.2
+8.9.5
+8.9.6
+8.9.9
+Others in Technology
+Energy Technologies
+Ergonomics
+Audio Technology
+Music Recording
+Machinery Maintenance
+Office Machinery Maintenance
+Industrial Machinery Maintenance
+Musical Instrument Technology
+Transport Logistics
+Technologies N.E.C
+9
+9.1
+9.1.1
+9.1.2
+9.1.3
+9.1.9
+Architecture, Building & Planning
+Architecture
+Architectural Design Theory
+Interior Architecture
+Architectural Technology
+Architecture N.E.C
+9.2
+9.2.1
+9.2.2
+9.2.3
+Building
+Building Technology
+Construction Management
+Building Surveying
+9.2.4
+Quantity Surveying
+9.2.5
+9.2.9
+Conservation of Buildings
+Building N.E.C
+9.3
+9.3.1
+9.3.2
+9.3.9
+Landscape Design
+Landscape Architecture
+Landscape Studies
+Landscape Design N.E.C
+9.4
+Planning (Urban, Rural &
+Regional)
+Regional Planning
+Urban & Rural Planning
+Urban Planning
+Rural Planning
+Planning Studies
+Urban Studies
+Housing
+Transport Planning
+Planning (Urban, Rural & Regional) N.E.C
+9.4.1
+9.4.2
+9.4.2.1
+9.4.2.2
+9.4.3
+9.4.4
+9.4.5
+9.4.6
+9.4.9
+9.9
+9.9.9
+Others in Architecture, Building & Planning
+Architecture, Building & Planning N.E.C

@@ -142,7 +142,7 @@ lfs_default_mappings <- function(cols) {
     "HAPPY", "HAPPY", "numeric",
     "ANXIOUS", "ANXIOUS", "numeric",
     # Variable changes over time ----------
-    degree_subject, "DEGREE_SUBJECT", "factor",
+    degree_subject, "DEGREE_SUBJECT", "unlabelled_factor",
     combined_degree_subject, "CMBDEGREE", "factor",
     "ILODEFR", "ILODEFR", "factor",
     "OYCIRC", "OYCIRC", "factor",
