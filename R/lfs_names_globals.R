@@ -37,6 +37,14 @@ c(":=",
 "paidweighthrly2",
 "unemployed",
 "union_percentage",
-"weight"
+"weight",
+"HSERIAL",
+"QUOTA",
+"WEEK",
+"W1YR",
+"QRTR",
+"ADD",
+"WAVFND",
+"HHLD"
 ))
 

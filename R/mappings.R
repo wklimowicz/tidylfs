@@ -170,7 +170,15 @@ lfs_default_mappings <- function(cols) {
     "DEGREE73", "DEGREE73", "numeric",
     "DEGREE74", "DEGREE74", "numeric",
     "DEGREE75", "DEGREE75", "numeric",
-    teaching_qualification, "TEACH1", "factor"
+    teaching_qualification, "TEACH1", "factor",
+    # HSERIAL variables
+    "QUOTA", "QUOTA", "unlabelled_factor",
+    "WEEK", "WEEK", "unlabelled_factor",
+    "W1YR", "W1YR", "unlabelled_factor",
+    "QRTR", "QRTR", "unlabelled_factor",
+    "ADD", "ADD", "unlabelled_factor",
+    "WAVFND", "WAVFND", "unlabelled_factor",
+    "HHLD", "HHLD", "unlabelled_factor"
   )
 
   # Exclude missing

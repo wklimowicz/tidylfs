@@ -253,7 +253,8 @@ lfs_compile <- function(lfs_directory,
 
   lfs_data_frame <- lfs_data_frame |>
     annotate_hiquald() |>
-    annotate_occupation()
+    annotate_occupation() |>
+    create_HSERIAL()
     # annotate_industry() |>
     # annotate_economic_activity()
 
@@ -269,7 +270,8 @@ lfs_compile <- function(lfs_directory,
     annotate_hiquald() |>
     annotate_occupation() |>
     annotate_industry() |>
-    annotate_economic_activity()
+    annotate_economic_activity() |>
+    create_HSERIAL()
   }
 
 

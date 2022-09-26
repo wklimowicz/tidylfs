@@ -1,3 +1,73 @@
+create_HSERIAL <- function(lfs) {
+
+# Pad with 0's appropriately
+withr::with_options(
+c(scipen = 999), #So you always get 10 and not 1e1
+{
+lfs[, QUOTA := stringr::str_pad(QUOTA,
+                                3,
+                                pad = "0")]
+lfs[, WEEK := stringr::str_pad(WEEK,
+                                2,
+                                pad = "0")]
+lfs[, ADD := stringr::str_pad(ADD,
+                                2,
+                                pad = "0")]
+lfs[, HHLD := stringr::str_pad(HHLD,
+                                2,
+                                pad = "0")]
+}
+)
+
+lfs[, HSERIAL := paste0(
+    QUOTA,
+    WEEK,
+    W1YR,
+    QRTR,
+    ADD,
+    WAVFND,
+    HHLD
+    )]
+
+# lfs[, HSERIAL := as.factor(HSERIAL)]
+
+lfs[,
+    `:=`(
+    QUOTA = NULL,
+    WEEK = NULL,
+    W1YR = NULL,
+    QRTR = NULL,
+    ADD = NULL,
+    WAVFND = NULL,
+    HHLD = NULL
+    )
+    ]
+
+
+}
+
+annotate_hiquald <- function(lfs) {
+
+    names_vector <- lfs[, names(.SD), .SDcols = patterns("DEGREE7")]
+
+    lfs[, HIQUALD := data.table::fcase(
+      HIQUALD == 1, "Degree or equivalent",
+      HIQUALD == 2, "Higher education",
+      HIQUALD == 3, "GCE, A-level or equivalent",
+      HIQUALD == 4, "GCSE grades A*-C or equivalent",
+      HIQUALD == 5, "Other qualifications",
+      HIQUALD == 6, "No qualification",
+      HIQUALD == 7, "Don't know"
+      )][, HIQUALD := forcats::as_factor(HIQUALD)
+       ][, (names_vector) := lapply(.SD, annotate_degree71, YEAR), .SDcols = patterns("DEGREE7")
+       ][, (names_vector) := lapply(.SD, forcats::as_factor), .SDcols = patterns("DEGREE7")]
+
+    return(lfs)
+
+}
+
+
+
 annotate_degree71 <- function(degree_name, YEAR) {
 
   data.table::fcase(
