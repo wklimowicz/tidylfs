@@ -57,11 +57,13 @@ lfs_default_mappings <- function(cols) {
   cured <- pick(c("CURED8", "CURED"), cols)
 
   hiquald <- pick(c(
+    "HIQUL22D",
     "HIQUL15D", "HIQUL11D", "HIQUAL8D",
     "HIQUAL5D", "HIQUAL4D", "HIQUALD"
   ), cols)
 
   hiqual <- pick(c(
+    "HIQUAL22",
     "HIQUAL15", "HIQUAL11", "HIQUAL8",
     "HIQUAL5", "HIQUAL4", "HIQUAL"
   ), cols)
