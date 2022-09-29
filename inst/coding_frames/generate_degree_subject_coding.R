@@ -18,7 +18,7 @@ s <- haven::read_sav("../lfs_raw_data/1993 Q2.sav")
 z <- labels_to_data_frame(s$subjct1)
 
 z %>%
-    readr::write_csv("inst/coding_frames/subct1_1992.csv")
+    readr::write_csv("inst/coding_frames/sngdeg_1992_2_digit.csv")
 
 s <- haven::read_sav("../lfs_raw_data/1998 Q4.sav")
 z <- labels_to_data_frame(s$sngdeg)
