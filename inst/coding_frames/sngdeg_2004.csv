@@ -1,0 +1,1306 @@
+DEGREE,DEGREE_DESCRIPTION
+1,Medicine & Dentistry
+2,Subjects allied to Medicine
+3,Biological Sciences
+4,"Vet Scien, Agric & related subjects"
+5,Physical Sciences
+6,Mathematical & Computer Sciences
+7,Engineering
+8,Technologies
+9,"Architecture, Building & Planning"
+10,Social stud
+11,Law
+12,Business & Administrative stud
+13,Mass Communications & Documentation
+14,"Ling, Classics & related subjects"
+15,"European Lang,Lit & related subj"
+16,"East,Asiatic,Afr,Amer & Aus Lang, Lit"
+17,Historical & Philosophical stud
+18,Creative Arts & Design
+19,Educ
+1.1,Pre-clinical Medicine
+2.1,"Anatomy, Physiology & Pathology"
+3.1,Biology
+4.1,Pre-clinical Veterinary Medicine
+5.1,Chemistry
+6.1,Mathematics
+7.1,General Engineering
+8.1,Minerals Technology
+9.1,Architecture
+1.2,Pre-clinical Dentistry
+2.2,"Pharmacology, Toxicology & Pharmacy"
+3.2,Botany
+4.2,Clin Vet Medicine & Dentistry
+5.2,Materials Science
+6.2,Operational Research
+7.2,Civil Engineering
+8.2,Metallurgy
+9.2,Building
+1.3,Clinical Medicine
+2.3,Complementary Medicine
+3.3,Zoology
+4.3,Animal Science
+5.3,Physics
+6.3,Statistics
+7.3,Mechanical Engineering
+8.3,Ceramics & Glasses
+9.3,L&scape Design
+1.4,Clinical Dentistry
+2.4,Nutrition
+3.4,Genetics
+4.4,Agriculture
+5.4,Forensic & Archaeological Science
+6.4,Computer Science
+7.4,Aerospace Engineering
+8.4,Polymers & Textiles
+9.4,"Planning (Urban, Rural & Regional)"
+2.5,Ophthalmics
+3.5,Microbiology
+4.5,Forestry
+5.5,Astronomy
+6.5,Information Systems
+7.5,Naval Architecture
+8.5,Materials Tech not otherwise specified
+2.6,Aural & Oral Sciences
+3.6,Sports Science
+4.6,Food & Beverage stud
+5.6,Geology
+6.6,Software Engineering
+7.6,Electronic & Electrical Engineering
+8.6,Maritime Technology
+2.7,Nursing
+3.7,"Molecular Biology,Biophys & Biochem"
+4.7,Agricultural Sciences
+5.7,Ocean Sciences
+6.7,Artificial Intelligence
+7.7,Production & Manufacturing Engineering
+8.7,Industrial Biotechnology
+2.8,Medical Technology
+3.8,Psychology
+5.8,Phys & Terr Geog & Environ Sciences
+7.8,"Chemical, Process & Energy Engineering"
+1.9,Oth in Medicine & Dentistry
+2.9,Oth in Subjects allied to Medicine
+3.9,Oth in Biological Sciences
+4.9,"Oth Vet Sciences,Agric & related subj"
+5.9,Oth in Physical Sciences
+6.9,Oth in Math & Computing Sciences
+7.9,Oth in Engineering
+8.9,Oth in Technology
+9.9,"Oth in Arch, Building & Planning"
+10.1,Economics
+11.1,Law by area
+12.1,Business stud
+13.1,Information Services
+14.1,Linguistics
+15.1,French stud
+16.1,Chinese stud
+17.1,History by period
+18.1,Fine Art
+19.1,Training teach
+10.2,Politics
+11.2,Law by Topic
+12.2,Management stud
+13.2,Publicity stud
+14.2,Comparative Literary stud
+15.2,German stud
+16.2,Japanese stud
+17.2,History by area
+18.2,Design stud
+19.2,Research & Study Skills in Educ
+10.3,Sociology
+12.3,Finance
+13.3,Media stud
+14.3,English stud
+15.3,Italian stud
+16.3,South Asian stud
+17.3,History by topic
+18.3,Music
+19.3,Academic stud in Educ
+10.4,Social Policy
+12.4,Accounting
+13.4,Publishing
+14.4,Ancient Language stud
+15.4,Spanish stud
+16.4,Other Asian stud
+17.4,Archaeology
+18.4,Drama
+10.5,Social Work
+12.5,Marketing
+13.5,Journalism
+14.5,Celtic stud
+15.5,Portuguese stud
+16.5,Afr stud
+17.5,Philosophy
+18.5,Dance
+10.6,Anthropology
+12.6,Human Resource Management
+14.6,Latin stud
+15.6,Sc&inavian stud
+16.6,Modern Middle Eastern stud
+17.6,Theology & Religious stud
+18.6,Cinematics & Photography
+10.7,Human & Social Geog
+12.7,Office skills
+14.7,Classical Greek stud
+15.7,Russian & East European stud
+16.7,Amer stud
+18.7,Crafts
+12.8,"Tourism, Transport & Travel"
+14.8,Classical stud
+16.8,Aus stud
+18.8,Imaginative Writing
+10.9,Oth in Social stud
+11.9,Other in Law
+12.9,Oth in Business & Administrative stud
+13.9,Oth in Mass Comm & Documentation
+14.9,"Oth Ling,Classics & related subjects"
+15.9,"Oth European Lang,Lit & related subj"
+16.9,"Oth East,Asiatic,Afr,Amer & Aus Lang"
+17.9,Oth in Historical & Phil stud
+18.9,Oth in Creative Arts & Design
+19.9,Oth in Educ
+2.7.0,Palliative Care Nursing
+2.1.1,Anatomy
+3.1.1,Applied Biology
+5.1.1,Applied Chemistry
+6.1.1,Pure Mathematics
+7.1.1,Integrated Engineering
+8.1.1,Mining
+9.1.1,Architectural Design Theory
+2.2.1,Pharmacology
+3.2.1,Applied Botany
+4.2.1,Clinical Veterinary Medicine
+7.2.1,Structural Engineering
+8.2.1,Applied Metallurgy
+9.2.1,Building Technology
+2.3.1,Osteopathy
+3.3.1,Applied Zoology
+4.3.1,Veterinary Nursing
+5.3.1,Applied Physics
+6.3.1,Applied Statistics
+7.3.1,Dynamics
+8.3.1,Ceramics
+9.3.1,L&scape Architecture
+2.4.1,Dietetics
+3.4.1,Applied Genetics
+4.4.1,Arable & Fruit Farming
+5.4.1,Forensic Science
+6.4.1,Computer Arch & Operating Systems
+7.4.1,Aeronautical Engineering
+8.4.1,Polymers Technology
+9.4.1,Regional Planning
+2.5.1,Optometry
+3.5.1,Applied Microbiology
+4.5.1,Trees & Shrubs
+5.5.1,Astrophysics
+6.5.1,Information Modelling
+7.5.1,Shipbuilding
+8.5.1,Materials Technology
+2.6.1,Audiology
+4.6.1,Food Science
+5.6.1,Applied Geology
+6.6.1,Software Design
+7.6.1,Electronic Engineering
+8.6.1,Marine Technology
+2.7.1,Community Nursing
+3.7.1,"App Molec. Biology,Biophys & Biochem"
+4.7.1,Agricultural Biology
+5.7.1,Marine Sciences
+6.7.1,Speech & Natural Language Processing
+7.7.1,Manufacturing Systems Engineering
+2.8.1,Cardiography
+3.8.1,Applied Psychology
+5.8.1,Environmental Geog
+7.8.1,Chemical Engineering
+2.9.1,Environmental Health
+3.9.1,Applied Biological Sciences
+8.9.1,Energy Technologies
+2.1.2,Physiology
+3.1.2,Behavioural Biology
+5.1.2,Inorganic Chemistry
+6.1.2,Applied Mathematics
+7.1.2,Safety Engineering
+8.1.2,Quarrying
+9.1.2,Interior Architecture
+2.2.2,Toxicology
+3.2.2,Mycology
+4.2.2,Clinical Veterinary Dentistry
+7.2.2,Environmental Engineering
+8.2.2,Metallic Fabrication
+9.2.2,Construction Management
+2.3.2,Chiropractic
+3.3.2,Cell Zoology
+4.3.2,Animal Health
+5.3.2,Chemical Physics
+6.3.2,Probability
+7.3.2,Mechanisms & Machines
+8.3.2,Glass Technology
+9.3.2,L&scape stud
+3.4.2,Human Genetics
+4.4.2,Livestock
+5.4.2,Archaeological Science
+6.4.2,Networks & Communications
+7.4.2,Astronautical Engineering
+8.4.2,Textiles Technology
+9.4.2,Urban & Rural Planning
+2.5.2,Orthoptics
+3.5.2,Medical & Veterinary Microbiology
+4.5.2,International Forestry
+5.5.2,Space & Planetary Sciences
+6.5.2,Systems Design Methodologies
+7.5.2,Ship Design
+8.5.2,Printing
+2.6.2,Speech Science
+4.6.2,Food Hygiene
+5.6.2,Mining Geology
+6.6.2,Programming
+7.6.2,Electrical Engineering
+2.7.2,Midwifery
+3.7.2,Biological Chemistry
+4.7.2,Agricultural Chemistry
+5.7.2,Hydrography
+6.7.2,Knowledge Representation
+7.7.2,Quality Assurance Engineering
+2.8.2,Radiology
+3.8.2,Developmental Psychology
+5.8.2,Geomorphology
+7.8.2,Atomic Engineering
+2.9.2,Occupational Health
+8.9.2,Ergonomics
+2.1.3,Pathology
+3.1.3,Cell Biology
+5.1.3,Structural Chemistry
+6.1.3,Mathematical Methods
+7.1.3,Computer-Aided Engineering
+8.1.3,Rock Mechanics
+9.1.3,Architectural Technology
+2.2.3,Pharmacy
+3.2.3,Plant Biotechnology
+7.2.3,Transport Engineering
+8.2.3,Corrosion Technology
+9.2.3,Building Surveying
+2.3.3,Chiropody
+3.3.3,Developmental Zoology
+4.3.3,Veterinary Public Health
+5.3.3,Environmental Physics
+6.3.3,Stochastic Processes
+7.3.3,Automotive Engineering
+3.4.3,Medical & Veterinary Genetics
+4.4.3,Fish Farming
+6.4.3,Computational Science Foundations
+7.4.3,Avionics
+8.4.3,Leather Technology
+9.4.3,Planning stud
+3.5.3,Bacteriology
+4.5.3,Organic Forestry
+6.5.3,Systems Analysis & Design
+8.5.3,Gemmology
+2.6.3,Language Pathology
+4.6.3,Food & Beverage Production
+5.6.3,Geotechnology
+7.6.3,Electrical Power
+2.7.3,Paediatric Nursing
+3.7.3,Metabolic Biochemistry
+4.7.3,Agricultural Botany
+6.7.3,Neural Computing
+7.7.3,Mechatronics
+2.8.3,"Biomech,Biomats & Prosthet(non-clin)"
+3.8.3,Experimental Psychology
+5.8.3,Topography
+7.8.3,Chemical Process Engineering
+2.9.3,Occupational Therapy
+8.9.3,Audio Technology
+2.1.4,Neuroscience
+3.1.4,DevelopmentalReproductive Biology
+5.1.4,Environmental Chemistry
+6.1.4,Numerical Analysis
+7.1.4,Mechanics
+8.1.4,Mineral Processing
+3.2.4,Plant Cell Science
+7.2.4,Surveying Science
+9.2.4,Quantity Surveying
+2.3.4,Alternative Medicine
+3.3.4,Entomology
+4.3.4,Overseas Veterinary Development
+5.3.4,Mathematical & Theoretical Physics
+6.3.4,Statistical Modelling
+7.3.4,Acoustics & Vibration
+3.4.4,Molecular Genetics
+4.4.4,Rural Estate Management
+6.4.4,Human-computer Interaction
+7.4.4,Aerodynamics
+8.4.4,Clothing Production
+9.4.4,Urban stud
+3.5.4,Virology
+4.5.4,Forestry Technology
+6.5.4,Databases
+4.6.4,Food & Beverages for the Consumer
+5.6.4,Earth Science
+7.6.4,Communications Engineering
+2.7.4,Adult Nursing
+3.7.4,Medical & Veterinary Biochemistry
+4.7.4,Agricultural Zoology
+6.7.4,Computer Vision
+2.8.4,Dental Technology
+3.8.4,Clinical Psychology
+5.8.4,Physical Geog
+7.8.4,Gas Engineering
+2.9.4,Counselling
+8.9.4,Machinery Maintenance
+3.1.5,Environmental Biology
+5.1.5,Medicinal Chemistry
+6.1.5,Mathematical Modelling
+7.1.5,Engineering Design
+8.1.5,Minerals Surveying
+3.2.5,Plant Pathology
+7.2.5,Geotechnical Engineering
+9.2.5,Conservation of Buildings
+3.3.5,Marine Zoology
+5.3.5,Medical Physics
+6.3.5,Mathematical Statistics
+7.3.5,Offshore Engineering
+4.4.5,International Agriculture
+6.4.5,Multi-media Computing Science
+7.4.5,Propulsion Systems
+9.4.5,Housing
+3.5.5,Immunology
+6.5.5,Systems Auditing
+5.6.5,Geological Oceanography
+7.6.5,Systems Engineering
+2.7.5,Dental Nursing
+3.7.5,Plant Biochemistry
+4.7.5,Soil as an Agricultural medium
+6.7.5,Cognitive Modelling
+2.8.5,Mortuary Technology
+3.8.5,Cognitive Psychology
+5.8.5,Environmental Sciences
+7.8.5,Petroleum Engineering
+8.9.5,Musical Instrument Technology
+2.1.6,Physiotherapy
+3.1.6,MarineFreshwater Biology
+5.1.6,Organic Chemistry
+6.1.6,EngineeringIndustrial Mathematics
+8.1.6,Petrochemical Technology
+3.3.6,Pest Science
+5.3.6,Optical Physics
+7.3.6,Electromechanical Engineering
+4.4.6,Organic Farming
+7.4.6,Aviation stud
+9.4.6,Transport Planning
+3.5.6,Biotechnology
+6.5.6,Data Management
+5.6.6,Geophysics
+7.6.6,Control Systems
+2.7.6,Mental Health Nursing
+3.7.6,Biomolecular Science
+6.7.6,Machine Learning
+3.8.6,Neuropsychology
+5.8.6,Climatology
+8.9.6,Transport Logistics
+3.1.7,Population Biology
+5.1.7,Physical Chemistry
+5.3.7,Nuclear & Particle Physics
+4.4.7,Agricultural Technology
+3.5.7,Serology
+5.6.7,Geochemistry
+7.6.7,Robotics & Cybernetics
+2.7.7,Medical Nursing
+3.7.7,Biophysical Science
+3.8.7,Psychometrics
+5.8.7,Soil Science
+3.1.8,Ecology
+5.1.8,Analytical Chemistry
+5.3.8,Acoustics
+7.6.8,Optoelectronic Engineering
+2.7.8,Paramedical Nursing
+3.8.8,Social Psychology
+2.1.9,"Anatomy, Physiology & Pathology N.E.C"
+3.1.9,Biology N.E.C
+4.1.9,Pre-clinical Veterinary Medicine N.E.C
+5.1.9,Chemistry N.E.C
+6.1.9,Mathematics N.E.C
+7.1.9,General Engineering N.E.C
+8.1.9,Minerals Technology N.E.C
+9.1.9,Architecture N.E.C
+2.2.9,"Pharm,Toxic & Pharmacy N.E.C"
+3.2.9,Botany N.E.C
+4.2.9,Clin Vet Medicine & Dentistry N.E.C
+5.2.9,Materials Science N.E.C
+6.2.9,Operational Research N.E.C
+7.2.9,Civil Engineering N.E.C
+8.2.9,Metallurgy N.E.C
+9.2.9,Building N.E.C
+2.3.9,Complementary Medicine N.E.C
+3.3.9,Zoology N.E.C
+4.3.9,Veterinary Sciences N.E.C
+5.3.9,Physics N.E.C
+6.3.9,Statistics N.E.C
+7.3.9,Mechanical Engineering N.E.C
+8.3.9,Ceramics & Glasses N.E.C
+9.3.9,L&scape Design N.E.C
+2.4.9,Nutrition N.E.C
+3.4.9,Genetics N.E.C
+4.4.9,Agriculture N.E.C
+5.4.9,Forensic Science N.E.C
+6.4.9,Computing Science N.E.C
+7.4.9,Aerospace Engineering N.E.C
+8.4.9,Polymers & Textiles N.E.C
+9.4.9,"Planning(Urban,Rural & Regional) N.E.C"
+3.5.9,Microbiology N.E.C
+4.5.9,Forestry N.E.C
+5.5.9,Astronomy N.E.C
+6.5.9,Systems Analysis & Design N.E.C
+7.5.9,Naval Architecture N.E.C
+8.5.9,Materials Technology N.E.C
+2.6.9,Aural & Oral Sciences N.E.C
+4.6.9,Food stud N.E.C
+5.6.9,Geology N.E.C
+6.6.9,Software Engineering N.E.C
+7.6.9,Electronic & Electrical Eng N.E.C
+8.6.9,Maritime Technology N.E.C
+2.7.9,Nursing N.E.C
+3.7.9,"Molec. Biology, Biophys & Biochem NEC"
+4.7.9,Agricultural Sciences N.E.C
+5.7.9,Ocean Sciences N.E.C
+6.7.9,Artificial Intelligence N.E.C
+7.7.9,Production & Manufacturing Eng N.E.C
+8.7.9,Industrial Biotechnology N.E.C
+2.8.9,Medical Technology N.E.C
+3.8.9,Psychology N.E.C
+5.8.9,Geog & Environ Sciences N.E.C
+7.8.9,"Chem, Process & Energy Eng N.E.C"
+1.9.9,Medicine & Dentistry N.E.C
+2.9.9,Subjects Allied to Medicine N.E.C
+3.9.9,Biological Sciences N.E.C
+4.9.9,"Vet Sciences, Agric & related subj NEC"
+5.9.9,Physical Sciences N.E.C
+6.9.9,Math & Computing Sciences N.E.C
+7.9.9,Engineering N.E.C
+8.9.9,Technologies N.E.C
+9.9.9,"Arch,Building & Planning N.E.C"
+10.1.1,Applied Economics
+11.1.1,UK Legal Systems
+12.1.1,European Business stud
+13.1.1,Information Management
+14.1.1,Applied Linguistics
+15.1.1,French Language
+16.1.1,Chinese Language stud
+17.1.1,Ancient History
+18.1.1,Drawing
+19.1.1,Training teach - Nursery
+10.2.1,Political Theories
+11.2.1,Public Law
+12.2.1,Management Techniques
+13.2.1,Public Relations
+14.2.1,Literature in translation
+15.2.1,German Language
+16.2.1,Japanese Language stud
+17.2.1,British History
+18.2.1,Graphic Design
+19.2.1,Research skills
+10.3.1,Applied Sociology
+12.3.1,Banking
+13.3.1,Media Studies
+14.3.1,English Language
+15.3.1,Italian Language
+16.3.1,South Asian Language stud
+17.3.1,Economic History
+18.3.1,MusicianshipPerformance stud
+19.3.1,Academic stud in Nursery Educ
+10.4.1,UK Social Policy
+12.4.1,Accountancy
+13.4.1,Electronic Publishing
+14.4.1,Ancient Egyptian
+15.4.1,Spanish Language
+16.4.1,Other Asian Language stud
+17.4.1,Egyptology
+18.4.1,Acting
+10.5.1,Health & Welfare
+12.5.1,Market Research
+13.5.1,Factual Reporting
+14.5.1,Ancient Celtic stud
+15.5.1,Portuguese Language
+16.5.1,Afr Language stud
+17.5.1,Metaphysics
+18.5.1,Choreography
+10.6.1,Social & Cultural Anthropology
+12.6.1,Business HRM
+14.6.1,Latin Language
+15.6.1,Sc&inavian Lang
+16.6.1,Modern Middle-Eastern Language stud
+17.6.1,Theology
+18.6.1,Moving Image Techniques
+10.7.1,Human & Social Geog by area
+12.7.1,Office Administration
+14.7.1,Classical Greek Language
+15.7.1,Russian & East European Lang
+16.7.1,Amer Language stud
+18.7.1,Fabric & Leather Crafts
+12.8.1,Travel Management
+16.8.1,Aus Language stud
+18.8.1,Scriptwriting
+14.9.1,Translation stud
+15.9.1,Other European Lang
+16.9.1,"Oth East,Asiatic,Afr,Amer & Aus Lang"
+10.1.2,Microeconomics
+11.1.2,European Union Law
+12.1.2,International Business stud
+13.1.2,Librarianship
+14.1.2,Historical Linguistics
+15.1.2,French Literature
+16.1.2,Chinese Literature stud
+17.1.2,Byzantine History
+18.1.2,Painting
+19.1.2,Training teach - Primary
+10.2.2,Political Systems
+11.2.2,Private Law
+12.2.2,Institutional Management
+14.2.2,Literature in its original language
+15.2.2,German Literature
+16.2.2,Japanese Literature stud
+17.2.2,European History
+18.2.2,Illustration
+19.2.2,Study skills
+10.3.2,Gender stud
+12.3.2,Investment & Insurance
+13.3.2,Media Production
+14.3.2,English Literature
+15.3.2,Italian Literature
+16.3.2,South Asian Literature stud
+17.3.2,Social History
+19.3.2,Academic stud in Primary Educ
+10.4.2,International Social Policy
+12.4.2,Accounting Theory
+13.4.2,Multi-media Publishing
+14.4.2,Classical Arabic
+15.4.2,Spanish Literature
+16.4.2,Other Asian Literature stud
+17.4.2,Stone Age
+18.4.2,Directing for Theatre
+10.5.2,Child Care
+12.5.2,Sales Management
+14.5.2,Modern Celtic stud
+15.5.2,Portuguese Literature
+16.5.2,Afr Literature stud
+17.5.2,Moral Philosophy
+18.5.2,Body Awareness
+10.6.2,Physical & Biological Anthropology
+12.6.2,Health & Safety Issues
+14.6.2,Latin Literature
+15.6.2,Sc&inavian Literature
+16.6.2,Modern Middle-Eastern Literature stud
+17.6.2,Religious stud
+18.6.2,Cinematography
+10.7.2,Human & Social Geog by topic
+12.7.2,Secretarial & Typing skills
+14.7.2,Classical Greek Literature
+15.7.2,Russian & East European Literature
+16.7.2,Amer Literature stud
+18.7.2,Metal Crafts
+12.8.2,Event Management
+16.8.2,Aus Literature stud
+18.8.2,Poetry Writing
+14.9.2,Translation theory
+15.9.2,Other European Literature
+16.9.2,"Oth East,Asiatic,Afr,Amer & Aus Lit"
+10.1.3,Macroeconomics
+11.1.3,Public International Law
+13.1.3,Curatorial stud
+14.1.3,Phonetics & Phonology
+15.1.3,French Society & Culture
+16.1.3,Chinese Society & Culture stud
+17.1.3,Medieval History
+18.1.3,Sculpture
+19.1.3,Training teach - Secondary
+10.2.3,UK GovernmentParliamentary stud
+12.2.3,L& & property management
+15.2.3,German Society & Culture
+16.2.3,Japanese Society & Culture stud
+17.2.3,Amer History
+18.2.3,ClothingFashion Design
+10.3.3,Ethnic stud
+12.3.3,Taxation
+14.3.3,English as a second language
+15.3.3,Italian Society & Culture
+16.3.3,South Asian Society & Culture stud
+17.3.3,History of Religions
+18.3.3,History of Music
+19.3.3,Academic stud in Secondary Educ
+10.4.3,Public Policy
+13.4.3,Interactive Publishing
+14.4.3,Akkadian
+15.4.3,Spanish Society & Culture
+16.4.3,Other Asian Society & Culture stud
+17.4.3,Bronze Age
+18.4.3,Producing for Theatre
+10.5.3,Youth Work
+12.5.3,Distribution
+14.5.3,Scot Gaelic
+15.5.3,Portuguese Society & Culture
+16.5.3,Afr Society & Culture stud
+17.5.3,Scholastic Philosophy
+18.5.3,History of Dance
+14.6.3,Latin Literature in Translation
+15.6.3,Sc&inavian Society & Culture
+16.6.3,Mod Middle-Eastern Soc & Culture stud
+17.6.3,Divinity
+18.6.3,History of Cinematics & Photography
+14.7.3,Classical Greek Lit in Translation
+15.7.3,Russian & East European Soc & Culture
+16.7.3,Amer Society & Culture stud
+18.7.3,Wood Crafts
+12.8.3,UK Tourism
+16.8.3,Aus Society & Culture stud
+18.8.3,Prose Writing
+15.9.3,Other European Societies & Cultures
+16.9.3,"Oth East,Asiatic,Afr,Amer & Aus Soc &"
+10.1.4,Econometrics
+11.1.4,Comparative Law
+14.1.4,Sociolinguistics
+17.1.4,Modern History
+18.1.4,Printmaking
+19.1.4,Training teach - Tertiary
+10.2.4,International Politics
+11.2.4,Jurisprudence
+12.2.4,Retail Management
+17.2.4,Asian History
+18.2.4,IndustrialProduct Design
+10.3.4,Disability in Society
+12.3.4,Financial Management
+14.3.4,English Lit written as a second lang
+17.3.4,Intellectual History
+18.3.4,Types of Music
+19.3.4,Academic stud in Tertiary Educ
+14.4.4,Sumerian
+17.4.4,Iron Age
+18.4.4,Theatre stud
+10.5.4,Community Work
+14.5.4,Irish Gaelic
+17.5.4,Social Philosophy
+18.5.4,Types of Dance
+17.6.4,Religious writings
+18.6.4,Photography
+18.7.4,Surface Decoration
+12.8.4,International Tourism
+10.1.5,Political Economics
+14.1.5,Psycholinguistics
+18.1.5,Calligraphy
+19.1.5,Training teach - Adult Educ
+10.2.5,International Relations
+11.2.5,Legal Practice
+17.2.5,Afr History
+18.2.5,Interior Design
+10.3.5,Religion in Society
+17.3.5,History of Art
+18.3.5,Musicology
+19.3.5,Academic stud in Adult Educ
+14.4.5,Sanskrit
+17.4.5,Archaeological conservation
+18.4.5,Stage Management
+10.5.5,Careers Guidance
+12.5.5,International Marketing
+14.5.5,Manx
+17.5.5,Philosophy of Science
+17.6.5,Pastoral stud
+18.7.5,Clay & Stone Crafts
+12.8.5,Transport stud
+10.1.6,International Economics
+14.1.6,English Linguistics
+18.1.6,Fine Art Conservation
+19.1.6,Training teach - Specialist
+10.2.6,Comparative Politics
+11.2.6,Medical Law
+17.2.6,Aus History
+18.2.6,Furniture Design
+10.3.6,Socio-economics
+17.3.6,History of Architecture
+18.3.6,Musical Instrument History
+19.3.6,Academic stud in Specialist Educ
+14.4.6,Prakrit
+17.4.6,Archaeological techniques
+18.4.6,Theatre Design
+10.5.6,ProbationAfter Care
+12.5.6,Promotion & Advertising
+14.5.6,Welsh
+17.5.6,Mental Philosophy
+18.7.6,Reed Crafts
+10.1.7,Economic Systems
+14.1.7,Ling of non-English European Lang
+17.2.7,World History
+18.2.7,Ceramics Design
+10.3.7,Social Theory
+17.3.7,History of Design
+19.3.7,Academic stud in Educ (across phases)
+14.4.7,Aramaic
+14.5.7,Cornish
+18.7.7,Glass Crafts
+14.1.8,"Ling of non-English, non-European Lang"
+18.2.8,Interactive & Electronic Design
+10.3.8,Political Sociology
+17.3.8,History of Science
+14.4.8,Hebrew
+14.5.8,Breton
+18.7.8,Paper Crafts
+10.1.9,Economics N.E.C
+11.1.9,Law by Area N.E.C
+12.1.9,Business stud N.E.C
+13.1.9,Information Services N.E.C
+14.1.9,Linguistics N.E.C
+15.1.9,French stud N.E.C
+16.1.9,Chinese stud N.E.C
+17.1.9,History by Period N.E.C
+18.1.9,Fine Art N.E.C
+19.1.9,Training teach N.E.C
+10.2.9,Politics N.E.C
+11.2.9,Law by topic N.E.C
+12.2.9,Management stud N.E.C
+13.2.9,Publicity stud N.E.C
+14.2.9,Comparative Literary stud N.E.C
+15.2.9,German stud N.E.C
+16.2.9,Japanese stud N.E.C
+17.2.9,History by Area N.E.C
+18.2.9,Design stud N.E.C
+19.2.9,Research & Study skills N.E.C
+10.3.9,Sociology N.E.C
+12.3.9,Finance N.E.C
+13.3.9,Media stud N.E.C
+14.3.9,English stud N.E.C
+15.3.9,Italian stud N.E.C
+16.3.9,South Asian stud N.E.C
+17.3.9,History by Topic N.E.C
+18.3.9,Music N.E.C
+19.3.9,Academic stud in Educ N.E.C
+10.4.9,Social Policy N.E.C
+12.4.9,Accounting N.E.C
+13.4.9,Publishing N.E.C
+14.4.9,Ancient Language stud N.E.C
+15.4.9,Spanish stud N.E.C
+16.4.9,her Asian stud N.E.C
+17.4.9,Archaeology N.E.C
+18.4.9,Drama N.E.C
+10.5.9,Social Work N.E.C
+12.5.9,Marketing N.E.C
+13.5.9,Journalism N.E.C
+14.5.9,Celtic stud N.E.C
+15.5.9,Portuguese stud N.E.C
+16.5.9,Afr stud N.E.C
+17.5.9,Philosophy N.E.C
+18.5.9,Dance N.E.C
+10.6.9,Anthropology N.E.C
+12.6.9,Human Resources N.E.C
+14.6.9,Latin stud N.E.C
+15.6.9,Sc&inavian stud N.E.C
+16.6.9,Modern Middle-Eastern stud N.E.C
+17.6.9,Theology & Religious stud N.E.C
+18.6.9,Cinematics & Photography N.E.C
+10.7.9,Human & Social Geog N.E.C
+12.7.9,Office skills N.E.C
+14.7.9,Classical Greek stud N.E.C
+15.7.9,Russian & East European stud N.E.C
+16.7.9,Amer stud N.E.C
+18.7.9,Crafts N.E.C
+12.8.9,"Tourism, Transport & Travel N.E.C"
+14.8.9,Classical stud N.E.C
+16.8.9,Aus stud N.E.C
+18.8.9,Imaginative Writing N.E.C
+10.9.9,Social stud N.E.C
+11.9.9,Law N.E.C
+12.9.9,Business & Administrative stud N.E.C
+13.9.9,Mass Comm & Doc N.E.C
+14.9.9,"Ling,Classics & related subj N.E.C"
+15.9.9,"European Lang,Lit & related subj N.E.C"
+16.9.9,"East,Asiatic,Afr,Amer & Aus Lang, Lit"
+17.9.9,Historical & Phil stud N.E.C
+18.9.9,Creative Arts & Design N.E.C
+19.9.9,Educ N.E.C
+2.7.0.1,Palliative Care Nursing
+3.1.1.1,Parasitology
+5.1.1.1,Industrial Chemistry
+5.3.1.1,Engineering Physics
+6.3.1.1,Medical Statistics
+7.3.1.1,Thermodynamics
+4.4.1.1,Agricultural Pests & Diseases
+6.4.1.1,Computer Architectures
+7.4.1.1,Air-Passenger Transport Engineering
+8.4.1.1,Plastics
+4.5.1.1,Forestry Pests & Diseases
+7.5.1.1,Surface Passenger Ship Building
+8.5.1.1,Engineering Materials
+4.6.1.1,Meat Science
+5.6.1.1,Industrial Geology
+7.6.1.1,Microelectronic Engineering
+8.6.1.1,Marine Navigation
+2.7.1.1,District Nursing
+4.7.1.1,Agricultural Microbiology
+7.7.1.1,Manufacturing Systems Design
+3.8.1.1,Occupational Psychology
+5.8.1.1,BioGeog
+7.8.1.1,Biochemical Engineering
+6.1.2.1,Mechanics (Mathematical)
+7.1.2.1,Fire Safety Engineering
+7.2.2.1,Energy Resources
+8.2.2.1,Pattern Making
+4.3.2.1,Animal Anatomy
+5.3.2.1,Solid state Physics
+7.3.2.1,Turbine Technology
+4.4.2.1,Livestock Husb&ry
+8.4.2.1,Textile Chemistry
+9.4.2.1,Urban  Planning
+3.5.2.1,Medical Microbiology
+5.5.2.1,Space Science
+7.5.2.1,Surface Passenger Ship Design
+8.5.2.1,Offset Lithography
+5.6.2.1,Exploration Geology
+6.6.2.1,Procedural Programming
+4.7.2.1,Agricultural Biochemistry
+2.8.2.1,"Radiography, diagnostic"
+7.8.2.1,Nuclear Engineering
+2.1.3.1,Cellular Pathology
+3.1.3.1,Applied Cell Biology
+5.1.3.1,Crystallography
+7.1.3.1,Automated Engineering Design
+7.2.3.1,Permanent Way Engineering
+5.3.3.1,Atmospheric Physics
+7.3.3.1,Road Vehicle Engineering
+3.4.3.1,Medical Genetics
+4.4.3.1,Fish Husb&ry
+8.4.3.1,Tanning
+4.6.3.1,Food & Beverage Manufacture
+5.6.3.1,Marine Geotechnology
+7.6.3.1,Electrical Power Generation
+5.8.3.1,Cartography
+7.8.3.1,Bioprocess Engineering
+8.9.3.1,Music Recording
+3.1.4.1,Developmental Biology
+5.1.4.1,Marine Chemistry
+7.1.4.1,Fluid Mechanics
+7.2.4.1,General Practice Surveying
+2.3.4.1,Chinese
+5.3.4.1,Electromagnetism
+7.3.4.1,Acoustics
+4.4.4.1,Farm Management
+7.4.4.1,Flight Mechanics
+8.4.4.1,Machine Knitting
+4.5.4.1,Forestry Irrigation & Drainage
+4.6.4.1,Food & Beverages Packaging
+5.6.4.1,Palaeontology
+7.6.4.1,Telecommunications Engineering
+2.7.4.1,Geriatric Nursing
+3.7.4.1,Medical Biochemistry
+3.8.4.1,Health Psychology
+5.8.4.1,Maritime Geog
+8.9.4.1,Office Machinery Maintenance
+5.1.5.1,Pharmaceutical Chemistry
+5.3.5.1,Radiation Physics
+7.6.5.1,Digital Circuit Engineering
+5.8.5.1,Applied Environmental Sciences
+3.1.6.1,Marine Biology
+5.1.6.1,Organometallic Chemistry
+5.3.6.1,Laser Physics
+4.4.6.1,Organic Arable & Fruit Farming
+5.6.6.1,Exploration Geophysics
+7.6.6.1,Instrumentation Control
+2.7.6.1,Learning Disability Nursing
+6.7.6.1,Automated Reasoning
+5.8.6.1,Meteorology
+4.4.7.1,Agricultural Machinery
+7.6.7.1,Robotics
+2.7.7.1,Critical Care Nursing
+3.1.8.1,Biodiversity
+3.1.9.1,Biometry
+5.8.9.1,Geographical Information Systems
+13.3.01,Television stud
+5.1.1.2,Colour Chemistry
+4.4.1.2,Crop Physiology
+6.4.1.2,Operating Systems
+7.4.1.2,Air-Freight Transport Engineering
+4.5.1.2,Tree Physiology
+7.5.1.2,Surface Freight Ship Building
+8.5.1.2,Paper Technology
+4.6.1.2,Cereal Science
+5.6.1.2,Engineering Geology
+7.6.1.2,Integrated Circuit Design
+8.6.1.2,Marine Radar
+2.7.1.2,Health Visiting
+7.7.1.2,Manufacturing Installation Systems
+3.8.1.2,Educal Psychology
+7.8.1.2,Pharmaceutical Engineering
+7.1.2.2,Water Quality Control
+7.2.2.2,Coastal Decay
+4.3.2.2,Animal Physiology
+4.4.2.2,Equine stud
+8.4.2.2,Dying & Colouring of Textiles
+9.4.2.2,Rural Planning
+3.5.2.2,Veterinary Microbiology
+5.5.2.2,Planetary Science
+7.5.2.2,Surface Freight Ship Design
+8.5.2.2,Photo-Lithography
+6.6.2.2,Object Oriented Programming
+2.8.2.2,"Radiography, therapeutic"
+2.1.3.2,Pathobiology
+7.2.3.2,Pavement Engineering
+5.3.3.2,Marine Physics
+7.3.3.2,Rail Vehicle Engineering
+3.4.3.2,Veterinary Genetics
+4.4.3.2,Freshwater Fish
+4.6.3.2,Food & Beverage Processing
+7.6.3.2,Electrical Power Distribution
+5.8.3.2,Remote Sensing
+3.1.4.2,Reproductive Biology
+7.1.4.2,Solid Mechanics
+7.2.4.2,Engineering Surveying
+2.3.4.2,Herbalism
+5.3.4.2,Quantum Mechanics
+7.3.4.2,Vibration
+4.4.4.2,Gamekeeping Management
+8.4.4.2,Commercial Tailoring
+4.6.4.2,Food & Beverage Delivery
+5.6.4.2,Geoscience
+7.6.4.2,Broadcast Engineering
+3.7.4.2,Veterinary Biochemistry
+8.9.4.2,Industrial Machinery Maintenance
+7.6.5.2,Analogue Circuit Engineering
+5.8.5.2,Hydrology
+3.1.6.2,Freshwater Biology
+5.1.6.2,Polymer Chemistry
+4.4.6.2,Organic Livestock
+7.6.6.2,Control by light systems
+4.4.7.2,Agricultural Irrigation & Drainage
+7.6.7.2,Cybernetics
+3.1.8.2,Evolution
+13.3.02,Radio stud
+4.4.1.3,Crop Nutrition
+7.4.1.3,Air-Combat Engineering
+4.5.1.3,Tree Nutrition
+7.5.1.3,Surface Combat Ship Building
+8.5.1.3,Furniture Technology
+4.6.1.3,Vegetable Science
+8.6.1.3,Marine Radio
+2.7.1.3,School Nursing
+7.7.1.3,Production Processes
+7.1.2.3,Public Health Engineering
+7.2.2.3,Environmental Impact Assessment
+4.3.2.3,Animal Pathology
+4.4.2.3,Poultry keeping
+7.5.2.3,Surface Combat Ship Design
+8.5.2.3,Reprographic Techniques
+6.6.2.3,Declarative Programming
+7.3.3.3,Ship Propulsion Engineering
+4.4.3.3,Saltwater Fish
+4.6.3.3,Food & Beverage Technology
+7.1.4.3,Structural Mechanics
+2.3.4.3,Acupuncture
+5.3.4.3,Computational Physics
+4.4.4.3,Water Resource Management
+8.4.4.3,Pattern Cutting
+5.6.4.3,Quaternary stud
+7.6.4.3,Satellite Engineering
+5.8.5.3,Pollution Control
+5.1.6.3,Bio-organic Chemistry
+4.4.6.3,Organic Fish Farming
+7.6.7.3,Bioengineering
+13.3.03,Film stud
+4.4.1.4,Crop Protection
+4.5.1.4,Tree Protection
+7.5.1.4,Submarine Building
+4.6.1.4,Fruit Science
+8.6.1.4,Marine Plumbing
+2.7.1.4,Practice Nursing
+7.7.1.4,Manufacturing Systems Maintenance
+4.3.2.4,Animal Pharmacology
+4.4.2.4,Game keeping
+7.5.2.4,Submarine Design
+8.5.2.4,Screen Process Printing
+4.4.3.4,Ornamental Fish
+4.6.3.4,Industrial Baking
+2.3.4.4,Aromatherapy
+4.4.4.4,L& Management for Recreation
+8.4.4.4,Millinery
+7.6.4.4,Microwave Engineering
+5.1.6.4,Petrochemical Chemistry
+7.6.7.4,Virtual Reality Engineering
+13.3.04,Electronic Media stud
+4.4.1.5,Crop Production
+4.5.1.5,Tree Production
+4.3.2.5,Animal Toxicology
+4.4.2.5,Exotic Livestock
+4.4.3.5,Aquaculture
+4.6.3.5,Industrial Brewing
+2.3.4.5,Hypnotherapy
+4.4.4.5,Heritage Management
+8.4.4.5,Footwear production
+5.1.6.5,Biomolecular Chemistry
+13.3.05,Paper-based Media stud
+17.6.45,Comparative religious texts
+4.4.1.6,Glasshouse Culture
+4.5.1.6,Timber Production
+4.3.2.6,Animal Pharmacy
+2.3.4.6,Reflexology
+4.4.4.6,Wilderness Management
+4.4.1.7,Amenity Plant Production
+4.5.1.7,Community Forestry
+4.3.2.7,Animal Nutrition
+4.4.4.7,Environmental Conservation
+4.4.1.8,Exotic Plants & Crops
+4.3.2.8,Animal Welfare
+10.1.1.1,Financial Economics
+11.1.1.1,English Law
+10.2.1.1,Liberalism
+11.2.1.1,Criminal Law
+12.2.1.1,Strategic Management
+17.2.1.1,Irish History
+18.2.1.1,Typography
+13.3.1.1,Television Studies
+12.4.1.1,Cost & Management Accountancy
+13.4.1.1,Publishing on audiovideo tape
+14.4.1.1,Coptic
+15.4.1.1,Spanish Lang in other countries
+15.5.1.1,Portuguese Lang in other countries
+17.5.1.1,Epistemology
+12.6.1.1,Industrial Relations
+14.6.1.1,Church Latin
+15.6.1.1,Swedish Language
+18.6.1.1,Directing Motion Pictures
+10.7.1.1,Human & Social Geog of Europe
+14.7.1.1,Classical Church Greek
+15.7.1.1,Russian Language
+16.7.1.1,Latin Amer Language stud
+18.7.1.1,Needlecraft
+15.9.1.1,Dutch
+13.1.2.1,Library stud
+19.1.2.1,Training teach - Infant (key stage 1)
+10.2.2.1,Autocracy
+11.2.2.1,Business & Commercial Law
+12.2.2.1,Hotel & Catering
+17.2.2.1,French History
+10.3.2.1,Womens stud
+12.3.2.1,Investment
+13.3.2.1,Television Production
+14.3.2.1,English Literature by period
+17.3.2.1,Local History
+12.4.2.1,Auditing of Accounts
+14.5.2.1,Goidelic group of Lang
+15.6.2.1,Swedish Literature
+17.6.2.1,Christian stud
+10.7.2.1,Economic Geog
+12.7.2.1,Audio Typing
+15.7.2.1,Russian Literature
+16.7.2.1,Latin Amer Literature stud
+18.7.2.1,SilversmithingGoldsmithing
+13.1.3.1,Museum stud
+14.1.3.1,Phonetics
+19.1.3.1,Training teach - (key stage 3)
+10.2.3.1,Public Administration
+12.2.3.1,L& Management
+17.2.3.1,Canadian History
+18.2.3.1,Textile Design
+10.4.3.1,Health Policy
+14.5.3.1,Scot Gaelic Literature
+15.6.3.1,Swedish Society & Culture
+18.6.3.1,History of Cinematics
+15.7.3.1,Russian Society & Culture
+16.7.3.1,Latin Amer Soc & Culture stud
+18.7.3.1,CarpentryJoinery
+17.1.4.1,Modern History 1500-1599
+19.1.4.1,Training teach - Further Educ
+10.2.4.1,European Union Politics
+17.2.4.1,Chinese History
+12.3.4.1,Financial Risk
+19.3.4.1,Academic stud in Further Educ
+14.5.4.1,Irish Gaelic Literature
+17.6.4.1,The Bible & Christian texts
+19.1.5.1,Training teach - Coaching
+10.2.5.1,Strategic stud
+17.2.5.1,North Afr History
+18.4.5.1,Theatrical Wardrobe Design
+14.5.5.1,Manx Literature
+18.7.5.1,Pottery
+12.8.5.1,L& Travel
+19.1.6.1,Training teach - Special Needs
+17.2.6.1,Australian History
+18.4.6.1,Stage Design
+12.5.6.1,Advertising
+14.5.6.1,Welsh Literature
+18.7.6.1,Basketry
+10.1.7.1,Capitalism
+14.1.7.1,French Linguistics
+17.2.7.1,International History
+10.3.7.1,Social Hierarchy
+14.5.7.1,Cornish Literature
+18.7.7.1,Glassblowing
+14.1.8.1,Chinese Linguistics
+17.3.8.1,History of Physics
+14.5.8.1,Breton Literature
+18.7.8.1,Bookbinding
+10.3.9.1,Sociology of Science & Technology
+17.3.9.1,Military History
+10.1.1.2,Agricultural Economics
+11.1.1.2,Welsh Law
+10.2.1.2,Conservatism
+12.2.1.2,Creative Management
+17.2.1.2,Scot History
+18.2.1.2,Multimedia Design
+13.3.1.2,Radio Studies
+12.4.1.2,Public Accountancy
+13.4.1.2,Publishing on CD-ROM
+12.6.1.2,Staff Development
+14.6.1.2,Medieval Latin
+15.6.1.2,Norwegian Language
+18.6.1.2,Producing Motion Pictures
+10.7.1.2,Human & Social Geog of Asia
+14.7.1.2,Late Greek
+15.7.1.2,Polish Language
+18.7.1.2,Dressmaking
+15.9.1.2,Flemish
+19.1.2.2,Training teach - Junior (key stage 2)
+10.2.2.2,Democracy
+11.2.2.2,Contract Law
+12.2.2.2,RecreationLeisure Management
+17.2.2.2,German History
+10.3.2.2,Mens stud
+12.3.2.2,Insurance
+13.3.2.2,Radio Production
+14.3.2.2,English Literature by author
+17.3.2.2,Oral History
+12.4.2.2,Financial Reporting
+14.5.2.2,Brythonic group of Lang
+15.6.2.2,Norwegian Literature
+17.6.2.2,Islamic stud
+10.7.2.2,Urban Geog
+12.7.2.2,Shorth& & Shorth& Transcription
+15.7.2.2,Polish Literature
+18.7.2.2,Blacksmithing
+13.1.3.2,Archive stud
+14.1.3.2,Phonology
+19.1.3.2,Training teach - (key stage 4)
+10.2.3.2,UK Constitutional stud
+12.2.3.2,Property Management
+17.2.3.2,USA History
+10.4.3.2,Welfare Policy
+15.6.3.2,Norwegian Society & Culture
+18.6.3.2,History of Photography
+15.7.3.2,Polish Society & Culture
+18.7.3.2,Cabinet making
+17.1.4.2,Modern History 1600-1699
+19.1.4.2,Training teach - Higher Educ
+10.2.4.2,Commonwealth Politics
+17.2.4.2,Indian History
+19.3.4.2,Academic stud in Higher Educ
+17.6.4.2,The Quran & Islamic texts
+10.2.5.2,War & Peace stud
+17.2.5.2,Central Afr History
+18.4.5.2,Theatrical Make-up
+18.7.5.2,Tile Making
+12.8.5.2,Sea Travel
+19.1.6.2,Teaching Eng as a Foreign Lang (TEFL)
+17.2.6.2,New Zeal& History
+12.5.6.2,Corporate Image
+18.7.6.2,Thatching
+10.1.7.2,Monetarism
+14.1.7.2,German Linguistics
+14.1.8.2,Japanese Linguistics
+17.3.8.2,History of Chemistry
+18.7.8.2,Origami
+10.1.1.3,Economic Policy
+11.1.1.3,Northern Irish Law
+10.2.1.3,Socialism
+12.2.1.3,Project Management
+17.2.1.3,Welsh History
+18.2.1.3,Visual Communication
+13.3.1.3,Film Studies
+12.4.1.3,Book-keeping
+13.4.1.3,Publishing via the World Wide Web
+12.6.1.3,Training Methods
+15.6.1.3,Finnish Language
+18.6.1.3,Film & Sound Recording
+10.7.1.3,Human & Social Geog of Africa
+15.7.1.3,Czech Language
+18.7.1.3,Soft Furnishing
+10.2.2.3,Plutocracy
+11.2.2.3,Property Law
+12.2.2.3,Domestic Management
+17.2.2.3,Italian History
+12.3.2.3,Actuarial Science
+13.3.2.3,Film Production
+14.3.2.3,English Literature by topic
+17.3.2.3,Family History
+15.6.2.3,Finnish Literature
+17.6.2.3,Judaism
+10.7.2.3,Political Geog
+15.7.2.3,Czech Literature
+18.7.2.3,ClockWatchmaking
+17.2.3.3,South Amer History
+10.4.3.3,Educ Policy
+15.6.3.3,Finnish Society & Culture
+15.7.3.3,Czech Society & Culture
+18.7.3.3,Marquetry & Inlaying
+17.1.4.3,Modern History 1700-1799
+10.2.4.3,Politics of a specific countryregion
+17.2.4.3,South East Asian History
+17.6.4.3,The Torah & Judaic texts
+17.2.5.3,Southern Afr History
+18.7.5.3,Stone Crafts
+12.8.5.3,Air Travel
+12.5.6.3,Sponsorship
+10.1.7.3,Keynesianism
+14.1.7.3,Italian Linguistics
+14.1.8.3,Linguistics of Other Asian Lang
+17.3.8.3,History of Mathematics
+11.1.1.4,Scot Law
+10.2.1.4,Nationalism
+12.2.1.4,Change Management
+17.2.1.4,English History
+13.3.1.4,Electronic Media Studies
+12.6.1.4,Recruitment Methods
+15.6.1.4,Danish Language
+18.6.1.4,Visual & Audio Effects
+10.7.1.4,Human & Social Geog of Australasia
+18.7.1.4,Weaving
+10.2.2.4,Oligarchy
+11.2.2.4,Torts
+12.2.2.4,Management & Organisation of Educ
+17.2.2.4,Iberian History
+15.6.2.4,Danish Literature
+17.6.2.4,Hinduism
+10.7.2.4,Transport Geog
+12.2.3.4,Valuation & Auctioneering
+17.2.3.4,Central Amer History
+10.4.3.4,Transport Policy
+15.6.3.4,Danish Society & Culture
+18.7.3.4,Veneering
+17.1.4.4,Modern History 1800-1899
+10.2.4.4,International Constitutional stud
+17.6.4.4,Asian religious texts
+17.2.5.4,East Afr History
+10.1.7.4,Collectivism
+14.1.7.4,Spanish Linguistics
+14.1.8.4,Linguistics of Middle-Eastern Lang
+10.2.1.5,Fascism
+12.2.1.5,Organisational Development
+13.3.1.5,Paper based Media Studies
+18.6.1.5,Animation Techniques
+10.7.1.5,Human & Social Geog of the Americas
+18.7.1.5,Leatherwork
+17.2.2.5,Russian History
+17.6.2.5,Buddhism
+10.7.2.5,Historical Geog
+10.4.3.5,Security Policy
+17.1.4.5,Modern History 1900-1919
+17.2.5.5,West Afr History
+14.1.7.5,Russian Linguistics
+14.1.8.5,Linguistics of Afr Lang
+10.2.1.6,Feminism
+10.7.1.6,Human & Soc Geog of ArcticAntarctic
+17.6.2.6,Other Asian Religious stud
+10.7.2.6,Cultural Geog
+17.1.4.6,Modern History 1920-1949
+14.1.7.6,Linguistics of Sc&inavian Lang
+10.2.1.7,Environmentalism
+17.6.2.7,Comparative Religious stud
+10.7.2.7,Agricultural Geog
+17.1.4.7,Modern History 1950-1999
+14.1.7.7,Ling of Slavonic & East-European Lang
+10.2.1.8,Anarchism
+17.1.4.8,Modern History 2000-2099
+14.1.7.8,Ling of Ancient & Classical Lang

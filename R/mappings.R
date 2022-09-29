@@ -64,7 +64,7 @@ lfs_default_mappings <- function(cols) {
 
   fdsico <- pick(c("FDSICO", "FDSINCOM", "SINCOM"), cols)
 
-  degree_subject <- pick(c("FDSNGDEG", "SNGDEG"), cols)
+  degree_subject <- pick(c("SUBJCT1", "FDSNGDEG", "SNGDEG"), cols)
 
   combined_degree_subject <- pick(c(
     "FDCMBMA", "UNCOMBMA",
@@ -142,7 +142,7 @@ lfs_default_mappings <- function(cols) {
     "HAPPY", "HAPPY", "numeric",
     "ANXIOUS", "ANXIOUS", "numeric",
     # Variable changes over time ----------
-    degree_subject, "DEGREE_SUBJECT", "unlabelled_factor",
+    degree_subject, "DEGREE_SUBJECT", "character",
     combined_degree_subject, "CMBDEGREE", "factor",
     "ILODEFR", "ILODEFR", "factor",
     "OYCIRC", "OYCIRC", "factor",

@@ -37,6 +37,11 @@ c(":=",
 "paidweighthrly2",
 "unemployed",
 "union_percentage",
-"weight"
+"weight",
+"DEGREE_DESCRIPTION",
+"DEGREE_SUBJECT",
+"SUBJECT_VAR" ,
+"i.DEGREE_DESCRIPTION",
+"two_digit_code"
 ))
 

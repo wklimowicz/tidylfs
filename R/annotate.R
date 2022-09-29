@@ -193,43 +193,44 @@ lfs[economic_activity_coding,
 
 annotate_subject <- function(lfs) {
 
+  # Trim WS because 1990's files have leading space
+  lfs[, DEGREE_SUBJECT := trimws(DEGREE_SUBJECT)]
+
   # Find correct coding file
   read_subject_coding <- function(year) {
     readr::read_csv(
-      paste0(system.file("coding_frames", package = "tidylfs"), "/one_digit_subject_", year, ".csv"),
+      paste0(system.file("coding_frames", package = "tidylfs"), "/sngdeg_", year, "_2_digit.csv"),
       col_types = readr::cols(
-        DEGREE_SUBJECT = readr::col_character(),
-        SUBJECT_DESCRIPTION = readr::col_character()
+        DEGREE = readr::col_character(),
+        DEGREE_DESCRIPTION = readr::col_character()
       ), progress = FALSE
     ) %>%
       dplyr::mutate(SUBJECT_VAR = year)
   }
 
-  subject_2012 <- read_subject_coding("2012")
-  subject_2004 <- read_subject_coding("2004")
+  subject_1992 <- read_subject_coding("1992")
   subject_1997 <- read_subject_coding("1997")
+  subject_2004 <- read_subject_coding("2004")
 
-  subject_coding <- dplyr::bind_rows(subject_2012, subject_2004, subject_1997) |>
-    # dplyr::rename(INECAC05 = .data$INECAC) |>
+  subject_coding <- dplyr::bind_rows(subject_1992, subject_1997, subject_2004) |>
     data.table::setDT()
 
 lfs[, SUBJECT_VAR := data.table::fcase(
-      QUARTER <= "1997 Q3", "1997",
-      QUARTER <= "2003 Q4", "2004",
-      QUARTER <= "2011 Q4", "2004", # 2 different ones here?
-      QUARTER > "2012 Q1", "2012"
+      QUARTER < "1997 Q3", "1992",
+      QUARTER <= "2003 Q4", "1997",
+      QUARTER >= "2004 Q1", "2004"
     )]
 
-lfs[, one_digit_code := str_extract(DEGREE_SUBJECT, regex("(\\d{1,2})"))]
-# lfs[, 2_digit_code := str_extract(DEGREE_SUBJECT, regex("(\\d{1,2}\\.\\d{1,2}|\\d{1,2})"))
 
+lfs[, two_digit_code := stringr::str_extract(DEGREE_SUBJECT, stringr::regex("(\\d{1,2}\\.\\d{1,2}|\\d{1,2})"))]
 
 lfs[subject_coding,
-    on = c("SUBJECT_VAR", "one_digit_code" = "DEGREE_SUBJECT"),
-    SUBJECT_DESCRIPTION := i.SUBJECT_DESCRIPTION
-    ][, `:=`(SUBJECT_VAR = NULL, one_digit_code = NULL)
-      ][, SUBJECT_DESCRIPTION := forcats::as_factor(SUBJECT_DESCRIPTION)]
-# [, data.table::setnames(.SD, "INECAC_DESCRIPTION", "INECAC05")]
+    on = c("SUBJECT_VAR", "two_digit_code" = "DEGREE"),
+    DEGREE_DESCRIPTION := i.DEGREE_DESCRIPTION
+    ][, `:=`(SUBJECT_VAR = NULL, two_digit_code = NULL)
+      ][, DEGREE_DESCRIPTION := forcats::as_factor(DEGREE_DESCRIPTION)
+      ][, DEGREE_SUBJECT := forcats::as_factor(DEGREE_SUBJECT)]
+
 
 
 }
