@@ -1,0 +1,128 @@
+DEGREE,DEGREE_DESCRIPTION
+1,SINGLE SUBJECTS
+1.01,Medicine
+1.011,Pre-clinical
+1.012,Clinical
+1.02,Dentistry
+1.021,Pre-clinical
+1.022,Clinical
+1.03,Anatomy and/or physiology
+1.04,Physiology and/or anatomy
+1.05,Pharmacology
+1.06,Pharmacy
+1.07,Opthalmics
+1.08,Nursing
+1.09,Biology
+1.10,Botany
+1.11,Zooloty
+1.12,Genetics
+1.13,Microbiology
+1.14,Biochemistry
+1.15,Psychology (as biological science)
+1.16,Veterinary science
+1.17,Agriculture
+1.18,Forestry
+1.19,Food science/food technology/home economics
+1.20,Chemistry/applied chemistry
+1.21,Physics/applied physics
+1.22,Astronomy
+1.23,Geology
+1.24,Geography (as physical science)
+1.25,Mathematics/applied mathematics
+1.26,Statistics
+1.27,Computer studies
+1.28,Engineering - general
+1.29,Engineering - civil
+1.30,Engineering - mechnical
+1.31,Engineering - aeronautical
+1.32,Engineering - electrical
+1.33,Engineering - electronic
+1.34,Engineering - production
+1.35,Engineering - chemical
+1.36,Technology - minerals
+1.37,Metallurgy
+1.38,Technology - other materials (than minerals)/material scienc
+1.39,Technology - maritime
+1.40,Technology - biotechnology
+1.41,Architecture
+1.42,Building
+1.43,Planning - town and country
+1.44,Economics
+1.45,Sociology
+1.46,Social policy and administration
+1.47,Social work - applied
+1.48,Anthropology (all kinds)
+1.49,Psychology (as social science)
+1.50,Geography (as social science)
+1.51,Politics
+1.52,Law
+1.53,Business and/or management studies
+1.54,Management and/or business studies
+1.55,Management - financial
+1.56,Accountancy
+1.57,Management - institutional
+1.58,Management - land and/or property
+1.59,Management - property and/or land/estate management
+1.60,Librarianship
+1.61,Linguistics
+1.62,English
+1.63,American studies
+1.64,Classical studies/Latin/Greek
+1.65,French
+1.66,German
+1.67,Hispanic studies
+1.68,Spanish
+1.69,Russian
+1.70,Chinese
+1.71,History (not history of art)
+1.72,History of art
+1.73,Archaeology
+1.74,Philosophy
+1.75,Theology and/or religious studies
+1.76,Religious studies and/or theology
+1.77,Fine art
+1.78,Design studies
+1.79,Music
+1.80,Drama
+1.81,Education - teacher training
+1.82,Education - academic studies
+2,OTHER AND COMBINED SUBJECTS
+2.01,OC - studies allied to medicine/physiotherapy
+2.02,OC - biological sciences
+2.03,OC - agricultural sciences
+2.04,OC - environmental and/or physical sciences
+2.05,OC - mathematical sciences
+2.06,OC - engineering and/or technology
+2.07,OC - architecture and related studies
+2.08,OC - social sciences/applied social sciences
+2.09,OC - business and/or financial studies
+2.11,OC - librarianship and/or information science
+2.12,OC - languages - European
+2.13,OC - languages - Oriental/Asian/African
+2.14,"OC - languages - Other, and related subjects"
+2.15,OC - arts - humanities (NOT languages)
+2.16,OC - arts - creative
+2.17,OC - education studies
+3,COMBINATION ACROSS SUBJECTS FIELDS
+3.01,GroupA - studies allied to medicine
+3.02,GroupA - biological sciences
+3.03,GroupA - veterinary science
+3.04,GroupA - agriculture and related studies
+3.05,GroupB - physical and mathematical sciences
+3.06,GroupC - GroupA with GroupB
+3.07,GroupD - engineering/technology
+3.08,GroupD - architecture/building/planning
+3.09,GroupE - Groups A/B with GroupD
+3.11,"GroupF - Social science, business, librarianship"
+3.12,GroupG - GroupF and physical/mathematical sciences
+3.13,GroupH - GroupF with GroupA and GroupD
+3.14,GroupJ - GroupF with language studies
+3.15,"GroupK - humanities, creative arts, education"
+3.16,GroupL - GroupK and physical/mathematical sciences
+3.17,GroupM - GroupK with language studies
+3.18,"GroupN - Groups K,A,D with language studies"
+3.19,GroupP - GroupK with GroupF
+4,Combined or general science
+5,Combined or general social science
+6,Combined or general arts
+7,Other general and combinations

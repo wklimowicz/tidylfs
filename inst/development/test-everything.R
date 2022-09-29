@@ -21,12 +21,40 @@ tic()
 lfs <- lfs_compile("../lfs_rds_data/", save_to_folder = TRUE, extra_mappings = user_extra_mappings)
 toc()
 
+
+# Short version
+# tic()
+# lfs <- lfs_compile("../lfs_rds_data_test/", save_to_folder = TRUE)
+# toc()
+
 source("data-raw/create_test_data.R")
 check()
 
 
+# Degree Subject Testing
+lfs[,.N, .(is.na(DEGREE_DESCRIPTION),QUARTER)] |> 
+  dcast(QUARTER ~ is.na) |> sie()
+
+lfs[QUARTER == "1997 Q3", .N, DEGREE_DESCRIPTION]
+
+lfs[DEGREE_DESCRIPTION %ilike% "art",
+    .(
+      V1 = median(GRSSWK, na.rm = TRUE),
+      N = .N
+      ), YEAR] |>
+  ggplot() +
+  geom_line(aes(x = YEAR, y = V1)) +
+  geom_vline(aes(xintercept = 1997)) +
+  geom_vline(aes(xintercept = 2004))
+
+
+lfs[!is.na(DEGREE_SUBJECT) , .N, .(SUBJECT_DESCRIPTION, DEGREE_SUBJECT)] |> sie()
+
+lfs[is.na(SUBJECT_DESCRIPTION) & !is.na(DEGREE_SUBJECT), .N, .(QUARTER)] 
+
+
 tic()
-lfs_compile("../lfs_rds_data_test/")
+lfs <- lfs_compile("../lfs_rds_data_2020/")
 toc()
 
 lfs <- lfs_load()
