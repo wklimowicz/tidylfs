@@ -31,7 +31,7 @@ lfs_default_mappings <- function(cols) {
   ilo_status <- pick(c("INECACR", "INECAC05"), cols)
 
   weight_income <- pick(
-    c(
+    c("PIWT22",
       "PIWT20",
       "PIWT18",
       "PIWT14",
@@ -45,17 +45,25 @@ lfs_default_mappings <- function(cols) {
     cols
   )
 
-  weight <- pick(c("PWT20", "PWT18", "PWT14", "PWT07"), cols)
+  weight <- pick(
+   c("PWT22",
+     "PWT20",
+     "PWT18",
+     "PWT14",
+     "PWT07"),
+   cols)
 
   # Education
   cured <- pick(c("CURED8", "CURED"), cols)
 
   hiquald <- pick(c(
+    "HIQUL22D",
     "HIQUL15D", "HIQUL11D", "HIQUAL8D",
     "HIQUAL5D", "HIQUAL4D", "HIQUALD"
   ), cols)
 
   hiqual <- pick(c(
+    "HIQUAL22",
     "HIQUAL15", "HIQUAL11", "HIQUAL8",
     "HIQUAL5", "HIQUAL4", "HIQUAL"
   ), cols)
@@ -170,7 +178,15 @@ lfs_default_mappings <- function(cols) {
     "DEGREE73", "DEGREE73", "numeric",
     "DEGREE74", "DEGREE74", "numeric",
     "DEGREE75", "DEGREE75", "numeric",
-    teaching_qualification, "TEACH1", "factor"
+    teaching_qualification, "TEACH1", "factor",
+    # HSERIAL variables
+    "QUOTA", "QUOTA", "unlabelled_factor",
+    "WEEK", "WEEK", "unlabelled_factor",
+    "W1YR", "W1YR", "unlabelled_factor",
+    "QRTR", "QRTR", "unlabelled_factor",
+    "ADD", "ADD", "unlabelled_factor",
+    "WAVFND", "WAVFND", "unlabelled_factor",
+    "HHLD", "HHLD", "unlabelled_factor"
   )
 
   # Exclude missing

@@ -40,8 +40,16 @@ c(":=",
 "weight",
 "DEGREE_DESCRIPTION",
 "DEGREE_SUBJECT",
-"SUBJECT_VAR" ,
+"SUBJECT_VAR",
 "i.DEGREE_DESCRIPTION",
-"two_digit_code"
+"two_digit_code",
+"HSERIAL",
+"QUOTA",
+"WEEK",
+"W1YR",
+"QRTR",
+"ADD",
+"WAVFND",
+"HHLD"
 ))
 
