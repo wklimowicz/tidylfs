@@ -1,7 +1,8 @@
 devtools::load_all()
 
 df <- lfs_load() %>%
-  dplyr::filter(YEAR > 2001)
+  dplyr::filter(YEAR > 2001) %>%
+  dplyr::mutate(QUARTER = as.character(QUARTER))
 # dplyr::filter(
 #   QUARTER %in% c(
 #     "1992 Q4",

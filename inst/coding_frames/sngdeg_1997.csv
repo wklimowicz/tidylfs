@@ -1,0 +1,1389 @@
+DEGREE,DEGREE_DESCRIPTION
+1,Medicine
+1.1,Pre-Clinical Medicine
+1.2,Medical Science
+1.3,Pre-Clinical Dentistry
+1.4,Clinical Medicine
+1.5,Neurophysiological Basis of Behaviour
+1.6,Nuclear Medicine
+1.7,Clinical Dentistry
+10,Social Sciences
+10.1,Economics
+10.1.1,Economic Policy
+10.1.10,Mathematical Economics
+10.1.11,Quantitative Economics
+10.1.12,Econometrics
+10.1.13,Economics and Quantitative Analysis
+10.1.14,Computing Economics
+10.1.15,Financial Economics
+10.1.16,Overseas Economics
+10.1.17,Technological Economics
+10.1.18,Other/General Economics n.e.c
+10.1.2,Applied Economics
+10.1.3,Business Economics
+10.1.4,Political Economics
+10.1.5,Philosophy Politics and Economics
+10.1.6,Economic Systems
+10.1.7,Ecological Economics
+10.1.8,Agricultural Economics
+10.1.9,Social Statistics
+10.10,Other Social Studies
+10.10.1,British Studies
+10.10.10,Other/General Social Studies (single subject) n.e.c
+10.10.2,Modern Studies
+10.10.3,Women's Studies
+10.10.4,Race Relations
+10.10.5,Development Studies
+10.10.6,Peace Studies
+10.10.7,Conflict Resolution
+10.10.8,Defence/Security Studies
+10.10.9,War Studies
+10.2,Sociology
+10.2.1,Applied Sociology
+10.2.10,Other/General Sociology n.e.c
+10.2.2,Social Studies
+10.2.3,Applied Social Studies
+10.2.4,Social Science
+10.2.5,Applied Social Science
+10.2.6,Human and Social Science
+10.2.7,Probation and After Care Training
+10.2.8,Cultural Sociology
+10.2.9,Criminology
+10.3,Social Policy and Administration
+10.3.1,Social and Economic Policy
+10.3.2,British and American Policy Studies
+10.3.3,Health Studies
+10.3.4,Health Administration
+10.3.5,Public Policy Management
+10.3.6,Other/General Social Policy & Administra
+10.4,Social Work
+10.4.1,Residential Social Work
+10.4.10,Child Care
+10.4.11,Residential Child Care
+10.4.12,Caring Skills
+10.4.13,Playwork
+10.4.14,Health and Community Studies
+10.4.15,Other/General Social Work n.e.c
+10.4.2,Welfare
+10.4.3,Applied Social Work
+10.4.4,Youth and Community Work
+10.4.5,Community Work
+10.4.6,Home Help
+10.4.7,Counselling
+10.4.8,Careers Education/Guidance
+10.4.9,Children in Society
+10.5,Anthropology
+10.5.1,Social Anthropology
+10.5.2,Biological Anthropology
+10.5.3,Cultural Studies
+10.5.4,Cultural Social Anthropology
+10.5.5,Other/general Anthropology n.e.c
+10.6,Psychology (without sig. biological element) n.e.c.
+10.6.1,Applied Psychology
+10.6.10,Developmental Psychology
+10.6.11,Other/general psychology (without sig. biological element) n
+10.6.2,Human Psychology
+10.6.3,Behavioural Science
+10.6.4,Social Psychology
+10.6.5,Cultural Social Psychology
+10.6.6,Applied Social Psychology
+10.6.7,Occupational Psychology
+10.6.8,Educational Psychology
+10.6.9,Experimental Psychology
+10.7,Geography (unless solely as a physical science)
+10.7.1,Applied Geography
+10.7.2,Human Geography
+10.7.3,Demography
+10.7.4,Economic Geography
+10.7.5,Geographical Techniques
+10.7.6,Asian and African Geography
+10.7.7,Other/General Social Geography n.e.c
+10.8,Politics
+10.8.1,Political Theory
+10.8.10,International Politics
+10.8.11,International Relations
+10.8.12,Strategic Studies
+10.8.13,Comparative Politics
+10.8.14,Politics of a Specific Country
+10.8.15,Other/General Politics n.e.c
+10.8.2,Communism
+10.8.3,Government
+10.8.4,Public Administration
+10.8.5,Politics and Administration
+10.8.6,Politics and Government
+10.8.7,Parliamentary Studies
+10.8.8,European Community Studies
+10.8.9,Policy and Administration Studies
+10.9,Law
+10.9.1,Jurisprudence
+10.9.10,Business Law
+10.9.11,American Law
+10.9.12,Law for Magistrates Court Clerks
+10.9.13,Law Related Studies
+10.9.14,Socio Legal Studies
+10.9.15,Theory of Law
+10.9.16,Conveyancing
+10.9.17,Other/General Law n.e.c
+10.9.2,European Community Law and Integration
+10.9.3,European Law
+10.9.4,French Law
+10.9.5,German Law
+10.9.6,Spanish Law
+10.9.7,European Legal Studies
+10.9.8,Scots Law
+10.9.9,Criminal Law
+11,Business and Financial Studies
+11.1,Business and Management Studies
+11.1.1,Management
+11.1.10,Business Studies
+11.1.11,Organisation Studies
+11.1.12,Business Administration/Enterprise Development
+11.1.13,Enterprise Training
+11.1.14,Business & Finance
+11.1.15,Business Computing
+11.1.16,Industrial Organisation
+11.1.17,Commerce
+11.1.18,Office Studies/Technology
+11.1.19,Medical Record Keeping
+11.1.2,Management Development
+11.1.20,European Business Administration & management
+11.1.21,European Business Studies
+11.1.22,Business and Administration
+11.1.23,Administrative Management
+11.1.24,Planning and Administration
+11.1.25,Organisation and Development
+11.1.26,Science Laboratory Administration
+11.1.27,Administrative Studies
+11.1.28,American Management Studies
+11.1.29,Secretarial and Typing Skills
+11.1.3,Management Services
+11.1.30,Secretarial Studies
+11.1.31,Personal Assistants
+11.1.32,Receptionists
+11.1.33,Shorthand and Shorthand Transcription
+11.1.34,Typewriting and Audio-Type-Writing
+11.1.35,Wordprocessing
+11.1.36,Production Control
+11.1.37,Agricultural Business Management
+11.1.38,Other/General Business & Management studies n.e.c
+11.1.4,Supervisory Management
+11.1.5,Training Management
+11.1.6,Industrial Management
+11.1.7,Work Study (including Organisation and Methods)
+11.1.8,Health Service Management
+11.1.9,Arts Management
+11.2,Operational Research
+11.2.1,Operations Management
+11.2.2,Other/General Operational Research
+11.3,Financial Management
+11.3.1,Banking
+11.3.10,Pension Management
+11.3.11,Other/General Finance studies n.e.c
+11.3.2,Building Societies
+11.3.3,Finance
+11.3.4,Actuarial Science
+11.3.5,Investment and Insurance
+11.3.6,Chartered Insurance
+11.3.7,Stock Exchange Practise
+11.3.8,European Financial Management
+11.3.9,Taxation
+11.4,Accountancy
+11.4.1,Accounting and Finance
+11.4.2,Chartered Accountancy
+11.4.3,Cost and Management Accountancy
+11.4.4,Certified Accountancy
+11.4.5,Public Accountancy
+11.4.6,Book-keeping
+11.4.7,Internal Audit
+11.4.8,Other/General Accountancy n.e.c
+11.5,Marketing and Market Research
+11.5.1,Marketing
+11.5.10,Storekeeping
+11.5.11,Retailing
+11.5.12,Retail Management
+11.5.13,Distribution
+11.5.14,Sales Management
+11.5.15,Other/General Marketing and Market Research n.e.c
+11.5.2,Textile Marketing
+11.5.3,Market Research
+11.5.4,Advertising
+11.5.5,International Marketing
+11.5.6,Salesman/Commercial Travelling
+11.5.7,Export Practise
+11.5.8,Overseas Trade
+11.5.9,Purchasing and Supply
+11.6,Industrial Relations
+11.6.1,Industrial Relations and Trade Union Stu
+11.6.10,Other/General Industrial Relations
+11.6.2,Industrial Studies
+11.6.3,Industrial Safety
+11.6.4,Management of Human Resources
+11.6.5,Labour Studies
+11.6.6,Human Resource Management
+11.6.7,Personnel Management
+11.6.8,Personnel Administration
+11.6.9,Trade Union Studies
+11.7,Catering & Institutional Management
+11.7.1,Institutional House-Keeping and Catering
+11.7.10,Hotel Management
+11.7.11,Accommodation Studies
+11.7.12,Tourism
+11.7.13,Travel and Tourism
+11.7.14,Home Economics
+11.7.15,Cookery
+11.7.16,Home and Community Studies
+11.7.17,Home Management
+11.7.18,House-Keeping and Catering
+11.7.19,Demonstrators
+11.7.2,Institutional Management
+11.7.20,Food Service
+11.7.21,Licensed Trade
+11.7.22,Wines and Spirits/Alcoholic Beverages
+11.7.23,Baking
+11.7.24,Baking Technology
+11.7.25,Design and Decoration of Flour Confectio
+11.7.26,Other/General Catering and Institutional Management n.e.c
+11.7.3,Catering
+11.7.4,Catering Management
+11.7.5,Hotel Chefs
+11.7.6,Hotel and Catering Administration
+11.7.7,Restaurant Operations
+11.7.8,Hotel Reception
+11.7.9,Hotel & Catering Management
+11.8,Land and Property Management
+11.8.1,Rural Land Management
+11.8.2,Estate Management and Valuation
+11.8.3,Rating and Valuation
+11.8.4,Valuers and Auctioneers and General Practice
+11.8.5,Property Surveying
+11.8.6,Property Surveying and Valuation
+11.8.7,Land Economy
+11.8.8,Property Development
+11.8.9,Other/General Land & Property Management n.e.c
+11.9,Transport other business A admin studies
+11.9.1,Port Operations
+11.9.10,Transport Management
+11.9.11,Transport Management & Operation
+11.9.12,Textile Management
+11.9.13,Shipping
+11.9.14,Shipbroking
+11.9.15,Freight Forwarding
+11.9.16,Navigation
+11.9.17,Yachting
+11.9.18,Maritime Studies
+11.9.19,Deck Officer Studies
+11.9.2,Maritime Commerce
+11.9.20,Sea Survival
+11.9.21,Pre-Sea Training
+11.9.22,First Aid
+11.9.23,Fisheries
+11.9.24,Sea Fishing
+11.9.25,Consumer Studies
+11.9.26,Consumer Affairs
+11.9.27,Trading Standards
+11.9.28,Postal Related Services
+11.9.29,Baths Management
+11.9.3,Marine Resource Management
+11.9.30,Report Writing
+11.9.31,Other Transport other business & admin studies n.e.c
+11.9.4,Transport
+11.9.5,Air Transport
+11.9.6,Road Transport
+11.9.7,Transport Planning
+11.9.8,Road Safety Studies
+11.9.9,Private Pilot
+12,Librarianship and Information Studies
+12.1,Librarianship
+12.1.1,School Library Studies
+12.1.2,Technical Communication/Authorship
+12.1.3,Museum Studies
+12.1.4,Archive Studies
+12.1.5,Other/General Librarianship n.e.c
+12.2,Information Science
+12.2.1,Information Management
+12.2.2,Other/General Information Science
+12.3,Communication Studies
+12.3.1,Communications
+12.3.2,Human Communication
+12.3.3,Other/General Communication Studies
+12.4,Media Studies
+12.4.1,Media and Television Studies
+12.4.2,Public Relations
+12.4.3,Advertising Writing
+12.4.4,Studio and Production Techniques
+12.4.5,Media Studies in Europe
+12.4.6,Other General Media Studies n.e.c
+12.5,Publishing
+12.6,Journalism
+13,Linguistics English Celtic & Ancient Languages
+13.1,Linguistics
+13.1.1,Applied Linguistics
+13.1.2,Computational Linguistics
+13.1.3,Linguistics and Phonetics
+13.1.4,Phonetics
+13.1.5,Language Studies & Philology
+13.1.6,Aspects of Language in Community
+13.1.7,Theoretical Linguistics
+13.1.8,Psycholinguistics
+13.1.9,Other/General Linguistics n.e.c
+13.10,Other Ancient Languages & Literature
+13.10.1,Ancient Near-Eastern Studies
+13.10.10,Hebrew (Classical)
+13.10.11,Hebrew (Biblical)
+13.10.12,Oriental Studies
+13.10.13,Other/General Ancient Languages & Literature n.e.c
+13.10.2,Ancient Egyptian and Egyptology
+13.10.3,Coptic
+13.10.4,Arabic/lslamic (Classical)
+13.10.5,Akkadian
+13.10.6,Sumerian
+13.10.7,Aramaic
+13.10.8,Sanskrit
+13.10.9,Prakrit
+13.2,Comparitive Literature
+13.2.1,Literature
+13.2.2,Literary Studies
+13.2.3,English Literature and European Literature in Translation
+13.2.4,Scottish Literature
+13.2.5,Other/General Comparitive Literature
+13.3,English
+13.3.1,Modern English Studies
+13.3.2,English Language
+13.3.3,English Literature
+13.3.4,Literature Life and Thought
+13.3.5,English for Speakers of Other Languages
+13.3.6,Other/General English n.e.c
+13.4,Literacy
+13.5,American Studies
+13.5.1,American Literature
+13.5.2,United States Literature
+13.5.3,Other/General American Studies n.e.c
+13.6,Celtic Languages Literature & Culture
+13.6.1,Celtic Studies
+13.6.2,Gaelic
+13.6.3,Welsh
+13.6.4,Welsh for Adults
+13.6.5,Irish
+13.6.6,Gaelic and Irish
+13.6.7,Irish Studies
+13.6.8,Other/General Celtic Studies n.e.c
+13.7,Latin Language A Culture
+13.7.1,Latin Language
+13.7.2,Latin Literature
+13.7.3,Latin Literature in Translation
+13.7.4,Other General Latin studies n.e.c
+13.8,Ancient Greek Language and Literature
+13.8.1,Classical Greek Language & Literature
+13.8.2,Ancient Greek Language
+13.8.3,Ancient Greek Literature
+13.8.4,Ancient Greek Literature in Translation
+13.8.5,Other/General Ancient Greek studies n.e.c
+13.9,Classics
+13.9.1,Classical Studies
+13.9.2,Classical Civilisation
+13.9.3,Roman Studies
+13.9.4,Byzantine Studies
+13.9.5,Other/General Classics n.e.c
+14,European Languages
+14.1,French Language. Literature and Culture
+14.1.1,French Language
+14.1.2,French Studies (in translation)
+14.1.3,Occitan
+14.1.4,Other/General French Studies n.e.c
+14.10,Other European Languages. Literature & Culture
+14.10.1,European Studies
+14.10.2,West European Studies
+14.10.3,Dutch
+14.10.4,Romance Languages
+14.10.5,Modern Greek
+14.10.6,Dutch and Modern Greek
+14.10.7,Other/General European studies n.e.c
+14.2,German Language. Literature & Culture
+14.2.1,German Language
+14.2.2,German Studies (in translation)
+14.2.3,Other/General German studies
+14.3,Italian Language. Literature & Culture
+14.3.1,Italian Language
+14.3.2,Italian Studies (in translation)
+14.3.3,Other/General Italian studies
+14.4,Spanish Language. Literature & Culture
+14.4.1,Spanish Language
+14.4.2,Spanish Studies (in translation)
+14.4.3,Catalan
+14.4.4,Iberian
+14.4.5,Hispanic Studies
+14.4.6,Other Spanish studies
+14.5,Portuguese Language. Literature & Culture
+14.6,Latin American Languages. Literature & Culture
+14.6.1,Latin American Languages
+14.6.2,Latin American Studies (in translation)
+14.6.3,Latin American Literature
+14.6.4,Other/general Latin American studies n.e.c
+14.7,Scandinavian Languages. Literature & Culture
+14.7.1,Scandinavian Studies
+14.7.2,Swedish
+14.7.3,Danish
+14.7.4,Finnish
+14.7.5,Norwegian
+14.7.6,Other/General Scandinavian Studies n.e.c
+14.8,Russian Languages. Literature & Culture
+14.8.1,Russian and Soviet Studies
+14.8.2,Russian Language
+14.8.3,Russian Studies (in translation)
+14.8.4,Russian Literature
+14.8.5,Other/General Russian Studies n.e.c
+14.9,Slavonic & East European Languages. Literature & Culture
+14.9.1,East European Studies
+14.9.2,Bulgarian
+14.9.3,Czech & Slovak
+14.9.4,Hungarian
+14.9.5,Polish
+14.9.6,Romanian
+14.9.7,Serbo-Croat
+14.9.8,Other/General Slavonic & East European Studies n.e.c
+15,Other Languages
+15.1,Chinese Languages. Literature & Culture
+15.1.1,Modern Chinese
+15.1.2,Chinese Studies
+15.1.3,Other/General Chinese Studies
+15.2,Japanese Languages. Literature & Culture
+15.2.1,Japanese Studies
+15.2.2,Japanese Language
+15.2.3,Other/General Japanese Studies n.e.c
+15.3,Other Asian Languages. Literature & Culture
+15.3.1,South-East Asian Studies
+15.3.10,Urdu
+15.3.11,Malay
+15.3.12,Indonesian
+15.3.13,Burmese
+15.3.14,Thai
+15.3.15,Sinhalese
+15.3.16,Vietnamese
+15.3.17,Marathi
+15.3.18,Tibetan
+15.3.19,Other/General Asian studies n.e.c
+15.3.2,Panjabi
+15.3.3,Hindi
+15.3.4,Korean
+15.3.5,Oriya
+15.3.6,Tamil
+15.3.7,Bengali
+15.3.8,Nepali
+15.3.9,Gujarati
+15.4,Modern Middle Eastern Languages. Literature & Culture
+15.4.1,Middle-Eastern Studies
+15.4.2,Islamic (Modern)
+15.4.3,Arabic
+15.4.4,Modern Hebrew
+15.4.5,Persian
+15.4.6,Semitic Studies
+15.4.7,Turkish
+15.4.8,Other/General Modern Middle Eastern studies n.e.c
+15.5,African Languages. Literature & Culture
+15.5.1,Amharic
+15.5.2,Bantu
+15.5.3,Hausa
+15.5.4,Swahili
+15.5.5,Berber
+15.5.6,Egyptian
+15.5.7,Other/General African studies
+15.6,Other Language Studies
+15.6.1,Languages for Business Purposes
+15.6.2,Languages and Literature in Education
+15.6.3,Linguists in Commerce
+15.6.4,Multi-Lingual Secretaries
+15.6.5,Other/General Language studies n.e.c
+15.7,Other or unspecified Modern Languages
+15.7.1,Modern Languages
+15.7.2,Conference Interpretation
+15.7.3,Translators
+15.7.4,Caribbean Studies
+16,Humanities
+16.1,History
+16.1.1,Local History English
+16.1.10,European History
+16.1.11,Medieval Studies
+16.1.12,History of Geographical Ideas
+16.1.13,Church History
+16.1.14,Byzantine History
+16.1.15,Intellectual History
+16.1.16,History of Ideas
+16.1.17,Other/General History n.e.c
+16.1.2,Regional History
+16.1.3,Ancient History
+16.1.4,Victorian Studies
+16.1.5,Modern History
+16.1.6,Welsh History
+16.1.7,Jewish History
+16.1.8,Scottish History
+16.1.9,English History
+16.2,Economic and Social History
+16.2.1,Economic History
+16.2.2,Social History
+16.2.3,Other/General Economic & Social History
+16.3,History of Art
+16.3.1,History of Art and Architecture
+16.3.2,History of Fine Art
+16.3.3,History of Design
+16.3.4,Other/General History of Art n.e.c
+16.4,History and Philosophy of Science
+16.5,Archaeology
+16.5.1,Archaeology of Western Asia
+16.5.2,Egyptology
+16.5.3,Ancient Mediterranean Studies
+16.5.4,Prehistory
+16.5.5,Archaeological Conservation
+16.5.6,Other/General Arhcaeology n.e.c
+16.6,Philosophy
+16.6.1,Natural Philosophy
+16.6.2,Mental Philosophy
+16.6.3,Social Philosophy
+16.6.4,Scholastic Philosophy
+16.6.5,Moral Philosophy
+16.6.6,Metaphysics
+16.6.7,Logic
+16.6.8,Other/General Philosophy n.e.c
+16.7,Theology A Religious Studies
+16.7.1,Theology
+16.7.10,Social Ethics
+16.7.11,Other/General Theology & Religious Studies n.e.c
+16.7.2,Divinity
+16.7.3,Biblical Studies
+16.7.4,Religious Studies
+16.7.5,Comparative Religion
+16.7.6,Pastoral Studies
+16.7.7,Christian Education
+16.7.8,Diploma in Theology
+16.7.9,Licentiate in Theology
+16.8,Other Humanities
+16.8.1,Scottish Ethnology
+16.8.2,Other Humanities n.e.c
+17,Arts
+17.1,Fine Art
+17.1.1,Visual Arts
+17.1.2,Conservation
+17.1.3,Conservation of Painting
+17.1.4,Other/General Fine Art n.e.c
+17.2,Design Studies
+17.2.1,Applied Design
+17.2.10,Technical Illustration
+17.2.11,Book and Book-binding Design
+17.2.12,Typography
+17.2.13,Textile Design
+17.2.14,Clothing Design
+17.2.15,Footwear Design
+17.2.16,Furniture Design
+17.2.17,Knitwear Design
+17.2.18,Fashion Design
+17.2.19,Fashion/Textile Design
+17.2.2,Environmental Design
+17.2.20,Carpet Design
+17.2.21,Industrial Design
+17.2.22,Industrial Glass Design
+17.2.23,Architectural Stained Glass Design
+17.2.24,Ceramic Design
+17.2.25,Surface Pattern Design
+17.2.26,Interior Design
+17.2.27,Theatre Design
+17.2.28,Jewellery Design
+17.2.29,Design Management
+17.2.3,Integrated Design
+17.2.30,Craft Design and Technology
+17.2.31,Craft Design and Technology Education
+17.2.32,Advertising Design
+17.2.33,Environmental Media
+17.2.34,Media Design
+17.2.35,Display Design
+17.2.36,Design and Heritage
+17.2.37,Photography
+17.2.38,Photographic Science/Technology
+17.2.39,Professional Photography
+17.2.4,Multi-disciplinary Design
+17.2.40,Film and Photographic Art
+17.2.41,Animation
+17.2.42,Film/Video
+17.2.43,Other/General Design studies n.e.c
+17.2.5,Graphic Communication
+17.2.6,Graphic Design
+17.2.7,Graphics
+17.2.8,Printing Design
+17.2.9,Illustration
+17.3,Music
+17.3.1,Professional Music
+17.3.10,Music Technology
+17.3.11,Sound Recording
+17.3.12,Other/General Music n.e.c
+17.3.2,Music for Performers
+17.3.3,Musicianship
+17.3.4,Music for Teachers
+17.3.5,Light Music
+17.3.6,Jazz and Light Music
+17.3.7,History of Music
+17.3.8,Opera
+17.3.9,Ethnomusicology
+17.4,Drama
+17.4.1,Drama - Oral Skills
+17.4.10,Theatre Craft
+17.4.11,Dance
+17.4.12,Movement Studies
+17.4.13,Speech and Drama
+17.4.14,Stage Management
+17.4.15,Drama Therapy
+17.4.16,Other/General Drama n.e.c
+17.4.2,Drama - Performers
+17.4.3,Drama - Teachers
+17.4.4,Drama and Theatre Studies
+17.4.5,Creative/Performing Arts
+17.4.6,Theatre
+17.4.7,Theatre Acting
+17.4.8,Theatre Studies
+17.4.9,Theatre Arts
+17.5,Cinematics
+17.5.1,Audio Visual Technicians
+17.5.2,Visual Studies
+17.5.3,Film and Television Studies
+17.5.4,Film and TV in Education
+17.5.5,Theatre/Film/TV
+17.5.6,Other/General Cinematics n.e.c
+17.6,Crafts
+17.6.1,Craft Materials
+17.6.10,Vocational Craft
+17.6.11,Vocational Design
+17.6.12,Other/General crafts n.e.c
+17.6.2,Other Craft Related Studies
+17.6.3,Basketry
+17.6.4,Dressmaking
+17.6.5,Embroidery
+17.6.6,Flower Arranging
+17.6.7,Home knitting
+17.6.8,Soft Furnishing
+17.6.9,Handicraft
+17.7,Beauty & Hairdressing
+17.7.1,Hairdressing/Wigmaking
+17.7.2,Beauty Therapy
+17.7.3,Epilation
+17.7.4,Make-up/Manicure/Pedicure
+17.7.5,Trichology
+17.7.6,Other/General Beauty & Hairdressing n.e.
+17.8,Other Art & Design n.e.c
+18,Education
+18.1,Teacher Training
+18.10,Other Topics in Education
+18.10.1,Primary Curriculum
+18.10.2,Curriculum
+18.10.3,Reading
+18.10.4,Technical and Commercial Subjects
+18.10.5,Topical Areas
+18.10.6,OtherTopics in Education n.e.c
+18.2,Physical Education
+18.2.1,Sport
+18.2.2,Sports Studies
+18.2.3,Sports Science (taught as an education subject)
+18.2.4,Recreation Management
+18.2.5,Leisure Management
+18.2.6,Sport Management
+18.2.7,Horse Instructors
+18.2.8,Other/General Physical Education n.e.c
+18.3,Academic Studies in Education
+18.3.1,Applied Education
+18.3.2,Nursery Education
+18.3.3,Primary Education
+18.3.4,Secondary Education
+18.3.5,Community Education
+18.3.6,Compensatory Education
+18.3.7,World Education
+18.3.8,Overseas Education
+18.4,Techniques in Teaching Children
+18.4.1,Guidance in Schools
+18.4.2,Teaching in a Multi-cultural Society
+18.4.3,Teaching and Learning
+18.4.4,Education of Gifted Children
+18.4.5,Adolescent Development
+18.4.6,Other/General Techniques in Teaching Children n.e.c
+18.5,Techniques in Teaching Adults
+18.5.1,Teachers - Adult Education
+18.5.2,Teaching Modern Languages to Adults
+18.5.3,Further Education Teacher Training (Others)
+18.5.4,Other General Techniques in Teaching Adu
+18.6,TEFL/TESOL
+18.7,Education for those with Special Needs
+18.7.1,Teaching the Handicapped
+18.7.10,Other/General Special Needs Education n.e.c
+18.7.2,Special Needs Related Studies
+18.7.3,Teaching the Mentally Handicapped
+18.7.4,Teaching Deaf Children
+18.7.5,Teaching Maladjusted Children
+18.7.6,Special Needs Education
+18.7.7,Teaching the Educationally Sub-normal
+18.7.8,Teaching those with a Language Handicap
+18.7.9,Teaching Remedial and Slow Learners
+18.8,Technology in Education
+18.8.1,Audio-Visual Techniques for Education
+18.8.2,Design for Learning
+18.8.3,Design Research in Education
+18.8.4,Other/General Technology in Education n.e.c
+18.9,Management & Organisation of Education
+2,Medical Related Subjects
+2.1,Anatomy and Physiology
+2.1.1,Physiology
+2.1.10,Other/General Anatomy and Physiology
+2.1.2,Anatomy
+2.1.3,Human Biology
+2.1.4,Pathology
+2.1.5,Cellular Pathology
+2.1.6,Experimental Pathology
+2.1.7,Pathobiology
+2.1.8,Neurosciences
+2.1.9,Applied Neuroscience
+2.2,Pharmacology
+2.2.1,Pharmacotherapeutics
+2.2.2,Toxicology
+2.2.3,Other/General Pharmacology
+2.3,Pharmacy
+2.4,Nutrition
+2.4.1,Dietetics
+2.4.2,Other Nutrition
+2.5,Ophthalmics
+2.5.1,Orthoptics
+2.5.2,Optometry
+2.5.3,Other/General Ophthalmics
+2.6,Audiology
+2.6.1,Deaf Studies
+2.6.2,Other/General Audiology
+2.7,Nursing
+2.7.1,Community Psychiatric Nursing
+2.7.10,Nursing Studies
+2.7.11,Midwifery
+2.7.12,Clinical Teaching (Nursing)
+2.7.13,Community Health Teaching (Nursing)
+2.7.14,Nursing Administration
+2.7.15,Nursing Ward Management and Technology
+2.7.16,Nursing Related Studies
+2.7.17,Ambulance Officer Studies
+2.7.18,Nursery Nursing
+2.7.19,Dental Nursing
+2.7.2,Occupational Health (nursing)
+2.7.20,Other/general Nursing n.e.c
+2.7.3,Pre-Nursing
+2.7.4,School  Nursing
+2.7.5,Community Nursing
+2.7.6,District Nursing
+2.7.7,District Nurse Tutors
+2.7.8,Health Visitors
+2.7.9,Health Visitor Tutors
+2.8,Medical Technology
+2.8.1,Mortuary Hygiene and Technology
+2.8.2,Radiography
+2.8.3,Radiography diagnostic
+2.8.4,Radiography therapeutic
+2.8.5,Physics for Radiographers
+2.8.6,Medical Photography
+2.8.7,Dental Technology
+2.8.8,Other/general Medical Technology n.e.c
+2.9,Other Medical Subjects
+2.9.1,Environmental Health
+2.9.10,Clinical Communication Studies
+2.9.11,Physiotherapy
+2.9.12,Occupational Therapy
+2.9.13,Occupational Hygiene
+2.9.14,Therapy through Art/Drama/Music
+2.9.15,Biomechanics and Biomaterials
+2.9.16,Prosthetics
+2.9.17,Cardiography
+2.9.18,Chemotherapy
+2.9.19,Chiropody/Podiatry
+2.9.2,Cleaning Science
+2.9.20,Therapeutic Psychology
+2.9.21,Remedial Professions
+2.9.22,Medical Related Professions
+2.9.23,Health Studies
+2.9.24,Health Education
+2.9.25,Dental Health Education
+2.9.26,Other Medical Subjects n.e.c
+2.9.3,Solid Waste
+2.9.4,Medical Laboratory Science
+2.9.5,Biomedical Science
+2.9.6,Pharmaceutical Chemistry
+2.9.7,Speech Science
+2.9.8,Speech Therapy
+2.9.9,Language Pathology
+3,Biological Sciences
+3.1,Biology
+3.1.1,Applied Biology
+3.1.10,Field Biology
+3.1.11,Marine Biology
+3.1.12,Aquaculture
+3.1.13,Aquatic Biology
+3.1.14,Freshwater Biology
+3.1.15,Animal and Plant Biology
+3.1.16,Computational Biology
+3.1.17,Other/general Biology n.e.c
+3.1.2,Neurobiology
+3.1.3,Biological Sciences
+3.1.4,Cell Biology
+3.1.5,Applied Cell Science
+3.1.6,Developmental Biology/Reproductional Biology
+3.1.7,Behavioural Biology
+3.1.8,Environmental Biology
+3.1.9,Applied Environmental Biology
+3.10,Vetinary Sciences
+3.10.1,Animal Related Studies
+3.10.2,Animal Nursing
+3.10.3,Animal Management
+3.10.4,Other/General Veterinary Sciences
+3.2,Botany
+3.2.1,Plant Science
+3.2.2,Applied Botany
+3.2.3,Plant Biotechnology
+3.2.4,Plant Cell Science
+3.2.5,Plant Biology
+3.2.6,Plant Pathology
+3.2.7,Mycology
+3.2.8,Other/general Botany n.e.c
+3.3,Zoology
+3.3.1,Zoo Management
+3.3.2,Animal Developmental Biology
+3.3.3,Applied Zoology
+3.3.4,Marine Zoology
+3.3.5,Cell Zoology
+3.3.6,Parasitology
+3.3.7,Pest Science
+3.3.8,Entomology
+3.3.9,Other/general Zoology n.e.c
+3.4,Genetics
+3.4.1,Medical Genetics
+3.4.2,Other/General Genetics
+3.5,Microbiology
+3.5.1,Applied Microbiology
+3.5.2,Virology
+3.5.3,Medical Microbiology
+3.5.4,Bacteriology
+3.5.5,Food Microbiology
+3.5.6,Other/General Microbiology n.e.c
+3.6,Molecular Biology and Biophysics
+3.6.1,Molecular Biophysics
+3.6.2,Molecular Biology
+3.6.3,Biomolecular Science
+3.6.4,Biophysics
+3.6.5,Biophysical Science
+3.6.6,Other/general Molecular Biology and Biophysics n.e.c
+3.7,Biochemistry
+3.7.1,Applied Biochemistry
+3.7.2,Medical Biochemistry
+3.7.3,Clinical Biochemistry
+3.7.4,Plant Biochemistry
+3.7.5,Biological Chemistry
+3.7.6,Biochemistry for Industry and Metabolic Biochemistry
+3.7.7,Nutritional Biochemistry
+3.7.8,Other/General Biochemistry n.e.c
+3.8,Psychology (not solely as a social science)
+3.8.1,Applied Psychology
+3.8.2,Clinical Psychology
+3.8.3,Clinical Science
+3.8.4,Experimental Psychology
+3.8.5,Social Psychology (with high scientific content)
+3.8.6,Occupational Psychology
+3.8.7,Applied Cognitive Science
+3.8.8,Other Pyschology (not solely as a social science)
+3.9,Other Biological Sciences
+3.9.1,Applied Biological Sciences
+3.9.10,Other General Biological Sciences n.e.c
+3.9.2,Brewing Science
+3.9.3,Immunology
+3.9.4,Serology
+3.9.5,Biometry
+3.9.6,Sports Science (taught as a science)
+3.9.7,Life Sciences
+3.9.8,Ecology
+3.9.9,Applied Environmental Sciences
+4,Agricultural Sciences
+4.1,Agriculture
+4.1.1,Agriculture/Horticulture
+4.1.10,Crop Science
+4.1.11,Crop Protection
+4.1.12,Crop Production (including grassland - Forage crops)
+4.1.13,Horticulture
+4.1.14,Commercial Horticulture
+4.1.15,Glasshouse and Protected Cropping
+4.1.16,Nursery Practice
+4.1.17,Fruit Production
+4.1.18,Vegetable/Flower Production
+4.1.19,Floristry
+4.1.2,Fish Farming and Water Keeping
+4.1.20,Conservation (Environmental)
+4.1.21,Natural Resources
+4.1.22,Agricultural and Food Marketing
+4.1.23,Farm Business Administration and Managem
+4.1.24,Farm Secretaries
+4.1.25,Commercial Landscape Recreation and Amenity Horticulture
+4.1.26,Turf Culture/Green Keeping
+4.1.27,Agricultural Mechanisation
+4.1.28,Other/general Agriculture n.e.c
+4.1.3,Animal Science
+4.1.4,Animal Nutrition
+4.1.5,Animal Physiology
+4.1.6,Animal Production
+4.1.7,Pig Technology/Husbandry
+4.1.8,Poultry Technology/Husbandry
+4.1.9,Horses on Farms and Estates
+4.2,Forestry
+4.2.1,Arboriculture
+4.2.2,Wood Science
+4.2.3,Agroforestry
+4.2.4,Other/General Forestry n.e.c
+4.3,Food Science
+4.3.1,Food Technology
+4.3.10,Food Market Science
+4.3.11,Fisheries Studies
+4.3.2,Food Hygiene
+4.3.3,Meat Inspection
+4.3.4,Poultry Meat Inspection
+4.3.5,Meat Technology
+4.3.6,Meat Industry Studies
+4.3.7,Food and Drink Processing
+4.3.8,Food Engineering and Manufacture
+4.3.9,Food Marketing and Economics
+4.4,Agricultural Sciences
+4.4.1,Agricultural Biology
+4.4.2,Agricultural Botany
+4.4.3,Agricultural Zoology
+4.4.4,Agricultural Bacteriology
+4.4.5,Agricultural Microbiology
+4.4.6,Agricultural Biochemistry
+4.4.7,Agricultural Chemistry
+4.4.8,Other/General Agricultural Sciences n.e.c
+4.5,Other Agricultural Subjects
+4.5.1,Agricultural Technology
+4.5.10,Soil Science
+4.5.11,Terrestrial Ecology
+4.5.12,Natural resource Studies
+4.5.13,Other/General Agricultural Studies n.e.c
+4.5.2,Agriculture Related Studies
+4.5.3,Countryside Recreation Studies
+4.5.4,Gamekeeping Sporting Management
+4.5.5,Rural Home Economics
+4.5.6,Rural Resource Management
+4.5.7,Countryside Management
+4.5.8,Landscape Management
+4.5.9,Rural Resource Science
+5,Physical/Environmenal Sciences
+5.1,Chemistry
+5.1.1,Biodeterioration of Materials
+5.1.10,Chemical Technology
+5.1.11,Process Plant Operation
+5.1.12,Industrial Chemistry
+5.1.13,Polymer Chemistry
+5.1.14,Colour Chemistry
+5.1.15,Macromolecular Chemistry
+5.1.16,Analytical Chemistry
+5.1.17,Cosmetic Chemistry
+5.1.18,Organic Chemical Synthesis
+5.1.19,Surface Coating Technology
+5.1.2,Applied Chemistry
+5.1.20,Radio Chemistry
+5.1.21,Crystallography
+5.1.22,Biomolecular Chemistry
+5.1.23,Other/General Chemistry n.e.c
+5.1.3,Medicinal Chemistry
+5.1.4,Bio-organic Chemistry
+5.1.5,Environmental Chemistry
+5.1.6,Marine Chemistry
+5.1.7,Petrochemical Studies
+5.1.8,Theoretical Chemistry
+5.1.9,Computational Chemistry
+5.2,Materials science
+5.3,Physics
+5.3.1,Applied Physics
+5.3.10,Medical Physics
+5.3.11,Ecological Physics
+5.3.12,Marine Physics
+5.3.13,Environmental Physics
+5.3.14,Radiation Physics
+5.3.15,Physical Research Techniques
+5.3.16,Electron Microscopy
+5.3.17,Colaration Physics
+5.3.18,Other/General Physics n.e.c
+5.3.2,Theoretical Physics
+5.3.3,Mathematical Physics
+5.3.4,Chemical Physics
+5.3.5,Physical Electronics
+5.3.6,Computational Physics
+5.3.7,Technological Physics
+5.3.8,Engineering Physics
+5.3.9,Laser Physics
+5.4,Astronomy
+5.4.1,Astronautics
+5.4.2,Astrophysics
+5.4.3,Other/General Astronomy n.e.c
+5.5,Geology
+5.5.1,Applied Geology
+5.5.10,Geophysics
+5.5.11,Exploration Geophysics
+5.5.12,Planetary Physics
+5.5.13,Geochemistry
+5.5.14,Engineering Geomorphology
+5.5.15,Other/General Geology n.e.c
+5.5.2,Palaeontology
+5.5.3,Engineering Geology
+5.5.4,Mining Geology
+5.5.5,Geotechnology
+5.5.6,Marine Geotechnics
+5.5.7,Environmental Geology
+5.5.8,Geology and Landscape Study
+5.5.9,Geological Oceanography
+5.6,Oceanography
+5.6.1,Ocean Sciences
+5.6.2,Marine Sciences
+5.6.3,Other/general Oceanography
+5.7,Geography (as a science)
+5.7.1,Maritime Geography
+5.7.2,Environmental Geography
+5.7.3,Physical Geography
+5.7.4,Topography
+5.7.5,Topographical Science
+5.7.6,Cartography
+5.7.7,Hydrographic Surveying
+5.7.8,Other/General Physical Geography n.e.c
+5.8,Environmental Science and other Physical Sciences
+5.8.1,Environmental Studies
+5.8.10,Radiation Science
+5.8.11,Quarternary Studies
+5.8.12,Other environmental/physical sciences n.e.c
+5.8.2,Environmental Science
+5.8.3,Human Ecology
+5.8.4,Applied Environmental Science
+5.8.5,Earth Science
+5.8.6,Earth Resources
+5.8.7,Pollution Control
+5.8.8,Conservation Policy
+5.8.9,Meteorology
+6,Mathematical Sciences & Computing
+6.1,Mathematics
+6.1.1,Applied Mathematics
+6.1.10,Numerical Analysis
+6.1.11,Computational Mathematics
+6.1.12,Numeracy
+6.1.13,Other/General mathematics n.e.c
+6.1.2,Applicable Mathematics
+6.1.3,Pure Mathematics
+6.1.4,Mathematical Studies
+6.1.5,Mathematical Sciences
+6.1.6,Industrial Mathematics
+6.1.7,Engineering Mathematics
+6.1.8,Numerical Mathematics
+6.1.9,Numerical Methods
+6.2,Statistics
+6.2.1,Statistics and Probability
+6.2.2,Applied Statistics
+6.2.3,Management Statistics
+6.2.4,Mathematical Statistics
+6.2.5,Operational Statistics
+6.2.6,Operational Research Techniques
+6.2.7,Other/general statistics n.e.c
+6.3,Computing Science
+6.3.1,Computer Studies
+6.3.10,Systems Analysis and Design
+6.3.11,Programming
+6.3.12,Computer Education
+6.3.13,Computer Appreciation
+6.3.14,Information Technology
+6.3.15,Information Systems
+6.3.16,Applied Information Technology
+6.3.17,Information Engineering
+6.3.18,Artificial Intelligence
+6.3.19,Medical Informatics
+6.3.2,Theoretical Computer Science
+6.3.20,Other/general computer sciences n.e.c
+6.3.3,Computational Science
+6.3.4,Applied Computing
+6.3.5,Data Processing
+6.3.6,Business Computing
+6.3.7,Microprocessing
+6.3.8,Software Engineering
+6.3.9,Software
+6.4,other mathematical sciences n.e.c
+7,Engineering
+7.1,General Engineering
+7.1.1,Integrated Engineering
+7.1.2,Engineering Management
+7.1.3,Refrigeration Engineering
+7.1.4,Computer Aided Engineering
+7.1.5,Other/General engineering n.e.c
+7.2,Civil Engineering
+7.2.1,Highway/Traffic Engineering
+7.2.10,Soil Mechanics
+7.2.11,Water Resource Studies
+7.2.12,Public Health Engineering
+7.2.13,Other/General Civil Engineering n.e.c
+7.2.2,Municipal Engineering
+7.2.3,Structural Engineering
+7.2.4,Environmental Engineering
+7.2.5,Surveying Science
+7.2.6,General Practice Surveying
+7.2.7,Engineering Surveying
+7.2.8,Land Surveying
+7.2.9,Geotechnics
+7.3,Mechanical Engineering
+7.3.1,Mechanisms and Machines
+7.3.10,Vehicle Bodywork Maintenance
+7.3.11,Road Transport Engineering
+7.3.12,Motor Vehicle Electronics
+7.3.13,Marine Engineering
+7.3.14,Offshore Engineering
+7.3.15,Fluid Power Engineering
+7.3.16,Heat Exchanger Technology
+7.3.17,Turbine Technology
+7.3.18,Electro-Mechanical Engineering
+7.3.19,Mechanatronic Engineering
+7.3.2,Spring Engineering
+7.3.20,Other/general Mechanical Engineering n.e.c
+7.3.3,Agricultural Engineering
+7.3.4,Agricultural/Horticultural Machinery Maintenance
+7.3.5,Agricultural Mechanics
+7.3.6,Farm Mechanisation
+7.3.7,Automotive Engineering
+7.3.8,Automobile Assessment
+7.3.9,Motor Cycle Engineering
+7.4,Aeronautical Engineering
+7.4.1,Aerospace Studies
+7.4.2,Aerospace Engineering
+7.4.3,Air Transport Engineering
+7.4.4,Avionics
+7.4.5,Aerodynamics
+7.4.6,Other/general Aeronautical Engineering n.e.c
+7.5,Electrical Engineering
+7.5.1,Electrical Power Engineering
+7.5.2,Electrical Systems
+7.5.3,Electrical and Electronic Engineering
+7.5.4,Electrical and Electronic Craft Practice
+7.5.5,Power Plant Operation
+7.5.6,Other/general Electrical Engineering n.e
+7.6,Electrical Engineering
+7.6.1,Electrical and Systems Engineering
+7.6.10,Optoelectronic Engineering
+7.6.11,Instrumentation and Control Engineering
+7.6.12,Instrumentation and Systems Engineering
+7.6.13,Automation and Control
+7.6.14,Measurement and Control
+7.6.15,Control Engineering
+7.6.16,Electronic Control
+7.6.17,Cybernetics and Robotics
+7.6.18,Engineering Systems and Control
+7.6.19,Ocean Electronics
+7.6.2,Computer Systems Engineering
+7.6.20,Electronic Servicing
+7.6.21,Electronic Musical Instruments
+7.6.22,Medical Electronic Engineering
+7.6.23,Other/general Electronic Engineering n.e.c
+7.6.3,Electronics & Computer Technology
+7.6.4,Microelectronics
+7.6.5,Engineering of Dynamic Systems
+7.6.6,Digital Systems Engineering
+7.6.7,Integrated Circuit Engineering
+7.6.8,Telecommunications Engineering
+7.6.9,Communications Engineering
+7.7,Production Engineering
+7.7.1,Quality Assurance (Engineering)
+7.7.10,Engineering Design
+7.7.11,Engineering Design and Manufacture
+7.7.12,Engineering Craft
+7.7.13,Engineering Drawing
+7.7.14,Product Design and Manufacture
+7.7.15,Manufacturing Engineering
+7.7.16,Manufacturing Systems Engineering
+7.7.17,Management Systems Engineering
+7.7.18,Engineering Production
+7.7.19,Fabrication Engineering Craft Practice
+7.7.2,Quality Control
+7.7.20,Mechanical Engineering and Maintenance
+7.7.21,Sheet Metal Work
+7.7.22,Welding
+7.7.23,Other/general Production Engineering n.e.c
+7.7.3,Production Management
+7.7.4,Acoustics and Vibration
+7.7.5,Engineering Acoustics and Vibration
+7.7.6,Machine Tools
+7.7.7,Materials Handling
+7.7.8,Industrial Engineering
+7.7.9,Instrument Production
+7.8,Chemical Engineering
+7.8.1,Plant/Process Trades
+7.8.10,Biochemical Engineering
+7.8.11,Other/general Chemical Engineering n.e.c
+7.8.2,Process Management
+7.8.3,Chemical Process Engineering
+7.8.4,Chemical and Bioprocess Engineering
+7.8.5,Gas Engineering
+7.8.6,Natural Gas Engineering
+7.8.7,Fuel Technology
+7.8.8,Boiler House Practice
+7.8.9,Combustion Science
+7.9,Other/general Engineering n.e.c
+8,Technology
+8.1,Minerals Technology
+8.1.1,Mining Engineering
+8.1.10,Minerals Technology
+8.1.11,Minerals Surveying
+8.1.12,Industrial Minerals
+8.1.13,Petroleum Engineering
+8.1.14,Mining Related Studies
+8.1.15,Colliery Control Engineering
+8.1.16,Colliery Electrics/Mechanics
+8.1.17,Colliery Management
+8.1.18,Colliery Ventilation
+8.1.19,Other/general Mineral Technology n.e.c
+8.1.2,Quarrying
+8.1.3,Mining
+8.1.4,Mine Surveying
+8.1.5,Mining - Electrical/Mechanical Engineering
+8.1.6,Drilling Engineering
+8.1.7,Rock Mechanics
+8.1.8,Mineral Engineering
+8.1.9,Mineral Processing
+8.2,Metallurgy
+8.2.1,Corrosion Technology
+8.2.2,Iron and Steel Related Studies
+8.2.3,Foundry Technology
+8.2.4,Pattern Making
+8.2.5,Other/general Merallurgy n.e.c
+8.3,Ceramics and Glass
+8.3.1,Ceramics
+8.3.2,Ceramic Science and Engineering
+8.3.3,Ceramics Technology
+8.3.4,Glass Technology
+8.3.5,Kiln Burners
+8.3.6,Other/General Ceramics and Glass n.e.c
+8.4,Polymers and textiles
+8.4.1,Science and Technology of Polymers
+8.4.10,Textile engineering
+8.4.11,Textile Chemistry
+8.4.12,Dying and Colouring of Textiles
+8.4.13,Knitting Machines
+8.4.14,Pattern Cutting
+8.4.15,Tailoring
+8.4.16,Clothing Technology and Manufacture
+8.4.17,Footwear Manufacture
+8.4.18,Furriery
+8.4.19,Clothing Engineering
+8.4.2,Polymer Engineering
+8.4.20,Fashion
+8.4.21,Fashion Technology
+8.4.22,Other/general Polymers and Textiles n.e.c
+8.4.3,Plastics
+8.4.4,Rubber Technology
+8.4.5,Leather Technology
+8.4.6,Rural Saddlery
+8.4.7,Furniture Production
+8.4.8,Timber Technology
+8.4.9,Machine Wood Working
+8.5,Other materials technology
+8.5.1,Materials Engineering
+8.5.10,Bookbinding Technologies
+8.5.11,Engineering Materials
+8.5.12,Paper Technology
+8.5.13,Paper Science
+8.5.14,Paper Conservation
+8.5.15,Materials Technology Related Studies
+8.5.16,Gemmology/Gem Diamond
+8.5.17,Musical Instrument Technology Manufactur
+8.5.18,Silversmithing/Goldsmithing
+8.5.19,Packaging
+8.5.2,Materials Technology
+8.5.20,Mouldmakers
+8.5.21,Materials Process Engineering
+8.5.22,Other/general Material Technology n.e.c
+8.5.3,Printing
+8.5.4,Printing Administration
+8.5.5,Offset Litho
+8.5.6,Photo-Lithography
+8.5.7,Reprographic Techniques
+8.5.8,Screen Process Printing
+8.5.9,Graphic Reproduction
+8.6,Maritime Technology
+8.6.1,Naval Architecture
+8.6.10,Marine Electronics
+8.6.11,Marine Radar
+8.6.12,Marine Radio
+8.6.13,Other/General Maritime Technology n.e.c
+8.6.2,Maritime Studies
+8.6.3,Yacht and Boat Design
+8.6.4,Yacht and Boatbuilding
+8.6.5,Yacht and Boatyard Management
+8.6.6,Shipbuilding
+8.6.7,Marine Plumbing
+8.6.8,Ship Science & Technology
+8.6.9,Offshore Engineering
+8.7,Biotechnology
+8.7.1,Biotechnology and Process Biotechnology
+8.7.2,Other/General Biotechnology
+8.8,Other Technologies
+8.8.1,Thermal Insulation
+8.8.10,Acoustics
+8.8.11,Applied Acoustics
+8.8.12,Geological Engineering
+8.8.13,Horology
+8.8.14,Vibration Technology
+8.8.15,Other/General Technology n.e.c
+8.8.2,Thermal Power Engineering
+8.8.3,Mathematical Engineering
+8.8.4,Transport Technology
+8.8.5,Transport Engineering
+8.8.6,Nuclear Engineering
+8.8.7,Energy Studies
+8.8.8,Energy Technology Studies
+8.8.9,Ergonomics
+9,Architecture and related studies
+9.1,Architecture
+9.1.1,Professional Practice Architecture
+9.1.2,Health Facility Planning
+9.1.3,Other/General Architectural studies n.e.c
+9.2,Building
+9.2.1,Building Maintenance/Adaptation/Conserva
+9.2.10,Building Construction Engineering
+9.2.11,Architectural Engineering
+9.2.12,Building Services Engineering
+9.2.13,Building Services Engineering - Electrical
+9.2.14,Building Services Engineering - HV and AC
+9.2.15,Building Services Engineering - Plumbing
+9.2.16,Building Services Engineering - Refrigeration
+9.2.17,Building Services Engineering-Gas
+9.2.18,Construction Management
+9.2.19,Construction Plant Mechanics
+9.2.2,Building Inspection and Control
+9.2.20,Construction Site Supervision
+9.2.21,Building Management
+9.2.22,Building Surveying
+9.2.23,Building Economics
+9.2.24,Quantity Surveying
+9.2.25,Building Related Studies
+9.2.26,Asphalt/Mastic Work
+9.2.27,Brickwork
+9.2.28,Carpentry and Joinery
+9.2.29,Painting/Decorating
+9.2.3,Building Regulations
+9.2.30,Plasterers Work
+9.2.31,Roofslating and Tiling
+9.2.32,Shopfitting
+9.2.33,Glazing and Allied Trades
+9.2.34,Other/General Building Studies n.e.c
+9.2.4,Building Maintenance Management
+9.2.5,Site Management Studies
+9.2.6,Building Technology
+9.2.7,Concrete Technology/Practise
+9.2.8,Formwork for Concrete Construction
+9.2.9,Building Engineering
+9.3,Environmental Technologies
+9.3.1,Landscape Architecture
+9.3.2,Landscape Design
+9.3.3,Land Use
+9.3.4,Other/general Environmental Technologies
+9.4,Town and Country Planning
+9.4.1,Regional Planning
+9.4.2,Urban and Regional Planning
+9.4.3,Town Planning
+9.4.4,Town and Urban Planning
+9.4.5,Planning Studies
+9.4.6,Urban Studies
+9.4.7,Housing
+9.4.8,Housing Management
+9.4.9,Housing Studies

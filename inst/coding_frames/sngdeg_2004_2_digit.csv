@@ -1,0 +1,162 @@
+DEGREE,DEGREE_DESCRIPTION
+1,Medicine & Dentistry
+2,Subjects allied to Medicine
+3,Biological Sciences
+4,"Vet Scien, Agric & related subjects"
+5,Physical Sciences
+6,Mathematical & Computer Sciences
+7,Engineering
+8,Technologies
+9,"Architecture, Building & Planning"
+10,Social stud
+11,Law
+12,Business & Administrative stud
+13,Mass Communications & Documentation
+14,"Ling, Classics & related subjects"
+15,"European Lang,Lit & related subj"
+16,"East,Asiatic,Afr,Amer & Aus Lang, Lit"
+17,Historical & Philosophical stud
+18,Creative Arts & Design
+19,Educ
+1.1,Pre-clinical Medicine
+2.1,"Anatomy, Physiology & Pathology"
+3.1,Biology
+4.1,Pre-clinical Veterinary Medicine
+5.1,Chemistry
+6.1,Mathematics
+7.1,General Engineering
+8.1,Minerals Technology
+9.1,Architecture
+1.2,Pre-clinical Dentistry
+2.2,"Pharmacology, Toxicology & Pharmacy"
+3.2,Botany
+4.2,Clin Vet Medicine & Dentistry
+5.2,Materials Science
+6.2,Operational Research
+7.2,Civil Engineering
+8.2,Metallurgy
+9.2,Building
+1.3,Clinical Medicine
+2.3,Complementary Medicine
+3.3,Zoology
+4.3,Animal Science
+5.3,Physics
+6.3,Statistics
+7.3,Mechanical Engineering
+8.3,Ceramics & Glasses
+9.3,L&scape Design
+1.4,Clinical Dentistry
+2.4,Nutrition
+3.4,Genetics
+4.4,Agriculture
+5.4,Forensic & Archaeological Science
+6.4,Computer Science
+7.4,Aerospace Engineering
+8.4,Polymers & Textiles
+9.4,"Planning (Urban, Rural & Regional)"
+2.5,Ophthalmics
+3.5,Microbiology
+4.5,Forestry
+5.5,Astronomy
+6.5,Information Systems
+7.5,Naval Architecture
+8.5,Materials Tech not otherwise specified
+2.6,Aural & Oral Sciences
+3.6,Sports Science
+4.6,Food & Beverage stud
+5.6,Geology
+6.6,Software Engineering
+7.6,Electronic & Electrical Engineering
+8.6,Maritime Technology
+2.7,Nursing
+3.7,"Molecular Biology,Biophys & Biochem"
+4.7,Agricultural Sciences
+5.7,Ocean Sciences
+6.7,Artificial Intelligence
+7.7,Production & Manufacturing Engineering
+8.7,Industrial Biotechnology
+2.8,Medical Technology
+3.8,Psychology
+5.8,Phys & Terr Geog & Environ Sciences
+7.8,"Chemical, Process & Energy Engineering"
+1.9,Oth in Medicine & Dentistry
+2.9,Oth in Subjects allied to Medicine
+3.9,Oth in Biological Sciences
+4.9,"Oth Vet Sciences,Agric & related subj"
+5.9,Oth in Physical Sciences
+6.9,Oth in Math & Computing Sciences
+7.9,Oth in Engineering
+8.9,Oth in Technology
+9.9,"Oth in Arch, Building & Planning"
+10.1,Economics
+11.1,Law by area
+12.1,Business stud
+13.1,Information Services
+14.1,Linguistics
+15.1,French stud
+16.1,Chinese stud
+17.1,History by period
+18.1,Fine Art
+19.1,Training teach
+10.2,Politics
+11.2,Law by Topic
+12.2,Management stud
+13.2,Publicity stud
+14.2,Comparative Literary stud
+15.2,German stud
+16.2,Japanese stud
+17.2,History by area
+18.2,Design stud
+19.2,Research & Study Skills in Educ
+10.3,Sociology
+12.3,Finance
+13.3,Media stud
+14.3,English stud
+15.3,Italian stud
+16.3,South Asian stud
+17.3,History by topic
+18.3,Music
+19.3,Academic stud in Educ
+10.4,Social Policy
+12.4,Accounting
+13.4,Publishing
+14.4,Ancient Language stud
+15.4,Spanish stud
+16.4,Other Asian stud
+17.4,Archaeology
+18.4,Drama
+10.5,Social Work
+12.5,Marketing
+13.5,Journalism
+14.5,Celtic stud
+15.5,Portuguese stud
+16.5,Afr stud
+17.5,Philosophy
+18.5,Dance
+10.6,Anthropology
+12.6,Human Resource Management
+14.6,Latin stud
+15.6,Sc&inavian stud
+16.6,Modern Middle Eastern stud
+17.6,Theology & Religious stud
+18.6,Cinematics & Photography
+10.7,Human & Social Geog
+12.7,Office skills
+14.7,Classical Greek stud
+15.7,Russian & East European stud
+16.7,Amer stud
+18.7,Crafts
+12.8,"Tourism, Transport & Travel"
+14.8,Classical stud
+16.8,Aus stud
+18.8,Imaginative Writing
+10.9,Oth in Social stud
+11.9,Other in Law
+12.9,Oth in Business & Administrative stud
+13.9,Oth in Mass Comm & Documentation
+14.9,"Oth Ling,Classics & related subjects"
+15.9,"Oth European Lang,Lit & related subj"
+16.9,"Oth East,Asiatic,Afr,Amer & Aus Lang"
+17.9,Oth in Historical & Phil stud
+18.9,Oth in Creative Arts & Design
+19.9,Oth in Educ

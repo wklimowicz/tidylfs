@@ -259,3 +259,49 @@ lfs[economic_activity_coding,
     ][, INECAC05 := forcats::as_factor(INECAC05)]
 
 }
+
+
+annotate_subject <- function(lfs) {
+
+  # Trim WS because 1990's files have leading space
+  lfs[, DEGREE_SUBJECT := trimws(DEGREE_SUBJECT)]
+
+  # Find correct coding file
+  read_subject_coding <- function(year) {
+    readr::read_csv(
+      paste0(system.file("coding_frames", package = "tidylfs"), "/sngdeg_", year, "_2_digit.csv"),
+      col_types = readr::cols(
+        DEGREE = readr::col_character(),
+        DEGREE_DESCRIPTION = readr::col_character()
+      ), progress = FALSE
+    ) %>%
+      dplyr::mutate(SUBJECT_VAR = year)
+  }
+
+  subject_1992 <- read_subject_coding("1992")
+  subject_1997 <- read_subject_coding("1997")
+  subject_2004 <- read_subject_coding("2004")
+
+  subject_coding <- dplyr::bind_rows(subject_1992, subject_1997, subject_2004) |>
+    data.table::setDT()
+
+lfs[, SUBJECT_VAR := data.table::fcase(
+      QUARTER < "1997 Q3", "1992",
+      QUARTER <= "2003 Q4", "1997",
+      QUARTER >= "2004 Q1", "2004"
+    )]
+
+
+lfs[, two_digit_code := stringr::str_extract(DEGREE_SUBJECT, stringr::regex("(\\d{1,2}\\.\\d{1,2}|\\d{1,2})"))]
+
+lfs[subject_coding,
+    on = c("SUBJECT_VAR", "two_digit_code" = "DEGREE"),
+    DEGREE_DESCRIPTION := i.DEGREE_DESCRIPTION
+    ][, `:=`(SUBJECT_VAR = NULL, two_digit_code = NULL)
+      ][, DEGREE_DESCRIPTION := forcats::as_factor(DEGREE_DESCRIPTION)
+      ][, DEGREE_SUBJECT := forcats::as_factor(DEGREE_SUBJECT)]
+
+
+
+}
+
