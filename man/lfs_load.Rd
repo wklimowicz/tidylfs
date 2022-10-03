@@ -14,7 +14,7 @@ A tibble with lfs data
 }
 \description{
 This works only with the \code{DATA_DIRECTORY} environment variable set to a folder.
-You can either manually save \code{lfs_data.fst} there, or it will automatically be
+You can either manually save \code{lfs_data.fst} there, or it will optionally be
 saved during compilation if the \code{DATA_DIRECTORY} variable is present while running
 \code{lfs_compile()}
 }

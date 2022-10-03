@@ -22,7 +22,6 @@ Imports:
     lifecycle,
     magrittr,
     matrixStats,
-    openssl,
     purrr,
     readr,
     rlang,
