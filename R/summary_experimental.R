@@ -8,9 +8,6 @@
 #' @return Tibble of outputs
 #'
 #' @importFrom rlang .data
-#'
-#'
-#' @export
 lfs_summarise_union <- function(lfs, ...) {
 
     # data.table version
@@ -36,8 +33,6 @@ lfs_summarise_union <- function(lfs, ...) {
 #' @return Tibble of outputs
 #'
 #' @importFrom rlang .data
-#'
-#' @export
 lfs_summarise_hours <- function(lfs, ...) {
 
     # data.table version

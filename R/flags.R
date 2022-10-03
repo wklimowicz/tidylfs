@@ -4,7 +4,6 @@
 #' @param column_name Name of the column - by default TEACHER
 #'
 #' @return tibble with extra teacher column
-#' @export
 lfs_flag_teacher <- function(lfs, column_name = "TEACHER") {
   rename <- c("column_name")
   names(rename) <- {{ column_name }}
@@ -42,7 +41,6 @@ lfs_flag_teacher <- function(lfs, column_name = "TEACHER") {
 #'
 #'
 #' @return tibble with extra teacher column
-#' @export
 lfs_flag_graduate <- function(lfs, column_name = "GRADUATE") {
   rename <- c("column_name")
   names(rename) <- {{ column_name }}
@@ -71,7 +69,6 @@ lfs_flag_graduate <- function(lfs, column_name = "GRADUATE") {
 #'
 #'
 #' @return tibble with extra teacher column
-#' @export
 lfs_flag_postgraduate <- function(lfs, column_name = "POSTGRADUATE") {
   rename <- c("column_name")
   names(rename) <- {{ column_name }}
@@ -93,7 +90,6 @@ lfs_flag_postgraduate <- function(lfs, column_name = "POSTGRADUATE") {
 #'
 #'
 #' @return tibble with extra teacher column
-#' @export
 lfs_flag_graduate_ons <- function(lfs, column_name = "GRADUATE_ONS") {
   rename <- c("column_name")
   names(rename) <- {{ column_name }}

@@ -1,7 +1,7 @@
 #' Load LFS Data
 #'
 #' This works only with the `DATA_DIRECTORY` environment variable set to a folder.
-#' You can either manually save `lfs_data.fst` there, or it will automatically be
+#' You can either manually save `lfs_data.fst` there, or it will optionally be
 #' saved during compilation if the `DATA_DIRECTORY` variable is present while running
 #' `lfs_compile()`
 #'
@@ -29,7 +29,7 @@ lfs_load <- function(data.table = TRUE) {
 #' Load APS Data
 #'
 #' This works only with the `DATA_DIRECTORY` environment variable set to a folder.
-#' You can either manually save `aps_data.fst` there, or it will automatically be
+#' You can either manually save `aps_data.fst` there, or it will optionally be
 #' saved during compilation if the `DATA_DIRECTORY` variable is present while running
 #' `lfs_compile(..., aps = TRUE)`
 #'
