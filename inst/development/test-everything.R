@@ -9,9 +9,16 @@ lfs_convert("../lfs_raw_data/", "../lfs_rds_data/", incremental = TRUE)
 
 user_extra_mappings <- function(lfs_file_column_names) {
 
+degree_class <- pick(
+c("DEGCLS7",
+"DEGCLS"),
+lfs_file_column_names
+)
+
   custom_variables <- tibble::tribble(
     ~lfs_name,       ~new_name,     ~type,
-    "DTEOFBTH", "DTEOFBTH", "unlabelled_factor"
+    "DTEOFBTH", "DTEOFBTH", "unlabelled_factor",
+    degree_class, "DEGCLS", "factor"
     )
 
   return(custom_variables)

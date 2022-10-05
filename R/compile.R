@@ -280,11 +280,13 @@ lfs_compile <- function(lfs_directory,
     annotate_economic_activity() |>
     annotate_subject() |>
     create_HSERIAL()
-  }
-
 
   # Convert QUARTER to factor
   lfs_data_frame[, QUARTER := as.factor(QUARTER)]
+
+  }
+
+
 
   if (aps == TRUE) {
   save_name <- "aps_data.fst"
