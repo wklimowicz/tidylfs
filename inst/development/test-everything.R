@@ -25,7 +25,9 @@ lfs_file_column_names
 }
 
 tic()
-lfs <- lfs_compile("../lfs_rds_data/", save_to_folder = TRUE, extra_mappings = user_extra_mappings)
+lfs <- lfs_compile("../lfs_rds_data_2020/",
+                   save_to_folder = TRUE,
+                   extra_mappings = user_extra_mappings)
 toc()
 
 

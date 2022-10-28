@@ -11,8 +11,6 @@
 #' @param file_format File extension: sav csv or rds
 #' @param extra_mappings Either NULL (use default) or an R script with the lfs_extra_mappings function
 #'
-#' @importFrom rlang .data
-#'
 #' @return List of output
 #' @keywords internal
 #'
@@ -45,7 +43,11 @@ lfs_tidy_file <- function(file,
     vars_extra <- extra_mappings(cols)
 
     vars_extra <- vars_extra %>%
-      dplyr::mutate(lfs_name = ifelse(.data$lfs_name %in% cols, .data$lfs_name, NA))
+      dplyr::mutate(lfs_name = ifelse(.data$lfs_name %in% cols,
+                                      .data$lfs_name,
+                                      NA_character_))
+
+    print(vars_extra)
 
     # Remove existing mappings if overwritten
     complete_mappings <- complete_mappings %>%
@@ -222,7 +224,7 @@ lfs_compile <- function(lfs_directory,
 
     variables_report <- variables_report %>%
       dplyr::mutate(QUARTER = row.names(variables_report)) %>%
-      dplyr::relocate(.data$QUARTER)
+      dplyr::relocate("QUARTER")
 
     colnames(variables_report) <- c("QUARTER", final_mapping)
 

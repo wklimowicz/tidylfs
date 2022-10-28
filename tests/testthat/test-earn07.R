@@ -91,6 +91,6 @@ test_that("EARN07 matches raw data", {
   earn07_ons <- stats::setNames(earn07_ons, names(earn07))
 
 
-  expect_equal(earn07, earn07_ons, tolerance = 1e-4)
+  expect_equal(earn07, earn07_ons, tolerance = 1e-3)
   expect_gt(nrow(earn07), 1)
 })
