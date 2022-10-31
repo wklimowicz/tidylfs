@@ -28,7 +28,7 @@ lfs_flag_teacher <- function(lfs, column_name = "TEACHER") {
 
   lfs <- lfs %>%
     dplyr::mutate(
-      column_name = "OCCUPATION_DESCRIPTION" %in% teaching_occupations
+      column_name = .data$OCCUPATION_DESCRIPTION %in% teaching_occupations
     ) %>%
     dplyr::rename(rename)
 }
@@ -47,16 +47,16 @@ lfs_flag_graduate <- function(lfs, column_name = "GRADUATE") {
 
   lfs <- lfs %>%
     dplyr::mutate(column_name = ifelse(
-      ("HIQUAL" %in% c(
+      (.data$HIQUAL %in% c(
         "First/Foundation degree",
         "First degree",
         "First degree/foundation degree"
       )) &
-        ("DEGREE71" %in% c("A first degree") |
-          "DEGREE72" %in% c("A first degree") |
-          "DEGREE73" %in% c("A first degree") |
-          "DEGREE74" %in% c("A first degree") |
-          "DEGREE75" %in% c("A first degree")),
+        (.data$DEGREE71 %in% c("A first degree") |
+          .data$DEGREE72 %in% c("A first degree") |
+          .data$DEGREE73 %in% c("A first degree") |
+          .data$DEGREE74 %in% c("A first degree") |
+          .data$DEGREE75 %in% c("A first degree")),
       1, 0
     )) %>%
     dplyr::rename(rename)
@@ -75,8 +75,8 @@ lfs_flag_postgraduate <- function(lfs, column_name = "POSTGRADUATE") {
 
   lfs <- lfs %>%
     dplyr::mutate(column_name = ifelse(
-      "HIQUALD" == "Higher education" &
-        "HIGHO" != c("Don't Know"), 1, 0
+      .data$HIQUALD == "Higher education" &
+        .data$HIGHO != c("Don't Know"), 1, 0
     )) %>%
     dplyr::rename(rename)
 }
@@ -96,7 +96,7 @@ lfs_flag_graduate_ons <- function(lfs, column_name = "GRADUATE_ONS") {
 
   lfs <- lfs %>%
     dplyr::mutate(column_name = ifelse(
-      ("HIQUALD" %in% c(
+      (.data$HIQUALD %in% c(
         "Degree or equivalent",
         "Higher education"
       )), 1, 0
