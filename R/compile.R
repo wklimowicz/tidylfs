@@ -47,8 +47,6 @@ lfs_tidy_file <- function(file,
                                       .data$lfs_name,
                                       NA_character_))
 
-    print(vars_extra)
-
     # Remove existing mappings if overwritten
     complete_mappings <- complete_mappings %>%
       dplyr::filter(!.data$new_name %in% vars_extra[[2]])

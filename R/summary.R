@@ -172,7 +172,7 @@ lfs_summarise_unemployment_df <- function(lfs, ...) {
         (.data$employed + .data$unemployed + .data$inactive),
     ) %>%
     dplyr::select(
-      -.data$unemployed,
+      -"unemployed",
       -"employed",
       -"inactive"
     )
