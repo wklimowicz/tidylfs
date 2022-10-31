@@ -118,17 +118,21 @@ annotate_occupation <- function(lfs) {
     ) %>%
       dplyr::mutate(SOC_TYPE = soc)
   }
+
+  socmain <- read_occupation_coding("SOCMAIN")
   soc2km <- read_occupation_coding("SOC2KM")
   soc10m <- read_occupation_coding("SOC10M")
   soc20m <- read_occupation_coding("SOC20M")
 
-  soc_coding <- dplyr::bind_rows(soc2km, soc10m, soc20m) %>%
+  list_of_socs <- list(socmain, soc2km, soc10m, soc20m)
+
+  soc_coding <- dplyr::bind_rows(list_of_socs) %>%
     dplyr::rename(OCCUPATION = "SOC")|>
     data.table::setDT()
 
     # dplyr::mutate(OCCUPATION_DESCRIPTION = forcats::as_factor(OCCUPATION_DESCRIPTION))
 
-  soc_coding_last <- dplyr::bind_rows(soc2km, soc10m, soc20m) %>%
+  soc_coding_last <- dplyr::bind_rows(list_of_socs) %>%
     dplyr::rename(
       LAST_OCCUPATION = "SOC",
       LAST_OCCUPATION_DESCRIPTION = "OCCUPATION_DESCRIPTION"
@@ -137,7 +141,7 @@ annotate_occupation <- function(lfs) {
 
     # dplyr::mutate(LAST_OCCUPATION_DESCRIPTION = forcats::as_factor(LAST_OCCUPATION_DESCRIPTION))
 
-  soc_coding_parental <- dplyr::bind_rows(soc2km, soc10m, soc20m) %>%
+  soc_coding_parental <- dplyr::bind_rows(list_of_socs) %>%
     dplyr::rename(
       PARENTAL_OCCUPATION = "SOC",
       PARENTAL_OCCUPATION_DESCRIPTION = "OCCUPATION_DESCRIPTION"
@@ -148,6 +152,7 @@ annotate_occupation <- function(lfs) {
 
 
   lfs <- lfs[, SOC_TYPE := data.table::fcase(
+      YEAR >= 1992 & YEAR < 2000, "SOCMAIN",
       YEAR >= 2001 & YEAR < 2011, "SOC2KM",
       YEAR >= 2011 & YEAR < 2021, "SOC10M",
       YEAR >= 2021, "SOC20M"
