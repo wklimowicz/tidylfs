@@ -271,14 +271,14 @@ test_that("Converting and compiling runs succesfully", {
 
     lfs_convert("test", "test_aps_data/")
 
-    lfs_compile("test_aps_data", save_to_folder = TRUE, aps = TRUE)
+    lfs_compile("test_aps_data/", save_to_folder = TRUE, aps = TRUE)
 
     aps <- aps_load()
   }
 
 
   withr::with_file(list(fs::dir_create("test"),
-    fs::dir_create("test_rds_data"),
+    fs::dir_create("test_aps_data"),
     "test/APS 2003.sav" = haven::write_sav(test_data, "test/APS 2003.sav"),
     "test/APS 2010.sav" = haven::write_sav(test_data, "test/APS 2010.sav"),
     "aps_data.fst",

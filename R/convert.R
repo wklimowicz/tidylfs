@@ -10,8 +10,6 @@
 #' @param filter_files Limit to certain files, using a named vector
 #' @param incremental Only convert files which don't exist in output directory
 #'
-#' @importFrom rlang .data
-#'
 #' @return List of output
 #'
 #' @importFrom haven labelled

@@ -123,15 +123,15 @@ annotate_occupation <- function(lfs) {
   soc20m <- read_occupation_coding("SOC20M")
 
   soc_coding <- dplyr::bind_rows(soc2km, soc10m, soc20m) %>%
-    dplyr::rename(OCCUPATION = .data$SOC)|>
+    dplyr::rename(OCCUPATION = "SOC")|>
     data.table::setDT()
 
     # dplyr::mutate(OCCUPATION_DESCRIPTION = forcats::as_factor(OCCUPATION_DESCRIPTION))
 
   soc_coding_last <- dplyr::bind_rows(soc2km, soc10m, soc20m) %>%
     dplyr::rename(
-      LAST_OCCUPATION = .data$SOC,
-      LAST_OCCUPATION_DESCRIPTION = .data$OCCUPATION_DESCRIPTION
+      LAST_OCCUPATION = "SOC",
+      LAST_OCCUPATION_DESCRIPTION = "OCCUPATION_DESCRIPTION"
     ) |>
     data.table::setDT()
 
@@ -139,8 +139,8 @@ annotate_occupation <- function(lfs) {
 
   soc_coding_parental <- dplyr::bind_rows(soc2km, soc10m, soc20m) %>%
     dplyr::rename(
-      PARENTAL_OCCUPATION = .data$SOC,
-      PARENTAL_OCCUPATION_DESCRIPTION = .data$OCCUPATION_DESCRIPTION
+      PARENTAL_OCCUPATION = "SOC",
+      PARENTAL_OCCUPATION_DESCRIPTION = "OCCUPATION_DESCRIPTION"
     )  |>
     data.table::setDT()
     # dplyr::mutate(PARENTAL_OCCUPATION_DESCRIPTION = forcats::as_factor(PARENTAL_OCCUPATION_DESCRIPTION))
@@ -203,11 +203,11 @@ annotate_industry <- function(lfs) {
       )
     ) %>%
       dplyr::mutate(SIC_TYPE = "SIC92") %>%
-      dplyr::select(-.data$Industry_Code, -.data$LFS_Description) %>%
-      dplyr::rename(INDUSTRY_DESCRIPTION = .data$ONS_Description)
+      dplyr::select(-"Industry_Code", -"LFS_Description") %>%
+      dplyr::rename(INDUSTRY_DESCRIPTION = "ONS_Description")
 
   sic_coding <- dplyr::bind_rows(sic07, sic92) %>%
-    dplyr::rename(INDUSTRY = .data$SIC) |>
+    dplyr::rename(INDUSTRY = "SIC") |>
     data.table::setDT()
     # dplyr::mutate(INDUSTRY_DESCRIPTION = forcats::as_factor(INDUSTRY_DESCRIPTION))
 
@@ -243,7 +243,7 @@ annotate_economic_activity <- function(lfs) {
   inecacr <- read_economic_activity("INECACR")
 
   economic_activity_coding <- dplyr::bind_rows(inecac05, inecacr) |>
-    dplyr::rename(INECAC05 = .data$INECAC) |>
+    dplyr::rename(INECAC05 = "INECAC") |>
     data.table::setDT()
 
 lfs[, INECAC_VAR := data.table::fcase(

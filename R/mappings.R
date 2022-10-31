@@ -139,7 +139,7 @@ lfs_default_mappings <- function(cols) {
     "ACTHR", "ACTHR", "numeric",
     # "TOTAC2", "TOTAC2", "numeric",
     # "SUMHRS", "SUMHRS", "numeric",
-    # "TOTHRS", "TOTHRS", "numeric",
+    "TOTHRS", "TOTHRS", "numeric",
     # Union ----------------------------------------
     "UNION", "UNION", "factor",
     "TUPRES", "TUPRES", "factor",

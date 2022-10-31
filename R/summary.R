@@ -4,7 +4,6 @@
 #' @param lfs LFS Dataset
 #' @param ... Variables to group by
 #'
-#' @importFrom rlang .data
 #' @importFrom data.table .N
 #'
 #' @return Tibble or data.table with salary data
@@ -35,7 +34,6 @@ lfs_summarise_salary <- function(lfs, ...) {
 #'
 #' @return Tibble or data.table with unemployment data
 #'
-#' @importFrom rlang .data
 #' @importFrom data.table .N
 #'
 #' @export
@@ -120,10 +118,10 @@ lfs_summarise_salary_df <- function(lfs, ...) {
       mean_hourly_pay = .data$paidweighthrly / (.data$paidweighthrly2)
     ) %>%
     dplyr::select(
-      -.data$paidweight,
-      -.data$paidweighthrly,
-      -.data$paidweight2,
-      -.data$paidweighthrly2
+      -"paidweight",
+      -"paidweighthrly",
+      -"paidweight2",
+      -"paidweighthrly2"
     ) %>%
     dplyr::relocate(...)
 }
@@ -174,9 +172,9 @@ lfs_summarise_unemployment_df <- function(lfs, ...) {
         (.data$employed + .data$unemployed + .data$inactive),
     ) %>%
     dplyr::select(
-      -.data$unemployed,
-      -.data$employed,
-      -.data$inactive
+      -"unemployed",
+      -"employed",
+      -"inactive"
     )
 
 }
