@@ -30,6 +30,8 @@ lfs_default_mappings <- function(cols) {
   # - see variales_report
   ilo_status <- pick(c("INECACR", "INECAC05"), cols)
 
+  ilodef <- pick(c("ILODEFR", "ILODEFA"), cols)
+
   weight_income <- pick(
     c("PIWT22",
       "PIWT20",
@@ -82,11 +84,11 @@ lfs_default_mappings <- function(cols) {
   teaching_qualification <- pick(c("TEACH41", "TEACH1"), cols)
 
   # Occupation
-  occupation <- pick(c("SOC20M", "SOC10M", "SOC2KM"), cols)
+  occupation <- pick(c("SOC20M", "SOC10M", "SOC2KM", "SOCMAIN"), cols)
 
   occupation_major <- pick(c(
     "SC2010MMJ", "SC10MMJ",
-    "SC2KMMJ"
+    "SC2KMMJ", "SOCMAJM"
   ), cols)
 
   last_occupation <- pick(c("SOC20O", "SOC10O", "SOC2KO"), cols)
@@ -152,7 +154,7 @@ lfs_default_mappings <- function(cols) {
     # Variable changes over time ----------
     degree_subject, "DEGREE_SUBJECT", "character",
     combined_degree_subject, "CMBDEGREE", "factor",
-    "ILODEFR", "ILODEFR", "factor",
+    ilodef, "ILODEFR", "factor",
     "OYCIRC", "OYCIRC", "factor",
     occupation, "OCCUPATION", "numeric",
     occupation_major, "OCCUPATION_MAJOR", "numeric",

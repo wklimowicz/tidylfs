@@ -1,0 +1,372 @@
+SOC,OCCUPATION_DESCRIPTION
+100,General administrators; national government (Assistant Secretary/Grade 5 and above)
+101,General managers; large companies and organisations
+102,Local government officers (administrative and executive functions)
+103,General administrators; national government (HEO to Senior Principal/Grade 6)
+110,"Production, works and maintenance managers"
+111,Managers in building and contracting
+112,Clerks of works
+113,Managers in mining and energy industries
+120,Treasurers and company financial managers
+121,Marketing and sales managers
+122,Purchasing managers
+123,Advertising and public relations managers
+124,"Personnel, training and industrial relations managers"
+125,Organisation and methods and work study managers
+126,Computer systems and data processing managers
+127,Company secretaries
+130,Credit controllers
+131,"Bank, Building Society and Post Office managers (except self-employed)"
+132,Civil Service executive officers
+139,Other financial institution and office managers n.e.c.
+140,Transport managers
+141,Stores controllers
+142,Managers in warehousing and other materials handling
+150,Officers in UK armed forces
+151,Officers in foreign and Commonwealth armed forces
+152,Police officers (inspector and above)
+153,Fire service officers (station officer and above)
+154,Prison officers (principal officer and above)
+155,"Customs and excise, immigration service officers (customs: chief preventive officer and above; excise: surveyor and above)"
+160,"Farm owners and managers, horticulturists"
+169,"Other managers in farming, horticulture, forestry and fishing n.e.c."
+170,Property and estate managers
+171,Garage managers and proprietors
+172,Hairdressers' and barbers' managers and proprietors
+173,Hotel and accommodation managers
+174,Restaurant and catering managers
+175,"Publicans, innkeepers and club stewards"
+176,Entertainment and sports managers
+177,Travel agency managers
+178,Managers and proprietors of butchers and fishmongers
+179,Managers and proprietors in service industries n.e.c.
+190,"Officials of trade associations, trade unions, professional bodies and charities"
+191,Registrars and administrators of educational establishments
+199,Other managers and administrators n.e.c.
+200,Chemists
+201,Biological scientists and biochemists
+202,"Physicists, geologists and meteorologists"
+209,Other natural scientists n.e.c.
+210,"Civil, structural, municipal, mining and quarrying engineers"
+211,Mechanical engineers
+212,Electrical engineers
+213,Electronic engineers
+214,Software engineers
+215,Chemical engineers
+216,Design and development engineers
+217,Process and production engineers
+218,Planning and quality control engineers
+219,Other engineers and technologists n.e.c.
+220,Medical practitioners
+221,Pharmacists/pharmacologists
+222,Ophthalmic opticians
+223,Dental practitioners
+224,Veterinarians
+230,University and polytechnic teaching professionals
+231,Higher and further education teaching professionals
+232,"Education officers, school inspectors"
+233,Secondary (and middle school deemed secondary) education teaching professionals
+234,Primary (and middle school deemed primary) and nursery education teaching professionals
+235,Special education teaching professionals
+239,Other teaching professionals n.e.c.
+240,Judges and officers of the Court
+241,Barristers and advocates
+242,Solicitors
+250,Chartered and certified accountants
+251,Management accountants
+252,"Actuaries, economists and statisticians"
+253,"Management consultants, business analysts"
+260,Architects
+261,Town planners
+262,"Building, land, mining and 'general practice' surveyors"
+270,Librarians
+271,Archivists and curators
+290,Psychologists
+291,Other social and behavioural scientists
+292,Clergy
+293,"Social workers, probation officers"
+300,Laboratory technicians
+301,Engineering technicians
+302,Electrical/electronic technicians
+303,Architectural and town planning technicians
+304,Building and civil engineering technicians
+309,Other scientific technicians n.e.c.
+310,Draughtspersons
+311,Building inspectors
+312,Quantity surveyors
+313,"Marine, insurance and other surveyors"
+320,Computer analyst/programmers
+330,Air traffic planners and controllers
+331,Aircraft flight deck officers
+332,Ship and hovercraft officers
+340,Nurses
+341,Midwives
+342,Medical radiographers
+343,Physiotherapists
+344,Chiropodists
+345,Dispensing opticians
+346,"Medical technicians, dental auxiliaries"
+347,"Occupational and speech therapists, psychotherapists, therapists n.e.c."
+348,Environmental health officers
+349,Other health associate professionals n.e.c.
+350,Legal service and related occupations
+360,"Estimators, valuers"
+361,"Underwriters, claims assessors, brokers, investment analysts"
+362,Taxation experts
+363,Personnel and industrial relations officers
+364,Organisation and methods and work study officers
+370,"Matrons, houseparents"
+371,"Welfare, community and youth workers"
+380,"Authors, writers, journalists"
+381,"Artists, commercial artists, graphic designers"
+382,Industrial designers
+383,Clothing designers
+384,"Actors, entertainers, stage managers, producers and directors"
+385,Musicians
+386,"Photographers, camera, sound and video equipment operators"
+387,"Professional athletes, sports officials"
+390,Information officers
+391,Vocational and industrial trainers
+392,Careers advisers and vocational guidance specialists
+393,Driving instructors (excluding HGV)
+394,"Inspectors of factories, utilities and trading standards"
+395,Other statutory and similar inspectors n.e.c.
+396,Occupational hygienists and safety officers (health and safety)
+399,Other associate professional and technical occupations n.e.c.
+400,Civil Service administrative officers and assistants
+401,Local government clerical officers and assistants
+410,"Accounts and wages clerks, book-keepers, other financial clerks"
+411,Counter clerks and cashiers
+412,"Debt, rent and other cash collectors"
+420,"Filing, computer and other records clerks (including legal conveyancing)"
+421,Library assistants/clerks
+430,Clerks (n.o.s.)
+440,"Stores, despatch and production control clerks"
+441,Storekeepers and warehousemen/women
+450,Medical secretaries
+451,Legal secretaries
+452,Typists and word processor operators
+459,"Other secretaries, personal assistants, typists, word processor operators n.e.c."
+460,Receptionists
+461,Receptionist/telephonists
+462,Telephone operators
+463,"Radio and telegraph operators, other office communication system operators"
+490,"Computer operators, data processing operators, other office machine operators"
+491,"Tracers, drawing office assistants"
+500,"Bricklayers, masons"
+501,"Roofers, slaters, tilers, sheeters, cladders"
+502,Plasterers
+503,Glaziers
+504,"Builders, building contractors"
+505,"Scaffolders, stagers, steeplejacks, riggers"
+506,"Floorers, floor coverers, carpet fitters and planners, floor and wall tilers"
+507,Painters and decorators
+509,Other construction trades n.e.c.
+510,"Centre, capstan, turret and other lathe setters and setter-operators"
+511,Boring and drilling machine setters and setter-operators
+512,Grinding machine setters and setter-operators
+513,Milling machine setters and setter-operators
+514,Press setters and setter-operators
+515,"Tool makers, tool fitters and markers-out"
+516,Metal working production and maintenance fitters
+517,Precision instrument makers and repairers
+518,"Goldsmiths, silversmiths, precious stone workers"
+519,Other machine tool setters and setter-operators n.e.c. (including CNC setter-operators)
+520,Production fitters (electrical/electronic)
+521,"Electricians, electrical maintenance fitters"
+522,Electrical engineers (not professional)
+523,Telephone fitters
+524,"Cable jointers, lines repairers"
+525,"Radio, TV and video engineers"
+526,"Computer engineers, installation and maintenance"
+529,Other electrical/electronic trades n.e.c.
+530,Smiths and forge workers
+531,"Moulders, core makers, die casters"
+532,"Plumbers, heating and ventilating engineers and related trades"
+533,Sheet metal workers
+534,"Metal plate workers, shipwrights, riveters"
+535,Steel erectors
+536,"Barbenders, steel fixers"
+537,Welding trades
+540,"Motor mechanics, auto engineers (including road patrol engineers)"
+541,Coach and vehicle body builders
+542,"Vehicle body repairers, panel beaters"
+543,Auto electricians
+544,Tyre and exhaust fitters
+550,Weavers
+551,Knitters
+552,"Warp preparers, bleachers, dyers and finishers"
+553,"Sewing machinists, menders, darners and embroiderers"
+554,"Coach trimmers, upholsterers and mattress makers"
+555,"Shoe repairers, leather cutters and sewers, footwear lasters, makers and finishers, other leather making and repairing"
+556,Tailors and dressmakers
+557,"Clothing cutters, milliners, furriers"
+559,"Other textiles, garments and related trades n.e.c."
+560,"Originators, compositors and print preparers"
+561,Printers
+562,Bookbinders and print finishers
+563,Screen printers
+569,Other printing and related trades n.e.c.
+570,Carpenters and joiners
+571,Cabinet makers
+572,Case and box makers
+573,Pattern makers (moulds)
+579,Other woodworking trades n.e.c.
+580,"Bakers, flour confectioners"
+581,"Butchers, meat cutters"
+582,"Fishmongers, poultry dressers"
+590,Glass product and ceramics makers
+591,Glass product and ceramics finishers and decorators
+592,Dental technicians
+593,"Musical instrument makers, piano tuners"
+594,"Gardeners, groundsmen/groundswomen"
+595,Horticultural trades
+596,"Coach painters, other spray painters"
+597,"Face trained coalmining workers, shotfirers and deputies"
+598,Office machinery mechanics
+599,Other craft and related occupations n.e.c.
+600,"NCOs and other ranks, UK armed forces"
+601,"NCOs and other ranks, foreign and Commonwealth armed forces"
+610,Police officers (sergeant and below)
+611,Fire service officers (leading fire officer and below)
+612,Prison service officers (below principal officer)
+613,"Customs and excise officers, immigration officers (customs: below chief preventive officer; excise: below surveyor)"
+614,Traffic wardens
+615,Security guards and related occupations
+619,Other security and protective service occupations n.e.c.
+620,"Chefs, cooks"
+621,"Waiters, waitresses"
+622,Bar staff
+630,Travel and flight attendants
+631,Railway station staff
+640,"Assistant nurses, nursing auxiliaries"
+641,Hospital ward assistants
+642,Ambulance staff
+643,Dental nurses
+644,Care assistants and attendants
+650,Nursery nurses
+651,Playgroup leaders
+652,Educational assistants
+659,Other childcare and related occupations n.e.c.
+660,"Hairdressers, barbers"
+661,Beauticians and related occupations
+670,Domestic housekeepers and related occupations
+671,Housekeepers (non-domestic)
+672,Caretakers
+673,"Launderers, dry cleaners, pressers"
+690,Undertakers
+691,Bookmakers
+699,Other personal and protective service occupations n.e.c.
+700,Buyers (retail trade)
+701,Buyers and purchasing officers (not retail)
+702,Importers and exporters
+703,"Air, commodity and ship brokers"
+710,Technical and wholesale sales representatives
+719,Other sales representatives n.e.c.
+720,Sales assistants
+721,Retail cash desk and check-out operators
+722,Petrol pump forecourt attendants
+730,Collector salespersons and credit agents
+731,Roundsmen/women and van salespersons
+732,Market and street traders and assistants
+733,"Scrap dealers, scrap metal merchants"
+790,Merchandisers
+791,"Window dressers, floral arrangers"
+792,Telephone salespersons
+800,Bakery and confectionery process operatives
+801,Brewery and vinery process operatives
+802,Tobacco process operatives
+809,"Other food, drink and tobacco process operatives n.e.c."
+810,Tannery production operatives
+811,Preparatory fibre processors
+812,"Spinners, doublers, twisters"
+813,"Winders, reelers"
+814,Other textiles processing operatives
+820,"Chemical, gas and petroleum process plant operatives"
+821,"Paper, wood and related process plant operatives"
+822,Cutting and slitting machine operatives (paper products etc)
+823,"Glass and ceramics furnace operatives, kilnsetters"
+824,"Rubber process operatives, moulding machine operatives, tyre builders"
+825,"Plastics process operatives, moulders and extruders"
+826,Synthetic fibre makers
+829,"Other chemicals, paper, plastics and related process operatives n.e.c."
+830,Furnace operatives (metal)
+831,Metal drawers
+832,Rollers
+833,"Annealers, hardeners, temperers (metal)"
+834,"Electroplaters, galvanisers, colour coaters"
+839,Other metal making and treating process operatives n.e.c.
+840,Machine tool operatives (including CNC machine tool operatives)
+841,Press stamping and automatic machine operatives
+842,Metal polishers
+843,Metal dressing operatives
+844,Shot blasters
+850,Assemblers/lineworkers (electrical/electronic goods)
+851,Assemblers/lineworkers (vehicles and other metal goods)
+859,Other assemblers/lineworkers n.e.c.
+860,"Inspectors, viewers and testers (metal and electrical goods)"
+861,"Inspectors, viewers, testers and examiners (other manufactured goods)"
+862,"Packers, bottlers, canners, fillers"
+863,"Weighers, graders, sorters"
+864,Routine laboratory testers
+869,Other routine process operatives n.e.c.
+870,Bus inspectors
+871,Road transport depot inspectors and related occupations
+872,Drivers of road goods vehicles
+873,Bus and coach drivers
+874,"Taxi, cab drivers and chauffeurs"
+875,Bus conductors
+880,"Seafarers (merchant navy); barge, lighter and boat operatives"
+881,"Rail transport inspectors, supervisors and guards"
+882,Rail engine drivers and assistants
+883,Rail signal operatives and crossing keepers
+884,Shunters and points operatives
+885,Mechanical plant drivers and operatives (earth moving and civil engineering)
+886,Crane drivers
+887,Fork lift and mechanical truck drivers
+889,Other transport and machinery operatives n.e.c.
+890,"Washers, screeners and crushers in mines and quarries"
+891,Printing machine minders and assistants
+892,Water and sewerage plant attendants
+893,"Electrical, energy, boiler and related plant operatives and attendants"
+894,"Oilers, greasers, lubricators"
+895,"Mains and service pipe layers, pipe jointers"
+896,Construction and related operatives
+897,Woodworking machine operatives
+898,Mine (excluding coal) and quarry workers
+899,Other plant and machine operatives n.e.c.
+900,Farm workers
+901,Agricultural machinery drivers and operatives
+902,All other occupations in farming and related
+903,Fishing and related workers
+904,Forestry workers
+910,Coal mine labourers
+911,Labourers in foundries
+912,Labourers in engineering and allied trades
+913,Mates to metal/electrical and related fitters
+919,Other labourers in making and processing industries n.e.c.
+920,Mates to woodworking trades workers
+921,Mates to building trades workers
+922,Rail construction and maintenance workers
+923,Road construction and maintenance workers
+924,"Paviors, kerb layers"
+929,Other building and civil engineering labourers n.e.c.
+930,"Stevedores, dockers"
+931,Goods porters
+932,Slingers
+933,Refuse and salvage collectors
+934,Driver's mates
+940,"Postal workers, mail sorters"
+941,"Messengers, couriers"
+950,Hospital porters
+951,Hotel porters
+952,"Kitchen porters, hands"
+953,"Counterhands, catering assistants"
+954,Shelf fillers
+955,Lift and car park attendants
+956,Window cleaners
+957,Road sweepers
+958,"Cleaners, domestics"
+959,Other occupations in sales and services n.e.c.
+990,All other labourers and related workers
+999,All others in miscellaneous occupations n.e.c.
