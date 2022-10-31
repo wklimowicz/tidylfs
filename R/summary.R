@@ -91,31 +91,31 @@ lfs_summarise_salary_dt <- function(lfs, ...) {
 lfs_summarise_salary_df <- function(lfs, ...) {
   lfs %>%
     dplyr::filter(
-      "WEIGHT_INCOME" > 0,
-      "HOURPAY" <= 100,
-      "HOURPAY" >= 0,
-      "INECAC05" == "Employee"
+      .data$WEIGHT_INCOME > 0,
+      .data$HOURPAY <= 100,
+      .data$HOURPAY >= 0,
+      .data$INECAC05 == "Employee"
     ) %>%
     dplyr::group_by(...) %>%
     dplyr::summarize(
       n = dplyr::n(),
-      median_weekly_pay = matrixStats::weightedMedian("GRSSWK",
-        w = "WEIGHT_INCOME",
+      median_weekly_pay = matrixStats::weightedMedian(.data$GRSSWK,
+        w = .data$WEIGHT_INCOME,
         na.rm = TRUE
       ),
-      median_hourly_pay = matrixStats::weightedMedian("HOURPAY",
-        w = "WEIGHT_INCOME",
+      median_hourly_pay = matrixStats::weightedMedian(.data$HOURPAY,
+        w = .data$WEIGHT_INCOME,
         na.rm = TRUE
       ),
-      paidweight = sum("GRSSWK" * "WEIGHT_INCOME", na.rm = TRUE),
-      paidweight2 = sum("WEIGHT_INCOME", na.rm = TRUE),
-      paidweighthrly = sum("HOURPAY" * "WEIGHT_INCOME", na.rm = TRUE),
-      paidweighthrly2 = sum("WEIGHT_INCOME", na.rm = TRUE),
+      paidweight = sum(.data$GRSSWK * .data$WEIGHT_INCOME, na.rm = TRUE),
+      paidweight2 = sum(.data$WEIGHT_INCOME, na.rm = TRUE),
+      paidweighthrly = sum(.data$HOURPAY * .data$WEIGHT_INCOME, na.rm = TRUE),
+      paidweighthrly2 = sum(.data$WEIGHT_INCOME, na.rm = TRUE),
       .groups = "drop"
     ) %>%
     dplyr::mutate(
-      mean_weekly_pay = "paidweight" / ("paidweight2"),
-      mean_hourly_pay = "paidweighthrly" / ("paidweighthrly2")
+      mean_weekly_pay = .data$paidweight / (.data$paidweight2),
+      mean_hourly_pay = .data$paidweighthrly / (.data$paidweighthrly2)
     ) %>%
     dplyr::select(
       -"paidweight",
@@ -152,24 +152,24 @@ lfs_summarise_unemployment_dt <- function(lfs, ...) {
 lfs_summarise_unemployment_df <- function(lfs, ...) {
   lfs %>%
     dplyr::filter(
-    "WEIGHT" > 0,
-    !is.na("ILODEFR")
+    .data$WEIGHT > 0,
+    !is.na(.data$ILODEFR)
     ) %>%
     dplyr::group_by(...) %>%
     dplyr::summarize(
       n = dplyr::n(),
-      employed = sum(("ILODEFR" == "In employment") * "WEIGHT", na.rm = TRUE),
-      unemployed = sum(("ILODEFR" == "ILO unemployed") * "WEIGHT", na.rm = TRUE),
-      inactive = sum(("ILODEFR" == "Inactive") * "WEIGHT", na.rm = TRUE),
+      employed = sum((.data$ILODEFR == "In employment") * .data$WEIGHT, na.rm = TRUE),
+      unemployed = sum((.data$ILODEFR == "ILO unemployed") * .data$WEIGHT, na.rm = TRUE),
+      inactive = sum((.data$ILODEFR == "Inactive") * .data$WEIGHT, na.rm = TRUE),
       .groups = "drop"
     ) %>%
     dplyr::mutate(
-      unemployed_percentage = "unemployed" /
-        ("employed" + "unemployed"),
-      employed_percentage = "employed" /
-        ("employed" + "unemployed" + "inactive"),
-      inactive_percentage = "inactive" /
-        ("employed" + "unemployed" + "inactive"),
+      unemployed_percentage = .data$unemployed /
+        (.data$employed + .data$unemployed),
+      employed_percentage = .data$employed /
+        (.data$employed + .data$unemployed + .data$inactive),
+      inactive_percentage = .data$inactive /
+        (.data$employed + .data$unemployed + .data$inactive),
     ) %>%
     dplyr::select(
       -"unemployed",
