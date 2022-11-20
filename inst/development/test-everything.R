@@ -185,3 +185,17 @@ lfs %>%
   lfs_summarise_hours(YEAR, TEACHER, SEX) %>%
   ggplot() +
   geom_line(aes(x = YEAR, y = hours, color = TEACHER, group = interaction(TEACHER, SEX), linetype = SEX))
+
+
+
+lfs[, .N, CASENO2
+    ][, .(N2 = .N), keyby = N
+    ][, prop := N2/sum(N2)
+    ][N %in% 1:5, sum(prop)]
+
+lfs[, N := .N, CASENO]
+
+lfs[, CASENO2 := paste0(DTEOFBTH, CASENO)]
+
+lfs[CASENO == 22311930210102]
+
