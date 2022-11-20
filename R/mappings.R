@@ -186,9 +186,7 @@ lfs_default_mappings <- function(cols) {
     "ADD", "ADD", "unlabelled_factor",
     "WAVFND", "WAVFND", "unlabelled_factor",
     "HHLD", "HHLD", "unlabelled_factor",
-    "PERSNO", "PERSNO", "unlabelled_factor",
-    "RECNO", "RECNO", "unlabelled_factor",
-    "RESPNO", "RESPNO", "unlabelled_factor"
+    "PERSNO", "PERSNO", "unlabelled_factor"
   )
 
   # Exclude missing
