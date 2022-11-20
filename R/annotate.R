@@ -16,6 +16,9 @@ lfs[, ADD := stringr::str_pad(ADD,
 lfs[, HHLD := stringr::str_pad(HHLD,
                                 2,
                                 pad = "0")]
+lfs[, PERSNO := stringr::str_pad(PERSNO,
+                                2,
+                                pad = "0")]
 }
 )
 
@@ -29,6 +32,8 @@ lfs[, HSERIAL := paste0(
     HHLD
     )]
 
+lfs[, CASENO := paste0(HSERIAL, PERSNO)]
+
 # lfs[, HSERIAL := as.factor(HSERIAL)]
 
 lfs[,
@@ -39,7 +44,8 @@ lfs[,
     QRTR = NULL,
     ADD = NULL,
     WAVFND = NULL,
-    HHLD = NULL
+    HHLD = NULL,
+    PERSNO = NULL
     )
     ]
 

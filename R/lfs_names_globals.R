@@ -50,6 +50,7 @@ c(":=",
 "QRTR",
 "ADD",
 "WAVFND",
-"HHLD"
+"HHLD",
+"PERSNO"
 ))
 

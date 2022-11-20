@@ -253,10 +253,8 @@ lfs_compile <- function(lfs_directory,
 
   lfs_data_frame <- data.table::rbindlist(lfs_data_frame, idcol = "YEAR", fill = TRUE)
 
-  lfs_data_frame[, `:=`(YEAR = as.integer(substr(YEAR, 5, 8)),
-                        CASENO = trimws(CASENO))]
+  lfs_data_frame[, `:=`(YEAR = as.integer(substr(YEAR, 5, 8)))]
 
-  data.table::setcolorder(lfs_data_frame, c("YEAR", "CASENO"))
 
   lfs_data_frame <- lfs_data_frame |>
     annotate_hiquald() |>
@@ -265,14 +263,14 @@ lfs_compile <- function(lfs_directory,
     # annotate_industry() |>
     # annotate_economic_activity()
 
+  data.table::setcolorder(lfs_data_frame, c("YEAR", "CASENO"))
+
   } else {
 
   lfs_data_frame <- data.table::rbindlist(lfs_data_frame, idcol = "QUARTER", fill = TRUE)
 
-  lfs_data_frame[, `:=`(YEAR = as.integer(substr(QUARTER, 1, 4)),
-                        CASENO = trimws(CASENO))]
+  lfs_data_frame[, `:=`(YEAR = as.integer(substr(QUARTER, 1, 4)))]
 
-  data.table::setcolorder(lfs_data_frame, c("YEAR", "QUARTER", "CASENO"))
   lfs_data_frame <- lfs_data_frame |>
     annotate_hiquald() |>
     annotate_occupation() |>
@@ -280,6 +278,8 @@ lfs_compile <- function(lfs_directory,
     annotate_economic_activity() |>
     annotate_subject() |>
     create_HSERIAL()
+
+  data.table::setcolorder(lfs_data_frame, c("YEAR", "QUARTER", "CASENO"))
 
   # Convert QUARTER to factor
   lfs_data_frame[, QUARTER := as.factor(QUARTER)]
