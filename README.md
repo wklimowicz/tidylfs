@@ -5,7 +5,7 @@
 
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/wklimowicz/tidylfs/workflows/R-CMD-check/badge.svg)](https://github.com/wklimowicz/tidylfs/actions)
+[![.github/workflows/R-CMD-check](https://github.com/wklimowicz/tidylfs/actions/workflows/.github/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/wklimowicz/tidylfs/actions/workflows/.github/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 ## Installation
@@ -21,7 +21,16 @@ devtools::install_github("wklimowicz/tidylfs")
 ## Quickstart
 
 Copy the LFS `.sav` files into a directory (in my example
-`lfs_data_folder`) and run:
+`lfs_data_folder`). They should look like this:
+
+    .
+    └── lfs_data_folder/
+        ├── 1992 Q1.sav
+        ├── 1992 Q2.sav
+        ├── ...
+        └── 2020 Q2.sav
+
+You can then run:
 
 ``` r
 library(tidylfs)
