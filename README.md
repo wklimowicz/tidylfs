@@ -5,7 +5,8 @@
 
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/wklimowicz/tidylfs/workflows/R-CMD-check/badge.svg)](https://github.com/wklimowicz/tidylfs/actions)
+[![.github/workflows/R-CMD-check](https://github.com/wklimowicz/tidylfs/actions/workflows/.github/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/wklimowicz/tidylfs/actions/workflows/.github/workflows/R-CMD-check.yaml)
+[![R-CMD-check](https://github.com/wklimowicz/tidylfs/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/wklimowicz/tidylfs/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 ## Installation
