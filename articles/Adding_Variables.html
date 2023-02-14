@@ -110,9 +110,9 @@ LFS User guidance</a>.</li>
 <span></span>
 <span><span class="fu"><a href="../reference/lfs_compile.html">lfs_compile</a></span><span class="op">(</span><span class="st">"your_lfs_rds_directory"</span>, extra_mappings <span class="op">=</span> <span class="va">user_extra_mappings</span><span class="op">)</span></span></code></pre></div>
 <ul>
-<li>To add a variable that changes over time, use <code>pick</code>. As
-an example, degree class is <code>DEGCLS7</code> from 2007 onwards, and
-<code>DEGCLS</code> before then. This code imports those as a factor
+<li>To add a variable that changes over time, use <code>pick_var</code>.
+As an example, degree class is <code>DEGCLS7</code> from 2007 onwards,
+and <code>DEGCLS</code> before then. This code imports those as a factor
 (retaining the SPSS labels), and calls the new column
 <code>DEGREE_CLASS</code>.</li>
 </ul>
@@ -121,7 +121,7 @@ an example, degree class is <code>DEGCLS7</code> from 2007 onwards, and
 <span></span>
 <span>  <span class="co"># This will pick DEGCLS7 if it exists in the quarterly file,</span></span>
 <span>  <span class="co"># if not then DEGCLS, otherwise it'll return NA.</span></span>
-<span>  <span class="va">degree_class</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/pick.html">pick</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"DEGCLS7"</span>, <span class="st">"DEGCLS"</span><span class="op">)</span>, <span class="va">lfs_file_column_names</span><span class="op">)</span></span>
+<span>  <span class="va">degree_class</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/pick_var.html">pick_var</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"DEGCLS7"</span>, <span class="st">"DEGCLS"</span><span class="op">)</span>, <span class="va">lfs_file_column_names</span><span class="op">)</span></span>
 <span></span>
 <span>  <span class="va">custom_variables</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/tribble.html" class="external-link">tribble</a></span><span class="op">(</span></span>
 <span>    <span class="op">~</span><span class="va">lfs_name</span>,       <span class="op">~</span><span class="va">new_name</span>,     <span class="op">~</span><span class="va">type</span>,</span>
