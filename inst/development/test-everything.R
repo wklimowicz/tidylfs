@@ -9,7 +9,7 @@ lfs_convert("../lfs_raw_data/", "../lfs_rds_data/", incremental = TRUE)
 
 user_extra_mappings <- function(lfs_file_column_names) {
 
-degree_class <- pick(
+degree_class <- pick_var(
 c("DEGCLS7",
 "DEGCLS"),
 lfs_file_column_names
