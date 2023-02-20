@@ -105,7 +105,7 @@ lfs_default_mappings <- function(cols) {
 
   health <- pick_var(c("HEALTH20", "HEALTH"), cols)
 
-  lnglst <- pick_var(c("LNGLST", "LNGLIM"), cols)
+  # lnglst <- pick_var(c("LNGLST", "LNGLIM"), cols)
 
 
   variables <- tibble::tribble(
@@ -152,7 +152,6 @@ lfs_default_mappings <- function(cols) {
     degree_subject, "DEGREE_SUBJECT", "character",
     combined_degree_subject, "CMBDEGREE", "factor",
     ilodef, "ILODEFR", "factor",
-    "OYCIRC", "OYCIRC", "factor",
     occupation, "OCCUPATION", "numeric",
     occupation_major, "OCCUPATION_MAJOR", "numeric",
     last_occupation, "LAST_OCCUPATION", "numeric",
@@ -162,7 +161,7 @@ lfs_default_mappings <- function(cols) {
     weight, "WEIGHT", "numeric",
     ilo_status, "INECAC05", "numeric",
     health, "HEALTH", "factor",
-    lnglst, "LNGLST", "factor",
+    # lnglst, "LNGLST", "factor",
     fdsico, "FDSICO", "factor",
     industry_major, "INDUSTRY_MAJOR", "factor",
     industry, "INDUSTRY", "character",
