@@ -6,6 +6,8 @@ library(tictoc)
 
 lfs_convert("../lfs_raw_data/", "../lfs_rds_data/", incremental = TRUE)
 
+# APS
+lfs_convert("../aps_raw_data/", "../aps_rds_data/", incremental = TRUE)
 
 user_extra_mappings <- function(lfs_file_column_names) {
 
