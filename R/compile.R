@@ -271,6 +271,8 @@ lfs_compile <- function(lfs_directory,
 
   lfs_data_frame[, `:=`(YEAR = as.integer(substr(QUARTER, 1, 4)))]
 
+  # TODO: For generality, this should only run conditional on the relevant variables being included
+  # E.g. UKDS version doesn't have SIC07/SIC92, so `annotate_industry` errors out.
   lfs_data_frame <- lfs_data_frame |>
     annotate_hiquald() |>
     annotate_occupation() |>
