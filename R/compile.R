@@ -229,7 +229,15 @@ lfs_compile <- function(lfs_directory,
     # If file is open, give warning and continue
     tryCatch(
       {
+        if (aps == 0) {
         readr::write_csv(variables_report, file = "lfs_variables_report.csv")
+        cli::cli_alert_info("Load LFS data with {.emph lfs <- lfs_load()}\n
+                             To check ONS definitions see {.emph lfs_variables_report.csv}\n")
+        } else {
+        readr::write_csv(variables_report, file = "aps_variables_report.csv")
+        cli::cli_alert_info("Load APS data with {.emph aps <- aps_load()}\n
+                             To check ONS definitions see {.emph aps_variables_report.csv}\n")
+        }
       },
       error = function(cond) {
         cli::cli_alert_danger("lfs_variables_report.csv is open - close it and rerun to get the report")
@@ -306,13 +314,6 @@ lfs_compile <- function(lfs_directory,
           paste0(Sys.getenv("DATA_DIRECTORY"), "/", save_name)
         )
 
-            if (aps == 0) {
-            cli::cli_alert_info("Load LFS data with {.emph lfs <- lfs_load()}\n
-                                 To check ONS definitions see {.emph lfs_variables_report.csv}\n")
-            } else {
-            cli::cli_alert_info("Load LFS data with {.emph aps <- aps_load()}\n
-                                 To check ONS definitions see {.emph lfs_variables_report.csv}\n")
-            }
       }
   }
 

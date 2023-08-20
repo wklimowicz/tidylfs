@@ -27,18 +27,18 @@ test_that("EARN06 matches raw data", {
     url_earn06 <- "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/grossweeklyearningsbyoccupationearn06"
     html_webpage <- httr::GET(url_earn06)
     html_webpage <- rawToChar(html_webpage$content)
-    download_link <- stringr::str_extract(html_webpage, "(https.*\\.xlsx)")
+    download_link <- stringr::str_extract(html_webpage, "(https.*\\.xls)")
 
     if (Sys.info()["sysname"] == "Windows") {
-      download.file(download_link, "earn06.xlsx", mode = "wb", quiet = TRUE)
+      download.file(download_link, "earn06.xls", mode = "wb", quiet = TRUE)
     } else {
-      download.file(download_link, "earn06.xlsx", quiet = TRUE)
+      download.file(download_link, "earn06.xls", quiet = TRUE)
     }
   })
 
 
-  earn06_ons <- readxl::read_xlsx(
-    path = "earn06.xlsx",
+  earn06_ons <- readxl::read_xls(
+    path = "earn06.xls",
     sheet = "Weekly SOC2010",
     .name_repair = "minimal"
   )
