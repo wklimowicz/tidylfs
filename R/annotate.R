@@ -158,7 +158,7 @@ annotate_occupation <- function(lfs) {
 
 
   lfs <- lfs[, SOC_TYPE := data.table::fcase(
-      YEAR >= 1992 & YEAR < 2000, "SOCMAIN",
+      YEAR >= 1992 & YEAR < 2001, "SOCMAIN",
       YEAR >= 2001 & YEAR < 2011, "SOC2KM",
       YEAR >= 2011 & YEAR < 2021, "SOC10M",
       YEAR >= 2021, "SOC20M"
