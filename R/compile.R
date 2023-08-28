@@ -128,28 +128,28 @@ lfs_tidy_file <- function(file,
 
 
 
-#' Compile to 1 R file
+#' Compile to single data.frame
 #'
 #' Compiles seperate fst files into one, picking relevant columns
 #'
 #' @param lfs_directory Path to directory with LFS files
+#' @param filter_years Vector of years to filter down to
 #' @param extra_mappings Either NULL (use default) or a file
 #' which has the custom mapping function.
 #' See
 #' \code{vignette("Adding_Variables", package = "tidylfs")}
 #' @param save_to_folder If TRUE, will save to the `DATA_DIRECTORY` environment variable if present
 #' @param save_variables_report Save a csv with the list of picked variables?
-#' @param fst_compress Compression level for fst
 #' @param aps Annual Population Survey flag, files called eg. "APS 2012.sav"
 #'
 #' @return Nothing - saves the fst file only.
 #'
 #' @export
 lfs_compile <- function(lfs_directory,
+                        filter_years = NULL,
                         extra_mappings = NULL,
                         save_to_folder = FALSE,
                         save_variables_report = TRUE,
-                        fst_compress = 50,
                         aps = FALSE) {
 
   # Get list of files ----------------------------------------
@@ -161,6 +161,16 @@ lfs_compile <- function(lfs_directory,
     invokeRestart("abort")
   }
 
+  # Filter down if filter_years isn't null
+  if (!is.null(filter_years)) {
+
+    # Collapse vector into numbers seperated by "|", then grepl
+    filtered_vector <- filter_years |>
+      paste(collapse = "|") |>
+      grep(files_in_directory)
+
+    files_in_directory <- files_in_directory[filtered_vector]
+  }
 
   cli::cli_alert_info("Found {length(files_in_directory)} file{?s} in directory")
 
@@ -173,6 +183,7 @@ lfs_compile <- function(lfs_directory,
   lfs_files <- files_in_directory[correct_file_index]
 
   cli_warn_files(correct_file_index, files_in_directory)
+
 
   # Get file extension
   file_format <- tools::file_ext(files_in_directory)[correct_file_index]
