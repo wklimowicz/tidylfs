@@ -2,19 +2,21 @@
 % Please edit documentation in R/compile.R
 \name{lfs_compile}
 \alias{lfs_compile}
-\title{Compile to 1 R file}
+\title{Compile to single data.frame}
 \usage{
 lfs_compile(
   lfs_directory,
+  filter_years = NULL,
   extra_mappings = NULL,
   save_to_folder = FALSE,
   save_variables_report = TRUE,
-  fst_compress = 50,
   aps = FALSE
 )
 }
 \arguments{
 \item{lfs_directory}{Path to directory with LFS files}
+
+\item{filter_years}{Vector of years to filter down to}
 
 \item{extra_mappings}{Either NULL (use default) or a file
 which has the custom mapping function.
@@ -24,8 +26,6 @@ See
 \item{save_to_folder}{If TRUE, will save to the \code{DATA_DIRECTORY} environment variable if present}
 
 \item{save_variables_report}{Save a csv with the list of picked variables?}
-
-\item{fst_compress}{Compression level for fst}
 
 \item{aps}{Annual Population Survey flag, files called eg. "APS 2012.sav"}
 }
