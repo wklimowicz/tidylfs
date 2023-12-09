@@ -25,10 +25,10 @@ extra_mappings <- function(lfs_file_column_names) {
 }
 
 # Convert all to RDS
-# lfs_convert("../lfs_raw_data/", "../lfs_rds_data")
+# lfs_convert("../data_lfs_raw/", "../data_lfs_rds")
 
 # # Compile into one dataset
-# lfs_compile("../lfs_rds_data/", extra_mappings = extra_mappings)
+# lfs_compile("../data_lfs_rds/", extra_mappings = extra_mappings)
 
 lfs <- lfs_load()
 setwd(here::here())

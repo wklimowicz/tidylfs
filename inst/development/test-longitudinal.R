@@ -5,9 +5,9 @@ load_all()
 
 setwd(here::here())
 
-lfs_convert("../lfs_raw_data/", "../lfs_rds_data/")
+lfs_convert("../data_lfs_raw/", "../data_lfs_rds/")
 
-lfs_compile("../lfs_rds_data/")
+lfs_compile("../data_lfs_rds/")
 
 tic()
 lfs <- lfs_load()

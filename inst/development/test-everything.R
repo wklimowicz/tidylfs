@@ -4,10 +4,10 @@ library(tidyverse)
 library(data.table)
 library(tictoc)
 
-lfs_convert("../lfs_raw_data/", "../lfs_rds_data/", incremental = TRUE)
+lfs_convert("../data_lfs_raw/", "../data_lfs_rds/", incremental = TRUE)
 
 # APS
-lfs_convert("../aps_raw_data/", "../aps_rds_data/", incremental = TRUE)
+lfs_convert("../data_aps_raw/", "../data_aps_rds/", incremental = TRUE)
 
 user_extra_mappings <- function(lfs_file_column_names) {
 
@@ -27,7 +27,7 @@ lfs_file_column_names
 }
 
 tic()
-lfs <- lfs_compile("../lfs_rds_data/",
+lfs <- lfs_compile("../data_lfs_rds/",
                    filter_years = 1980:2030,
                    save_to_folder = TRUE,
                    extra_mappings = user_extra_mappings)
@@ -36,7 +36,7 @@ toc()
 
 # Short version
 # tic()
-# lfs <- lfs_compile("../lfs_rds_data_test/", save_to_folder = TRUE)
+# lfs <- lfs_compile("../data_lfs_rds_test/", save_to_folder = TRUE)
 # toc()
 
 source("data-raw/create_test_data.R")
@@ -66,7 +66,7 @@ lfs[is.na(SUBJECT_DESCRIPTION) & !is.na(DEGREE_SUBJECT), .N, .(QUARTER)]
 
 
 tic()
-lfs <- lfs_compile("../lfs_rds_data_2020/")
+lfs <- lfs_compile("../data_lfs_rds_2020/")
 toc()
 
 lfs <- lfs_load()
