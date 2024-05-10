@@ -4,20 +4,20 @@
 #'
 #' @param dataset_id Name of ONS dataset
 #' @param timeseries_id Name of ONS time series
-#' @return A Jsonlite(?) object from the ONS API
+#' @return A list converted from json from the ONS API
 #' @keywords internal
-#' @examples
 #'
+#' @export
+#' @examplesIf interactive()
 #' # CPIH Inflation
-#' ons_time_series("MM23", "L55O") %>%
-#'   purrr::pluck("years") %>%
+#' ons_time_series("MM23", "L55O") |>
+#'   purrr::pluck("years") |>
 #'   dplyr::select(date, value)
 #'
 #' # Unemployment Rate
-#' ons_time_series("LMS", "MGSX") %>%
-#'   purrr::pluck("months") %>%
+#' ons_time_series("LMS", "MGSX") |>
+#'   purrr::pluck("months") |>
 #'   dplyr::select(date, value)
-#' @export
 ons_time_series <- function(dataset_id, timeseries_id) {
   api_endpoint <- "https://api.ons.gov.uk/"
 
