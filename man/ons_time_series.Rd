@@ -12,21 +12,22 @@ ons_time_series(dataset_id, timeseries_id)
 \item{timeseries_id}{Name of ONS time series}
 }
 \value{
-A Jsonlite(?) object from the ONS API
+A list converted from json from the ONS API
 }
 \description{
 Get a list with ONS API output
 }
 \examples{
-
+\dontshow{if (interactive()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 # CPIH Inflation
-ons_time_series("MM23", "L55O") \%>\%
-  purrr::pluck("years") \%>\%
+ons_time_series("MM23", "L55O") |>
+  purrr::pluck("years") |>
   dplyr::select(date, value)
 
 # Unemployment Rate
-ons_time_series("LMS", "MGSX") \%>\%
-  purrr::pluck("months") \%>\%
+ons_time_series("LMS", "MGSX") |>
+  purrr::pluck("months") |>
   dplyr::select(date, value)
+\dontshow{\}) # examplesIf}
 }
 \keyword{internal}

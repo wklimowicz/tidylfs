@@ -8,6 +8,7 @@
 ^lfs_variables_report\.csv$
 ^aps_variables_report\.csv$
 ^data-raw$
+^lfs_documentation$
 ^_pkgdown\.yml$
 ^docs$
 ^pkgdown$
