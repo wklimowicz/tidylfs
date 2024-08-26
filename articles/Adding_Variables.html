@@ -63,8 +63,8 @@
 </h2>
 <ul>
 <li>
-<p>tidylfs is designed to be easily extended. Adding variables and
-summaries is a few steps:</p>
+<code>tidylfs</code> is designed to be easily extended. Adding
+variables and summaries is a few steps:
 <ul>
 <li>Find the relevant variables in the <a href="https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/methodologies/labourforcesurveyuserguidance" class="external-link">ONS
 LFS User guidance</a>.</li>
@@ -73,14 +73,14 @@ LFS User guidance</a>.</li>
 <code>lfs_compile</code>.</li>
 </ul>
 </li>
-<li><p>For example, to add maritial status:</p></li>
+<li>For example, to add marital status:</li>
 </ul>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">user_extra_mappings</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">lfs_file_column_names</span><span class="op">)</span> <span class="op">{</span></span>
 <span></span>
 <span>  <span class="va">custom_variables</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/tribble.html" class="external-link">tribble</a></span><span class="op">(</span></span>
 <span>    <span class="op">~</span><span class="va">lfs_name</span>,       <span class="op">~</span><span class="va">new_name</span>,     <span class="op">~</span><span class="va">type</span>,</span>
-<span>    <span class="st">"MARSEX6"</span>, <span class="st">"SEX_AND_MARITIAL_STATUS"</span>, <span class="st">"factor"</span></span>
+<span>    <span class="st">"MARSEX6"</span>, <span class="st">"SEX_AND_MARITAL_STATUS"</span>, <span class="st">"factor"</span></span>
 <span>    <span class="op">)</span></span>
 <span></span>
 <span>  <span class="kw"><a href="https://rdrr.io/r/base/function.html" class="external-link">return</a></span><span class="op">(</span><span class="va">custom_variables</span><span class="op">)</span></span>
@@ -103,7 +103,7 @@ and <code>DEGCLS</code> before then. This code imports those as a factor
 <span></span>
 <span>  <span class="va">custom_variables</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/tribble.html" class="external-link">tribble</a></span><span class="op">(</span></span>
 <span>    <span class="op">~</span><span class="va">lfs_name</span>,       <span class="op">~</span><span class="va">new_name</span>,     <span class="op">~</span><span class="va">type</span>,</span>
-<span>    <span class="st">"MARSEX6"</span>, <span class="st">"SEX_AND_MARITIAL_STATUS"</span>, <span class="st">"factor"</span>,</span>
+<span>    <span class="st">"MARSEX6"</span>, <span class="st">"SEX_AND_MARITAL_STATUS"</span>, <span class="st">"factor"</span>,</span>
 <span>    <span class="va">degree_class</span>, <span class="st">"DEGREE_CLASS"</span>, <span class="st">"factor"</span></span>
 <span>    <span class="op">)</span></span>
 <span></span>
