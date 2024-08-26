@@ -5,7 +5,7 @@
 
 <!-- badges: start -->
 
-[![.github/workflows/R-CMD-check](https://github.com/wklimowicz/tidylfs/actions/workflows/.github/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/wklimowicz/tidylfs/actions/workflows/.github/workflows/R-CMD-check.yaml)
+[![R-CMD-check](https://github.com/wklimowicz/tidylfs/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/wklimowicz/tidylfs/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 ## Installation
@@ -46,16 +46,16 @@ lfs <- lfs_compile(lfs_directory = "lfs_rds_folder/")
 
 To reproduce official ONS publications, such as
 
--   Unemployent [UNEM01
-    NSA](https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/unemployment/datasets/unemploymentbyageanddurationnotseasonallyadjustedunem01nsa)
+- Unemployent [UNEM01
+  NSA](https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/unemployment/datasets/unemploymentbyageanddurationnotseasonallyadjustedunem01nsa)
 
 ``` r
 lfs %>%
     lfs_summarise_unemployment(QUARTER)
 ```
 
--   Salary by occupation
-    [EARN06](https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/grossweeklyearningsbyoccupationearn06)
+- Salary by occupation
+  [EARN06](https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/grossweeklyearningsbyoccupationearn06)
 
 ``` r
 lfs %>%
@@ -68,7 +68,7 @@ lfs %>%
 
 Extending them is easy:
 
--   Unemployment by quarter, sex, and age category
+- Unemployment by quarter, sex, and age category
 
 ``` r
 lfs %>%

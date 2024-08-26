@@ -6,9 +6,12 @@ on:
   pull_request:
     branches: [main, master]
   schedule:
-    - cron: "0 0 * * 2" # Once every 2 weeks on monday
+      - cron: "0 0 1 * *" # Once a month, to catch bugs with package updates
 
-name: R-CMD-check
+
+name: R-CMD-check.yaml
+
+permissions: read-all
 
 jobs:
   R-CMD-check:
@@ -31,7 +34,7 @@ jobs:
       R_KEEP_PKG_SOURCE: yes
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - uses: r-lib/actions/setup-pandoc@v2
 
@@ -49,3 +52,4 @@ jobs:
       - uses: r-lib/actions/check-r-package@v2
         with:
           upload-snapshots: true
+          build_args: 'c("--no-manual","--compact-vignettes=gs+qpdf")'

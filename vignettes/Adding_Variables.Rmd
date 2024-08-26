@@ -17,21 +17,19 @@ knitr::opts_chunk$set(
 
 # Overview
 
-* tidylfs is designed to be easily extended. Adding variables and summaries is a few steps:
-
+* `tidylfs` is designed to be easily extended. Adding variables and summaries is a few steps:
     * Find the relevant variables in the [ONS LFS User guidance](https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/methodologies/labourforcesurveyuserguidance).
     * Add them to the function below.
     * Load the function, and pass it as an argument to `lfs_compile`.
 
-
-* For example, to add maritial status:
+* For example, to add marital status:
 
 ```{r}
 user_extra_mappings <- function(lfs_file_column_names) {
 
   custom_variables <- tibble::tribble(
     ~lfs_name,       ~new_name,     ~type,
-    "MARSEX6", "SEX_AND_MARITIAL_STATUS", "factor"
+    "MARSEX6", "SEX_AND_MARITAL_STATUS", "factor"
     )
 
   return(custom_variables)
@@ -52,7 +50,7 @@ user_extra_mappings <- function(lfs_file_column_names) {
 
   custom_variables <- tibble::tribble(
     ~lfs_name,       ~new_name,     ~type,
-    "MARSEX6", "SEX_AND_MARITIAL_STATUS", "factor",
+    "MARSEX6", "SEX_AND_MARITAL_STATUS", "factor",
     degree_class, "DEGREE_CLASS", "factor"
     )
 

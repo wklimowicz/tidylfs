@@ -21,7 +21,7 @@ As part of the QA checks for this package there is code to replicate official ON
 
 ### EARN04
 
-[Ons Publication](https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/grossweeklyearningsoffulltimeemployeesearn04)
+[ONS Publication](https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/grossweeklyearningsoffulltimeemployeesearn04)
 
 ```{r}
   lfs <- lfs_load()
@@ -34,7 +34,7 @@ As part of the QA checks for this package there is code to replicate official ON
 
 ### EARN06
 
-[Ons Publication](https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/grossweeklyearningsbyoccupationearn06)
+[ONS Publication](https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/grossweeklyearningsbyoccupationearn06)
 
 ```{r}
   earn06 <- lfs %>%
@@ -51,7 +51,7 @@ As part of the QA checks for this package there is code to replicate official ON
 
 ### EARN07
 
-[Ons Publication](https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/grossweeklyearningsbyindustryearn07)
+[ONS Publication](https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/grossweeklyearningsbyindustryearn07)
 
 Currently only accurate from 2009 onwards
 
@@ -91,7 +91,7 @@ Currently only accurate from 2009 onwards
 
 ### UNEM01 NSA
 
-[Ons Publication](https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/unemployment/datasets/unemploymentbyageanddurationnotseasonallyadjustedunem01nsa)
+[ONS Publication](https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/unemployment/datasets/unemploymentbyageanddurationnotseasonallyadjustedunem01nsa)
 
 Accurate from 1995 onwards, also replicates sex splits when adding `SEX` as a grouping variable.
 
@@ -108,7 +108,7 @@ Accurate from 1995 onwards, also replicates sex splits when adding `SEX` as a gr
 
 ### HOUR01 NSA
 
-[Ons Publication](https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/actualweeklyhoursworkednotseasonallyadjustedhour01nsa)
+[ONS Publication](https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/actualweeklyhoursworkednotseasonallyadjustedhour01nsa)
 
 ```{r}
   hour01 <- lfs %>%
