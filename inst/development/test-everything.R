@@ -4,7 +4,10 @@ library(tidyverse)
 library(data.table)
 library(tictoc)
 
-lfs_convert("../data_lfs_raw/", "../data_lfs_rds/", incremental = TRUE)
+raw_folder <- Sys.getenv("LFS_RAW_DIRECTORY")
+rds_folder <- Sys.getenv("LFS_DIRECTORY")
+
+lfs_convert(raw_folder, rds_folder, incremental = TRUE)
 
 # APS
 lfs_convert("../data_aps_raw/", "../data_aps_rds/", incremental = TRUE)
@@ -27,7 +30,7 @@ lfs_file_column_names
 }
 
 tic()
-lfs <- lfs_compile("../data_lfs_rds/",
+lfs <- lfs_compile(rds_folder,
                    filter_years = 1980:2030,
                    save_to_folder = TRUE,
                    extra_mappings = user_extra_mappings)

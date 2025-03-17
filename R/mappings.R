@@ -21,7 +21,6 @@ pick_var <- function(vector_of_names, column_names) {
 }
 
 lfs_default_mappings <- function(cols) {
-
   # Choose variables in order of priority when found
 
   # Core - INECACR is older, but replicates ONS numbers more precisely in 2000's
@@ -31,12 +30,14 @@ lfs_default_mappings <- function(cols) {
   ilodef <- pick_var(c("ILODEFR", "ILODEFA"), cols)
 
   weight_income <- pick_var(
-    c("PIWT22",
+    c(
+      "PIWT24",
+      "PIWT22",
       "PIWT20",
       "PIWT18",
       "PIWT14",
-      # "PWT07", 
-      # The ONS doesn't include an Income weighting in 2001 Q1. 
+      # "PWT07",
+      # The ONS doesn't include an Income weighting in 2001 Q1.
       # Replacing it with the non-income weight causes a bug because of duplicate
       # variable names in this script.
       # The ONS omits 2001 Q1 in official pay publications (eg. EARN07)
@@ -46,12 +47,16 @@ lfs_default_mappings <- function(cols) {
   )
 
   weight <- pick_var(
-   c("PWT22",
-     "PWT20",
-     "PWT18",
-     "PWT14",
-     "PWT07"),
-   cols)
+    c(
+      "PWT24",
+      "PWT22",
+      "PWT20",
+      "PWT18",
+      "PWT14",
+      "PWT07"
+    ),
+    cols
+  )
 
   # Education
   cured <- pick_var(c("CURED8", "CURED"), cols)
