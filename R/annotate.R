@@ -92,7 +92,9 @@ annotate_degree71 <- function(degree_name, YEAR) {
 
 annotate_hiquald <- function(lfs) {
 
-    names_vector <- lfs[, names(.SD), .SDcols = patterns("DEGREE7")]
+    if (!("HIQUALD" %in% colnames(lfs))) {
+      return(lfs)
+    }
 
     lfs[, HIQUALD := data.table::fcase(
       HIQUALD == 1, "Degree or equivalent",
@@ -103,8 +105,20 @@ annotate_hiquald <- function(lfs) {
       HIQUALD == 6, "No qualification",
       HIQUALD == 7, "Don't know"
       )][, HIQUALD := forcats::as_factor(HIQUALD)
-       ][, (names_vector) := lapply(.SD, annotate_degree71, YEAR), .SDcols = patterns("DEGREE7")
-       ][, (names_vector) := lapply(.SD, forcats::as_factor), .SDcols = patterns("DEGREE7")]
+       ]
+
+}
+
+annotate_degree7 <- function(lfs) {
+
+    if (!("DEGREE7" %in% colnames(lfs))) {
+      return(lfs)
+    }
+
+    names_vector <- lfs[, names(.SD), .SDcols = patterns("DEGREE7")]
+
+    lfs[, (names_vector) := lapply(.SD, annotate_degree71, YEAR), .SDcols = patterns("DEGREE7")
+         ][, (names_vector) := lapply(.SD, forcats::as_factor), .SDcols = patterns("DEGREE7")]
 
     return(lfs)
 
@@ -188,6 +202,10 @@ annotate_occupation <- function(lfs) {
 }
 
 annotate_industry <- function(lfs) {
+
+  if (!any(c("SIC92", "SIC07") %in% colnames(lfs))) {
+    return(lfs)
+  }
 
   # Find correct coding file
   read_industry_coding <- function(sic) {

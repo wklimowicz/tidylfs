@@ -277,6 +277,7 @@ lfs_compile <- function(lfs_directory,
 
   lfs_data_frame <- lfs_data_frame |>
     annotate_hiquald() |>
+    annotate_degree7() |>
     annotate_occupation() |>
     create_HSERIAL()
     # annotate_industry() |>
@@ -294,6 +295,7 @@ lfs_compile <- function(lfs_directory,
   # E.g. UKDS version doesn't have SIC07/SIC92, so `annotate_industry` errors out.
   lfs_data_frame <- lfs_data_frame |>
     annotate_hiquald() |>
+    annotate_degree7() |>
     annotate_occupation() |>
     annotate_industry() |>
     annotate_economic_activity() |>
