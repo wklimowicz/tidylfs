@@ -203,7 +203,7 @@ annotate_occupation <- function(lfs) {
 
 annotate_industry <- function(lfs) {
 
-  if (!any(c("SIC92", "SIC07") %in% colnames(lfs))) {
+  if (!any(c("INDUSTRY") %in% colnames(lfs))) {
     return(lfs)
   }
 
