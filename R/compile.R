@@ -279,7 +279,7 @@ lfs_compile <- function(lfs_directory,
     annotate_hiquald() |>
     annotate_degree7() |>
     annotate_occupation() |>
-    annotate_economic_activity(aps = TRUE)
+    annotate_economic_activity(aps = TRUE) |>
     create_HSERIAL()
     # annotate_industry() |>
 
