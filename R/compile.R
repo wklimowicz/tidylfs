@@ -176,7 +176,7 @@ lfs_compile <- function(lfs_directory,
 
   correct_file_index <- stringr::str_detect(
     files_in_directory,
-    "^\\d{4}( |_)Q\\d\\.(sav|csv|Rds)$|APS \\d{4}.(sav|csv|Rds)$|\\d{4} APS.(sav|csv|Rds)"
+    "^\\d{4}( |_)Q\\d\\.(sav|csv|Rds)$|APS \\d{4}.(sav|csv|Rds)$"
   )
 
   # Take only files which match "4 digits Q digit" pattern
