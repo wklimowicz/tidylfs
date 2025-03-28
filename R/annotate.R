@@ -254,7 +254,7 @@ annotate_industry <- function(lfs) {
 }
 
 
-annotate_economic_activity <- function(lfs) {
+annotate_economic_activity <- function(lfs, aps = FALSE) {
 
   # Find correct coding file
   read_economic_activity <- function(inecac) {
@@ -275,10 +275,17 @@ annotate_economic_activity <- function(lfs) {
     dplyr::rename(INECAC05 = "INECAC") |>
     data.table::setDT()
 
-lfs[, INECAC_VAR := data.table::fcase(
-      QUARTER <= "2005 Q1", "INECACR",
-      QUARTER > "2005 Q1", "INECAC05"
-    )]
+  if (aps == TRUE) {
+    lfs[, INECAC_VAR := data.table::fcase(
+          YEAR <= 2005, "INECACR",
+          YEAR > 2005, "INECAC05"
+        )]
+  } else {
+    lfs[, INECAC_VAR := data.table::fcase(
+          QUARTER <= "2005 Q1", "INECACR",
+          QUARTER > "2005 Q1", "INECAC05"
+        )]
+  }
 
 lfs[economic_activity_coding,
     on = c("INECAC_VAR", "INECAC05"),
