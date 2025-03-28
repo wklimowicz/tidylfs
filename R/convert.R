@@ -52,7 +52,7 @@ lfs_convert <- function(lfs_directory,
 
   correct_file_index <- stringr::str_detect(
     files_in_directory,
-    "^\\d{4}( |_)Q\\d\\.(sav|csv)$|^APS \\d{4}.(sav|csv)$"
+    "^\\d{4}( |_)Q\\d\\.(sav|csv)$|^APS \\d{4}\\.(sav|csv)$|^\\d{4} APS\\.sav$"
   )
 
   # Take only files which match "4 digits Q digit" pattern
