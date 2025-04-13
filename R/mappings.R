@@ -14,7 +14,7 @@ pick_var <- function(vector_of_names, column_names) {
   index <- vector_of_names %in% column_names
 
   if (sum(index) > 0) {
-    vector_of_names[which.max(index == T)]
+    vector_of_names[which.max(index == TRUE)]
   } else {
     NA_character_
   }

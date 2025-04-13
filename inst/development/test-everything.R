@@ -1,4 +1,3 @@
-setwd(here::here())
 load_all()
 library(tidyverse)
 library(data.table)

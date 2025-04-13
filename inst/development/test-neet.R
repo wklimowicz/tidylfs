@@ -31,8 +31,6 @@ extra_mappings <- function(lfs_file_column_names) {
 # lfs_compile("../data_lfs_rds/", extra_mappings = extra_mappings)
 
 lfs <- lfs_load()
-setwd(here::here())
-
 
 # Set up NEET Definitions ---------------------------------------------
 

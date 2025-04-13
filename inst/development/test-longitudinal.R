@@ -3,8 +3,6 @@ library(tictoc)
 library(data.table)
 load_all()
 
-setwd(here::here())
-
 lfs_convert("../data_lfs_raw/", "../data_lfs_rds/")
 
 lfs_compile("../data_lfs_rds/")
