@@ -11,22 +11,22 @@ One way to quality assure the data compilation is to attempt to replicate offici
 
 # Salary
 
-### EARN04
+## EARN04
 
 [ONS Publication](https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/grossweeklyearningsoffulltimeemployeesearn04)
 
 ```r
 library(tidyverse)
 
-earn04 <- lfs %>%
-  filter(FTPTWK == "Full-time") %>%
+earn04 <- lfs |>
+  filter(FTPTWK == "Full-time") |>
   filter(
     WEIGHT_INCOME > 0,
     HOURPAY <= 100,
     HOURPAY >= 0,
     INECAC05 == "Employee"
-  ) %>%
-  group_by(QUARTER) %>%
+  ) |>
+  group_by(QUARTER) |>
   summarize(
     n = n(),
     median_weekly_pay = matrixStats::weightedMedian(
@@ -44,29 +44,29 @@ earn04 <- lfs %>%
     paidweighthrly = sum(HOURPAY * WEIGHT_INCOME, na.rm = TRUE),
     paidweighthrly2 = sum(WEIGHT_INCOME, na.rm = TRUE),
     .groups = "drop"
-  ) %>%
+  ) |>
   mutate(
     mean_weekly_pay = paidweight / (paidweight2),
     mean_hourly_pay = paidweighthrly / (paidweighthrly2)
-  ) %>%
+  ) |>
   select(QUARTER, mean_weekly_pay, median_weekly_pay)
 ```
 
-### EARN06
+## EARN06
 
 [ONS Publication](https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/grossweeklyearningsbyoccupationearn06)
 
 ```r
-earn06 <- lfs %>%
-  filter(FTPTWK == "Full-time") %>%
-  filter(!is.na(OCCUPATION_MAJOR)) %>%
+earn06 <- lfs |>
+  filter(FTPTWK == "Full-time") |>
+  filter(!is.na(OCCUPATION_MAJOR)) |>
   filter(
     WEIGHT_INCOME > 0,
     HOURPAY <= 100,
     HOURPAY >= 0,
     INECAC05 == "Employee"
-  ) %>%
-  group_by(QUARTER, OCCUPATION_MAJOR) %>%
+  ) |>
+  group_by(QUARTER, OCCUPATION_MAJOR) |>
   summarize(
     n = n(),
     median_weekly_pay = matrixStats::weightedMedian(
@@ -84,53 +84,53 @@ earn06 <- lfs %>%
     paidweighthrly = sum(HOURPAY * WEIGHT_INCOME, na.rm = TRUE),
     paidweighthrly2 = sum(WEIGHT_INCOME, na.rm = TRUE),
     .groups = "drop"
-  ) %>%
+  ) |>
   mutate(
     mean_weekly_pay = paidweight / (paidweight2),
     mean_hourly_pay = paidweighthrly / (paidweighthrly2)
-  ) %>%
+  ) |>
   pivot_wider(
     id_cols = QUARTER,
     names_from = OCCUPATION_MAJOR,
-    values_from = "mean_weekly_pay"
+    values_from = mean_weekly_pay
   )
 ```
 
 
-### EARN07
+## EARN07
 
-[ONS Publication](https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/grossweeklyearningsbyindustryearn07). Currently only accurate from 2009 onwards.
+[ONS Publication](https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/grossweeklyearningsbyindustryearn07). Currently only accurate from 2010 onwards.
 
 ```r
-earn07 <- lfs %>%
-  filter(YEAR > 2009) %>%
-  filter(!is.na(INDUSTRY)) %>%
+earn07 <- lfs |>
+  filter(YEAR >= 2010) |>
+  filter(!is.na(INDUSTRY)) |>
   mutate(GROUPED_INDUSTRY = case_when(
-    substr(INDUSTRY, 1, 1) == "A" ~ "A",
-    substr(INDUSTRY, 1, 1) %in% c("B", "D", "E") ~ "BDE",
-    substr(INDUSTRY, 1, 1) %in% "C" ~ "C",
-    substr(INDUSTRY, 1, 1) %in% "F" ~ "F",
-    substr(INDUSTRY, 1, 1) %in% "G" ~ "G",
-    substr(INDUSTRY, 1, 1) %in% "H" ~ "H",
-    substr(INDUSTRY, 1, 1) %in% "I" ~ "I",
-    substr(INDUSTRY, 1, 1) %in% "J" ~ "J",
-    substr(INDUSTRY, 1, 1) %in% c("K", "L") ~ "KL",
-    substr(INDUSTRY, 1, 1) %in% "M" ~ "M",
-    substr(INDUSTRY, 1, 1) %in% "N" ~ "N",
-    substr(INDUSTRY, 1, 1) %in% "O" ~ "O",
-    substr(INDUSTRY, 1, 1) %in% "P" ~ "P",
-    substr(INDUSTRY, 1, 1) %in% "Q" ~ "Q",
-    substr(INDUSTRY, 1, 1) %in% c("R", "S", "T") ~ "RST"
-  )) %>%
-  filter(!is.na(GROUPED_INDUSTRY)) %>%
-  filter(FTPTWK == "Full-time") %>%
+    substr(INDUSTRY_MAJOR, 1, 1) == "A" ~ "A",
+    substr(INDUSTRY_MAJOR, 1, 1) %in% c("B", "D", "E") ~ "BDE",
+    substr(INDUSTRY_MAJOR, 1, 1) == "C" ~ "C",
+    substr(INDUSTRY_MAJOR, 1, 1) == "F" ~ "F",
+    substr(INDUSTRY_MAJOR, 1, 1) == "G" ~ "G",
+    substr(INDUSTRY_MAJOR, 1, 1) == "H" ~ "H",
+    substr(INDUSTRY_MAJOR, 1, 1) == "I" ~ "I",
+    substr(INDUSTRY_MAJOR, 1, 1) == "J" ~ "J",
+    substr(INDUSTRY_MAJOR, 1, 1) %in% c("K", "L") ~ "KL",
+    substr(INDUSTRY_MAJOR, 1, 1) == "M" ~ "M",
+    substr(INDUSTRY_MAJOR, 1, 1) == "N" ~ "N",
+    substr(INDUSTRY_MAJOR, 1, 1) == "O" ~ "O",
+    substr(INDUSTRY_MAJOR, 1, 1) == "P" ~ "P",
+    substr(INDUSTRY_MAJOR, 1, 1) == "Q" ~ "Q",
+    substr(INDUSTRY_MAJOR, 1, 1) %in% c("R", "S", "T") ~ "RST"
+  )) |>
+  filter(!is.na(GROUPED_INDUSTRY)) |>
+  filter(FTPTWK == "Full-time") |>
   filter(
     WEIGHT_INCOME > 0,
     HOURPAY <= 100,
     HOURPAY >= 0,
     INECAC05 == "Employee"
-  ) %>%
-  group_by(QUARTER, GROUPED_INDUSTRY) %>%
+  ) |>
+  group_by(QUARTER, GROUPED_INDUSTRY) |>
   summarize(
     n = n(),
     median_weekly_pay = matrixStats::weightedMedian(
@@ -148,12 +148,12 @@ earn07 <- lfs %>%
     paidweighthrly = sum(HOURPAY * WEIGHT_INCOME, na.rm = TRUE),
     paidweighthrly2 = sum(WEIGHT_INCOME, na.rm = TRUE),
     .groups = "drop"
-  ) %>%
+  ) |>
   mutate(
     mean_weekly_pay = paidweight / (paidweight2),
     mean_hourly_pay = paidweighthrly / (paidweighthrly2)
-  ) %>%
-  select(QUARTER, mean_weekly_pay, median_weekly_pay)
+  ) |>
+  select(QUARTER, GROUPED_INDUSTRY, mean_weekly_pay, median_weekly_pay) |>
   tidyr::pivot_wider(
     id_cols = QUARTER,
     names_from = GROUPED_INDUSTRY,
@@ -163,33 +163,31 @@ earn07 <- lfs %>%
 
 # Unemployment
 
-### UNEM01 NSA
+## UNEM01 NSA
 
-[ONS Publication](https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/unemployment/datasets/unemploymentbyageanddurationnotseasonallyadjustedunem01nsa)
-
-Accurate from 1995 onwards.
+[ONS Publication](https://www.ons.gov.uk/employmentandlabourmarket/peoplenotinwork/unemployment/datasets/unemploymentbyageanddurationnotseasonallyadjustedunem01nsa). Accurate from 1995 onwards.
 
 ```r
-unem01 <- lfs %>%
-  filter(YEAR > 1995) %>%
+unem01 <- lfs |>
+  filter(YEAR > 1995) |>
   filter(
     WEIGHT > 0,
     !is.na(ILODEFR)
-  ) %>%
-  group_by(QUARTER) %>%
+  ) |>
+  group_by(QUARTER) |>
   summarize(
     n = n(),
     employed = sum((ILODEFR == "In employment") * WEIGHT, na.rm = TRUE),
     unemployed = sum((ILODEFR == "ILO unemployed") * WEIGHT, na.rm = TRUE),
     inactive = sum((ILODEFR == "Inactive") * WEIGHT, na.rm = TRUE),
     .groups = "drop"
-  ) %>%
+  ) |>
   mutate(
     unemployed_percentage = unemployed / (employed + unemployed),
     employed_percentage = employed / (employed + unemployed + inactive),
     inactive_percentage = inactive / (employed + unemployed + inactive),
-  ) %>%
-  select(QUARTER, unemployed_percentage) %>%
-  mutate(unemployed_percentage = unemployed_percentage * 100) %>%
+  ) |>
+  select(QUARTER, unemployed_percentage) |>
+  mutate(unemployed_percentage = unemployed_percentage * 100) |>
   filter(!is.na(unemployed_percentage))
 ```
