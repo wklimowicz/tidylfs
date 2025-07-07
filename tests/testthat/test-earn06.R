@@ -1,17 +1,40 @@
 skip_on_ci()
 
-
-
 test_that("EARN06 matches raw data", {
 
   # From Raw LFS Data --------------------
-
   earn06 <- readRDS("data/test-e1.Rds")
 
   earn06 <- earn06 %>%
     dplyr::filter(FTPTWK == "Full-time") %>%
     dplyr::filter(!is.na(OCCUPATION_MAJOR)) %>%
-    lfs_summarise_salary(QUARTER, OCCUPATION_MAJOR) %>%
+    dplyr::filter(FTPTWK == "Full-time" & !is.na(OCCUPATION_MAJOR)) |>
+    dplyr::summarise(
+      n = dplyr::n(),
+      median_weekly_pay = matrixStats::weightedMedian(
+        GRSSWK,
+        w = WEIGHT_INCOME,
+        na.rm = TRUE
+      ),
+      median_hourly_pay = matrixStats::weightedMedian(
+        HOURPAY,
+        w = WEIGHT_INCOME,
+        na.rm = TRUE
+      ),
+      paidweight = sum(GRSSWK * WEIGHT_INCOME, na.rm = TRUE),
+      paidweight2 = sum(WEIGHT_INCOME, na.rm = TRUE),
+      paidweighthrly = sum(HOURPAY * WEIGHT_INCOME, na.rm = TRUE),
+      paidweighthrly2 = sum(WEIGHT_INCOME, na.rm = TRUE),
+    .by = c("QUARTER", "OCCUPATION_MAJOR")
+  ) |>
+  dplyr::mutate(
+    mean_weekly_pay = paidweight / (paidweight2),
+    mean_hourly_pay = paidweighthrly / (paidweighthrly2),
+    paidweight = NULL,
+    paidweighthrly = NULL,
+    paidweight2 = NULL,
+    paidweighthrly2 = NULL
+  ) |>
     dplyr::arrange(OCCUPATION_MAJOR) %>%
     # dplyr::mutate(QUARTER = "Apr-Jun 2021") %>%
     tidyr::pivot_wider(
@@ -22,7 +45,6 @@ test_that("EARN06 matches raw data", {
 
 
   # From ONS EARN06 Publication --------------------
-
   withr::local_file(list("earn06.xlsx"), {
     url_earn06 <- "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/grossweeklyearningsbyoccupationearn06"
     html_webpage <- httr::GET(url_earn06)
@@ -67,7 +89,6 @@ test_that("EARN06 matches raw data", {
     dplyr::filter(QUARTER %in% unique(earn06_ons$QUARTER))
 
   earn06_ons <- stats::setNames(earn06_ons, c("QUARTER", 1:9))
-
 
   expect_equal(earn06, earn06_ons, tolerance = 1e-3)
   expect_gt(nrow(earn06), 1)

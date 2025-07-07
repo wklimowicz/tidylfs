@@ -3,8 +3,6 @@ skip_on_ci()
 
 test_that("HOUR01 matches raw data", {
 
-
-
   # From Raw LFS Data --------------------
   hour01_raw <- readRDS("data/test-h1.Rds")
 
@@ -18,10 +16,7 @@ test_that("HOUR01 matches raw data", {
       values_from = hours
     )
 
-
-
   # From ONS HOUR01 Publication --------------------
-
   withr::local_file(list("hour01.xls"), {
     url_hour01 <- "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/actualweeklyhoursworkednotseasonallyadjustedhour01nsa"
     html_webpage <- httr::GET(url_hour01)

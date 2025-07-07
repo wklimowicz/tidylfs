@@ -295,22 +295,21 @@ lfs_compile <- function(directory,
 
 
   # Assign annotations to columns
-  if (aps == TRUE) {
+  if (dataset == "aps") {
 
-  lfs_data_frame <- data.table::rbindlist(lfs_data_frame, idcol = "YEAR", fill = TRUE)
+    lfs_data_frame <- data.table::rbindlist(lfs_data_frame, idcol = "YEAR", fill = TRUE)
 
-  lfs_data_frame[, `:=`(YEAR = as.integer(substr(YEAR, 5, 8)))]
+    lfs_data_frame[, `:=`(YEAR = as.integer(substr(YEAR, 5, 8)))]
 
+    lfs_data_frame <- lfs_data_frame |>
+      annotate_hiquald() |>
+      annotate_degree7() |>
+      annotate_occupation() |>
+      annotate_economic_activity(aps = TRUE) |>
+      create_HSERIAL()
+      # annotate_industry() |>
 
-  lfs_data_frame <- lfs_data_frame |>
-    annotate_hiquald() |>
-    annotate_degree7() |>
-    annotate_occupation() |>
-    annotate_economic_activity(aps = TRUE) |>
-    create_HSERIAL()
-    # annotate_industry() |>
-
-  data.table::setcolorder(lfs_data_frame, c("YEAR", "CASENO"))
+    data.table::setcolorder(lfs_data_frame, c("YEAR", "CASENO"))
 
   } else {
 

@@ -9,14 +9,22 @@ test_that("UNEM01 matches raw data", {
   # variable has been introduced which causes small diff.
   unem01_raw <- readRDS("data/test-u1.Rds")
 
-
   # All people ----------------------------------------
-
-  unem01 <- unem01_raw %>%
-    dplyr::filter(YEAR > 1994) %>%
-    lfs_summarise_unemployment(QUARTER) %>%
+  unem01 <- data.table::as.data.table(unem01_raw)[YEAR > 1994 & WEIGHT > 0 & !is.na(ILODEFR), 
+    list(n = .N,
+      employed = sum((ILODEFR == "In employment") * WEIGHT, na.rm = TRUE),
+      unemployed = sum((ILODEFR == "ILO unemployed") * WEIGHT, na.rm = TRUE),
+      inactive = sum((ILODEFR == "Inactive") * WEIGHT, na.rm = TRUE)),
+    by = QUARTER
+  ][, `:=`(
+    unemployed_percentage = (unemployed / (employed + unemployed)) * 100,
+    employed_percentage = employed / (employed + unemployed + inactive),
+    inactive_percentage = inactive / (employed + unemployed + inactive),
+    unemployed = NULL,
+    employed = NULL,
+    inactive = NULL)
+  ][] %>%
     dplyr::select(QUARTER, unemployed_percentage) %>%
-    dplyr::mutate(unemployed_percentage = unemployed_percentage * 100) %>%
     dplyr::filter(!is.na(unemployed_percentage))
 
 
@@ -64,12 +72,21 @@ test_that("UNEM01 matches raw data", {
 
   # Men ----------------------------------------
 
-  unem01 <- unem01_raw %>%
-    dplyr::filter(YEAR %in% c(1995:2023)) %>%
-    dplyr::filter(SEX == "Male") %>%
-    lfs_summarise_unemployment(QUARTER) %>%
+  unem01 <- data.table::as.data.table(unem01_raw)[YEAR %in% c(1995:2023) & SEX == "Male" & WEIGHT > 0 & !is.na(ILODEFR), 
+    list(n = .N,
+      employed = sum((ILODEFR == "In employment") * WEIGHT, na.rm = TRUE),
+      unemployed = sum((ILODEFR == "ILO unemployed") * WEIGHT, na.rm = TRUE),
+      inactive = sum((ILODEFR == "Inactive") * WEIGHT, na.rm = TRUE)),
+    by = QUARTER
+  ][, `:=`(
+    unemployed_percentage = (unemployed / (employed + unemployed)) * 100,
+    employed_percentage = employed / (employed + unemployed + inactive),
+    inactive_percentage = inactive / (employed + unemployed + inactive),
+    unemployed = NULL,
+    employed = NULL,
+    inactive = NULL)
+  ][] %>%
     dplyr::select(QUARTER, unemployed_percentage) %>%
-    dplyr::mutate(unemployed_percentage = unemployed_percentage * 100) %>%
     dplyr::filter(!is.na(unemployed_percentage))
 
 
@@ -102,12 +119,21 @@ test_that("UNEM01 matches raw data", {
 
   # Women ----------------------------------------
 
-  unem01 <- unem01_raw %>%
-    dplyr::filter(YEAR %in% c(1995:2023)) %>%
-    dplyr::filter(SEX == "Female") %>%
-    lfs_summarise_unemployment(QUARTER) %>%
+  unem01 <- data.table::as.data.table(unem01_raw)[YEAR %in% c(1995:2023) & SEX == "Female" & WEIGHT > 0 & !is.na(ILODEFR), 
+    list(n = .N,
+      employed = sum((ILODEFR == "In employment") * WEIGHT, na.rm = TRUE),
+      unemployed = sum((ILODEFR == "ILO unemployed") * WEIGHT, na.rm = TRUE),
+      inactive = sum((ILODEFR == "Inactive") * WEIGHT, na.rm = TRUE)),
+    by = QUARTER
+  ][, `:=`(
+    unemployed_percentage = (unemployed / (employed + unemployed)) * 100,
+    employed_percentage = employed / (employed + unemployed + inactive),
+    inactive_percentage = inactive / (employed + unemployed + inactive),
+    unemployed = NULL,
+    employed = NULL,
+    inactive = NULL)
+  ][] %>%
     dplyr::select(QUARTER, unemployed_percentage) %>%
-    dplyr::mutate(unemployed_percentage = unemployed_percentage * 100) %>%
     dplyr::filter(!is.na(unemployed_percentage))
 
 

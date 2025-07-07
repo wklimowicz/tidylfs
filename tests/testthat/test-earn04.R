@@ -1,16 +1,34 @@
 skip_on_ci()
 
-
-
 test_that("EARN04 matches raw data", {
-
   # From Raw LFS Data --------------------
 
   earn04 <- readRDS("data/test-e1.Rds")
 
-  earn04 <- earn04 %>%
-    dplyr::filter(FTPTWK == "Full-time") %>%
-    lfs_summarise_salary(QUARTER) %>%
+  earn04 <- data.table::as.data.table(earn04)[FTPTWK == "Full-time" &
+    WEIGHT_INCOME > 0 & HOURPAY <= 100 & HOURPAY >= 0 & INECAC05 == "Employee",
+    list(n = .N,
+      median_weekly_pay = matrixStats::weightedMedian(GRSSWK,
+        w = WEIGHT_INCOME,
+        na.rm = TRUE
+      ),
+      median_hourly_pay = matrixStats::weightedMedian(HOURPAY,
+        w = WEIGHT_INCOME,
+        na.rm = TRUE
+      ),
+      paidweight = sum(GRSSWK * WEIGHT_INCOME, na.rm = TRUE),
+      paidweight2 = sum(WEIGHT_INCOME, na.rm = TRUE),
+      paidweighthrly = sum(HOURPAY * WEIGHT_INCOME, na.rm = TRUE),
+      paidweighthrly2 = sum(WEIGHT_INCOME, na.rm = TRUE)),
+    by = QUARTER
+  ][, `:=`(
+    mean_weekly_pay = paidweight / (paidweight2),
+    mean_hourly_pay = paidweighthrly / (paidweighthrly2),
+    paidweight = NULL,
+    paidweighthrly = NULL,
+    paidweight2 = NULL,
+    paidweighthrly2 = NULL)
+  ][] %>%
     dplyr::select(QUARTER, mean_weekly_pay, median_weekly_pay)
   # dplyr::mutate(QUARTER = "Apr-Jun 2021") %>%
   # tidyr::pivot_wider(
@@ -18,15 +36,12 @@ test_that("EARN04 matches raw data", {
   #   values_from = "mean_weekly_pay"
   # )
 
-
   # From ONS EARN04 Publication --------------------
-
   withr::local_file("earn04.xls", {
     url_earn04 <- "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/grossweeklyearningsoffulltimeemployeesearn04"
     html_webpage <- httr::GET(url_earn04)
     html_webpage <- rawToChar(html_webpage$content)
     download_link <- stringr::str_extract(html_webpage, "(https.*\\.xls)")
-
 
     if (Sys.info()["sysname"] == "Windows") {
       download.file(download_link, "earn04.xls", mode = "wb", quiet = TRUE)
@@ -34,7 +49,6 @@ test_that("EARN04 matches raw data", {
       download.file(download_link, "earn04.xls", quiet = TRUE)
     }
   })
-
 
   earn04_ons <- readxl::read_xls(
     path = "earn04.xls",
@@ -60,7 +74,7 @@ test_that("EARN04 matches raw data", {
     dplyr::mutate(QUARTER = paste(YEAR, QUARTER)) %>%
     dplyr::filter(QUARTER %in% unique(earn04$QUARTER)) %>%
     dplyr::select(-YEAR) %>%
-    dplyr::filter(dplyr::if_all(2:3, ~ .x != "..")) %>%
+    dplyr::filter(dplyr::if_all(2:3, ~ ! .x %in% c("..", "--"))) %>%
     dplyr::mutate(dplyr::across(2:3, as.numeric)) %>%
     dplyr::filter(dplyr::if_all(2:3, ~ !is.na(.x))) %>%
     data.table::as.data.table()
@@ -70,7 +84,6 @@ test_that("EARN04 matches raw data", {
     dplyr::filter(QUARTER %in% unique(earn04_ons$QUARTER))
 
   earn04_ons <- stats::setNames(earn04_ons, names(earn04))
-
 
   expect_equal(earn04, earn04_ons, tolerance = 1e-3)
   expect_gt(nrow(earn04), 1)
