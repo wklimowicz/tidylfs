@@ -2,9 +2,11 @@
 
 * `save_variables_report` is now deprecated. `lfs_compile()` attaches a `variable_mapping` attribute. Remove the argument and use `variable_mapping(lfs)` to view the mapping.
 
-* `lfs_load()`, `aps_load()`, and `lfs_compile(save_to_folder)` are now deprecated in favour of explicitly writing the data after complition.
+* `lfs_load()`, `aps_load()`, and `lfs_compile(save_to_folder)` are now deprecated in favour of explicitly writing the data after compilation.
 
 * `aps` argument to `lfs_compile()` is now deprecated. Use `dataset = "aps"` instead.
+
+* `lfs_summary_*` functions are deprecated. The code for replicating ONS publications is in a vignettes, and should be copied over explicitly if used in an analysis project.
 
 # tidylfs 0.0.3
 
