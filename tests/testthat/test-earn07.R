@@ -53,7 +53,8 @@ test_that("EARN07 matches raw data", {
       id_cols = QUARTER,
       names_from = GROUPED_INDUSTRY,
       values_from = "mean_weekly_pay"
-    )
+    ) |>
+    dplyr::arrange(QUARTER)
 
 
   # From ONS EARN07 Publication --------------------

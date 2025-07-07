@@ -59,7 +59,7 @@ lfs <- lfs_compile(directory = "lfs_rds_folder/")
 
 To view the variable mapping use `variable_mapping()`:
 
-```{r}
+```{r eval=FALSE}
 variable_mapping(lfs)
 ```
 

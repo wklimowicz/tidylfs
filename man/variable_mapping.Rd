@@ -15,3 +15,9 @@ A data.frame with the variable mapping.
 \description{
 Retrieve variable mapping for LFS/APS compilation
 }
+\examples{
+\dontrun{
+lfs <- lfs_compile("lfs_data/")
+variable_mapping(lfs)
+}
+}

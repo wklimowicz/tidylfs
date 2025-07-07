@@ -143,7 +143,7 @@ lfs_tidy_file <- function(file,
 #'
 #' "lfs" expects files named like "2004 Q1.sav" or "2004 Q2.sav",
 #'
-#' "aps" expects files named like "2004 APS.sav" or "2005 APS.sav".
+#' "aps" expects files named like "APS 2004.sav" or "APS 2005.sav".
 #'
 #' @param aps Deprecated. Use `dataset = "aps"` instead.
 #' @param save_variables_report Deprecated.  Use `variables_mapping(lfs)` instead.

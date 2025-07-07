@@ -21,7 +21,7 @@ lfs_compile(
 
 "lfs" expects files named like "2004 Q1.sav" or "2004 Q2.sav",
 
-"aps" expects files named like "2004 APS.sav" or "2005 APS.sav".}
+"aps" expects files named like "APS 2004.sav" or "APS 2005.sav".}
 
 \item{filter_years}{Vector of years to filter down to}
 

@@ -28,9 +28,10 @@ test_that("EARN04 matches raw data", {
     paidweighthrly = NULL,
     paidweight2 = NULL,
     paidweighthrly2 = NULL)
-  ][] %>%
-    dplyr::select(QUARTER, mean_weekly_pay, median_weekly_pay)
-  # dplyr::mutate(QUARTER = "Apr-Jun 2021") %>%
+  ][] |>
+    dplyr::select(QUARTER, mean_weekly_pay, median_weekly_pay) |>
+    dplyr::arrange(QUARTER)
+  # dplyr::mutate(QUARTER = "Apr-Jun 2021") |>
   # tidyr::pivot_wider(
   #   id_cols = QUARTER,
   #   values_from = "mean_weekly_pay"
@@ -58,29 +59,29 @@ test_that("EARN04 matches raw data", {
 
   earn04_ons[5, 1] <- "QUARTER"
 
-  earn04_ons <- earn04_ons %>%
-    janitor::clean_names() %>%
-    dplyr::select(1, 3, 4) %>%
+  earn04_ons <- earn04_ons |>
+    janitor::clean_names() |>
+    dplyr::select(1, 3, 4) |>
     janitor::row_to_names(5)
 
-  earn04_ons <- earn04_ons %>%
-    dplyr::mutate(YEAR = substr(QUARTER, 9, 12)) %>%
+  earn04_ons <- earn04_ons |>
+    dplyr::mutate(YEAR = substr(QUARTER, 9, 12)) |>
     dplyr::mutate(QUARTER = dplyr::case_when(
       substr(QUARTER, 1, 7) == "Jan-Mar" ~ "Q1",
       substr(QUARTER, 1, 7) == "Apr-Jun" ~ "Q2",
       substr(QUARTER, 1, 7) == "Jul-Sep" ~ "Q3",
       substr(QUARTER, 1, 7) == "Oct-Dec" ~ "Q4"
-    )) %>%
-    dplyr::mutate(QUARTER = paste(YEAR, QUARTER)) %>%
-    dplyr::filter(QUARTER %in% unique(earn04$QUARTER)) %>%
-    dplyr::select(-YEAR) %>%
-    dplyr::filter(dplyr::if_all(2:3, ~ ! .x %in% c("..", "--"))) %>%
-    dplyr::mutate(dplyr::across(2:3, as.numeric)) %>%
-    dplyr::filter(dplyr::if_all(2:3, ~ !is.na(.x))) %>%
+    )) |>
+    dplyr::mutate(QUARTER = paste(YEAR, QUARTER)) |>
+    dplyr::filter(QUARTER %in% unique(earn04$QUARTER)) |>
+    dplyr::select(-YEAR) |>
+    dplyr::filter(dplyr::if_all(2:3, ~ ! .x %in% c("..", "--"))) |>
+    dplyr::mutate(dplyr::across(2:3, as.numeric)) |>
+    dplyr::filter(dplyr::if_all(2:3, ~ !is.na(.x))) |>
     data.table::as.data.table()
 
   # Take only rows that ONS Published as well
-  earn04 <- earn04 %>%
+  earn04 <- earn04 |>
     dplyr::filter(QUARTER %in% unique(earn04_ons$QUARTER))
 
   earn04_ons <- stats::setNames(earn04_ons, names(earn04))
