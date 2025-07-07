@@ -6,7 +6,7 @@
 \alias{tidylfs-package}
 \title{tidylfs: Tools for analysing the ONS Labour Force Survey}
 \description{
-Tools for analysts working with the LFS.
+Tools for compiling multiple waves of the ONS Labour Force Survey into one tidy data frame.
 }
 \seealso{
 Useful links:
