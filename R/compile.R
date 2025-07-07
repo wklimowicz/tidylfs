@@ -163,8 +163,6 @@ lfs_compile <- function(directory,
 
   dataset <- match.arg(dataset)
 
-  dots <- rlang::list2(...)
-
   if (lifecycle::is_present(aps)) {
     lifecycle::deprecate_stop(
       "0.1.0",

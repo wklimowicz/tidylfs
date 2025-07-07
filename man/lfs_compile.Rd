@@ -11,8 +11,7 @@ lfs_compile(
   extra_mappings = NULL,
   aps = lifecycle::deprecated(),
   save_variables_report = lifecycle::deprecated(),
-  save_to_folder = lifecycle::deprecated(),
-  ...
+  save_to_folder = lifecycle::deprecated()
 )
 }
 \arguments{
