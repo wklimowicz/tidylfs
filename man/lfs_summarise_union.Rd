@@ -15,5 +15,9 @@ lfs_summarise_union(lfs, ...)
 Tibble of outputs
 }
 \description{
-\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}
+
+This function is deprecated. The code has moved to a vignette and should be used
+explicitly in analysis. Refer to the package documentation for detailed usage.
 }
+\keyword{internal}

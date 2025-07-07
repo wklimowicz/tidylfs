@@ -16,3 +16,4 @@ This function is deprecated and will be removed in a future version of the packa
 
 It is recommended to explicitly save the compiled data to persist it.
 }
+\keyword{internal}

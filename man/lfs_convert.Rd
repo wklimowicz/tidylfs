@@ -5,14 +5,14 @@
 \title{Convert files to Rds for faster compiling in future}
 \usage{
 lfs_convert(
-  lfs_directory,
+  directory,
   output_directory,
   filter_files = NULL,
   incremental = FALSE
 )
 }
 \arguments{
-\item{lfs_directory}{Directory with raw LFS files}
+\item{directory}{Directory with raw LFS files}
 
 \item{output_directory}{Target directory to save Rds files}
 

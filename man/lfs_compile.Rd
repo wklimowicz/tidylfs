@@ -21,7 +21,8 @@ lfs_compile(
 \item{dataset}{Either "lfs" or "aps".
 
 "lfs" expects files named like "2004 Q1.sav" or "2004 Q2.sav",
-"aps" expects files named like "2004 APS.sav" or "2004 APS.csv".}
+
+"aps" expects files named like "2004 APS.sav" or "2005 APS.sav".}
 
 \item{filter_years}{Vector of years to filter down to}
 
@@ -37,7 +38,7 @@ See
 \item{save_to_folder}{Deprecated. Use \code{lfs <- lfs_compile(..)}, and save manually to a folder.}
 }
 \value{
-Nothing - saves the fst file only.
+A data.table with a stacked LFS dataset. Access the variable mappinging with \code{variable_mapping()}.
 }
 \description{
 Compiles seperate fst files into one, picking relevant columns

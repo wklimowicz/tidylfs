@@ -1,6 +1,10 @@
 #' Group by and Summarise for unionisation rates
 #'
-#' `r lifecycle::badge("experimental")`
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' This function is deprecated. The code has moved to a vignette and should be used
+#' explicitly in analysis. Refer to the package documentation for detailed usage.
 #'
 #' @param lfs LFS Dataset
 #' @param ... Variables to group by
@@ -8,6 +12,7 @@
 #' @return Tibble of outputs
 #'
 #' @importFrom rlang .data
+#' @keywords internal
 lfs_summarise_union <- function(lfs, ...) {
 
     # data.table version
@@ -25,7 +30,11 @@ lfs_summarise_union <- function(lfs, ...) {
 
 #' Group by and Summarise for hours worked
 #'
-#' `r lifecycle::badge("experimental")`
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' This function is deprecated. The code has moved to a vignette and should be used
+#' explicitly in analysis. Refer to the package documentation for detailed usage.
 #'
 #' @param lfs LFS Dataset
 #' @param ... Variables to group by
@@ -33,6 +42,7 @@ lfs_summarise_union <- function(lfs, ...) {
 #' @return Tibble of outputs
 #'
 #' @importFrom rlang .data
+#' @keywords internal
 lfs_summarise_hours <- function(lfs, ...) {
 
     # data.table version

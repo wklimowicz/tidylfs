@@ -46,6 +46,7 @@ lfs_load <- function(data.table = TRUE) {
 #'
 #' @inheritParams lfs_load
 #'
+#' @keywords internal
 #' @export
 aps_load <- function(data.table = TRUE) {
 
