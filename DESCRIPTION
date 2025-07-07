@@ -39,7 +39,8 @@ Suggests:
     rmarkdown,
     testthat (>= 3.0.0),
     tidyr,
-    vctrs
+    vctrs,
+    quarto
 VignetteBuilder:
     quarto
 Config/testthat/edition: 3

@@ -158,8 +158,7 @@ lfs_compile <- function(directory,
                         extra_mappings = NULL,
                         aps = lifecycle::deprecated(),
                         save_variables_report = lifecycle::deprecated(),
-                        save_to_folder = lifecycle::deprecated(),
-                        ...
+                        save_to_folder = lifecycle::deprecated()
                         ) {
 
   dataset <- match.arg(dataset)
