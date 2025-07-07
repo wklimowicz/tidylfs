@@ -1,4 +1,5 @@
 devtools::load_all()
+library(tidyverse)
 
 con <- DBI::dbConnect(
   odbc::databricks(),
@@ -11,8 +12,8 @@ lfs <- tbl(
 )
 
 df <- lfs %>%
-  dplyr::filter(YEAR > 2001) %>%
-  dplyr::mutate(QUARTER = as.character(QUARTER))
+  filter(YEAR > 2001) %>%
+  mutate(QUARTER = as.character(QUARTER))
 
 directory_path <- paste0(
   system.file("tests", "testthat", package = "tidylfs"),
@@ -23,7 +24,7 @@ dir.create(directory_path, showWarnings = FALSE)
 
 # Occupation Salary Test Data
 earn06 <- df %>%
-  dplyr::select(
+  select(
     YEAR, QUARTER, FTPTWK, WEIGHT_INCOME,
     OCCUPATION_MAJOR, INDUSTRY_MAJOR,
     GRSSWK, HOURPAY, INECAC05
@@ -39,8 +40,8 @@ saveRDS_compressed(earn06, save_file_path)
 
 # Unemployment Test Data
 unem01 <- df %>%
-  dplyr::filter(YEAR > 1996) %>%
-  dplyr::select(YEAR, QUARTER, ILODEFR, WEIGHT, SEX, INECAC05) %>%
+  filter(YEAR > 1996) %>%
+  select(YEAR, QUARTER, ILODEFR, WEIGHT, SEX, INECAC05) %>%
   na.exclude() |>
   collect()
 
@@ -53,7 +54,7 @@ saveRDS_compressed(unem01, save_file_path)
 
 # Hours Test Data
 hour01 <- df %>%
-  dplyr::select(
+  select(
     QUARTER, ILODEFR, WEIGHT, FTPTWK, TTACHR
   ) %>%
   na.exclude() |>
