@@ -132,29 +132,77 @@ lfs_tidy_file <- function(file,
 #'
 #' Compiles seperate fst files into one, picking relevant columns
 #'
-#' @param lfs_directory Path to directory with LFS files
+#' @param directory Path to directory with LFS files
 #' @param filter_years Vector of years to filter down to
 #' @param extra_mappings Either NULL (use default) or a file
 #' which has the custom mapping function.
 #' See
 #' \code{vignette("Adding_Variables", package = "tidylfs")}
-#' @param save_to_folder If TRUE, will save to the `DATA_DIRECTORY` environment variable if present
-#' @param save_variables_report Save a csv with the list of picked variables?
-#' @param aps Annual Population Survey flag, files called eg. "APS 2012.sav"
 #'
-#' @return Nothing - saves the fst file only.
+#' @param dataset Either "lfs" or "aps".
+#'
+#' "lfs" expects files named like "2004 Q1.sav" or "2004 Q2.sav",
+#'
+#' "aps" expects files named like "2004 APS.sav" or "2005 APS.sav".
+#'
+#' @param aps Deprecated. Use `dataset = "aps"` instead.
+#' @param save_variables_report Deprecated.  Use `variables_mapping(lfs)` instead.
+#' @param save_to_folder Deprecated. Use `lfs <- lfs_compile(..)`, and save manually to a folder.
+#'
+#' @return A data.table with a stacked LFS dataset. Access the variable mappinging with `variable_mapping()`.
 #'
 #' @export
-lfs_compile <- function(lfs_directory,
+lfs_compile <- function(directory,
+                        dataset = c("lfs", "aps"),
                         filter_years = NULL,
                         extra_mappings = NULL,
-                        save_to_folder = FALSE,
-                        save_variables_report = TRUE,
-                        aps = FALSE) {
+                        aps = lifecycle::deprecated(),
+                        save_variables_report = lifecycle::deprecated(),
+                        save_to_folder = lifecycle::deprecated(),
+                        ...
+                        ) {
+
+  dataset <- match.arg(dataset)
+
+  dots <- rlang::list2(...)
+
+  if (lifecycle::is_present(aps)) {
+    lifecycle::deprecate_stop(
+      "0.1.0",
+      "lfs_compile(aps)",
+      details = c(
+        "!" = "Use `dataset = 'aps'` instead."
+      )
+    )
+  }
+
+  if (lifecycle::is_present(save_variables_report)) {
+    lifecycle::deprecate_warn(
+      "0.1.0",
+      "lfs_compile(save_variables_report)",
+      details = c(
+        "!" = "`lfs_compile()` now always returns a `variable_mapping` attribute.",
+        " " = "Access it with:",
+        " " = "",
+        " " = "lfs <- lfs_compile(directory)",
+        " " = "variable_mapping(lfs)"
+      )
+    )
+  }
+
+  if (lifecycle::is_present(save_to_folder)) {
+    lifecycle::deprecate_warn(
+      "0.1.0",
+      "lfs_compile(save_to_folder)",
+      details = c(
+        "!" = "`save_to_folder` is deprecated. Use lfs <- lfs_compile(..) and save manually."
+      )
+    )
+  }
 
   # Get list of files ----------------------------------------
 
-  files_in_directory <- list.files(lfs_directory)
+  files_in_directory <- list.files(directory)
 
   if (length(files_in_directory) == 0) {
     cli::cli_alert_danger("No Files Found")
@@ -196,16 +244,14 @@ lfs_compile <- function(lfs_directory,
 
 
   # Make a full path variable
-  lfs_files_w_path <- file.path(lfs_directory, lfs_files)
+  lfs_files_w_path <- file.path(directory, lfs_files)
 
   cli::cli_h1("Renaming and Tidying LFS Columns")
-
 
   # Tidy each dataset ----------------------------------------
 
   # Maps along each file and tidies it - using seq_along to make
   # cli bar work properly
-
   lfs_data <- purrr::map(seq_along(lfs_files_w_path),
     lfs_tidy_file,
     total_files = lfs_files_w_path,
@@ -213,50 +259,31 @@ lfs_compile <- function(lfs_directory,
     extra_mappings = extra_mappings
   )
 
-  # Make record of what variables chosen if picked ---------------------------
-  cli::cli_alert_info("Combining...")
+  # Record of what variables chosen if picked ---------------------------
+  wave_meta <- purrr::map(lfs_data, 2)
+  wave_names <- purrr::map(wave_meta, "lfs_name")
 
-  if (save_variables_report == TRUE) {
-    final_mapping <- purrr::map(lfs_data, 2)[[1]][[2]]
-    variables_report <- purrr::map(lfs_data, 2) %>%
-      purrr::map("lfs_name")
+  names(wave_names) <- switch(
+    dataset,
+    aps = substr(lfs_files, 1, 8), # e.g. `2004 APS.sav`
+    lfs = substr(lfs_files, 1, 7) # e.g. `2004 Q1.sav`
+  )
 
-    if (aps == TRUE) {
-    names(variables_report) <- substr(lfs_files, 1, 8)
-    } else {
-    names(variables_report) <- substr(lfs_files, 1, 7)
-    }
+  # Convert to a wide cross-walk data frame
+  mapping_wide <- dplyr::bind_rows(wave_names, .id = "QUARTER")  # long → wide
+  mapping_wide <- t(mapping_wide) |> as.data.frame()             # transpose so vars are rows
+  mapping_wide <- mapping_wide |>
+                  dplyr::mutate(QUARTER = row.names(mapping_wide)) |>
+                  dplyr::relocate(QUARTER)
 
-    variables_report <- dplyr::bind_rows(variables_report, .id = "QUARTER")
-    variables_report <- base::t(variables_report)
-    variables_report <- as.data.frame(variables_report)
+  # Column names: "QUARTER" + final tidy variable names
+  final_mapping <- purrr::map(lfs_data, 2)[[1]][[2]]
+  colnames(mapping_wide) <- c("QUARTER", final_mapping)
 
-    variables_report <- variables_report %>%
-      dplyr::mutate(QUARTER = row.names(variables_report)) %>%
-      dplyr::relocate("QUARTER")
-
-    colnames(variables_report) <- c("QUARTER", final_mapping)
-
-    # If file is open, give warning and continue
-    tryCatch(
-      {
-        if (aps == 0) {
-        readr::write_csv(variables_report, file = "lfs_variables_report.csv")
-        cli::cli_alert_info("Load LFS data with {.emph lfs <- lfs_load()}\n
-                             To check ONS definitions see {.emph lfs_variables_report.csv}\n")
-        } else {
-        readr::write_csv(variables_report, file = "aps_variables_report.csv")
-        cli::cli_alert_info("Load APS data with {.emph aps <- aps_load()}\n
-                             To check ONS definitions see {.emph aps_variables_report.csv}\n")
-        }
-      },
-      error = function(cond) {
-        cli::cli_alert_danger("lfs_variables_report.csv is open - close it and rerun to get the report")
-      }
-    )
-  }
+  # `mapping_wide` gets assigned as an attribute to the final data frame
 
   # Add Quarter Year and Save ----------------------------------------
+  cli::cli_alert_info("Combining...")
   lfs_data_frame <- purrr::map(lfs_data, 1)
 
   # Rename for quarters
@@ -309,31 +336,10 @@ lfs_compile <- function(lfs_directory,
 
   }
 
-
-
-  if (aps == TRUE) {
-  save_name <- "aps_data.fst"
-  } else {
-  save_name <- "lfs_data.fst"
-  }
-
-  # If enabled
-  if (save_to_folder) {
-      # If DATA_DIRECTORY environment variable is present, save there.
-      if (Sys.getenv("DATA_DIRECTORY") != "") {
-
-        cli::cli_alert_info("Saving as fst")
-
-        fst::write_fst(
-          lfs_data_frame,
-          paste0(Sys.getenv("DATA_DIRECTORY"), "/", save_name)
-        )
-
-      }
-  }
-
   # Print complete message
   cli_compiling_complete(file_format = file_format, aps = aps)
+
+  attr(lfs_data_frame, "variable_mapping") <- mapping_wide
 
   return(lfs_data_frame)
 

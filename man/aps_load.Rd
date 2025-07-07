@@ -10,8 +10,9 @@ aps_load(data.table = TRUE)
 \item{data.table}{Import as data.table?}
 }
 \description{
-This works only with the \code{DATA_DIRECTORY} environment variable set to a folder.
-You can either manually save \code{aps_data.fst} there, or it will optionally be
-saved during compilation if the \code{DATA_DIRECTORY} variable is present while running
-\code{lfs_compile(..., aps = TRUE)}
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}
+
+This function is deprecated and will be removed in a future version of the package.
+
+It is recommended to explicitly save the compiled data to persist it.
 }

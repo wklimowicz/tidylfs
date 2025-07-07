@@ -1,16 +1,25 @@
 #' Load LFS Data
 #'
-#' This works only with the `DATA_DIRECTORY` environment variable set to a folder.
-#' You can either manually save `lfs_data.fst` there, or it will optionally be
-#' saved during compilation if the `DATA_DIRECTORY` variable is present while running
-#' `lfs_compile()`
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' This function is deprecated and will be removed in a future version of the package.
+#'
+#' It is recommended to explicitly save the compiled data to persist it.
 #'
 #' @return A tibble with lfs data
 #'
 #' @param data.table Import as data.table?
 #'
 #' @export
+#' @keywords internal
 lfs_load <- function(data.table = TRUE) {
+
+  lifecycle::deprecate_warn(
+    when = "0.1.0",
+    what = "lfs_load()",
+    details = "Write the compiled data explicitly to persist it."
+  )
 
   # Check if DATA_DIRECTORY environment variable is present
   if (Sys.getenv("DATA_DIRECTORY") == "") {
@@ -28,15 +37,23 @@ lfs_load <- function(data.table = TRUE) {
 
 #' Load APS Data
 #'
-#' This works only with the `DATA_DIRECTORY` environment variable set to a folder.
-#' You can either manually save `aps_data.fst` there, or it will optionally be
-#' saved during compilation if the `DATA_DIRECTORY` variable is present while running
-#' `lfs_compile(..., aps = TRUE)`
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' This function is deprecated and will be removed in a future version of the package.
+#'
+#' It is recommended to explicitly save the compiled data to persist it.
 #'
 #' @inheritParams lfs_load
 #'
 #' @export
 aps_load <- function(data.table = TRUE) {
+
+  lifecycle::deprecate_warn(
+    when = "0.1.0",
+    what = "aps_load()",
+    details = "Write the compiled data explicitly to persist it."
+  )
 
   # Check if DATA_DIRECTORY environment variable is present
   if (Sys.getenv("DATA_DIRECTORY") == "") {

@@ -30,10 +30,14 @@ lfs_file_column_names
 
 tic()
 lfs <- lfs_compile(rds_folder,
-                   filter_years = 1980:2030,
+                   filter_years = 2023,
                    save_to_folder = TRUE,
+                   aps = TRUE,
+                   save_variables_report = TRUE,
                    extra_mappings = user_extra_mappings)
 toc()
+
+variable_mapping(lfs)
 
 
 # Short version
@@ -47,7 +51,7 @@ check()
 
 # Degree Subject Testing
 lfs[,.N, .(is.na(DEGREE_DESCRIPTION),QUARTER)] |> 
-  dcast(QUARTER ~ is.na) |> sie()
+  dcast(QUARTER ~ is.na)
 
 lfs[QUARTER == "1997 Q3", .N, DEGREE_DESCRIPTION]
 

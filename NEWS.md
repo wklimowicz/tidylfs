@@ -1,3 +1,11 @@
+# tidylfs 0.1.0
+
+* `save_variables_report` is now deprecated. `lfs_compile()` attaches a `variable_mapping` attribute. Remove the argument and use `variable_mapping(lfs)` to view the mapping.
+
+* `lfs_load()`, `aps_load()`, and `lfs_compile(save_to_folder)` are now deprecated in favour of explicitly writing the data after complition.
+
+* `aps` argument to `lfs_compile()` is now deprecated. Use `dataset = "aps"` instead.
+
 # tidylfs 0.0.3
 
 * Data is now not saved by default after compilation, since updating the package purges the package directory.
