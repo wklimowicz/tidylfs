@@ -1,8 +1,8 @@
 ---
-title: "Replicating ONS Publications"
+title: "Replicating ONS publications"
 format: html
 vignette: >
-  %\VignetteIndexEntry{Replicating ONS Publications}
+  %\VignetteIndexEntry{Replicating ONS publications}
   %\VignetteEngine{quarto::html}
   %\VignetteEncoding{UTF-8}
 ---

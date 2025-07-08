@@ -178,7 +178,7 @@ lfs_compile <- function(directory,
       "0.1.0",
       "lfs_compile(save_variables_report)",
       details = c(
-        "!" = "`lfs_compile()` now always returns a `variable_mapping` attribute.",
+        "!" = "`lfs_compile()` now returns a `variable_mapping` attribute.",
         " " = "Access it with:",
         " " = "",
         " " = "lfs <- lfs_compile(directory)",

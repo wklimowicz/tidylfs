@@ -15,8 +15,8 @@ navbar:
       text: Get started
       href: index.html
     variables:
-      text: Adding more variables
+      text: Adding variables
       href: articles/adding-variables.html
     replicate:
-      text: Replicating ONS Publications
+      text: Replicating ONS publications
       href: articles/stats-replication.html

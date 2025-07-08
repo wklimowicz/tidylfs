@@ -1,8 +1,8 @@
 ---
-title: "Adding extra variables"
+title: "Adding variables to compiled data"
 format: html
 vignette: >
-  %\VignetteIndexEntry{Adding extra variables}
+  %\VignetteIndexEntry{Adding variables to compiled data}
   %\VignetteEngine{quarto::html}
   %\VignetteEncoding{UTF-8}
 ---
