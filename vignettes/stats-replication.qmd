@@ -13,7 +13,7 @@ One way to quality assure the data compilation is to attempt to replicate offici
 
 ## EARN04
 
-[ONS Publication](https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/grossweeklyearningsoffulltimeemployeesearn04)
+[ONS Publication](https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/grossweeklyearningsoffulltimeemployeesearn04).
 
 ```r
 library(tidyverse)
@@ -54,7 +54,7 @@ earn04 <- lfs |>
 
 ## EARN06
 
-[ONS Publication](https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/grossweeklyearningsbyoccupationearn06)
+[ONS Publication](https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/grossweeklyearningsbyoccupationearn06).
 
 ```r
 earn06 <- lfs |>
