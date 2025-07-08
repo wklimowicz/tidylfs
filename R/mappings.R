@@ -31,6 +31,7 @@ lfs_default_mappings <- function(cols) {
 
   weight_income <- pick_var(
     c(
+      "PIWT25",
       "PIWT24",
       "PIWT22",
       "PIWT20",
@@ -48,6 +49,7 @@ lfs_default_mappings <- function(cols) {
 
   weight <- pick_var(
     c(
+      "PWT25",
       "PWT24",
       "PWT22",
       "PWT20",

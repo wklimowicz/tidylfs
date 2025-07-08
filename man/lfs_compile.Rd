@@ -5,16 +5,23 @@
 \title{Compile to single data.frame}
 \usage{
 lfs_compile(
-  lfs_directory,
+  directory,
+  dataset = c("lfs", "aps"),
   filter_years = NULL,
   extra_mappings = NULL,
-  save_to_folder = FALSE,
-  save_variables_report = TRUE,
-  aps = FALSE
+  aps = lifecycle::deprecated(),
+  save_variables_report = lifecycle::deprecated(),
+  save_to_folder = lifecycle::deprecated()
 )
 }
 \arguments{
-\item{lfs_directory}{Path to directory with LFS files}
+\item{directory}{Path to directory with LFS files}
+
+\item{dataset}{Either "lfs" or "aps".
+
+"lfs" expects files named like "2004 Q1.sav" or "2004 Q2.sav",
+
+"aps" expects files named like "APS 2004.sav" or "APS 2005.sav".}
 
 \item{filter_years}{Vector of years to filter down to}
 
@@ -23,14 +30,14 @@ which has the custom mapping function.
 See
 \code{vignette("Adding_Variables", package = "tidylfs")}}
 
-\item{save_to_folder}{If TRUE, will save to the \code{DATA_DIRECTORY} environment variable if present}
+\item{aps}{Deprecated. Use \code{dataset = "aps"} instead.}
 
-\item{save_variables_report}{Save a csv with the list of picked variables?}
+\item{save_variables_report}{Deprecated.  Use \code{variables_mapping(lfs)} instead.}
 
-\item{aps}{Annual Population Survey flag, files called eg. "APS 2012.sav"}
+\item{save_to_folder}{Deprecated. Use \code{lfs <- lfs_compile(..)}, and save manually to a folder.}
 }
 \value{
-Nothing - saves the fst file only.
+A data.table with a stacked LFS dataset. Access the variable mapping with \code{variable_mapping(lfs)}.
 }
 \description{
 Compiles seperate fst files into one, picking relevant columns

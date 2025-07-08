@@ -5,7 +5,7 @@
 #' Note: importing labelled from haven is required to import haven when
 #' tests are run - otherwise it can't use the haven labelled format.
 #'
-#' @param lfs_directory Directory with raw LFS files
+#' @param directory Directory with raw LFS files
 #' @param output_directory Target directory to save Rds files
 #' @param filter_files Limit to certain files, using a named vector
 #' @param incremental Only convert files which don't exist in output directory
@@ -14,12 +14,12 @@
 #'
 #' @importFrom haven labelled
 #' @export
-lfs_convert <- function(lfs_directory,
+lfs_convert <- function(directory,
                         output_directory,
                         filter_files = NULL,
                         incremental = FALSE) {
 
-  files_in_directory <- list.files(lfs_directory)
+  files_in_directory <- list.files(directory)
 
   . <- NULL # Fix R CMD Check
 
@@ -31,7 +31,7 @@ lfs_convert <- function(lfs_directory,
   if (incremental == TRUE) {
     # Check what files exist and diff
    exist_in_output <- tools::file_path_sans_ext(list.files(output_directory))
-   exist_in_input <- tools::file_path_sans_ext(list.files(lfs_directory))
+   exist_in_input <- tools::file_path_sans_ext(list.files(directory))
    files_in_directory <- setdiff(exist_in_input, exist_in_output)
 
    # Reattach extension
@@ -68,7 +68,7 @@ lfs_convert <- function(lfs_directory,
   }
 
   # Add path
-  lfs_files_w_path <- file.path(lfs_directory, lfs_files)
+  lfs_files_w_path <- file.path(directory, lfs_files)
 
   cli::cli_h1("Converting to Rds")
 

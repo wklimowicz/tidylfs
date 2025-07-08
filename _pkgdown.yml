@@ -1,60 +1,22 @@
 url: https://wklimowicz.github.io/tidylfs/
-template:
-  bootstrap: 5
-  # bootswatch: flatly
 
 development:
-  version_tooltip: "Development version"
+  mode: auto
 
-reference:
-- title: Analysis
-- subtitle: Summary Functions
-  desc: Group and summarise for chosen metric
-- contents:
-  - starts_with("lfs_summarise")
-- subtitle: Flags
-  desc: Add a indicator column
-  contents:
-  - starts_with("lfs_flag")
-- title: Setup 
-- subtitle: Convert and Compile
-  desc: Convert from `.sav` to `.Rds` and compile to one dataset
-  contents:
-  - starts_with("lfs_convert")
-  - starts_with("lfs_compile")
-  - lfs_load
-  - aps_load
-- subtitle: Add custom columns
-  desc: Brings in extra columns from lfs
-  contents:
-  - pick_var
+template:
+  bootstrap: 5
 
 navbar:
   structure:
-    left:  [home, reference, variables,  replicate]
+    left:  [home, reference, variables, replicate]
     right: [github]
   components:
     home:
       text: Get started
       href: index.html
     variables:
-      text: Adding more variables
-      href: articles/Adding_Variables.html
+      text: Adding variables
+      href: articles/adding-variables.html
     replicate:
-      text: Replicate ONS Publications
-      href: articles/Replicating_ONS_Publications.html
-
-# navbar:
-#   structure:
-#       left:  [variables, replicate, reference]
-#       right: [search, github]
-#   components:
-#       home:
-#         icon: fas fa-home fa-lg
-#         href: index.html
-#       variables:
-#         href: articles/Adding_Variables.html
-#         aria-label: Adding more Variables
-#       replicate:
-#         href: articles/Replicating_ONS_Publications.html
-#         aria-label: Replicating ONS publications
+      text: Replicating ONS publications
+      href: articles/stats-replication.html

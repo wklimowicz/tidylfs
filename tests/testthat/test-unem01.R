@@ -9,15 +9,24 @@ test_that("UNEM01 matches raw data", {
   # variable has been introduced which causes small diff.
   unem01_raw <- readRDS("data/test-u1.Rds")
 
-
   # All people ----------------------------------------
-
-  unem01 <- unem01_raw %>%
-    dplyr::filter(YEAR > 1994) %>%
-    lfs_summarise_unemployment(QUARTER) %>%
-    dplyr::select(QUARTER, unemployed_percentage) %>%
-    dplyr::mutate(unemployed_percentage = unemployed_percentage * 100) %>%
-    dplyr::filter(!is.na(unemployed_percentage))
+  unem01 <- data.table::as.data.table(unem01_raw)[YEAR > 1994 & WEIGHT > 0 & !is.na(ILODEFR), 
+    list(n = .N,
+      employed = sum((ILODEFR == "In employment") * WEIGHT, na.rm = TRUE),
+      unemployed = sum((ILODEFR == "ILO unemployed") * WEIGHT, na.rm = TRUE),
+      inactive = sum((ILODEFR == "Inactive") * WEIGHT, na.rm = TRUE)),
+    by = QUARTER
+  ][, `:=`(
+    unemployed_percentage = (unemployed / (employed + unemployed)) * 100,
+    employed_percentage = employed / (employed + unemployed + inactive),
+    inactive_percentage = inactive / (employed + unemployed + inactive),
+    unemployed = NULL,
+    employed = NULL,
+    inactive = NULL)
+  ][] |>
+    dplyr::select(QUARTER, unemployed_percentage) |>
+    dplyr::filter(!is.na(unemployed_percentage)) |>
+    dplyr::arrange(QUARTER)
 
 
   withr::local_file("unem01.xls", {
@@ -43,18 +52,18 @@ test_that("UNEM01 matches raw data", {
   unem01_ons[6, 1] <- "QUARTER"
   unem01_ons[6, 3] <- "unemployed_percentage"
 
-  unem01_ons <- unem01_ons[, c(1, 3)] %>%
-    janitor::row_to_names(6) %>%
-    dplyr::mutate(YEAR = substr(QUARTER, 9, 12)) %>%
+  unem01_ons <- unem01_ons[, c(1, 3)] |>
+    janitor::row_to_names(6) |>
+    dplyr::mutate(YEAR = substr(QUARTER, 9, 12)) |>
     dplyr::mutate(QUARTER = dplyr::case_when(
       substr(QUARTER, 1, 7) == "Jan-Mar" ~ "Q1",
       substr(QUARTER, 1, 7) == "Apr-Jun" ~ "Q2",
       substr(QUARTER, 1, 7) == "Jul-Sep" ~ "Q3",
       substr(QUARTER, 1, 7) == "Oct-Dec" ~ "Q4"
-    )) %>%
-    dplyr::mutate(QUARTER = paste(YEAR, QUARTER)) %>%
-    dplyr::select(-YEAR) %>%
-    dplyr::filter(QUARTER %in% unique(unem01$QUARTER)) %>%
+    )) |>
+    dplyr::mutate(QUARTER = paste(YEAR, QUARTER)) |>
+    dplyr::select(-YEAR) |>
+    dplyr::filter(QUARTER %in% unique(unem01$QUARTER)) |>
     dplyr::mutate(unemployed_percentage = as.numeric(unemployed_percentage)) |>
     data.table::as.data.table()
 
@@ -64,13 +73,23 @@ test_that("UNEM01 matches raw data", {
 
   # Men ----------------------------------------
 
-  unem01 <- unem01_raw %>%
-    dplyr::filter(YEAR %in% c(1995:2023)) %>%
-    dplyr::filter(SEX == "Male") %>%
-    lfs_summarise_unemployment(QUARTER) %>%
-    dplyr::select(QUARTER, unemployed_percentage) %>%
-    dplyr::mutate(unemployed_percentage = unemployed_percentage * 100) %>%
-    dplyr::filter(!is.na(unemployed_percentage))
+  unem01 <- data.table::as.data.table(unem01_raw)[YEAR %in% c(1995:2023) & SEX == "Male" & WEIGHT > 0 & !is.na(ILODEFR), 
+    list(n = .N,
+      employed = sum((ILODEFR == "In employment") * WEIGHT, na.rm = TRUE),
+      unemployed = sum((ILODEFR == "ILO unemployed") * WEIGHT, na.rm = TRUE),
+      inactive = sum((ILODEFR == "Inactive") * WEIGHT, na.rm = TRUE)),
+    by = QUARTER
+  ][, `:=`(
+    unemployed_percentage = (unemployed / (employed + unemployed)) * 100,
+    employed_percentage = employed / (employed + unemployed + inactive),
+    inactive_percentage = inactive / (employed + unemployed + inactive),
+    unemployed = NULL,
+    employed = NULL,
+    inactive = NULL)
+  ][] |>
+    dplyr::select(QUARTER, unemployed_percentage) |>
+    dplyr::filter(!is.na(unemployed_percentage)) |>
+    dplyr::arrange(QUARTER)
 
 
   unem01_ons <- readxl::read_xls(
@@ -82,19 +101,19 @@ test_that("UNEM01 matches raw data", {
   unem01_ons[6, 1] <- "QUARTER"
   unem01_ons[6, 3] <- "unemployed_percentage"
 
-  unem01_ons <- unem01_ons[, c(1, 3)] %>%
-    janitor::row_to_names(6) %>%
-    dplyr::mutate(YEAR = substr(QUARTER, 9, 12)) %>%
+  unem01_ons <- unem01_ons[, c(1, 3)] |>
+    janitor::row_to_names(6) |>
+    dplyr::mutate(YEAR = substr(QUARTER, 9, 12)) |>
     dplyr::mutate(QUARTER = dplyr::case_when(
       substr(QUARTER, 1, 7) == "Jan-Mar" ~ "Q1",
       substr(QUARTER, 1, 7) == "Apr-Jun" ~ "Q2",
       substr(QUARTER, 1, 7) == "Jul-Sep" ~ "Q3",
       substr(QUARTER, 1, 7) == "Oct-Dec" ~ "Q4"
-    )) %>%
-    dplyr::mutate(QUARTER = paste(YEAR, QUARTER)) %>%
-    dplyr::select(-YEAR) %>%
-    dplyr::filter(QUARTER %in% unique(unem01$QUARTER)) %>%
-    dplyr::mutate(unemployed_percentage = as.numeric(unemployed_percentage)) %>%
+    )) |>
+    dplyr::mutate(QUARTER = paste(YEAR, QUARTER)) |>
+    dplyr::select(-YEAR) |>
+    dplyr::filter(QUARTER %in% unique(unem01$QUARTER)) |>
+    dplyr::mutate(unemployed_percentage = as.numeric(unemployed_percentage)) |>
     data.table::as.data.table()
 
   expect_equal(unem01, unem01_ons, tolerance = test_tolerance)
@@ -102,13 +121,23 @@ test_that("UNEM01 matches raw data", {
 
   # Women ----------------------------------------
 
-  unem01 <- unem01_raw %>%
-    dplyr::filter(YEAR %in% c(1995:2023)) %>%
-    dplyr::filter(SEX == "Female") %>%
-    lfs_summarise_unemployment(QUARTER) %>%
-    dplyr::select(QUARTER, unemployed_percentage) %>%
-    dplyr::mutate(unemployed_percentage = unemployed_percentage * 100) %>%
-    dplyr::filter(!is.na(unemployed_percentage))
+  unem01 <- data.table::as.data.table(unem01_raw)[YEAR %in% c(1995:2023) & SEX == "Female" & WEIGHT > 0 & !is.na(ILODEFR), 
+    list(n = .N,
+      employed = sum((ILODEFR == "In employment") * WEIGHT, na.rm = TRUE),
+      unemployed = sum((ILODEFR == "ILO unemployed") * WEIGHT, na.rm = TRUE),
+      inactive = sum((ILODEFR == "Inactive") * WEIGHT, na.rm = TRUE)),
+    by = QUARTER
+  ][, `:=`(
+    unemployed_percentage = (unemployed / (employed + unemployed)) * 100,
+    employed_percentage = employed / (employed + unemployed + inactive),
+    inactive_percentage = inactive / (employed + unemployed + inactive),
+    unemployed = NULL,
+    employed = NULL,
+    inactive = NULL)
+  ][] |>
+    dplyr::select(QUARTER, unemployed_percentage) |>
+    dplyr::filter(!is.na(unemployed_percentage)) |>
+    dplyr::arrange(QUARTER)
 
 
   unem01_ons <- readxl::read_xls(
@@ -120,19 +149,19 @@ test_that("UNEM01 matches raw data", {
   unem01_ons[6, 1] <- "QUARTER"
   unem01_ons[6, 3] <- "unemployed_percentage"
 
-  unem01_ons <- unem01_ons[, c(1, 3)] %>%
-    janitor::row_to_names(6) %>%
-    dplyr::mutate(YEAR = substr(QUARTER, 9, 12)) %>%
+  unem01_ons <- unem01_ons[, c(1, 3)] |>
+    janitor::row_to_names(6) |>
+    dplyr::mutate(YEAR = substr(QUARTER, 9, 12)) |>
     dplyr::mutate(QUARTER = dplyr::case_when(
       substr(QUARTER, 1, 7) == "Jan-Mar" ~ "Q1",
       substr(QUARTER, 1, 7) == "Apr-Jun" ~ "Q2",
       substr(QUARTER, 1, 7) == "Jul-Sep" ~ "Q3",
       substr(QUARTER, 1, 7) == "Oct-Dec" ~ "Q4"
-    )) %>%
-    dplyr::mutate(QUARTER = paste(YEAR, QUARTER)) %>%
-    dplyr::select(-YEAR) %>%
-    dplyr::filter(QUARTER %in% unique(unem01$QUARTER)) %>%
-    dplyr::mutate(unemployed_percentage = as.numeric(unemployed_percentage)) %>%
+    )) |>
+    dplyr::mutate(QUARTER = paste(YEAR, QUARTER)) |>
+    dplyr::select(-YEAR) |>
+    dplyr::filter(QUARTER %in% unique(unem01$QUARTER)) |>
+    dplyr::mutate(unemployed_percentage = as.numeric(unemployed_percentage)) |>
     data.table::as.data.table()
 
   expect_equal(unem01, unem01_ons, tolerance = test_tolerance)

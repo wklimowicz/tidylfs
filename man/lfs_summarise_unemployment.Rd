@@ -15,5 +15,9 @@ lfs_summarise_unemployment(lfs, ...)
 Tibble or data.table with unemployment data
 }
 \description{
-Group by and Summarise for ONS unemployment
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}
+
+This function is deprecated. The code has moved to a vignette and should be used
+explicitly in analysis. Refer to the package documentation for detailed usage.
 }
+\keyword{internal}

@@ -1,5 +1,10 @@
 #' Group by and Summarise into salary ONS Salary
 #'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' This function is deprecated. The code has moved to a vignette and should be used
+#' explicitly in analysis. Refer to the package documentation for detailed usage.
 #'
 #' @param lfs LFS Dataset
 #' @param ... Variables to group by
@@ -9,6 +14,7 @@
 #' @return Tibble or data.table with salary data
 #'
 #' @export
+#' @keywords internal
 lfs_summarise_salary <- function(lfs, ...) {
 
 
@@ -28,6 +34,11 @@ lfs_summarise_salary <- function(lfs, ...) {
 
 #' Group by and Summarise for ONS unemployment
 #'
+#' @description
+#' `r lifecycle::badge("deprecated")`
+#'
+#' This function is deprecated. The code has moved to a vignette and should be used
+#' explicitly in analysis. Refer to the package documentation for detailed usage.
 #'
 #' @param lfs LFS Dataset
 #' @param ... Variables to group by
@@ -37,6 +48,7 @@ lfs_summarise_salary <- function(lfs, ...) {
 #' @importFrom data.table .N
 #'
 #' @export
+#' @keywords internal
 lfs_summarise_unemployment <- function(lfs, ...) {
 
 

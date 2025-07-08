@@ -14,3 +14,6 @@
 ^pkgdown$
 ^doc$
 ^Meta$
+^\.quarto$
+^vignettes/.quarto$
+^\.claude$

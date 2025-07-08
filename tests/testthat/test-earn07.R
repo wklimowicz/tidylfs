@@ -28,16 +28,33 @@ test_that("EARN07 matches raw data", {
       # substr(INDUSTRY_MAJOR, 1, 1) %in% "U" ~ "U"
     )) %>%
     dplyr::filter(!is.na(GROUPED_INDUSTRY)) %>%
-    # dplyr::mutate(FTPT = as.numeric(.data$FTPT)) %>%
     dplyr::filter(FTPTWK == "Full-time") %>%
-    # dplyr::filter(QUARTER == "2005 Q1") %>%
-    lfs_summarise_salary(QUARTER, GROUPED_INDUSTRY) %>%
+    dplyr::filter(YEAR > 2009 & !is.na(GROUPED_INDUSTRY) & FTPTWK == "Full-time") |>
+    dplyr::summarise(
+      n = dplyr::n(),
+      median_weekly_pay = matrixStats::weightedMedian(GRSSWK, w = WEIGHT_INCOME, na.rm = TRUE),
+      median_hourly_pay = matrixStats::weightedMedian(HOURPAY, w = WEIGHT_INCOME, na.rm = TRUE),
+      paidweight = sum(GRSSWK * WEIGHT_INCOME, na.rm = TRUE),
+      paidweight2 = sum(WEIGHT_INCOME, na.rm = TRUE),
+      paidweighthrly = sum(HOURPAY * WEIGHT_INCOME, na.rm = TRUE),
+      paidweighthrly2 = sum(WEIGHT_INCOME, na.rm = TRUE),
+    .by = c("QUARTER", "GROUPED_INDUSTRY")
+  ) |>
+  dplyr::mutate(
+    mean_weekly_pay = paidweight / (paidweight2),
+    mean_hourly_pay = paidweighthrly / (paidweighthrly2),
+    paidweight = NULL,
+    paidweighthrly = NULL,
+    paidweight2 = NULL,
+    paidweighthrly2 = NULL
+  ) |>
     dplyr::arrange(GROUPED_INDUSTRY) %>%
     tidyr::pivot_wider(
       id_cols = QUARTER,
       names_from = GROUPED_INDUSTRY,
       values_from = "mean_weekly_pay"
-    )
+    ) |>
+    dplyr::arrange(QUARTER)
 
 
   # From ONS EARN07 Publication --------------------
@@ -78,6 +95,7 @@ test_that("EARN07 matches raw data", {
       substr(QUARTER, 1, 7) == "Jul-Sep" ~ "Q3",
       substr(QUARTER, 1, 7) == "Oct-Dec" ~ "Q4"
     )) %>%
+    dplyr::filter(dplyr::if_all(2:3, ~ ! .x %in% c("..", "--"))) %>%
     dplyr::mutate(QUARTER = paste(YEAR, QUARTER)) %>%
     dplyr::filter(QUARTER %in% unique(earn07$QUARTER)) %>%
     # dplyr::filter(QUARTER != "2001 Q2") %>% # ONS didn't publish this quarter

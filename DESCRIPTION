@@ -1,15 +1,15 @@
 Package: tidylfs
 Title: Tools for analysing the ONS Labour Force Survey
-Version: 0.0.3
+Version: 0.1.0.9000
 Authors@R: 
     person("Wojtek", "Klimowicz", , "wojtekklimowicz96@gmail.com", role = c("aut", "cre"))
-Description: Tools for analysts working with the LFS.
+Description: Tools for compiling multiple waves of the ONS Labour Force Survey into one tidy data frame.
 License: MIT + file LICENSE
 URL: https://github.com/wklimowicz/tidylfs,
     https://wklimowicz.github.io/tidylfs/
 BugReports: https://github.com/wklimowicz/tidylfs/issues
 Depends:
-    R (>= 3.5.0)
+    R (>= 4.1.0)
 Imports: 
     cli,
     data.table,
@@ -39,9 +39,10 @@ Suggests:
     rmarkdown,
     testthat (>= 3.0.0),
     tidyr,
-    vctrs
+    vctrs,
+    quarto
 VignetteBuilder:
-    knitr
+    quarto
 Config/testthat/edition: 3
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
