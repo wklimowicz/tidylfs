@@ -1,6 +1,6 @@
 Package: tidylfs
 Title: Tools for analysing the ONS Labour Force Survey
-Version: 0.1.0.9000
+Version: 0.1.1
 Authors@R: 
     person("Wojtek", "Klimowicz", , "wojtekklimowicz96@gmail.com", role = c("aut", "cre"))
 Description: Tools for compiling multiple waves of the ONS Labour Force Survey into one tidy data frame.

@@ -1,4 +1,4 @@
-# tidylfs (development version)
+# tidylfs 0.1.1
 
 # tidylfs 0.1.0
 
