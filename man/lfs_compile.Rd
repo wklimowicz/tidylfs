@@ -37,7 +37,7 @@ See
 \item{save_to_folder}{Deprecated. Use \code{lfs <- lfs_compile(..)}, and save manually to a folder.}
 }
 \value{
-A data.table with a stacked LFS dataset. Access the variable mappinging with \code{variable_mapping()}.
+A data.table with a stacked LFS dataset. Access the variable mapping with \code{variable_mapping(lfs)}.
 }
 \description{
 Compiles seperate fst files into one, picking relevant columns

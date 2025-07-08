@@ -9,9 +9,9 @@ test_that("HOUR01 matches raw data", {
   hour01 <- hour01_raw |>
     # dplyr::mutate(FTPT = as.numeric(FTPT)) |>
     dplyr::mutate(FT = !FTPTWK == "Full-time") |>
-    dplyr::mutate(ILODEFR = as.numeric(ILODEFR)) |>
     dplyr::filter(
-      ILODEFR == 1,
+      ILODEFR == "In employment",
+      !is.na(FT),
       WEIGHT > 0
     ) |>
     dplyr::filter(!is.na(TTACHR)) |>

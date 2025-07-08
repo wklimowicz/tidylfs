@@ -149,7 +149,7 @@ lfs_tidy_file <- function(file,
 #' @param save_variables_report Deprecated.  Use `variables_mapping(lfs)` instead.
 #' @param save_to_folder Deprecated. Use `lfs <- lfs_compile(..)`, and save manually to a folder.
 #'
-#' @return A data.table with a stacked LFS dataset. Access the variable mappinging with `variable_mapping()`.
+#' @return A data.table with a stacked LFS dataset. Access the variable mapping with `variable_mapping(lfs)`.
 #'
 #' @export
 lfs_compile <- function(directory,
