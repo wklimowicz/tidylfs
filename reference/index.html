@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">tidylfs</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.3</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.1.1</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,8 +17,8 @@
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto"><li class="nav-item"><a class="nav-link" href="../index.html">Get started</a></li>
 <li class="active nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
-<li class="nav-item"><a class="nav-link" href="../articles/Adding_Variables.html">Adding more variables</a></li>
-<li class="nav-item"><a class="nav-link" href="../articles/Replicating_ONS_Publications.html">Replicate ONS Publications</a></li>
+<li class="nav-item"><a class="nav-link" href="../articles/adding-variables.html">Adding variables</a></li>
+<li class="nav-item"><a class="nav-link" href="../articles/stats-replication.html">Replicating ONS publications</a></li>
       </ul><ul class="navbar-nav"><li class="nav-item"><a class="external-link nav-link" href="https://github.com/wklimowicz/tidylfs/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul></div>
 
@@ -32,15 +32,9 @@
     </div>
 
     <div class="section level2">
-      <h2 id="analysis">Analysis<a class="anchor" aria-label="anchor" href="#analysis"></a></h2>
+      <h2 id="all-functions">All functions<a class="anchor" aria-label="anchor" href="#all-functions"></a></h2>
 
 
-
-
-    </div><div class="section level2">
-
-      <h3 id="summary-functions">Summary Functions<a class="anchor" aria-label="anchor" href="#summary-functions"></a></h3>
-      <div class="section-desc"><p>Group and summarise for chosen metric</p></div>
 
 
     </div><div class="section level2">
@@ -49,88 +43,6 @@
 
 
       <dl><dt>
-
-          <code><a href="lfs_summarise_hours.html">lfs_summarise_hours()</a></code>
-          <span class="badge lifecycle lifecycle-experimental">experimental</span>
-        </dt>
-        <dd>Group by and Summarise for hours worked</dd>
-      </dl><dl><dt>
-
-          <code><a href="lfs_summarise_salary.html">lfs_summarise_salary()</a></code>
-
-        </dt>
-        <dd>Group by and Summarise into salary ONS Salary</dd>
-      </dl><dl><dt>
-
-          <code><a href="lfs_summarise_unemployment.html">lfs_summarise_unemployment()</a></code>
-
-        </dt>
-        <dd>Group by and Summarise for ONS unemployment</dd>
-      </dl><dl><dt>
-
-          <code><a href="lfs_summarise_union.html">lfs_summarise_union()</a></code>
-          <span class="badge lifecycle lifecycle-experimental">experimental</span>
-        </dt>
-        <dd>Group by and Summarise for unionisation rates</dd>
-      </dl></div><div class="section level2">
-
-      <h3 id="flags">Flags<a class="anchor" aria-label="anchor" href="#flags"></a></h3>
-      <div class="section-desc"><p>Add a indicator column</p></div>
-
-
-    </div><div class="section level2">
-
-
-
-
-      <dl><dt>
-
-          <code><a href="lfs_flag_graduate.html">lfs_flag_graduate()</a></code>
-
-        </dt>
-        <dd>Add a graduate flag column to LFS data</dd>
-      </dl><dl><dt>
-
-          <code><a href="lfs_flag_graduate_ons.html">lfs_flag_graduate_ons()</a></code>
-
-        </dt>
-        <dd>Add an ONS graduate flag column to LFS data</dd>
-      </dl><dl><dt>
-
-          <code><a href="lfs_flag_postgraduate.html">lfs_flag_postgraduate()</a></code>
-
-        </dt>
-        <dd>Add a post-gradaute flag column to LFS data</dd>
-      </dl><dl><dt>
-
-          <code><a href="lfs_flag_teacher.html">lfs_flag_teacher()</a></code>
-
-        </dt>
-        <dd>Add a teacher flag column to LFS data</dd>
-      </dl></div><div class="section level2">
-      <h2 id="setup">Setup<a class="anchor" aria-label="anchor" href="#setup"></a></h2>
-
-
-
-
-    </div><div class="section level2">
-
-      <h3 id="convert-and-compile">Convert and Compile<a class="anchor" aria-label="anchor" href="#convert-and-compile"></a></h3>
-      <div class="section-desc"><p>Convert from <code>.sav</code> to <code>.Rds</code> and compile to one dataset</p></div>
-
-
-    </div><div class="section level2">
-
-
-
-
-      <dl><dt>
-
-          <code><a href="lfs_convert.html">lfs_convert()</a></code>
-
-        </dt>
-        <dd>Convert files to Rds for faster compiling in future</dd>
-      </dl><dl><dt>
 
           <code><a href="lfs_compile.html">lfs_compile()</a></code>
 
@@ -138,36 +50,24 @@
         <dd>Compile to single data.frame</dd>
       </dl><dl><dt>
 
-          <code><a href="lfs_load.html">lfs_load()</a></code>
+          <code><a href="lfs_convert.html">lfs_convert()</a></code>
 
         </dt>
-        <dd>Load LFS Data</dd>
+        <dd>Convert files to Rds for faster compiling in future</dd>
       </dl><dl><dt>
-
-          <code><a href="aps_load.html">aps_load()</a></code>
-
-        </dt>
-        <dd>Load APS Data</dd>
-      </dl></div><div class="section level2">
-
-      <h3 id="add-custom-columns">Add custom columns<a class="anchor" aria-label="anchor" href="#add-custom-columns"></a></h3>
-      <div class="section-desc"><p>Brings in extra columns from lfs</p></div>
-
-
-    </div><div class="section level2">
-
-
-
-
-      <dl><dt>
 
           <code><a href="pick_var.html">pick_var()</a></code>
 
         </dt>
         <dd>Picks column names in order of appearance</dd>
+      </dl><dl><dt>
+
+          <code><a href="variable_mapping.html">variable_mapping()</a></code>
+
+        </dt>
+        <dd>Retrieve variable mapping for LFS/APS compilation</dd>
       </dl></div>
-  </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
-    </nav></aside></div>
+  </main></div>
 
 
     <footer><div class="pkgdown-footer-left">
@@ -175,7 +75,7 @@
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
 </div>
 
     </footer></div>

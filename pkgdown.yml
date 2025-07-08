@@ -1,10 +1,10 @@
 pandoc: 3.1.11
-pkgdown: 2.1.1
+pkgdown: 2.1.3
 pkgdown_sha: ~
 articles:
-  Adding_Variables: Adding_Variables.html
-  Replicating_ONS_Publications: Replicating_ONS_Publications.html
-last_built: 2025-04-13T18:31Z
+  adding-variables: adding-variables.html
+  stats-replication: stats-replication.html
+last_built: 2025-07-08T07:56Z
 urls:
   reference: https://wklimowicz.github.io/tidylfs/reference
   article: https://wklimowicz.github.io/tidylfs/articles
