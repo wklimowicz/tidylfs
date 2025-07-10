@@ -25,7 +25,7 @@ lfs_compile(
 
 \item{years}{Either NULL (all years) or a vector of years to filter by.}
 
-\item{extra_mappings}{Either NULL (use default) or a function that takes a vector of column names and returns a data frame with \code{lfs_name}, \code{new_name}, and `type. See \code{vignette("Adding_Variables", package = "tidylfs")}}
+\item{extra_mappings}{Either NULL (use default) or a function that takes a vector of column names and returns a data frame with \code{lfs_name}, \code{new_name}, and \code{type}. See \code{vignette("Adding_Variables", package = "tidylfs")}}
 
 \item{aps}{Deprecated. Use \code{dataset = "aps"} instead.}
 

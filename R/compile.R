@@ -134,7 +134,7 @@ lfs_tidy_file <- function(file,
 #'
 #' @param directory Path to directory with LFS files
 #' @param years Either NULL (all years) or a vector of years to filter by.
-#' @param extra_mappings Either NULL (use default) or a function that takes a vector of column names and returns a data frame with `lfs_name`, `new_name`, and `type. See \code{vignette("Adding_Variables", package = "tidylfs")}
+#' @param extra_mappings Either NULL (use default) or a function that takes a vector of column names and returns a data frame with `lfs_name`, `new_name`, and `type`. See \code{vignette("Adding_Variables", package = "tidylfs")}
 #'
 #' @param dataset Either "lfs" or "aps".
 #'
