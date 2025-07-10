@@ -24,6 +24,7 @@ test_that("Converting and compiling runs succesfully", {
     list(
       fs::dir_create("test"),
       fs::dir_create("test_aps_data"),
+      fs::dir_create("test_rds_data"),
       "test/APS 2003.sav" = haven::write_sav(lfs_test_data(), "test/APS 2003.sav"),
       "test/APS 2010.sav" = haven::write_sav(lfs_test_data(), "test/APS 2010.sav")
     ),
@@ -34,7 +35,7 @@ test_that("Converting and compiling runs succesfully", {
   withr::with_file(
     list(
       fs::dir_create("test"),
-      fs::dir_create("test_rds_data2"),
+      fs::dir_create("test_rds_data"),
       "test/2003 Q4.sav" = haven::write_sav(lfs_test_data(), "test/2003 Q4.sav"),
       "test/2010 Q4.sav" = haven::write_sav(lfs_test_data(), "test/2010 Q4.sav")
     ),
@@ -47,5 +48,4 @@ test_that("Converting and compiling runs succesfully", {
       })
     }
   )
-
 })

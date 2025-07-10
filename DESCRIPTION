@@ -18,7 +18,6 @@ Imports:
     fst,
     glue,
     haven,
-    jsonlite,
     lifecycle,
     magrittr,
     matrixStats,

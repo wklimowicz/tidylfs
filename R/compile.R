@@ -143,7 +143,7 @@ lfs_tidy_file <- function(file,
 #' "aps" expects files named like "APS 2004.sav" or "APS 2005.sav".
 #'
 #' @param aps Deprecated. Use `dataset = "aps"` instead.
-#' @param save_variables_report Deprecated.  Use `variables_mapping(lfs)` instead.
+#' @param save_variables_report Deprecated.  Use `variable_mapping(lfs)` instead.
 #' @param save_to_folder Deprecated. Use `lfs <- lfs_compile(..)`, and save manually to a folder.
 #'
 #' @return A data.table with a stacked LFS dataset. Access the variable mapping with `variable_mapping(lfs)`.

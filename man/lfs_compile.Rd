@@ -29,7 +29,7 @@ lfs_compile(
 
 \item{aps}{Deprecated. Use \code{dataset = "aps"} instead.}
 
-\item{save_variables_report}{Deprecated.  Use \code{variables_mapping(lfs)} instead.}
+\item{save_variables_report}{Deprecated.  Use \code{variable_mapping(lfs)} instead.}
 
 \item{save_to_folder}{Deprecated. Use \code{lfs <- lfs_compile(..)}, and save manually to a folder.}
 }
