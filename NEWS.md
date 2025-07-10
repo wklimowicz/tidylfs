@@ -2,6 +2,8 @@
 
 # tidylfs 0.1.1
 
+* `ons_time_series` has been removed.
+
 # tidylfs 0.1.0
 
 * `save_variables_report` has been deprecated. `lfs_compile()` attaches a `variable_mapping` attribute. Remove the argument and use `variable_mapping(lfs)` to view the mapping.
