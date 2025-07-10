@@ -39,15 +39,15 @@ earn04 <- lfs |>
       w = WEIGHT_INCOME,
       na.rm = TRUE
     ),
-    paidweight = sum(GRSSWK * WEIGHT_INCOME, na.rm = TRUE),
-    paidweight2 = sum(WEIGHT_INCOME, na.rm = TRUE),
-    paidweighthrly = sum(HOURPAY * WEIGHT_INCOME, na.rm = TRUE),
-    paidweighthrly2 = sum(WEIGHT_INCOME, na.rm = TRUE),
+    total_weighted_weekly_pay = sum(GRSSWK * WEIGHT_INCOME, na.rm = TRUE),
+    total_weekly_weight = sum(WEIGHT_INCOME, na.rm = TRUE),
+    total_weighted_hourly_pay = sum(HOURPAY * WEIGHT_INCOME, na.rm = TRUE),
+    total_hourly_weight = sum(WEIGHT_INCOME, na.rm = TRUE),
     .groups = "drop"
   ) |>
   mutate(
-    mean_weekly_pay = paidweight / (paidweight2),
-    mean_hourly_pay = paidweighthrly / (paidweighthrly2)
+    mean_weekly_pay = total_weighted_weekly_pay / total_weekly_weight,
+    mean_hourly_pay = total_weighted_hourly_pay / total_hourly_weight
   ) |>
   select(QUARTER, mean_weekly_pay, median_weekly_pay)
 ```
@@ -79,15 +79,15 @@ earn06 <- lfs |>
       w = WEIGHT_INCOME,
       na.rm = TRUE
     ),
-    paidweight = sum(GRSSWK * WEIGHT_INCOME, na.rm = TRUE),
-    paidweight2 = sum(WEIGHT_INCOME, na.rm = TRUE),
-    paidweighthrly = sum(HOURPAY * WEIGHT_INCOME, na.rm = TRUE),
-    paidweighthrly2 = sum(WEIGHT_INCOME, na.rm = TRUE),
+    total_weighted_weekly_pay = sum(GRSSWK * WEIGHT_INCOME, na.rm = TRUE),
+    total_weekly_weight = sum(WEIGHT_INCOME, na.rm = TRUE),
+    total_weighted_hourly_pay = sum(HOURPAY * WEIGHT_INCOME, na.rm = TRUE),
+    total_hourly_weight = sum(WEIGHT_INCOME, na.rm = TRUE),
     .groups = "drop"
   ) |>
   mutate(
-    mean_weekly_pay = paidweight / (paidweight2),
-    mean_hourly_pay = paidweighthrly / (paidweighthrly2)
+    mean_weekly_pay = total_weighted_weekly_pay / total_weekly_weight,
+    mean_hourly_pay = total_weighted_hourly_pay / total_hourly_weight
   ) |>
   pivot_wider(
     id_cols = QUARTER,
@@ -143,15 +143,15 @@ earn07 <- lfs |>
       w = WEIGHT_INCOME,
       na.rm = TRUE
     ),
-    paidweight = sum(GRSSWK * WEIGHT_INCOME, na.rm = TRUE),
-    paidweight2 = sum(WEIGHT_INCOME, na.rm = TRUE),
-    paidweighthrly = sum(HOURPAY * WEIGHT_INCOME, na.rm = TRUE),
-    paidweighthrly2 = sum(WEIGHT_INCOME, na.rm = TRUE),
+    total_weighted_weekly_pay = sum(GRSSWK * WEIGHT_INCOME, na.rm = TRUE),
+    total_weekly_weight = sum(WEIGHT_INCOME, na.rm = TRUE),
+    total_weighted_hourly_pay = sum(HOURPAY * WEIGHT_INCOME, na.rm = TRUE),
+    total_hourly_weight = sum(WEIGHT_INCOME, na.rm = TRUE),
     .groups = "drop"
   ) |>
   mutate(
-    mean_weekly_pay = paidweight / (paidweight2),
-    mean_hourly_pay = paidweighthrly / (paidweighthrly2)
+    mean_weekly_pay = total_weighted_weekly_pay / total_weekly_weight,
+    mean_hourly_pay = total_weighted_hourly_pay / total_hourly_weight
   ) |>
   select(QUARTER, GROUPED_INDUSTRY, mean_weekly_pay, median_weekly_pay) |>
   tidyr::pivot_wider(
