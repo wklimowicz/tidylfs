@@ -133,11 +133,8 @@ lfs_tidy_file <- function(file,
 #' Compiles seperate fst files into one, picking relevant columns
 #'
 #' @param directory Path to directory with LFS files
-#' @param filter_years Vector of years to filter down to
-#' @param extra_mappings Either NULL (use default) or a file
-#' which has the custom mapping function.
-#' See
-#' \code{vignette("Adding_Variables", package = "tidylfs")}
+#' @param years Either NULL (all years) or a vector of years to filter by.
+#' @param extra_mappings Either NULL (use default) or a function that takes a vector of column names and returns a data frame with `lfs_name`, `new_name`, and `type`. See \code{vignette("Adding_Variables", package = "tidylfs")}
 #'
 #' @param dataset Either "lfs" or "aps".
 #'
@@ -146,7 +143,7 @@ lfs_tidy_file <- function(file,
 #' "aps" expects files named like "APS 2004.sav" or "APS 2005.sav".
 #'
 #' @param aps Deprecated. Use `dataset = "aps"` instead.
-#' @param save_variables_report Deprecated.  Use `variables_mapping(lfs)` instead.
+#' @param save_variables_report Deprecated.  Use `variable_mapping(lfs)` instead.
 #' @param save_to_folder Deprecated. Use `lfs <- lfs_compile(..)`, and save manually to a folder.
 #'
 #' @return A data.table with a stacked LFS dataset. Access the variable mapping with `variable_mapping(lfs)`.
@@ -154,7 +151,7 @@ lfs_tidy_file <- function(file,
 #' @export
 lfs_compile <- function(directory,
                         dataset = c("lfs", "aps"),
-                        filter_years = NULL,
+                        years = NULL,
                         extra_mappings = NULL,
                         aps = lifecycle::deprecated(),
                         save_variables_report = lifecycle::deprecated(),
@@ -206,11 +203,11 @@ lfs_compile <- function(directory,
     invokeRestart("abort")
   }
 
-  # Filter down if filter_years isn't null
-  if (!is.null(filter_years)) {
+  # Filter down if years isn't null
+  if (!is.null(years)) {
 
     # Collapse vector into numbers seperated by "|", then grepl
-    filtered_vector <- filter_years |>
+    filtered_vector <- years |>
       paste(collapse = "|") |>
       grep(files_in_directory)
 

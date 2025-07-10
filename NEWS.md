@@ -1,4 +1,8 @@
+# tidylfs (development version)
+
 # tidylfs 0.1.1
+
+* `ons_time_series` has been removed.
 
 # tidylfs 0.1.0
 

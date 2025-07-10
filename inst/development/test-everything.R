@@ -30,10 +30,8 @@ lfs_file_column_names
 
 tic()
 lfs <- lfs_compile(rds_folder,
-                   filter_years = 2023,
-                   save_to_folder = TRUE,
-                   aps = TRUE,
-                   save_variables_report = TRUE,
+                   dataset = "lfs",
+                   years = 1990:2025,
                    extra_mappings = user_extra_mappings)
 toc()
 

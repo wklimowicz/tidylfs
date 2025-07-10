@@ -7,7 +7,7 @@
 lfs_compile(
   directory,
   dataset = c("lfs", "aps"),
-  filter_years = NULL,
+  years = NULL,
   extra_mappings = NULL,
   aps = lifecycle::deprecated(),
   save_variables_report = lifecycle::deprecated(),
@@ -23,16 +23,13 @@ lfs_compile(
 
 "aps" expects files named like "APS 2004.sav" or "APS 2005.sav".}
 
-\item{filter_years}{Vector of years to filter down to}
+\item{years}{Either NULL (all years) or a vector of years to filter by.}
 
-\item{extra_mappings}{Either NULL (use default) or a file
-which has the custom mapping function.
-See
-\code{vignette("Adding_Variables", package = "tidylfs")}}
+\item{extra_mappings}{Either NULL (use default) or a function that takes a vector of column names and returns a data frame with \code{lfs_name}, \code{new_name}, and \code{type}. See \code{vignette("Adding_Variables", package = "tidylfs")}}
 
 \item{aps}{Deprecated. Use \code{dataset = "aps"} instead.}
 
-\item{save_variables_report}{Deprecated.  Use \code{variables_mapping(lfs)} instead.}
+\item{save_variables_report}{Deprecated.  Use \code{variable_mapping(lfs)} instead.}
 
 \item{save_to_folder}{Deprecated. Use \code{lfs <- lfs_compile(..)}, and save manually to a folder.}
 }
