@@ -50,7 +50,7 @@ test_that("Year filter works", {
       suppressMessages({
         lfs_convert("test", "test_rds_data/")
         lfs <- lfs_compile("test_rds_data", dataset = "lfs", years = 2003)
-        # 2 Rows in the mapping
+        # 1 Row in the mapping
         expect_equal(variable_mapping(lfs) |> nrow(), 1L)
       })
     }
