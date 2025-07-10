@@ -33,7 +33,7 @@ test_that("Converting and compiling runs succesfully", {
 
 
 test_that("Year filter works", {
-  # Ye
+  
   test_convert_compile <- function() {
     lfs_convert("test", "test_rds_data/")
     lfs <- lfs_compile("test_rds_data", dataset = "lfs", years = 2003)
