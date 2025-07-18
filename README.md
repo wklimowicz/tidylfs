@@ -21,7 +21,9 @@ devtools::install_github("wklimowicz/tidylfs")
 ## Quickstart
 
 Copy the LFS `.sav` files into a directory (in my example
-`lfs_data_folder`). They should look like this:
+`lfs_data_folder`). They should look like this (the naming convention is
+important since that’s how the package knows which quarter and year the
+data is from):
 
     .
     └── lfs_data_folder/
