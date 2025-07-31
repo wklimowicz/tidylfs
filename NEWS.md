@@ -1,4 +1,8 @@
-# tidylfs (development version)
+# tidylfs 0.1.2
+
+* Improved code for vignettes replicating ONS publications.
+
+* Improve error message when attempting to use `variable_mapping`.
 
 # tidylfs 0.1.1
 
