@@ -22,7 +22,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">tidylfs</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.1.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.1.2</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -91,15 +91,15 @@
 <span>      w <span class="op">=</span> <span class="va">WEIGHT_INCOME</span>,</span>
 <span>      na.rm <span class="op">=</span> <span class="cn">TRUE</span></span>
 <span>    <span class="op">)</span>,</span>
-<span>    paidweight <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">GRSSWK</span> <span class="op">*</span> <span class="va">WEIGHT_INCOME</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
-<span>    paidweight2 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">WEIGHT_INCOME</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
-<span>    paidweighthrly <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">HOURPAY</span> <span class="op">*</span> <span class="va">WEIGHT_INCOME</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
-<span>    paidweighthrly2 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">WEIGHT_INCOME</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>    total_weighted_weekly_pay <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">GRSSWK</span> <span class="op">*</span> <span class="va">WEIGHT_INCOME</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>    total_weekly_weight <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">WEIGHT_INCOME</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>    total_weighted_hourly_pay <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">HOURPAY</span> <span class="op">*</span> <span class="va">WEIGHT_INCOME</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>    total_hourly_weight <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">WEIGHT_INCOME</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
 <span>    .groups <span class="op">=</span> <span class="st">"drop"</span></span>
 <span>  <span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">mutate</span><span class="op">(</span></span>
-<span>    mean_weekly_pay <span class="op">=</span> <span class="va">paidweight</span> <span class="op">/</span> <span class="op">(</span><span class="va">paidweight2</span><span class="op">)</span>,</span>
-<span>    mean_hourly_pay <span class="op">=</span> <span class="va">paidweighthrly</span> <span class="op">/</span> <span class="op">(</span><span class="va">paidweighthrly2</span><span class="op">)</span></span>
+<span>    mean_weekly_pay <span class="op">=</span> <span class="va">total_weighted_weekly_pay</span> <span class="op">/</span> <span class="va">total_weekly_weight</span>,</span>
+<span>    mean_hourly_pay <span class="op">=</span> <span class="va">total_weighted_hourly_pay</span> <span class="op">/</span> <span class="va">total_hourly_weight</span></span>
 <span>  <span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">select</span><span class="op">(</span><span class="va">QUARTER</span>, <span class="va">mean_weekly_pay</span>, <span class="va">median_weekly_pay</span><span class="op">)</span></span></code></pre></div>
 </section><section class="level2"><h3 id="earn06">EARN06<a class="anchor" aria-label="anchor" href="#earn06"></a>
@@ -128,15 +128,15 @@
 <span>      w <span class="op">=</span> <span class="va">WEIGHT_INCOME</span>,</span>
 <span>      na.rm <span class="op">=</span> <span class="cn">TRUE</span></span>
 <span>    <span class="op">)</span>,</span>
-<span>    paidweight <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">GRSSWK</span> <span class="op">*</span> <span class="va">WEIGHT_INCOME</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
-<span>    paidweight2 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">WEIGHT_INCOME</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
-<span>    paidweighthrly <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">HOURPAY</span> <span class="op">*</span> <span class="va">WEIGHT_INCOME</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
-<span>    paidweighthrly2 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">WEIGHT_INCOME</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>    total_weighted_weekly_pay <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">GRSSWK</span> <span class="op">*</span> <span class="va">WEIGHT_INCOME</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>    total_weekly_weight <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">WEIGHT_INCOME</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>    total_weighted_hourly_pay <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">HOURPAY</span> <span class="op">*</span> <span class="va">WEIGHT_INCOME</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>    total_hourly_weight <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">WEIGHT_INCOME</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
 <span>    .groups <span class="op">=</span> <span class="st">"drop"</span></span>
 <span>  <span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">mutate</span><span class="op">(</span></span>
-<span>    mean_weekly_pay <span class="op">=</span> <span class="va">paidweight</span> <span class="op">/</span> <span class="op">(</span><span class="va">paidweight2</span><span class="op">)</span>,</span>
-<span>    mean_hourly_pay <span class="op">=</span> <span class="va">paidweighthrly</span> <span class="op">/</span> <span class="op">(</span><span class="va">paidweighthrly2</span><span class="op">)</span></span>
+<span>    mean_weekly_pay <span class="op">=</span> <span class="va">total_weighted_weekly_pay</span> <span class="op">/</span> <span class="va">total_weekly_weight</span>,</span>
+<span>    mean_hourly_pay <span class="op">=</span> <span class="va">total_weighted_hourly_pay</span> <span class="op">/</span> <span class="va">total_hourly_weight</span></span>
 <span>  <span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">pivot_wider</span><span class="op">(</span></span>
 <span>    id_cols <span class="op">=</span> <span class="va">QUARTER</span>,</span>
@@ -188,15 +188,15 @@
 <span>      w <span class="op">=</span> <span class="va">WEIGHT_INCOME</span>,</span>
 <span>      na.rm <span class="op">=</span> <span class="cn">TRUE</span></span>
 <span>    <span class="op">)</span>,</span>
-<span>    paidweight <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">GRSSWK</span> <span class="op">*</span> <span class="va">WEIGHT_INCOME</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
-<span>    paidweight2 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">WEIGHT_INCOME</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
-<span>    paidweighthrly <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">HOURPAY</span> <span class="op">*</span> <span class="va">WEIGHT_INCOME</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
-<span>    paidweighthrly2 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">WEIGHT_INCOME</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>    total_weighted_weekly_pay <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">GRSSWK</span> <span class="op">*</span> <span class="va">WEIGHT_INCOME</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>    total_weekly_weight <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">WEIGHT_INCOME</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>    total_weighted_hourly_pay <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">HOURPAY</span> <span class="op">*</span> <span class="va">WEIGHT_INCOME</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>    total_hourly_weight <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">WEIGHT_INCOME</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
 <span>    .groups <span class="op">=</span> <span class="st">"drop"</span></span>
 <span>  <span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">mutate</span><span class="op">(</span></span>
-<span>    mean_weekly_pay <span class="op">=</span> <span class="va">paidweight</span> <span class="op">/</span> <span class="op">(</span><span class="va">paidweight2</span><span class="op">)</span>,</span>
-<span>    mean_hourly_pay <span class="op">=</span> <span class="va">paidweighthrly</span> <span class="op">/</span> <span class="op">(</span><span class="va">paidweighthrly2</span><span class="op">)</span></span>
+<span>    mean_weekly_pay <span class="op">=</span> <span class="va">total_weighted_weekly_pay</span> <span class="op">/</span> <span class="va">total_weekly_weight</span>,</span>
+<span>    mean_hourly_pay <span class="op">=</span> <span class="va">total_weighted_hourly_pay</span> <span class="op">/</span> <span class="va">total_hourly_weight</span></span>
 <span>  <span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">select</span><span class="op">(</span><span class="va">QUARTER</span>, <span class="va">GROUPED_INDUSTRY</span>, <span class="va">mean_weekly_pay</span>, <span class="va">median_weekly_pay</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">tidyr</span><span class="fu">::</span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_wider.html" class="external-link">pivot_wider</a></span><span class="op">(</span></span>

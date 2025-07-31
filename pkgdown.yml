@@ -4,7 +4,7 @@ pkgdown_sha: ~
 articles:
   adding-variables: adding-variables.html
   stats-replication: stats-replication.html
-last_built: 2025-07-08T07:56Z
+last_built: 2025-07-31T11:51Z
 urls:
   reference: https://wklimowicz.github.io/tidylfs/reference
   article: https://wklimowicz.github.io/tidylfs/articles
